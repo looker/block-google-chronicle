@@ -15,6 +15,9 @@
         },
         "CHRONICLE_URL": {
             "label": "Chronicle URL"
+        },
+        "CONFIG_PROJECT_NAME": {
+          "label": "Config Project Name"
         }
     },
     "models": [
@@ -23,5 +26,12 @@
             "connection_constant": "CONNECTION_NAME"
         }
     ],
-    "auxiliary_projects": []
+    "auxiliary_projects": [
+    {
+      "git_uri": "git://github.com/looker/block-google-chronicle.git",
+      "git_ref": "",
+      "label": "Google Chronicle Config",
+      "constant_name": "CONFIG_PROJECT_NAME"
+    }
+  ]
 }

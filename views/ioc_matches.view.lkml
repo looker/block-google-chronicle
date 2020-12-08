@@ -1,4 +1,12 @@
+include: "//@{CONFIG_PROJECT_NAME}/views/ioc_matches.view.lkml"
+
+
 view: ioc_matches {
+  extends: [ioc_matches_config]
+}
+
+###################################################
+view: ioc_matches_core {
   sql_table_name: `@{DATASET_NAME}.@{IOC_MATCHES}`
     ;;
 
@@ -62,7 +70,7 @@ view: ioc_matches {
   }
 
 
-  dimension : ioc_value_domain{
+  dimension : ioc_value_domain {
     type: string
     sql:
     CASE
@@ -96,6 +104,11 @@ view: ioc_matches {
 }
 
 view: ioc_matches__asset {
+  extends: [ioc_matches__asset_config]
+}
+
+###################################################
+view: ioc_matches__asset_core {
   dimension: asset_ip_address {
     type: string
     sql: ${TABLE}.asset_ip_address ;;
@@ -121,6 +134,11 @@ view: ioc_matches__asset {
 }
 
 view: ioc_matches__ioc_ingest_time {
+  extends: [ioc_matches__ioc_ingest_time_config]
+}
+
+###################################################
+view: ioc_matches__ioc_ingest_time_core {
   dimension: nanos {
     type: number
     sql: ${TABLE}.nanos ;;
@@ -147,6 +165,12 @@ view: ioc_matches__ioc_ingest_time {
 }
 
 view: global_threat_map_ioc {
+  extends: [global_threat_map_ioc_config]
+}
+
+###################################################
+
+view: global_threat_map_ioc_core {
   derived_table: {
     sql: SELECT
         a.ts,
