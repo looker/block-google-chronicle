@@ -1,0 +1,27 @@
+{
+    "label": "Google Chronicle",
+    "category_label": "Models",
+    "branding": {
+        "image_uri": "https://storage.googleapis.com/bml-image/Chronicle-RGB-Icon-Color.png",
+        "tagline": "Explore, analyze and visualize Chronicle data in Looker"
+    },
+    "constants": {
+        "CONNECTION_NAME": {
+            "label": "Connection Name",
+            "value_constraint": "connection"
+        },
+        "DATASET_NAME": {
+            "label": "Dataset Name"
+        },
+        "CHRONICLE_URL": {
+            "label": "Chronicle URL"
+        }
+    },
+    "models": [
+        {
+            "name": "block_google_chronicle",
+            "connection_constant": "CONNECTION_NAME"
+        }
+    ],
+    "auxiliary_projects": []
+}
