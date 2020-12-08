@@ -1,4 +1,5 @@
 explore: udm_events_core {
+  extension: required
   join: udm_events__principal {
     view_label: "Udm Events: Principal"
     sql: LEFT JOIN UNNEST([${udm_events.principal}]) as udm_events__principal ;;

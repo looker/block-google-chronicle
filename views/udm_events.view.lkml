@@ -6920,6 +6920,12 @@ view: destination_geo_ip {
 }
 
 view: asset_rule_detections_with_udm_events {
+  extends: [asset_rule_detections_with_udm_events_config]
+}
+
+###################################################
+
+view: asset_rule_detections_with_udm_events_core {
   derived_table: {
     sql: WITH udm_events AS (SELECT
         COALESCE(udm_events.principal.hostname, udm_events.principal.ip[SAFE_OFFSET(0)]) AS asset,
@@ -6989,6 +6995,11 @@ view: asset_rule_detections_with_udm_events {
 }
 
 view: user_rule_detections_with_udm_events {
+  extends: [user_rule_detections_with_udm_events_config]
+}
+
+###################################################
+view: user_rule_detections_with_udm_events_core {
   derived_table: {
     sql: WITH udm_events AS (SELECT
         udm_events.principal.user.userid AS user_name,
