@@ -1,15 +1,20 @@
 project_name: "block-google-chronicle"
 
+constant: CONFIG_PROJECT_NAME {
+  value: "block-google-chronicle-config"
+  export: override_required
+}
+
 constant: CONNECTION_NAME{
-  value: "your_bq_connection_name"
+  value: "chronicle-data"
+}
+
+constant: DATASET_NAME{
+  value: "chroniclesecurity-catfood.prod_data"
 }
 
 constant: MODEL_NAME{
   value: "block_google_chronicle"
-}
-
-constant: DATASET_NAME{
-  value: "your_bq_chronicle_dataset"
 }
 
 constant: IOC_MATCHES{
@@ -66,4 +71,9 @@ constant: CHRONICLE_ICON_URL{
 
 constant: CHRONICLE_URL{
   value: "https://your_chronicle_url.backstory.chronicle.security"
+}
+
+
+local_dependency: {
+  project: "@{CONFIG_PROJECT_NAME}"
 }
