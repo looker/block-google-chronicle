@@ -27,24 +27,17 @@ explore: destination_geo_ip {
   extends: [destination_geo_ip_config]
 }
 
-# explore: global_threat_map_ioc {
-#   extends: [global_threat_map_ioc_config]
-# }
+explore: global_threat_map_ioc {
+  extends: [global_threat_map_ioc_config]
+}
 
-#explore: global_threat_map_ioc_core {}
+explore: asset_rule_detections_with_udm_events {
+  extends: [asset_rule_detections_with_udm_events_config]
+}
 
-# explore: asset_rule_detections_with_udm_events {
-#   extends: [asset_rule_detections_with_udm_events_config]
-# }
-
-#explore: asset_rule_detections_with_udm_events_core {}
-
-# explore: user_rule_detections_with_udm_events {
-#   extends: [user_rule_detections_with_udm_events_config]
-# }
-
-#explore: user_rule_detections_with_udm_events_core {}
-
+explore: user_rule_detections_with_udm_events {
+  extends: [user_rule_detections_with_udm_events_config]
+}
 
 explore: ioc_matches {
   extends: [ioc_matches_config]

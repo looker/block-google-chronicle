@@ -1,4 +1,5 @@
 explore: ioc_matches_core {
+  extension: required
   join: ioc_matches__asset {
     view_label: "Ioc Matches: Asset"
     sql: LEFT JOIN UNNEST([${ioc_matches.asset}]) as ioc_matches__asset ;;
