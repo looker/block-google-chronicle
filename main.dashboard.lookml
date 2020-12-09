@@ -1,7 +1,7 @@
 - dashboard: main
   title: Main
   layout: newspaper
-  preferred_viewer: dashboards-next
+  preferred_viewer: dashboards
   elements:
   - name: Ingested Events
     type: text
@@ -10,17 +10,17 @@
     body_text: ''
     row: 0
     col: 0
-    width: 4
-    height: 2
+    width: 7
+    height: 3
   - name: Throughput (GB)
     type: text
     title_text: Throughput (GB)
     subtitle_text: ''
     body_text: ''
     row: 0
-    col: 8
-    width: 4
-    height: 2
+    col: 7
+    width: 9
+    height: 3
   - name: Alerts
     type: text
     title_text: Alerts
@@ -28,8 +28,8 @@
     body_text: ''
     row: 0
     col: 16
-    width: 4
-    height: 2
+    width: 7
+    height: 3
   - title: Alert
     name: Alert
     model: block_google_chronicle
@@ -83,10 +83,10 @@
     note_text: Delta compared to previous time period
     listen:
       Time: rule_detections__detection__detection_timestamp.period_filter
-    row: 0
-    col: 20
-    width: 4
-    height: 2
+    row: 3
+    col: 16
+    width: 8
+    height: 4
   - title: Ingestion Data Size
     name: Ingestion Data Size
     model: block_google_chronicle
@@ -168,10 +168,10 @@
     note_text: Delta compared to previous time period
     listen:
       Time: ingestion_stats.period_filter
-    row: 0
-    col: 12
-    width: 4
-    height: 2
+    row: 3
+    col: 7
+    width: 9
+    height: 4
   - title: Events Over Time
     name: Events Over Time
     model: block_google_chronicle
@@ -229,7 +229,7 @@
     note_text: Trends for volume of different event types ingested by Chronicle
     listen:
       Time: ingestion_stats.period_filter
-    row: 2
+    row: 7
     col: 0
     width: 10
     height: 9
@@ -278,7 +278,7 @@
     note_text: Geo-location of the IP addresses of IOC matches, put on a Global Map
     listen:
       Time: global_threat_map_ioc.period_filter
-    row: 2
+    row: 7
     col: 10
     width: 14
     height: 9
@@ -338,10 +338,10 @@
     note_text: Delta compared to previous time period
     listen:
       Time: ingestion_stats.period_filter
-    row: 0
-    col: 4
-    width: 4
-    height: 2
+    row: 3
+    col: 0
+    width: 7
+    height: 4
   filters:
   - name: Time
     title: Time
