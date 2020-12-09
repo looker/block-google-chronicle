@@ -2,8 +2,8 @@
     "label": "Google Chronicle",
     "category_label": "Models",
     "branding": {
-        "image_uri": "https://storage.googleapis.com/bml-image/Chronicle-RGB-Icon-Color.png",
-        "tagline": "Explore, analyze and visualize Chronicle data in Looker"
+        "image_uri": "https://marketplace-api.looker.com/block-icons/chronicle.png",
+        "tagline": "Explore, analyze and visualize Chronicle data in Looker."
     },
     "constants": {
         "CONNECTION_NAME": {
@@ -28,7 +28,7 @@
     ],
     "auxiliary_projects": [
     {
-      "git_uri": "git://github.com/looker/block-google-chronicle.git",
+      "git_uri": "git://github.com/looker/block-google-chronicle-config.git",
       "git_ref": "",
       "label": "Google Chronicle Config",
       "constant_name": "CONFIG_PROJECT_NAME"
