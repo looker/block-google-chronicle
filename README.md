@@ -12,7 +12,7 @@ Core project: block-google-chronicle is the read-only project where the block’
 
 Config project: block-google-chronicle-config is the project that can be modified by LookML developers. This project extends the core project. Its files are also imported into the core project and extended in the core project’s content layer, so that changes made to files in the config project are brought into the core project. 
 
-For more information on the Block structure and customization, refer to (Looker Marketplace Documnetation) [https://docs.looker.com/data-modeling/marketplace/customize-blocks]
+For more information on the Block structure and customization, refer to [Looker Marketplace Documnetation](https://docs.looker.com/data-modeling/marketplace/customize-blocks)
 
 ## Technical installation
 
