@@ -35,9 +35,9 @@ explore: asset_rule_detections_with_udm_events {
   extends: [asset_rule_detections_with_udm_events_config]
 }
 
-explore: user_rule_detections_with_udm_events {
-  extends: [user_rule_detections_with_udm_events_config]
-}
+# explore: user_rule_detections_with_udm_events {
+#   extends: [user_rule_detections_with_udm_events_config]
+# }
 
 explore: ioc_matches {
   extends: [ioc_matches_config]
