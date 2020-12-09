@@ -29,7 +29,7 @@
     "auxiliary_projects": [
     {
       "git_uri": "git://github.com/looker/block-google-chronicle-config.git",
-      "git_ref": "637dd907140acff5f59ac02ffa9653f451b168df",
+      "git_ref": "9de0ecd0fb22ad515efeed5c90439eec139db2a7",
       "label": "Google Chronicle Config",
       "constant_name": "CONFIG_PROJECT_NAME"
     }

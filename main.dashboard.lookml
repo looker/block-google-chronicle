@@ -1,7 +1,7 @@
 - dashboard: main
   title: Main
   layout: newspaper
-  preferred_viewer: dashboards
+  preferred_viewer: dashboards-next
   elements:
   - name: Ingested Events
     type: text
