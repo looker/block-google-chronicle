@@ -7,10 +7,12 @@ constant: CONFIG_PROJECT_NAME {
 
 constant: CONNECTION_NAME{
   value: "chronicle-data"
+  export: override_required
 }
 
 constant: DATASET_NAME{
   value: "chroniclesecurity-catfood.prod_data"
+  export: override_required
 }
 
 constant: MODEL_NAME{
