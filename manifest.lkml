@@ -7,10 +7,17 @@ constant: CONFIG_PROJECT_NAME {
 
 constant: CONNECTION_NAME{
   value: "chronicle-data"
+  export: override_required
 }
 
 constant: DATASET_NAME{
   value: "chroniclesecurity-catfood.prod_data"
+  export: override_required
+}
+
+constant: CHRONICLE_URL{
+  value: "https://your_chronicle_url.backstory.chronicle.security"
+  export: override_required
 }
 
 constant: MODEL_NAME{
@@ -67,10 +74,6 @@ constant: DASHBOARD_ICON_URL{
 
 constant: CHRONICLE_ICON_URL{
   value: "https://storage.googleapis.com/bml-image/Chronicle-RGB-Icon-Color.png"
-}
-
-constant: CHRONICLE_URL{
-  value: "https://your_chronicle_url.backstory.chronicle.security"
 }
 
 
