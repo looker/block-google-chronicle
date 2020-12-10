@@ -15,6 +15,11 @@ constant: DATASET_NAME{
   export: override_required
 }
 
+constant: CHRONICLE_URL{
+  value: "https://your_chronicle_url.backstory.chronicle.security"
+  export: override_required
+}
+
 constant: MODEL_NAME{
   value: "block_google_chronicle"
 }
@@ -69,10 +74,6 @@ constant: DASHBOARD_ICON_URL{
 
 constant: CHRONICLE_ICON_URL{
   value: "https://storage.googleapis.com/bml-image/Chronicle-RGB-Icon-Color.png"
-}
-
-constant: CHRONICLE_URL{
-  value: "https://your_chronicle_url.backstory.chronicle.security"
 }
 
 
