@@ -26,7 +26,7 @@ For more information on the Block structure and customization, refer to [Looker 
 1. Install this block from the marketplace
 2. Required installation parameters:
   - CONNECTION_NAME: name of the database connection for the Chronicle dataset in BigQuery
-  - DATASET_NAME: the [project.dataset] in BigQuery where Chronicle data is stored, for e.g. `prod_data`
+  - DATASET_NAME: the [project.dataset] in BigQuery where Chronicle data is stored, for e.g. `chronicle`
   - CHRONICLE_URL: this block contains links back to the different views in Chronicle. Enter the base URL of your Chronicle tenant, for e.g. https://tenant.backstory.chronicle.security/
 3. Access the block from Browse - Applications & Tools - Google Chronicle Block or the LookML dashboards folder (/folders/lookml). You can customize these dashboards by copying them into one of your instances folders.
 
