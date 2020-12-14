@@ -35,21 +35,21 @@ explore: asset_rule_detections_with_udm_events {
   extends: [asset_rule_detections_with_udm_events_config]
 }
 
-# explore: user_rule_detections_with_udm_events {
-#   extends: [user_rule_detections_with_udm_events_config]
-# }
+explore: user_rule_detections_with_udm_events {
+  extends: [user_rule_detections_with_udm_events_config]
+}
 
 explore: ioc_matches {
   extends: [ioc_matches_config]
 }
 
-
 explore: rule_detections {
   extends: [rule_detections_config]
 }
 
-
-#explore: udm_enum_value_to_name_mapping {}
+explore: udm_enum_value_to_name_mapping {
+extends: [user_rule_detections_with_udm_events_config]
+}
 
 explore: udm_events {
   extends: [udm_events_config]
