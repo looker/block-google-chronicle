@@ -1278,3 +1278,7 @@ explore: udm_events_core {
     relationship: one_to_one
   }
 }
+
+explore: udm_enum_value_to_name_mapping_core {
+  extension: required
+}
