@@ -116,7 +116,7 @@
         udm_enum_value_to_name_mapping.field_path: backstory.Authentication.Mechanism
       sorts: [udm_enum_value_to_name_mapping.enum_name]
       limit: 500
-      dynamic_fields: [{table_calculation: auth_value, label: Auth Value, expression: 'to_string(${udm_enum_value_to_name_mapping.enum_value})',
+      dynamic_fields: [{table_calculation: auth_value, label: Auth Value, expression: '${udm_enum_value_to_name_mapping.enum_value}',
           value_format: !!null '', value_format_name: !!null '', _kind_hint: dimension,
           _type_hint: string}]
       query_timezone: America/Los_Angeles

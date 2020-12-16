@@ -48,7 +48,7 @@ explore: rule_detections {
 }
 
 explore: udm_enum_value_to_name_mapping {
-extends: [user_rule_detections_with_udm_events_config]
+  extends: [udm_enum_value_to_name_mapping_config]
 }
 
 explore: udm_events {
