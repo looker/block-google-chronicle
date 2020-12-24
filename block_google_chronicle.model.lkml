@@ -52,5 +52,12 @@ explore: udm_enum_value_to_name_mapping {
 }
 
 explore: udm_events {
-  extends: [udm_events_config]
+  extends: [udm_events_config]   
+
+  join: events_mapping_product_type_as_string_core{   
+    type: inner  
+    view_label: "UDM Events:  Event Type" 
+    relationship: one_to_one   
+    sql_on: ${events_mapping_product_type_as_string_core.udm_enum_value_to_name_mapping_enum_value} = ${udm_events__metadata.event_type} ;; 
+    }  
 }

@@ -12,7 +12,7 @@
     pivots: [signin_type]
     fill_fields: [udm_events.event_timestamp_date]
     filters:
-      udm_events.metadata_product_event_type_as_string: '"USER_LOGIN"'
+      events_mapping_product_type_as_string_core.udm_enum_value_to_name_mapping_enum_name: '"USER_LOGIN"'
       udm_events__security_result.security_result_action_as_string: "-NULL"
     sorts: [udm_events.event_timestamp_date desc, signin_type desc]
     limit: 500
@@ -97,7 +97,7 @@
     fields: [udm_events__security_result.security_result_action_as_string, signin_type, udm_events.count,
       count_of_principaluseruserid]
     filters:
-      udm_events.metadata_product_event_type_as_string: '"USER_LOGIN"'
+      events_mapping_product_type_as_string_core.udm_enum_value_to_name_mapping_enum_name: '"USER_LOGIN"'
       udm_events__security_result.security_result_action_as_string: "-NULL"
     sorts: [udm_events__security_result.security_result_action_as_string]
     limit: 100
@@ -181,7 +181,7 @@
     pivots: [udm_events__principal__process__file.full_path]
     fill_fields: [udm_events.event_timestamp_date]
     filters:
-      udm_events.metadata_product_event_type_as_string: '"PROCESS_LAUNCH"'
+      events_mapping_product_type_as_string_core.udm_enum_value_to_name_mapping_enum_name: '"PROCESS_LAUNCH"'
     sorts: [udm_events.event_timestamp_date desc, udm_events__principal__process__file.full_path]
     limit: 500
     column_limit: 10
@@ -466,7 +466,7 @@
     type: looker_pie
     fields: [udm_events.count, udm_events__principal__process__file.full_path]
     filters:
-      udm_events.metadata_product_event_type_as_string: '"PROCESS_LAUNCH"'
+      events_mapping_product_type_as_string_core.udm_enum_value_to_name_mapping_enum_name: '"PROCESS_LAUNCH"'
     sorts: [udm_events.count desc]
     limit: 10
     column_limit: 10

@@ -11,7 +11,7 @@
     fields: [udm_events__security_result.security_result_action_as_string, udm_events.count]
     filters:
       udm_events__security_result.security_result_action_as_string: "-NULL"
-      udm_events.metadata_product_event_type_as_string: '"USER_LOGIN"'
+      events_mapping_product_type_as_string_core.udm_enum_value_to_name_mapping_enum_name: '"USER_LOGIN"'
       udm_events.period: This Period
     sorts: [udm_events.count desc]
     limit: 500
@@ -73,7 +73,7 @@
     pivots: [udm_events__security_result.security_result_action_as_string]
     fill_fields: [udm_events.event_timestamp_date]
     filters:
-      udm_events.metadata_product_event_type_as_string: '"USER_LOGIN"'
+      events_mapping_product_type_as_string_core.udm_enum_value_to_name_mapping_enum_name: '"USER_LOGIN"'
       udm_events__security_result.security_result_action_as_string: "-NULL"
       udm_events.period: This Period
     sorts: [udm_events__security_result.security_result_action_as_string 0, udm_events.event_timestamp_date
@@ -133,7 +133,7 @@
     fields: [udm_events__target.application, udm_events.count]
     filters:
       udm_events__security_result.security_result_action_as_string: "-NULL"
-      udm_events.metadata_product_event_type_as_string: '"USER_LOGIN"'
+      events_mapping_product_type_as_string_core.udm_enum_value_to_name_mapping_enum_name: '"USER_LOGIN"'
       udm_events__target.application: "-NULL"
       udm_events.period: This Period
     sorts: [udm_events.count desc 0, udm_events__target.application]
@@ -191,7 +191,7 @@
     type: looker_pie
     fields: [udm_events.count, udm_events__principal.ip]
     filters:
-      udm_events.metadata_product_event_type_as_string: '"USER_LOGIN"'
+      events_mapping_product_type_as_string_core.udm_enum_value_to_name_mapping_enum_name: '"USER_LOGIN"'
       udm_events__principal.ip: "-NULL"
       udm_events.period: This Period
     sorts: [udm_events.count desc 0, udm_events__principal.ip]
@@ -270,7 +270,7 @@
     fields: [udm_events.count, udm_events.period]
     filters:
       udm_events__security_result.security_result_action_as_string: ALLOW
-      udm_events.metadata_product_event_type_as_string: '"USER_LOGIN"'
+      events_mapping_product_type_as_string_core.udm_enum_value_to_name_mapping_enum_name: '"USER_LOGIN"'
     sorts: [udm_events.period desc]
     limit: 500
     dynamic_fields: [{table_calculation: delta, label: Delta, expression: 'round(if(is_null(${udm_events.count}),
@@ -345,7 +345,7 @@
     fields: [udm_events.count, udm_events.period]
     filters:
       udm_events__security_result.security_result_action_as_string: BLOCK
-      udm_events.metadata_product_event_type_as_string: '"USER_LOGIN"'
+      events_mapping_product_type_as_string_core.udm_enum_value_to_name_mapping_enum_name: '"USER_LOGIN"'
     sorts: [udm_events.period desc]
     limit: 500
     dynamic_fields: [{table_calculation: delta, label: Delta, expression: 'round(if(is_null(${udm_events.count}),
@@ -420,7 +420,7 @@
     fields: [udm_events__target.application, udm_events.count, udm_events__security_result.security_result_action_as_string]
     pivots: [udm_events__security_result.security_result_action_as_string]
     filters:
-      udm_events.metadata_product_event_type_as_string: '"USER_LOGIN"'
+      events_mapping_product_type_as_string_core.udm_enum_value_to_name_mapping_enum_name: '"USER_LOGIN"'
       udm_events__target.application: "-EMPTY"
       udm_events.period: This Period
       udm_events__security_result.security_result_action_as_string: "-NULL"
@@ -545,7 +545,7 @@
       udm_events.count, udm_events__principal.ip]
     pivots: [udm_events__security_result.security_result_action_as_string]
     filters:
-      udm_events.metadata_product_event_type_as_string: '"USER_LOGIN"'
+      events_mapping_product_type_as_string_core.udm_enum_value_to_name_mapping_enum_name: '"USER_LOGIN"'
       udm_events__principal__user.userid_for_drill: "-NULL"
       udm_events__security_result.security_result_action_as_string: "-NULL"
       udm_events.period: This Period

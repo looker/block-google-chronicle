@@ -8,7 +8,7 @@
     model: block_google_chronicle
     explore: udm_events
     type: looker_grid
-    fields: [udm_events.metadata_product_event_type_as_string, udm_events.count]
+    fields: [events_mapping_product_type_as_string_core.udm_enum_value_to_name_mapping_enum_name, udm_events.count]
     sorts: [udm_events.count desc]
     limit: 30
     column_limit: 50
@@ -39,7 +39,7 @@
     show_row_totals: true
     series_labels:
       udm_events.count: Events Count
-      udm_events.metadata_product_event_type_as_string: Event Type
+      events_mapping_product_type_as_string_core.udm_enum_value_to_name_mapping_enum_name: Event Type
     series_cell_visualizations:
       percentage:
         is_active: true
@@ -146,7 +146,7 @@
     pivots: [signin_type]
     fill_fields: [udm_events.event_timestamp_date]
     filters:
-      udm_events.metadata_product_event_type_as_string: '"USER_LOGIN"'
+      events_mapping_product_type_as_string_core.udm_enum_value_to_name_mapping_enum_name: '"USER_LOGIN"'
       udm_events__security_result.security_result_action_as_string: "-NULL"
     sorts: [udm_events.event_timestamp_date desc, signin_type]
     limit: 500
@@ -230,7 +230,7 @@
     fields: [udm_events.asset, udm_events__security_result.security_result_action_as_string,
       udm_events.count, signin_type]
     filters:
-      udm_events.metadata_product_event_type_as_string: '"USER_LOGIN"'
+      events_mapping_product_type_as_string_core.udm_enum_value_to_name_mapping_enum_name: '"USER_LOGIN"'
       udm_events__security_result.security_result_action_as_string: "-NULL"
     sorts: [udm_events.count desc]
     limit: 100
@@ -314,11 +314,11 @@
     model: block_google_chronicle
     explore: udm_events
     type: looker_column
-    fields: [udm_events.count, udm_events.metadata_product_event_type_as_string, udm_events__security_result.security_result_action_as_string]
+    fields: [udm_events.count, events_mapping_product_type_as_string_core.udm_enum_value_to_name_mapping_enum_name, udm_events__security_result.security_result_action_as_string]
     pivots: [udm_events__security_result.security_result_action_as_string]
     filters:
-      udm_events.metadata_product_event_type_as_string: FILE^_%
-    sorts: [udm_events.count desc 0, udm_events.metadata_product_event_type_as_string,
+      events_mapping_product_type_as_string_core.udm_enum_value_to_name_mapping_enum_name: FILE^_%
+    sorts: [udm_events.count desc 0, events_mapping_product_type_as_string_core.udm_enum_value_to_name_mapping_enum_name,
       udm_events__security_result.security_result_action_as_string]
     limit: 500
     column_limit: 50
@@ -405,12 +405,12 @@
     model: block_google_chronicle
     explore: udm_events
     type: looker_line
-    fields: [udm_events.count, udm_events.metadata_product_event_type_as_string, udm_events.event_timestamp_date]
-    pivots: [udm_events.metadata_product_event_type_as_string]
+    fields: [udm_events.count, events_mapping_product_type_as_string_core.udm_enum_value_to_name_mapping_enum_name, udm_events.event_timestamp_date]
+    pivots: [events_mapping_product_type_as_string_core.udm_enum_value_to_name_mapping_enum_name]
     fill_fields: [udm_events.event_timestamp_date]
     filters:
-      udm_events.metadata_product_event_type_as_string: FILE^_%,-"FILE_OPEN"
-    sorts: [udm_events.metadata_product_event_type_as_string 0, udm_events.event_timestamp_date
+      events_mapping_product_type_as_string_core.udm_enum_value_to_name_mapping_enum_name: FILE^_%,-"FILE_OPEN"
+    sorts: [events_mapping_product_type_as_string_core.udm_enum_value_to_name_mapping_enum_name 0, udm_events.event_timestamp_date
         desc]
     limit: 500
     column_limit: 50

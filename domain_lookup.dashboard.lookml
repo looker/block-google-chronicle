@@ -10,7 +10,7 @@
     type: single_value
     fields: [udm_events.count, udm_events.period]
     filters:
-      udm_events.metadata_product_event_type_as_string: '"NETWORK_DNS"'
+      events_mapping_product_type_as_string_core.udm_enum_value_to_name_mapping_enum_name: '"NETWORK_DNS"'
       udm_events__network__dns.response: 'Yes'
     sorts: [udm_events.period desc]
     limit: 10
@@ -149,7 +149,7 @@
     type: single_value
     fields: [udm_events.count, udm_events.period]
     filters:
-      udm_events.metadata_product_event_type_as_string: '"NETWORK_DNS"'
+      events_mapping_product_type_as_string_core.udm_enum_value_to_name_mapping_enum_name: '"NETWORK_DNS"'
       udm_events__network__dns.response_code: not 0,NOT NULL
     sorts: [udm_events.period desc]
     limit: 10
@@ -288,7 +288,7 @@
     type: single_value
     fields: [count_of_domain, udm_events.period]
     filters:
-      udm_events.metadata_product_event_type_as_string: '"NETWORK_DNS"'
+      events_mapping_product_type_as_string_core.udm_enum_value_to_name_mapping_enum_name: '"NETWORK_DNS"'
     sorts: [udm_events.period desc]
     limit: 10
     column_limit: 50
@@ -431,7 +431,7 @@
     type: single_value
     fields: [count_of_principalip0, udm_events.period]
     filters:
-      udm_events.metadata_product_event_type_as_string: '"NETWORK_DNS"'
+      events_mapping_product_type_as_string_core.udm_enum_value_to_name_mapping_enum_name: '"NETWORK_DNS"'
     sorts: [udm_events.period desc]
     limit: 10
     column_limit: 50
@@ -606,7 +606,7 @@
     type: looker_pie
     fields: [udm_events__principal.ip, udm_events.count]
     filters:
-      udm_events.metadata_product_event_type_as_string: '"NETWORK_DNS"'
+      events_mapping_product_type_as_string_core.udm_enum_value_to_name_mapping_enum_name: '"NETWORK_DNS"'
       udm_events__network__dns.response: 'Yes'
     sorts: [udm_events.count desc]
     limit: 10
@@ -662,7 +662,7 @@
     pivots: [udm_events__principal.ip]
     fill_fields: [udm_events.event_timestamp_date]
     filters:
-      udm_events.metadata_product_event_type_as_string: '"NETWORK_DNS"'
+      events_mapping_product_type_as_string_core.udm_enum_value_to_name_mapping_enum_name: '"NETWORK_DNS"'
       udm_events__network__dns.response: 'Yes'
     sorts: [udm_events.count desc 0, udm_events.event_timestamp_date, udm_events__principal.ip]
     limit: 500
@@ -785,7 +785,7 @@
     type: looker_pie
     fields: [udm_events__network__dns.response_code, udm_events.count, response_code_names]
     filters:
-      udm_events.metadata_product_event_type_as_string: '"NETWORK_DNS"'
+      events_mapping_product_type_as_string_core.udm_enum_value_to_name_mapping_enum_name: '"NETWORK_DNS"'
       udm_events__network__dns.response: 'Yes'
       udm_events__network__dns.response_code: NOT NULL
     sorts: [udm_events.count desc, udm_events__network__dns.response_code desc]
@@ -882,7 +882,7 @@
     pivots: [response]
     fill_fields: [udm_events.event_timestamp_date]
     filters:
-      udm_events.metadata_product_event_type_as_string: '"NETWORK_DNS"'
+      events_mapping_product_type_as_string_core.udm_enum_value_to_name_mapping_enum_name: '"NETWORK_DNS"'
       udm_events__network__dns.response: 'Yes'
       udm_events__network__dns.response_code: NOT NULL
     sorts: [udm_events.count desc 0, udm_events.event_timestamp_date desc, response]
@@ -1011,7 +1011,7 @@
     model: block_google_chronicle
     explore: udm_events
     type: looker_grid
-    fields: [udm_events__metadata.product_name, udm_events.metadata_product_event_type_as_string,
+    fields: [udm_events__metadata.product_name, events_mapping_product_type_as_string_core.udm_enum_value_to_name_mapping_enum_name,
       udm_events__principal.hostname, udm_events__principal.ip, udm_events__target.hostname,
       udm_events__target.ip, udm_events__target.port, udm_events__network__dns__questions.name,
       udm_events__network__dns__answers.name, udm_events.domain]
@@ -1038,7 +1038,7 @@
     show_row_totals: true
     series_labels:
       udm_events__metadata.product_name: Product
-      udm_events.metadata_product_event_type_as_string: Event Type
+      events_mapping_product_type_as_string_core.udm_enum_value_to_name_mapping_enum_name: Event Type
       udm_events__principal_hostname: Principal Hostname
       udm_events__principal.ip: Source IP
       udm_events__target.ip[SAFE_OFFSET(0)]: Destination IP
