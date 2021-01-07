@@ -17,11 +17,11 @@ view: ioc_matches_core {
 
   dimension: asset_hostname {
     sql: COALESCE(${asset}.hostname, ${asset}.asset_ip_address) ;;
-    link: {
-      label: "Asset Lookup on {{value}}"
-      url: "@{ASSET_LOOKUP}"
-      icon_url: "@{DASHBOARD_ICON_URL}"
-    }
+    # link: {
+    #   label: "Asset Lookup on {{value}}"
+    #   url: "@{ASSET_LOOKUP}"
+    #   icon_url: "@{DASHBOARD_ICON_URL}"
+    # }
     link: {
       label: "Investigate in Chronicle"
       url: "@{CHRONICLE_URL}/assetResults?assetIdentifier={{value}}"
@@ -76,11 +76,11 @@ view: ioc_matches_core {
     CASE
       WHEN ${TABLE}.ioc_type= 'IOC_TYPE_DOMAIN' THEN ${TABLE}.ioc_value
     END;;
-    link: {
-      label: "Domain Lookup on {{value}}"
-      url: "@{DOMAIN_LOOKUP}"
-      icon_url: "@{DASHBOARD_ICON_URL}"
-    }
+    # link: {
+    #   label: "Domain Lookup on {{value}}"
+    #   url: "@{DOMAIN_LOOKUP}"
+    #   icon_url: "@{DASHBOARD_ICON_URL}"
+    # }
     link: {
       label: "Investigate in Chronicle"
       url: "@{CHRONICLE_URL}/domainResults?domain={{value}}"

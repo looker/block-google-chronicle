@@ -774,11 +774,11 @@ view: udm_events__principal__user {
   dimension: userid_for_drill {
     type: string
     sql: ${TABLE}.userid ;;
-    link: {
-      label: "User Lookup on {{value}}"
-      url: "@{USER_LOOKUP}"
-      icon_url: "@{DASHBOARD_ICON_URL}"
-    }
+    # link: {
+    #   label: "User Lookup on {{value}}"
+    #   url: "@{USER_LOOKUP}"
+    #   icon_url: "@{DASHBOARD_ICON_URL}"
+    # }
     link: {
       label: "Investigate in Chronicle"
       url: "@{CHRONICLE_URL}/userResults?userName={{value}}"
