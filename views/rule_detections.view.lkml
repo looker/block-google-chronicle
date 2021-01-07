@@ -175,11 +175,11 @@ view: rule_detections__detection__assets {
   dimension: hostname {
     type: string
     sql: ${TABLE}.hostname ;;
-    link: {
-      label: "Asset Lookup on {{value}}"
-      url: "@{ASSET_LOOKUP}"
-      icon_url: "@{DASHBOARD_ICON_URL}"
-    }
+  # link: {
+  #   label: "Asset Lookup on {{value}}"
+  #   url: "@{ASSET_LOOKUP}"
+  #   icon_url: "@{DASHBOARD_ICON_URL}"
+  # }
   }
 
   dimension: asset {
@@ -256,11 +256,11 @@ view: rule_detections__detection__users {
     type: string
     primary_key: yes
     sql: ${TABLE}.user_name ;;
-    link: {
-      label: "User Lookup on {{value}}"
-      url: "@{USER_LOOKUP}"
-      icon_url: "@{DASHBOARD_ICON_URL}"
-    }
+    # link: {
+    #   label: "User Lookup on {{value}}"
+    #   url: "@{USER_LOOKUP}"
+    #   icon_url: "@{DASHBOARD_ICON_URL}"
+    # }
   }
 
   dimension: windows_sid {
