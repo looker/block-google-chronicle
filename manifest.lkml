@@ -32,6 +32,10 @@ constant: INGESTION_STATS{
   value: "ingestion_stats"
 }
 
+constant: UDM_EVENTS_AGGREGRATES{
+  value: "udm_events_aggregates"
+}
+
 constant: UDM_MAPPINGS{
   value: "udm_enum_value_to_name_mapping"
 }

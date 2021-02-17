@@ -26,6 +26,10 @@ view: udm_events_core {
     sql: ${TABLE}.metadata.event_timestamp.seconds ;;
   }
 
+  filter: time_filter {
+    type: date_time
+  }
+
   filter: period_filter {
     type: date
     description: "Use this filter to define the current and previous period for analysis"
@@ -51,103 +55,6 @@ view: udm_events_core {
                 THEN 'Previous Period'
             END
         END ;;
-  }
-
-  dimension: metadata_product_event_type_as_string {
-    type: string
-    label: "metadata.event_type.string"
-    sql:
-    CASE
-      WHEN ${TABLE}.metadata.event_type = 0 THEN 'EVENTTYPE_UNSPECIFIED'
-      WHEN ${TABLE}.metadata.event_type = 10000 THEN 'PROCESS_UNCATEGORIZED'
-      WHEN ${TABLE}.metadata.event_type = 10001 THEN 'PROCESS_LAUNCH'
-      WHEN ${TABLE}.metadata.event_type = 10002 THEN 'PROCESS_INJECTION'
-      WHEN ${TABLE}.metadata.event_type = 10003 THEN 'PROCESS_PRIVILEGE_ESCALATION'
-      WHEN ${TABLE}.metadata.event_type = 10004 THEN 'PROCESS_TERMINATION'
-      WHEN ${TABLE}.metadata.event_type = 10005 THEN 'PROCESS_OPEN'
-      WHEN ${TABLE}.metadata.event_type = 10006 THEN 'PROCESS_MODULE_LOAD'
-      WHEN ${TABLE}.metadata.event_type = 11000 THEN 'REGISTRY_UNCATEGORIZED'
-      WHEN ${TABLE}.metadata.event_type = 11001 THEN 'REGISTRY_CREATION'
-      WHEN ${TABLE}.metadata.event_type = 11002 THEN 'REGISTRY_MODIFICATION'
-      WHEN ${TABLE}.metadata.event_type = 11003 THEN 'REGISTRY_DELETION'
-      WHEN ${TABLE}.metadata.event_type = 12000 THEN 'SETTING_UNCATEGORIZED'
-      WHEN ${TABLE}.metadata.event_type = 12001 THEN 'SETTING_CREATION'
-      WHEN ${TABLE}.metadata.event_type = 12002 THEN 'SETTING_MODIFICATION'
-      WHEN ${TABLE}.metadata.event_type = 12003 THEN 'SETTING_DELETION'
-      WHEN ${TABLE}.metadata.event_type = 13000 THEN 'MUTEX_UNCATEGORIZED'
-      WHEN ${TABLE}.metadata.event_type = 13001 THEN 'MUTEX_CREATION'
-      WHEN ${TABLE}.metadata.event_type = 14000 THEN 'FILE_UNCATEGORIZED'
-      WHEN ${TABLE}.metadata.event_type = 14001 THEN 'FILE_CREATION'
-      WHEN ${TABLE}.metadata.event_type = 14002 THEN 'FILE_DELETION'
-      WHEN ${TABLE}.metadata.event_type = 14003 THEN 'FILE_MODIFICATION'
-      WHEN ${TABLE}.metadata.event_type = 14004 THEN 'FILE_READ'
-      WHEN ${TABLE}.metadata.event_type = 14005 THEN 'FILE_COPY'
-      WHEN ${TABLE}.metadata.event_type = 14006 THEN 'FILE_OPEN'
-      WHEN ${TABLE}.metadata.event_type = 14007 THEN 'FILE_MOVE'
-      WHEN ${TABLE}.metadata.event_type = 14008 THEN 'FILE_SYNC'
-      WHEN ${TABLE}.metadata.event_type = 15000 THEN 'USER_UNCATEGORIZED'
-      WHEN ${TABLE}.metadata.event_type = 15001 THEN 'USER_LOGIN'
-      WHEN ${TABLE}.metadata.event_type = 15002 THEN 'USER_LOGOUT'
-      WHEN ${TABLE}.metadata.event_type = 15003 THEN 'USER_CREATION'
-      WHEN ${TABLE}.metadata.event_type = 15004 THEN 'USER_CHANGE_PASSWORD'
-      WHEN ${TABLE}.metadata.event_type = 15005 THEN 'USER_CHANGE_PERMISSIONS'
-      WHEN ${TABLE}.metadata.event_type = 15007 THEN 'USER_BADGE_IN'
-      WHEN ${TABLE}.metadata.event_type = 15008 THEN 'USER_DELETION'
-      WHEN ${TABLE}.metadata.event_type = 15009 THEN 'USER_RESOURCE_CREATION'
-      WHEN ${TABLE}.metadata.event_type = 15010 THEN 'USER_RESOURCE_UPDATE_CONTENT'
-      WHEN ${TABLE}.metadata.event_type = 15011 THEN 'USER_RESOURCE_UPDATE_PERMISSIONS'
-      WHEN ${TABLE}.metadata.event_type = 15012 THEN 'USER_COMMUNICATION'
-      WHEN ${TABLE}.metadata.event_type = 15013 THEN 'USER_RESOURCE_ACCESS'
-      WHEN ${TABLE}.metadata.event_type = 15014 THEN 'USER_RESOURCE_DELETION'
-      WHEN ${TABLE}.metadata.event_type = 23000 THEN 'GROUP_UNCATEGORIZED'
-      WHEN ${TABLE}.metadata.event_type = 23001 THEN 'GROUP_CREATION'
-      WHEN ${TABLE}.metadata.event_type = 23002 THEN 'GROUP_DELETION'
-      WHEN ${TABLE}.metadata.event_type = 23003 THEN 'GROUP_MODIFICATION'
-      WHEN ${TABLE}.metadata.event_type = 19000 THEN 'EMAIL_UNCATEGORIZED'
-      WHEN ${TABLE}.metadata.event_type = 19001 THEN 'EMAIL_TRANSACTION'
-      WHEN ${TABLE}.metadata.event_type = 16000 THEN 'NETWORK_UNCATEGORIZED'
-      WHEN ${TABLE}.metadata.event_type = 16001 THEN 'NETWORK_FLOW'
-      WHEN ${TABLE}.metadata.event_type = 16002 THEN 'NETWORK_CONNECTION'
-      WHEN ${TABLE}.metadata.event_type = 16003 THEN 'NETWORK_FTP'
-      WHEN ${TABLE}.metadata.event_type = 16004 THEN 'NETWORK_DHCP'
-      WHEN ${TABLE}.metadata.event_type = 16005 THEN 'NETWORK_DNS'
-      WHEN ${TABLE}.metadata.event_type = 16006 THEN 'NETWORK_HTTP'
-      WHEN ${TABLE}.metadata.event_type = 16007 THEN 'NETWORK_SMTP'
-      WHEN ${TABLE}.metadata.event_type = 17000 THEN 'STATUS_UNCATEGORIZED'
-      WHEN ${TABLE}.metadata.event_type = 17001 THEN 'STATUS_HEARTBEAT'
-      WHEN ${TABLE}.metadata.event_type = 17002 THEN 'STATUS_STARTUP'
-      WHEN ${TABLE}.metadata.event_type = 17003 THEN 'STATUS_SHUTDOWN'
-      WHEN ${TABLE}.metadata.event_type = 17004 THEN 'STATUS_UPDATE'
-      WHEN ${TABLE}.metadata.event_type = 18000 THEN 'SCAN_UNCATEGORIZED'
-      WHEN ${TABLE}.metadata.event_type = 18001 THEN 'SCAN_FILE'
-      WHEN ${TABLE}.metadata.event_type = 18003 THEN 'SCAN_PROCESS'
-      WHEN ${TABLE}.metadata.event_type = 18004 THEN 'SCAN_HOST'
-      WHEN ${TABLE}.metadata.event_type = 18005 THEN 'SCAN_VULN_HOST'
-      WHEN ${TABLE}.metadata.event_type = 18006 THEN 'SCAN_VULN_NETWORK'
-      WHEN ${TABLE}.metadata.event_type = 18007 THEN 'SCAN_NETWORK'
-      WHEN ${TABLE}.metadata.event_type = 20000 THEN 'SCHEDULED_TASK_UNCATEGORIZED'
-      WHEN ${TABLE}.metadata.event_type = 20001 THEN 'SCHEDULED_TASK_CREATION'
-      WHEN ${TABLE}.metadata.event_type = 20002 THEN 'SCHEDULED_TASK_DELETION'
-      WHEN ${TABLE}.metadata.event_type = 20003 THEN 'SCHEDULED_TASK_ENABLE'
-      WHEN ${TABLE}.metadata.event_type = 20004 THEN 'SCHEDULED_TASK_DISABLE'
-      WHEN ${TABLE}.metadata.event_type = 20005 THEN 'SCHEDULED_TASK_MODIFICATION'
-      WHEN ${TABLE}.metadata.event_type = 21000 THEN 'SYSTEM_AUDIT_LOG_UNCATEGORIZED'
-      WHEN ${TABLE}.metadata.event_type = 21001 THEN 'SYSTEM_AUDIT_LOG_WIPE'
-      WHEN ${TABLE}.metadata.event_type = 22000 THEN 'SERVICE_UNSPECIFIED'
-      WHEN ${TABLE}.metadata.event_type = 22001 THEN 'SERVICE_CREATION'
-      WHEN ${TABLE}.metadata.event_type = 22002 THEN 'SERVICE_DELETION'
-      WHEN ${TABLE}.metadata.event_type = 22003 THEN 'SERVICE_START'
-      WHEN ${TABLE}.metadata.event_type = 22004 THEN 'SERVICE_STOP'
-      WHEN ${TABLE}.metadata.event_type = 22005 THEN 'SERVICE_MODIFICATION'
-      WHEN ${TABLE}.metadata.event_type = 100000 THEN 'GENERIC_EVENT'
-      WHEN ${TABLE}.metadata.event_type = 1 THEN 'RESOURCE_CREATION'
-      WHEN ${TABLE}.metadata.event_type = 2 THEN 'RESOURCE_DELETION'
-      WHEN ${TABLE}.metadata.event_type = 3 THEN 'RESOURCE_PERMISSIONS_CHANGE'
-      WHEN ${TABLE}.metadata.event_type = 4 THEN 'RESOURCE_READ'
-      WHEN ${TABLE}.metadata.event_type = 5 THEN 'RESOURCE_WRITTEN'
-    ELSE
-      CAST(${TABLE}.metadata.event_type AS STRING)
-    END ;;
   }
 
   dimension: domain {
@@ -6631,7 +6538,6 @@ view: user_login_source_geo_ip {
   derived_table: {
     sql: SELECT
         a.ts,
-        a.principal_hostname,
         a.principal_ip,
         a.target_ip,
         IFNULL(city, 'Other') AS city,
@@ -6642,7 +6548,6 @@ view: user_login_source_geo_ip {
       (
         SELECT
           ts,
-          principal_hostname,
           principal_ip,
           target_ip,
           NET.IPV4_TO_INT64(NET.IP_FROM_STRING(principal_ip)) AS clientIpNum,
@@ -6650,20 +6555,16 @@ view: user_login_source_geo_ip {
         FROM
         (
           SELECT
-            metadata.event_timestamp.seconds as ts,
-            principal.hostname as principal_hostname,
-            principal.ip[SAFE_OFFSET(0)] as principal_ip,
-            target.ip[SAFE_OFFSET(0)] as target_ip,
-            metadata.event_type as event_type
+            event_hour as ts,
+            principal_ip as principal_ip,
+            target_ip as target_ip,
           FROM
-            `@{DATASET_NAME}.@{UDM_EVENTS}`
+            `@{DATASET_NAME}.@{UDM_EVENTS_AGGREGRATES}`  as udm_events
+          WHERE {% condition time_filter %} event_hour{% endcondition %}
         ) as x
         WHERE
         (
-          event_type = 15001
-          AND
           REGEXP_CONTAINS(principal_ip, "\\d+\\.\\d+\\.\\d+\\.\\d+")
-          AND {% condition period_filter %} TIMESTAMP_SECONDS(ts) {% endcondition %}
         )
       ) AS A
 
@@ -6680,6 +6581,9 @@ view: user_login_source_geo_ip {
   measure: count {
     type: count
   }
+  filter: time_filter {
+    type: date_time
+  }
 
   dimension_group: event_timestamp {
     type: time
@@ -6689,44 +6593,12 @@ view: user_login_source_geo_ip {
       date,
       week,
       month,
-      hour,
-      minute,
+      quarter,
       year
     ]
-    datatype: epoch
     sql: ${TABLE}.ts ;;
   }
 
-  filter: period_filter {
-    type: date
-    description: "Use this filter to define the current and previous period for analysis"
-  }
-
-# ${event_timestamp_raw} is the timestamp dimension we are building our reporting period off of
-
-  dimension: period {
-    type: string
-    description: "The reporting period as selected by the Period Filter. Values - 'This Period' and 'Previous Period'.
-    Apply Filter 'This Period' to get values from current period."
-    sql:
-      CASE
-        WHEN {% date_start period_filter %} is not null AND {% date_end period_filter %} is not null /* date ranges or in the past x days */
-          THEN
-            CASE
-              WHEN ${event_timestamp_raw} >= UNIX_SECONDS({% date_start period_filter %})
-                AND ${event_timestamp_raw} <= UNIX_SECONDS({% date_end period_filter %})
-                THEN 'This Period'
-              WHEN ${event_timestamp_raw} >= UNIX_SECONDS(TIMESTAMP_ADD({% date_start period_filter %}, INTERVAL 1 * (TIMESTAMP_DIFF({% date_start period_filter %},{% date_end period_filter %}, DAY))  DAY))
-                AND ${event_timestamp_raw} <= UNIX_SECONDS(TIMESTAMP_ADD({% date_start period_filter %}, INTERVAL -1 DAY))
-                THEN 'Previous Period'
-            END
-        END ;;
-  }
-
-  dimension: principal_hostname {
-    type: string
-    sql: ${TABLE}.principal_hostname ;;
-  }
 
   dimension: principal_ip {
     type: string
@@ -6800,12 +6672,14 @@ view: destination_geo_ip {
           target.ip[SAFE_OFFSET(0)] as target_ip,
           metadata.event_type as event_type
         FROM
-          `@{DATASET_NAME}.@{UDM_EVENTS}`
+          `@{DATASET_NAME}.@{UDM_EVENTS}` as udm_events
+          WHERE {% condition time_filter %} udm_events._PARTITIONTIME {% endcondition %}
+                AND {% condition time_filter %} TIMESTAMP_SECONDS(metadata.event_timestamp.seconds) {% endcondition %}
+
       ) as x
       WHERE
       (
         REGEXP_CONTAINS(target_ip, "\\d+\\.\\d+\\.\\d+\\.\\d+")
-        AND {% condition period_filter %} TIMESTAMP_SECONDS(ts) {% endcondition %}
       )
     ) AS A
 
@@ -6837,6 +6711,10 @@ view: destination_geo_ip {
     ]
     datatype: epoch
     sql: ${TABLE}.ts ;;
+  }
+
+  filter: time_filter {
+    type: date_time
   }
 
   filter: period_filter {
