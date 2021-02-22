@@ -1,6 +1,11 @@
+include: "//@{CONFIG_PROJECT_NAME}/views/udm_events_aggregates.view.lkml"
+
 view: udm_events_aggregates {
-  sql_table_name: @{DATASET_NAME}.@{UDM_EVENTS_AGGREGRATES}
-    ;;
+  extends: [udm_events_aggregates_config]
+}
+
+view: udm_events_aggregates_core {
+  sql_table_name: @{DATASET_NAME}.@{UDM_EVENTS_AGGREGRATES};;
 
   dimension: action {
     type: number
@@ -70,4 +75,3 @@ view: udm_events_aggregates {
     type: count
   }
 }
-
