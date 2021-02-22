@@ -7,8 +7,7 @@ view: udm_events {
 
 ###################################################
 view: udm_events_core {
-  sql_table_name: @{DATASET_NAME}.@{UDM_EVENTS}
-    ;;
+  sql_table_name: @{DATASET_NAME}.@{UDM_EVENTS};;
 
   dimension_group: event_timestamp {
     type: time
