@@ -51,6 +51,21 @@ explore: udm_enum_value_to_name_mapping {
   extends: [udm_enum_value_to_name_mapping_config]
 }
 
+explore: udm_events_aggregates {
+  extends: [udm_events_aggregates_config]
+}
+
 explore: udm_events {
   extends: [udm_events_config]
+
+  conditionally_filter: {
+    filters: {
+      field: udm_events.time_filter
+      value: "last 24 hours"
+    }
+  }
+
+  fields: [ALL_FIELDS*,]
+  sql_always_where: {% condition udm_events.time_filter %} udm_events._PARTITIONTIME {% endcondition %}
+    AND {% condition udm_events.time_filter %} TIMESTAMP_SECONDS(${event_timestamp_raw}) {% endcondition %};;
 }
