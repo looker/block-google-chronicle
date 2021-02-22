@@ -1282,3 +1282,9 @@ explore: udm_events_core {
 explore: udm_enum_value_to_name_mapping_core {
   extension: required
 }
+
+
+explore: udm_events_aggregates_core {
+  extension: required
+}
+
