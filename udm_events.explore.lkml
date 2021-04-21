@@ -39,7 +39,7 @@ explore: udm_events_core {
   join: udm_events__principal__labels {
     view_label: "Udm Events: Principal Labels"
     sql: LEFT JOIN UNNEST(${udm_events__principal.labels}) as udm_events__principal__labels ;;
-    relationship: one_to_many
+    relationship: many_to_one
   }
 
   join: udm_events__principal__cloud {
