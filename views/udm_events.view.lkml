@@ -5346,6 +5346,11 @@ view: udm_events__target__labels {
     type: string
     sql: ${TABLE}.value ;;
   }
+
+  dimension: map_value {
+    map_layer_name: countries
+    sql: ${TABLE}.value ;;
+  }
 }
 
 view: udm_events__target__cloud {
