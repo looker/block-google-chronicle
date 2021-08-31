@@ -1,0 +1,37 @@
+{
+    "label": "Google Chronicle",
+    "category_label": "Models",
+    "branding": {
+        "image_uri": "https://marketplace-api.looker.com/block-icons/chronicle.png",
+        "tagline": "Explore, analyze and visualize Chronicle data in Looker."
+    },
+    "constants": {
+        "CONNECTION_NAME": {
+            "label": "Connection Name",
+            "value_constraint": "connection"
+        },
+        "DATASET_NAME": {
+            "label": "Dataset Name"
+        },
+        "CHRONICLE_URL": {
+            "label": "Chronicle URL"
+        },
+        "CONFIG_PROJECT_NAME": {
+          "label": "Config Project Name"
+        }
+    },
+    "models": [
+        {
+            "name": "block_google_chronicle",
+            "connection_constant": "CONNECTION_NAME"
+        }
+    ],
+    "auxiliary_projects": [
+    {
+      "git_uri": "git://github.com/looker/block-google-chronicle-config.git",
+      "git_ref": "79839ba2d5759c2a855400734bdf1a1481b4a45b",
+      "label": "Google Chronicle Config",
+      "constant_name": "CONFIG_PROJECT_NAME"
+    }
+  ]
+}
