@@ -1,10 +1,4 @@
-include: "//@{CONFIG_PROJECT_NAME}/views/udm_events_aggregates.view.lkml"
-
 view: udm_events_aggregates {
-  extends: [udm_events_aggregates_config]
-}
-
-view: udm_events_aggregates_core {
   sql_table_name: @{DATASET_NAME}.@{UDM_EVENTS_AGGREGRATES};;
 
   dimension: action {

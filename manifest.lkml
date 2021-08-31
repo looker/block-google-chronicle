@@ -1,12 +1,7 @@
 project_name: "block-google-chronicle"
 
-constant: CONFIG_PROJECT_NAME {
-  value: "block-google-chronicle-config"
-  export: override_required
-}
-
 constant: CONNECTION_NAME{
-  value: "your-chronicle-connection"
+  value: "c1"
   export: override_required
 }
 
@@ -78,9 +73,4 @@ constant: DASHBOARD_ICON_URL{
 
 constant: CHRONICLE_ICON_URL{
   value: "https://storage.googleapis.com/bml-image/Chronicle-RGB-Icon-Color.png"
-}
-
-
-local_dependency: {
-  project: "@{CONFIG_PROJECT_NAME}"
 }

@@ -1,12 +1,4 @@
-include: "//@{CONFIG_PROJECT_NAME}/views/rule_detections.view.lkml"
-
-
 view: rule_detections {
-  extends: [rule_detections_config]
-}
-
-###################################################
-view: rule_detections_core {
   sql_table_name: `@{DATASET_NAME}.@{RULE_DETECTIONS}`
     ;;
 
@@ -117,7 +109,6 @@ view: rule_detections__detection__detection_timestamp {
 
 
 view: rule_detections__detection {
-
   dimension: id {
     primary_key: yes
     type: string

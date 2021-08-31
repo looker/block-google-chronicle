@@ -1,12 +1,4 @@
-include: "//@{CONFIG_PROJECT_NAME}/views/udm_events.view.lkml"
-
-
 view: udm_events {
-  extends: [udm_events_config]
-}
-
-###################################################
-view: udm_events_core {
   sql_table_name: @{DATASET_NAME}.@{UDM_EVENTS};;
 
   dimension_group: event_timestamp {
@@ -6802,12 +6794,6 @@ view: destination_geo_ip {
 }
 
 view: asset_rule_detections_with_udm_events {
-  extends: [asset_rule_detections_with_udm_events_config]
-}
-
-###################################################
-
-view: asset_rule_detections_with_udm_events_core {
   derived_table: {
     sql: WITH udm_events AS (SELECT
         COALESCE(udm_events.principal.hostname, udm_events.principal.ip[SAFE_OFFSET(0)]) AS asset,
@@ -6876,12 +6862,8 @@ view: asset_rule_detections_with_udm_events_core {
 
 }
 
-view: user_rule_detections_with_udm_events {
-  extends: [user_rule_detections_with_udm_events_config]
-}
 
-###################################################
-view: user_rule_detections_with_udm_events_core {
+view: user_rule_detections_with_udm_events {
   derived_table: {
     sql: WITH udm_events AS (SELECT
         udm_events.principal.user.userid AS user_name,

@@ -1,5 +1,6 @@
-explore: rule_detections_core {
-  extension: required
+include: "/views/*.lkml"
+
+explore: rule_detections {
   join: rule_detections__detection__detection_timestamp {
     view_label: "Rule Detections: Detection Detection Timestamp"
     sql: LEFT JOIN UNNEST([${rule_detections__detection.detection_timestamp}]) as rule_detections__detection__detection_timestamp ;;

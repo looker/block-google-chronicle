@@ -1,13 +1,4 @@
-include: "//@{CONFIG_PROJECT_NAME}/views/ingestion_stats.view.lkml"
-
-
 view: ingestion_stats {
-  extends: [ingestion_stats_config]
-}
-
-###################################################
-
-view: ingestion_stats_core {
   sql_table_name: `@{DATASET_NAME}.@{INGESTION_STATS}`
     ;;
 

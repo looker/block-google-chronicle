@@ -1,5 +1,16 @@
-explore: udm_events_core {
-  extension: required
+include: "/views/*.lkml"
+
+explore: udm_events {
+  conditionally_filter: {
+    filters: {
+      field: udm_events.time_filter
+      value: "last 24 hours"
+    }
+  }
+
+  fields: [ALL_FIELDS*,]
+  sql_always_where: {% condition udm_events.time_filter %} udm_events._PARTITIONTIME {% endcondition %}
+    AND {% condition udm_events.time_filter %} TIMESTAMP_SECONDS(${event_timestamp_raw}) {% endcondition %};;
   join: udm_events__principal {
     view_label: "Udm Events: Principal"
     sql: LEFT JOIN UNNEST([${udm_events.principal}]) as udm_events__principal ;;
@@ -1278,13 +1289,3 @@ explore: udm_events_core {
     relationship: one_to_one
   }
 }
-
-explore: udm_enum_value_to_name_mapping_core {
-  extension: required
-}
-
-
-explore: udm_events_aggregates_core {
-  extension: required
-}
-
