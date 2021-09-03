@@ -32,7 +32,7 @@
     height: 1
   - title: Alert
     name: Alert
-    #model: block_google_chronicle
+    model: block_google_chronicle_v2
     explore: rule_detections
     type: single_value
     fields: [rule_detections.count_for_drill, rule_detections__detection__detection_timestamp.period]
@@ -89,7 +89,7 @@
     height: 4
   - title: Ingestion Data Size
     name: Ingestion Data Size
-    #model: block_google_chronicle
+    model: block_google_chronicle_v2
     explore: ingestion_stats
     type: single_value
     fields: [ingestion_stats.total_size_bytes_GB_for_drill, ingestion_stats.period]
@@ -174,7 +174,7 @@
     height: 4
   - title: Events Over Time
     name: Events Over Time
-    #model: block_google_chronicle
+    model: block_google_chronicle_v2
     explore: ingestion_stats
     type: looker_column
     fields: [total_events_count, ingestion_stats.timestamp_date, ingestion_stats.log_type_for_drill]
@@ -235,7 +235,7 @@
     height: 9
   - title: Global Threat Map - IOC IP Matches
     name: Global Threat Map - IOC IP Matches
-    #model: block_google_chronicle
+    model: block_google_chronicle_v2
     explore: global_threat_map_ioc
     type: looker_map
     fields: [global_threat_map_ioc.ioc_matches_test_ioc_value, global_threat_map_ioc.location,
@@ -284,7 +284,7 @@
     height: 9
   - title: Events for Main Dashboard
     name: Events for Main Dashboard
-    #model: block_google_chronicle
+    model: block_google_chronicle_v2
     explore: ingestion_stats
     type: single_value
     fields: [ingestion_stats.total_entry_number_in_million_for_drill, ingestion_stats.period]
@@ -352,7 +352,7 @@
     ui_config:
       type: advanced
       display: popover
-    #model: block_google_chronicle
+    model: block_google_chronicle_v2
     explore: ingestion_stats
     listens_to_filters: []
     field: ingestion_stats.period_filter
