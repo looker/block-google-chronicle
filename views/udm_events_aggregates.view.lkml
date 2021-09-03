@@ -1,5 +1,5 @@
 view: udm_events_aggregates {
-  sql_table_name: `udm_events_aggregates`
+  sql_table_name: `@{DATASET_NAME}.@{UDM_EVENTS_AGGREGRATES}`
     ;;
 
   dimension: action {

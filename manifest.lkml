@@ -41,6 +41,10 @@ constant: UDM_EVENTS_AGGREGRATES{
   value: "udm_events_aggregates"
 }
 
+constant: JOB_METADATA {
+  value: "job_metadata"
+}
+
 constant: DATA_INGESTION_AND_HEALTH_DASHBOARD{
   value: "/dashboards-next/@{MODEL_NAME}::data_ingestion_and_health"
 }

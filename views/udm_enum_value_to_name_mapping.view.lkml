@@ -1,5 +1,5 @@
 view: udm_enum_value_to_name_mapping {
-  sql_table_name: `udm_enum_value_to_name_mapping`
+  sql_table_name: `@{DATASET_NAME}.@{UDM_MAPPINGS}`
     ;;
 
   dimension: enum_name {
