@@ -15,14 +15,11 @@
         },
         "CHRONICLE_URL": {
             "label": "Chronicle URL"
-        },
-        "CONFIG_PROJECT_NAME": {
-          "label": "Config Project Name"
         }
     },
     "models": [
         {
-            "name": "block_google_chronicle",
+            "name": "block_google_chronicle_v2",
             "connection_constant": "CONNECTION_NAME"
         }
     ]
