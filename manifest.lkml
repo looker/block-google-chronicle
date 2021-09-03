@@ -1,5 +1,5 @@
 constant: CONNECTION_NAME{
-  value: "your-chronicle-connection"
+  value: "c1"
   export: override_required
 }
 
