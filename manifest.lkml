@@ -1,7 +1,12 @@
-project_name: "block-google-chronicle"
+project_name: "looker-dashboards"
+
+constant: CONFIG_PROJECT_NAME {
+  value: "block-google-chronicle-config"
+  export: override_required
+}
 
 constant: CONNECTION_NAME{
-  value: "c1"
+  value: "your-chronicle-connection"
   export: override_required
 }
 
@@ -27,10 +32,6 @@ constant: INGESTION_STATS{
   value: "ingestion_stats"
 }
 
-constant: UDM_EVENTS_AGGREGRATES{
-  value: "udm_events_aggregates"
-}
-
 constant: UDM_MAPPINGS{
   value: "udm_enum_value_to_name_mapping"
 }
@@ -41,6 +42,10 @@ constant: RULE_DETECTIONS{
 
 constant: UDM_EVENTS{
   value: "udm_events"
+}
+
+constant: UDM_EVENTS_AGGREGRATES{
+  value: "udm_events_aggregates"
 }
 
 constant: DATA_INGESTION_AND_HEALTH_DASHBOARD{
