@@ -5,12 +5,12 @@
   elements:
   - title: Rule Detections Over Time
     name: Rule Detections Over Time
-    model: block_google_chronicle
+    model: block_google_chronicle_v2
     explore: rule_detections
     type: looker_line
-    fields: [rule_detections.count, rule_detections__detection__detection_timestamp.event_timestamp_week]
-    fill_fields: [rule_detections__detection__detection_timestamp.event_timestamp_week]
-    sorts: [rule_detections__detection__detection_timestamp.event_timestamp_week desc]
+    fields: [rule_detections.count, rule_detections.event_timestamp_week]
+    fill_fields: [rule_detections.event_timestamp_week]
+    sorts: [ule_detections.event_timestamp_week desc]
     limit: 500
     query_timezone: America/Los_Angeles
     x_axis_gridlines: false
@@ -58,22 +58,22 @@
     conditional_formatting_include_nulls: false
     defaults_version: 1
     listen:
-      Time: rule_detections__detection__detection_timestamp.event_timestamp_time
+      Time: rule_detections.event_timestamp_time
     row: 0
     col: 0
     width: 8
     height: 6
   - title: Rule Detections by Severity Over Time
     name: Rule Detections by Severity Over Time
-    model: block_google_chronicle
+    model: block_google_chronicle_v2
     explore: rule_detections
     type: looker_area
-    fields: [rule_detections__detection__detection_timestamp.event_timestamp_date,
+    fields: [rule_detections.event_timestamp_date,
       rule_detections.count, rule_detections.severity]
     pivots: [rule_detections.severity]
     filters:
       rule_detections.severity: "-NULL,-EMPTY"
-    sorts: [rule_detections__detection__detection_timestamp.event_timestamp_date desc,
+    sorts: [rule_detections.event_timestamp_date desc,
       rule_detections.severity 0]
     limit: 500
     query_timezone: America/Los_Angeles
@@ -133,14 +133,14 @@
     defaults_version: 1
     hidden_fields: []
     listen:
-      Time: rule_detections__detection__detection_timestamp.event_timestamp_time
+      Time: rule_detections.event_timestamp_time
     row: 0
     col: 16
     width: 8
     height: 6
   - title: Rule Detections by Severity
     name: Rule Detections by Severity
-    model: block_google_chronicle
+    model: block_google_chronicle_v2
     explore: rule_detections
     type: looker_pie
     fields: [rule_detections.count, rule_detections.severity]
@@ -202,14 +202,14 @@
     show_silhouette: false
     totals_color: "#808080"
     listen:
-      Time: rule_detections__detection__detection_timestamp.event_timestamp_time
+      Time: rule_detections.event_timestamp_time
     row: 0
     col: 8
     width: 8
     height: 6
   - title: Top 10 Rule Names by Detections
     name: Top 10 Rule Names by Detections
-    model: block_google_chronicle
+    model: block_google_chronicle_v2
     explore: rule_detections
     type: looker_grid
     fields: [rule_detections.count, rule_detections.rule_name]
@@ -276,20 +276,20 @@
     value_labels: legend
     label_type: labPer
     listen:
-      Time: rule_detections__detection__detection_timestamp.event_timestamp_time
+      Time: rule_detections.event_timestamp_time
     row: 6
     col: 0
     width: 11
     height: 6
   - title: Rule Detections by Name Over Time
     name: Rule Detections by Name Over Time
-    model: block_google_chronicle
+    model: block_google_chronicle_v2
     explore: rule_detections
     type: looker_column
-    fields: [rule_detections.count, rule_detections.rule_name, rule_detections__detection__detection_timestamp.event_timestamp_date]
+    fields: [rule_detections.count, rule_detections.rule_name, rule_detections.event_timestamp_date]
     pivots: [rule_detections.rule_name]
-    fill_fields: [rule_detections__detection__detection_timestamp.event_timestamp_date]
-    sorts: [rule_detections.count desc 0, rule_detections.rule_name desc, rule_detections__detection__detection_timestamp.event_timestamp_date
+    fill_fields: [rule_detections.event_timestamp_date]
+    sorts: [rule_detections.count desc 0, rule_detections.rule_name desc, rule_detections.event_timestamp_date
         desc]
     limit: 500
     query_timezone: America/Los_Angeles
@@ -389,14 +389,14 @@
     value_labels: legend
     label_type: labPer
     listen:
-      Time: rule_detections__detection__detection_timestamp.event_timestamp_time
+      Time: rule_detections.event_timestamp_time
     row: 6
     col: 11
     width: 13
     height: 6
   - title: Top 10  IPs by Rule Detections
     name: Top 10  IPs by Rule Detections
-    model: block_google_chronicle
+    model: block_google_chronicle_v2
     explore: rule_detections
     type: looker_grid
     fields: [rule_detections__detection__assets.asset_ip_address, rule_detections.count]
@@ -463,14 +463,14 @@
     series_types: {}
     defaults_version: 1
     listen:
-      Time: rule_detections__detection__detection_timestamp.event_timestamp_time
+      Time: rule_detections.event_timestamp_time
     row: 12
     col: 16
     width: 8
     height: 6
   - title: Top 10 Asset Names by Rule Detections
     name: Top 10 Asset Names by Rule Detections
-    model: block_google_chronicle
+    model: block_google_chronicle_v2
     explore: rule_detections
     type: looker_grid
     fields: [rule_detections__detection__assets.hostname, rule_detections.count]
@@ -536,14 +536,14 @@
     interpolation: linear
     defaults_version: 1
     listen:
-      Time: rule_detections__detection__detection_timestamp.event_timestamp_time
+      Time: rule_detections.event_timestamp_time
     row: 12
     col: 8
     width: 8
     height: 6
   - title: Top 10 Users by Rule Detections
     name: Top 10 Users by Rule Detections
-    model: block_google_chronicle
+    model: block_google_chronicle_v2
     explore: rule_detections
     type: looker_grid
     fields: [rule_detections__detection__users.user_name, rule_detections.count]
@@ -580,7 +580,7 @@
       num_rows: '10'
     defaults_version: 1
     listen:
-      Time: rule_detections__detection__detection_timestamp.event_timestamp_time
+      Time: rule_detections.event_timestamp_time
     row: 12
     col: 0
     width: 8
@@ -589,14 +589,14 @@
   - name: Time
     title: Time
     type: field_filter
-    default_value: 1 week
+    default_value: 7 days
     allow_multiple_values: true
     required: true
     ui_config:
       type: advanced
       display: popover
       options: []
-    model: block_google_chronicle
+    model: block_google_chronicle_v2
     explore: rule_detections
     listens_to_filters: []
-    field: rule_detections__detection__detection_timestamp.event_timestamp_time
+    field: rule_detections.event_timestamp_time

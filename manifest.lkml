@@ -1,17 +1,10 @@
-project_name: "looker-dashboards"
-
-constant: CONFIG_PROJECT_NAME {
-  value: "block-google-chronicle-config"
-  export: override_required
-}
-
 constant: CONNECTION_NAME{
   value: "your-chronicle-connection"
   export: override_required
 }
 
 constant: DATASET_NAME{
-  value: "project.dataset"
+  value: "dataset"
   export: override_required
 }
 
@@ -21,7 +14,7 @@ constant: CHRONICLE_URL{
 }
 
 constant: MODEL_NAME{
-  value: "block_google_chronicle"
+  value: "block_google_chronicle_v2"
 }
 
 constant: IOC_MATCHES{
@@ -46,6 +39,10 @@ constant: UDM_EVENTS{
 
 constant: UDM_EVENTS_AGGREGRATES{
   value: "udm_events_aggregates"
+}
+
+constant: JOB_METADATA {
+  value: "job_metadata"
 }
 
 constant: DATA_INGESTION_AND_HEALTH_DASHBOARD{

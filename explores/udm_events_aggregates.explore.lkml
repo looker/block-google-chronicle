@@ -1,3 +1,5 @@
-include: "/views/*.lkml"
+include: "/views/refinements/udm_events_aggregates.view.lkml"
 
-explore: udm_events_aggregates {}
+explore: udm_events_aggregates {
+  hidden: yes
+}

@@ -5,10 +5,10 @@
   elements:
   - title: IOC Matches Over Time by Category
     name: IOC Matches Over Time by Category
-    model: block_google_chronicle
+    model: block_google_chronicle_v2
     explore: ioc_matches
     type: looker_line
-    fields: [ioc_matches.count, ioc_matches__ioc_ingest_time.event_timestamp_time,
+    fields: [ioc_matches.count, ioc_matches.event_timestamp_time,
       ioc_matches.category]
     pivots: [ioc_matches.category]
     sorts: [ioc_matches.count desc 0, ioc_matches.category]
@@ -91,14 +91,14 @@
     totals_color: "#808080"
     defaults_version: 1
     listen:
-      Time: ioc_matches__ioc_ingest_time.event_timestamp_time
+      Time: ioc_matches.event_timestamp_time
     row: 0
     col: 0
     width: 24
     height: 8
   - title: Top 10 IOC Matches by Category, Type and Count
     name: Top 10 IOC Matches by Category, Type and Count
-    model: block_google_chronicle
+    model: block_google_chronicle_v2
     explore: ioc_matches
     type: looker_grid
     fields: [ioc_matches.count, ioc_matches.category, ioc_matches.ioc_type]
@@ -160,14 +160,14 @@
     show_null_points: true
     interpolation: linear
     listen:
-      Time: ioc_matches__ioc_ingest_time.event_timestamp_time
+      Time: ioc_matches.event_timestamp_time
     row: 14
     col: 0
     width: 8
     height: 6
   - title: Top 10 IOC Values
     name: Top 10 IOC Values
-    model: block_google_chronicle
+    model: block_google_chronicle_v2
     explore: ioc_matches
     type: looker_grid
     fields: [ioc_matches.count, ioc_matches.ioc_value]
@@ -229,14 +229,14 @@
     show_null_points: true
     interpolation: linear
     listen:
-      Time: ioc_matches__ioc_ingest_time.event_timestamp_time
+      Time: ioc_matches.event_timestamp_time
     row: 14
     col: 8
     width: 8
     height: 6
   - title: Top 10 Rarely Seen Values
     name: Top 10 Rarely Seen Values
-    model: block_google_chronicle
+    model: block_google_chronicle_v2
     explore: ioc_matches
     type: looker_grid
     fields: [ioc_matches.count, ioc_matches.ioc_value]
@@ -298,14 +298,14 @@
     show_null_points: true
     interpolation: linear
     listen:
-      Time: ioc_matches__ioc_ingest_time.event_timestamp_time
+      Time: ioc_matches.event_timestamp_time
     row: 14
     col: 16
     width: 8
     height: 6
   - title: Top 10 Domains IOC Indicators
     name: Top 10 Domains IOC Indicators
-    model: block_google_chronicle
+    model: block_google_chronicle_v2
     explore: ioc_matches
     type: looker_bar
     fields: [ioc_matches.count, ioc_matches.ioc_value_domain]
@@ -350,14 +350,14 @@
       ioc_matches.count: Count
     defaults_version: 1
     listen:
-      Time: ioc_matches__ioc_ingest_time.event_timestamp_time
+      Time: ioc_matches.event_timestamp_time
     row: 8
     col: 0
     width: 8
     height: 6
   - title: Top 10 IP IOC Indicators
     name: Top 10 IP IOC Indicators
-    model: block_google_chronicle
+    model: block_google_chronicle_v2
     explore: ioc_matches
     type: looker_bar
     fields: [ioc_matches.ioc_value, ioc_matches.count]
@@ -402,14 +402,14 @@
       ioc_matches.count: Count
     defaults_version: 1
     listen:
-      Time: ioc_matches__ioc_ingest_time.event_timestamp_time
+      Time: ioc_matches.event_timestamp_time
     row: 8
     col: 8
     width: 8
     height: 6
   - title: Top 10 Assets by IOC Matches
     name: Top 10 Assets by IOC Matches
-    model: block_google_chronicle
+    model: block_google_chronicle_v2
     explore: ioc_matches
     type: looker_bar
     fields: [ioc_matches.asset_hostname, ioc_matches.count]
@@ -452,7 +452,7 @@
       ioc_matches.count: Count
     defaults_version: 1
     listen:
-      Time: ioc_matches__ioc_ingest_time.event_timestamp_time
+      Time: ioc_matches.event_timestamp_time
     row: 8
     col: 16
     width: 8
@@ -461,14 +461,14 @@
   - name: Time
     title: Time
     type: field_filter
-    default_value: 1 weeks
+    default_value: 7 days
     allow_multiple_values: true
     required: true
     ui_config:
       type: advanced
       display: popover
       options: []
-    model: block_google_chronicle
+    model: block_google_chronicle_v2
     explore: ioc_matches
     listens_to_filters: []
-    field: ioc_matches__ioc_ingest_time.event_timestamp_time
+    field: ioc_matches.event_timestamp_time

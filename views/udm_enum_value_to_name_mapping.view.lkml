@@ -1,5 +1,5 @@
 view: udm_enum_value_to_name_mapping {
-  sql_table_name: @{DATASET_NAME}.@{UDM_MAPPINGS}
+  sql_table_name: `@{DATASET_NAME}.@{UDM_MAPPINGS}`
     ;;
 
   dimension: enum_name {
@@ -19,6 +19,6 @@ view: udm_enum_value_to_name_mapping {
 
   measure: count {
     type: count
+    drill_fields: [enum_name]
   }
-
 }

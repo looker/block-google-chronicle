@@ -11,7 +11,7 @@
     row: 0
     col: 0
     width: 7
-    height: 3
+    height: 1
   - name: Throughput (GB)
     type: text
     title_text: Throughput (GB)
@@ -20,7 +20,7 @@
     row: 0
     col: 7
     width: 9
-    height: 3
+    height: 1
   - name: Alerts
     type: text
     title_text: Alerts
@@ -29,10 +29,10 @@
     row: 0
     col: 16
     width: 7
-    height: 3
+    height: 1
   - title: Alert
     name: Alert
-    model: block_google_chronicle
+    model: block_google_chronicle_v2
     explore: rule_detections
     type: single_value
     fields: [rule_detections.count_for_drill, rule_detections__detection__detection_timestamp.period]
@@ -82,14 +82,14 @@
     note_display: hover
     note_text: Delta compared to previous time period
     listen:
-      Time: rule_detections__detection__detection_timestamp.period_filter
+      Time: rule_detections.period_filter
     row: 3
     col: 16
     width: 8
     height: 4
   - title: Ingestion Data Size
     name: Ingestion Data Size
-    model: block_google_chronicle
+    model: block_google_chronicle_v2
     explore: ingestion_stats
     type: single_value
     fields: [ingestion_stats.total_size_bytes_GB_for_drill, ingestion_stats.period]
@@ -174,7 +174,7 @@
     height: 4
   - title: Events Over Time
     name: Events Over Time
-    model: block_google_chronicle
+    model: block_google_chronicle_v2
     explore: ingestion_stats
     type: looker_column
     fields: [total_events_count, ingestion_stats.timestamp_date, ingestion_stats.log_type_for_drill]
@@ -235,7 +235,7 @@
     height: 9
   - title: Global Threat Map - IOC IP Matches
     name: Global Threat Map - IOC IP Matches
-    model: block_google_chronicle
+    model: block_google_chronicle_v2
     explore: global_threat_map_ioc
     type: looker_map
     fields: [global_threat_map_ioc.ioc_matches_test_ioc_value, global_threat_map_ioc.location,
@@ -284,7 +284,7 @@
     height: 9
   - title: Events for Main Dashboard
     name: Events for Main Dashboard
-    model: block_google_chronicle
+    model: block_google_chronicle_v2
     explore: ingestion_stats
     type: single_value
     fields: [ingestion_stats.total_entry_number_in_million_for_drill, ingestion_stats.period]
@@ -346,13 +346,13 @@
   - name: Time
     title: Time
     type: field_filter
-    default_value: 1 weeks
+    default_value: 7 days
     allow_multiple_values: true
     required: true
     ui_config:
       type: advanced
       display: popover
-    model: block_google_chronicle
+    model: block_google_chronicle_v2
     explore: ingestion_stats
     listens_to_filters: []
     field: ingestion_stats.period_filter

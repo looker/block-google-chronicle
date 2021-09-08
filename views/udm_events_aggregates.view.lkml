@@ -1,5 +1,6 @@
 view: udm_events_aggregates {
-  sql_table_name: @{DATASET_NAME}.@{UDM_EVENTS_AGGREGRATES};;
+  sql_table_name: `@{DATASET_NAME}.@{UDM_EVENTS_AGGREGRATES}`
+    ;;
 
   dimension: action {
     type: number
@@ -25,6 +26,11 @@ view: udm_events_aggregates {
     sql: ${TABLE}.event_hour ;;
   }
 
+  dimension: principal_hostname {
+    type: string
+    sql: ${TABLE}.principal_hostname ;;
+  }
+
   dimension: principal_ip {
     type: string
     sql: ${TABLE}.principal_ip ;;
@@ -33,16 +39,6 @@ view: udm_events_aggregates {
   dimension: principal_userid {
     type: string
     sql: ${TABLE}.principal_userid ;;
-  }
-
-  dimension: userid_for_drill {
-    type: string
-    sql: ${TABLE}.principal_userid ;;
-    link: {
-      label: "Investigate in Chronicle"
-      url: "@{CHRONICLE_URL}/userResults?userName={{value}}"
-      icon_url: "@{CHRONICLE_ICON_URL}"
-    }
   }
 
   dimension: target_application {
@@ -67,5 +63,6 @@ view: udm_events_aggregates {
 
   measure: count {
     type: count
+    drill_fields: [target_hostname, principal_hostname]
   }
 }
