@@ -14,7 +14,7 @@ view: +ioc_matches {
     #   icon_url: "@{DASHBOARD_ICON_URL}"
     # }
     link: {
-      label: "Investigate in Chronicle"
+      label: "Investigate asset"
       url: "
       {% if value != ioc_matches.asset__asset_ip_address._value %}
       @{CHRONICLE_URL}/assetResults?assetIdentifier={{value}}&assetType=hostname
@@ -22,7 +22,7 @@ view: +ioc_matches {
       @{CHRONICLE_URL}/assetResults?assetIdentifier={{value}}&assetType=ip
       {% endif %}
       "
-      icon_url: "@{CHRONICLE_ICON_URL}"
+      icon_url: "@{ASSET_PAGE_ICON_URL}"
     }
   }
 
@@ -52,9 +52,22 @@ view: +ioc_matches {
     #   icon_url: "@{DASHBOARD_ICON_URL}"
     # }
       link: {
-        label: "Investigate in Chronicle"
+        label: "Investigate domain"
         url: "@{CHRONICLE_URL}/domainResults?domain={{value}}"
-        icon_url: "@{CHRONICLE_ICON_URL}"
+        icon_url: "@{DOMAIN_PAGE_ICON_URL}"
       }
     }
-}
+
+    dimension : ioc_value_ip {
+      type: string
+      sql:
+          CASE
+            WHEN ${TABLE}.ioc_type= 'IOC_TYPE_IP' THEN ${TABLE}.ioc_value
+          END;;
+      link: {
+        label: "Investigate IP"
+        url: "@{CHRONICLE_URL}/destinationIpResults?ip={{value}}"
+        icon_url: "@{DOMAIN_IP_PAGE_ICON_URL}"
+      }
+    }
+  }

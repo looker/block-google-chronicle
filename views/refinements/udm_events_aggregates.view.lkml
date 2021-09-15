@@ -7,7 +7,7 @@ view: +udm_events_aggregates {
     link: {
       label: "Investigate in Chronicle"
       url: "@{CHRONICLE_URL}/userResults?userName={{value}}"
-      icon_url: "@{CHRONICLE_ICON_URL}"
+      icon_url: "@{USER_PAGE_ICON_URL}"
     }
   }
 }

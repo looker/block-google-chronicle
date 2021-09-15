@@ -13,7 +13,7 @@ view: +rule_detections {
     link: {
       label: "Investigate in Chronicle"
       url: "@{CHRONICLE_URL}/ruleDetections?ruleId={{rule_detections.rule_id._value}}"
-      icon_url: "@{CHRONICLE_ICON_URL}"
+      icon_url: "@{RULE_DETECTIONS_PAGE_ICON_URL}"
     }
   }
 

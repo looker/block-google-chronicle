@@ -35,8 +35,8 @@
     model: block_google_chronicle_v2
     explore: rule_detections
     type: single_value
-    fields: [rule_detections.count_for_drill, rule_detections__detection__detection_timestamp.period]
-    sorts: [rule_detections__detection__detection_timestamp.period desc]
+    fields: [rule_detections.count_for_drill, rule_detections.period]
+    sorts: [rule_detections.period desc]
     limit: 500
     dynamic_fields: [{table_calculation: delta, label: Delta, expression: 'round((${rule_detections.count_for_drill}
           - offset(${rule_detections.count_for_drill}, 1))/1000,3)', value_format: !!null '',

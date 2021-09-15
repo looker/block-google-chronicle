@@ -360,7 +360,7 @@
     model: block_google_chronicle_v2
     explore: ioc_matches
     type: looker_bar
-    fields: [ioc_matches.ioc_value, ioc_matches.count]
+    fields: [ioc_matches.ioc_value_ip, ioc_matches.count]
     filters:
       ioc_matches.ioc_type: '"IOC_TYPE_IP"'
     sorts: [ioc_matches.count desc]
