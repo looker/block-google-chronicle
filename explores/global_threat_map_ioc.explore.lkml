@@ -1,6 +1,5 @@
 include: "/views/custom/global_threat_map_ioc.view.lkml"
 
-explore: destination_geo_ip {
-  extension: required
+explore: global_threat_map_ioc {
   hidden: yes
 }

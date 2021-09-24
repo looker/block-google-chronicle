@@ -1,12 +1,10 @@
-project_name: "block-google-chronicle"
-
 constant: CONNECTION_NAME{
-  value: "c1"
+  value: "your-bq-connection"
   export: override_required
 }
 
 constant: DATASET_NAME{
-  value: "project.dataset"
+  value: "dataset"
   export: override_required
 }
 
@@ -16,7 +14,7 @@ constant: CHRONICLE_URL{
 }
 
 constant: MODEL_NAME{
-  value: "block_google_chronicle"
+  value: "block_google_chronicle_v2"
 }
 
 constant: IOC_MATCHES{
@@ -25,10 +23,6 @@ constant: IOC_MATCHES{
 
 constant: INGESTION_STATS{
   value: "ingestion_stats"
-}
-
-constant: UDM_EVENTS_AGGREGRATES{
-  value: "udm_events_aggregates"
 }
 
 constant: UDM_MAPPINGS{
@@ -41,6 +35,14 @@ constant: RULE_DETECTIONS{
 
 constant: UDM_EVENTS{
   value: "udm_events"
+}
+
+constant: UDM_EVENTS_AGGREGRATES{
+  value: "udm_events_aggregates"
+}
+
+constant: JOB_METADATA {
+  value: "job_metadata"
 }
 
 constant: DATA_INGESTION_AND_HEALTH_DASHBOARD{
@@ -73,4 +75,32 @@ constant: DASHBOARD_ICON_URL{
 
 constant: CHRONICLE_ICON_URL{
   value: "https://storage.googleapis.com/bml-image/Chronicle-RGB-Icon-Color.png"
+}
+
+constant: ASSET_PAGE_ICON_URL {
+  value: "https://backstory.chronicle.security/static/pageicons/asset-white.svg"
+}
+
+constant: DOMAIN_IP_PAGE_ICON_URL {
+  value: "https://backstory.chronicle.security/static/pageicons/domain-ip-white.svg"
+}
+
+constant: DOMAIN_PAGE_ICON_URL {
+  value: "https://backstory.chronicle.security/static/pageicons/domain-white.svg"
+}
+
+constant: FILE_HASH_PAGE_ICON_URL {
+  value: "https://backstory.chronicle.security/static/pageicons/file-hash-white.svg"
+}
+
+constant: RULE_DETECTIONS_PAGE_ICON_URL {
+  value: "https://backstory.chronicle.security/static/pageicons/rule-detections-white.svg"
+}
+
+constant: STRUCTURED_SEARCH_PAGE_ICON_URL {
+  value: "https://backstory.chronicle.security/static/pageicons/structured-search-white.svg"
+}
+
+constant: USER_PAGE_ICON_URL {
+  value: "https://backstory.chronicle.security/static/pageicons/user-white.svg"
 }

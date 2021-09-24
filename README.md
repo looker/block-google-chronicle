@@ -5,14 +5,10 @@
 
 **(2) Centralized Place for Analysis** -  No need to play the swivel chair game and go between different consoles, you can do self-service reporting for Chronicle data right here in Looker. Plus, you can combine your Chronicle data with other security and non-security data in your warehouse for end-to-end analysis.
 
-**(3) Democratization of Data** - Security Analysts, managers and executives can easily build their own dashboards, and any user is equipped to ask and answer their own questions, save and share their own reports. 
+**(3) Democratization of Data** - Security Analysts, managers and executives can easily build their own dashboards, and any user is equipped to ask and answer their own questions, save and share their own reports.
 
 ## Block Structure
-Core project: block-google-chronicle is the read-only project where the block’s base Explores, views, and dashboards are defined. The core project’s initial views and Explores are defined in the core project and extended in the config project, where they can be modified. Then the config project and its files are imported into the core project. Finally, the core project defines the block’s content layer, or the dashboards and Explores that are surfaced in the Looker UI.
-
-Config project: block-google-chronicle-config is the project that can be modified by LookML developers. This project extends the core project. Its files are also imported into the core project and extended in the core project’s content layer, so that changes made to files in the config project are brought into the core project. 
-
-For more information on the Block structure and customization, refer to [Looker Marketplace Documnetation](https://docs.looker.com/data-modeling/marketplace/customize-blocks)
+For more information on the Block structure and customization, refer to [Looker Marketplace Documnetation](https://docs.looker.com/data-modeling/marketplace/customize-blocks#marketplace_blocks_that_use_refinements)
 
 ## Technical installation
 
