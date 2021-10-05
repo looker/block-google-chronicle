@@ -99,6 +99,12 @@ explore: +udm_events {
     relationship: one_to_many
   }
 
+  join: udm_events__security_result__action {
+    view_label: "Udm Events: Security Result Action"
+    sql: LEFT JOIN UNNEST(${udm_events__security_result.action}) as udm_events__security_result__action ;;
+    relationship: one_to_many
+  }
+
   # Etc
   conditionally_filter: {
     filters: {

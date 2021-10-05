@@ -4,7 +4,7 @@ view: +rule_detections {
   dimension: primary_key {
     primary_key: yes
     hidden: yes
-    sql: CONCAT(${TABLE}.detection.version_timestamp.seconds, ${TABLE}.detection.version_timestamp.nanos, ${TABLE}.detection.id);;
+    sql: CONCAT(${TABLE}.version_timestamp.seconds, ${TABLE}.version_timestamp.nanos, ${TABLE}.detection.id);;
   }
 
   dimension: rule_name {
