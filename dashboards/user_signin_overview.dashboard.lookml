@@ -253,6 +253,7 @@
     explore: udm_events_aggregates
     type: single_value
     fields: [udm_events_aggregates.count]
+    value_format: "[>=1000000000]#,##0.0,,,\" B\";[>=1000000]0.0,,\" M\";0.0,\" K\""
     filters:
       udm_events_aggregates.action: '1'
     limit: 500
@@ -322,6 +323,7 @@
     filters:
       udm_events_aggregates.action: '2'
     limit: 500
+    value_format: "[>=1000000000]#,##0.0,,,\" B\";[>=1000000]0.0,,\" M\";0.0,\" K\""
     custom_color_enabled: true
     show_single_value_title: false
     show_comparison: false
