@@ -231,7 +231,7 @@
     height: 7
   - name: Number of Failed Sign Ins
     type: text
-    title_text: Number of Failed Sign Ins
+    title_text: "Number of Failed<br>Sign Ins"
     subtitle_text: ''
     body_text: ''
     row: 0
@@ -240,7 +240,7 @@
     height: 3
   - name: Number of Successful Sign Ins
     type: text
-    title_text: Number of Successful Sign Ins
+    title_text: "Number of Successful<br>Sign Ins"
     subtitle_text: ''
     body_text: ''
     row: 0
