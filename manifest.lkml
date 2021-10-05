@@ -15,7 +15,6 @@ constant: CHRONICLE_URL{
 
 constant: MODEL_NAME{
   value: "block_google_chronicle_v2"
-  export: override_optional
 }
 
 constant: IOC_MATCHES{
