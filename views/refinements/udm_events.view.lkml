@@ -5,7 +5,7 @@ view: +udm_events {
   dimension: primary_key {
     primary_key: yes
     hidden: yes
-    sql: CONCAT(${TABLE}.metadata.product_log_id, ${TABLE}.metadata.event_timestamp.seconds, ${TABLE}.metadata.event_timestamp.nanos, ${TABLE}.metadata.event_type, ${TABLE}.metadata.vendor_name, ${TABLE}.metadata.product_name);;
+    sql: CONCAT(IFNULL(${TABLE}.metadata.product_log_id, ""), IFNULL(${TABLE}.metadata.event_timestamp.seconds,0), IFNULL(${TABLE}.metadata.event_timestamp.nanos,0), IFNULL(${TABLE}.metadata.event_type,0), IFNULL(${TABLE}.metadata.vendor_name,""), IFNULL(${TABLE}.metadata.product_name,""));;
   }
 
   dimension_group: event_timestamp {
