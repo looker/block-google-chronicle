@@ -4,7 +4,7 @@ view: +rule_detections {
   dimension: primary_key {
     primary_key: yes
     hidden: yes
-    sql: CONCAT(${TABLE}.detection.version_timestamp.seconds, ${TABLE}.detection.version_timestamp.nanos, ${TABLE}.detection.id);;
+    sql: CONCAT(IFNULL(${TABLE}.version_timestamp.seconds,0), IFNULL(${TABLE}.version_timestamp.nanos,0), IFNULL(${TABLE}.detection.id,""));;
   }
 
   dimension: rule_name {
@@ -72,38 +72,5 @@ view: +rule_detections {
     ]
     datatype: epoch
     sql: ${detection__detection_timestamp__seconds} ;;
-  }
-}
-
-# Adding views to fix the generated (broken) joins for some nested repeated fields.
-view: +rule_detections__detection__events__about {
-  dimension: ip {
-    hidden: yes
-    sql: ${TABLE}.ip ;;
-    group_label: "About"
-    group_item_label: "IP"
-  }
-
-  dimension: mac {
-    hidden: yes
-    sql: ${TABLE}.mac ;;
-    group_label: "About"
-    group_item_label: "Mac"
-  }
-}
-
-view: +rule_detections__detection__events__intermediary {
-  dimension: ip {
-    hidden: yes
-    sql: ${TABLE}.ip ;;
-    group_label: "Intermediary"
-    group_item_label: "IP"
-  }
-
-  dimension: mac {
-    hidden: yes
-    sql: ${TABLE}.mac ;;
-    group_label: "Intermediary"
-    group_item_label: "Mac"
   }
 }
