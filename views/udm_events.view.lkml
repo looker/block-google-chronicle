@@ -37,20 +37,6 @@ view: udm_events {
     sql: ${TABLE}.about ;;
   }
 
-  dimension: about__ip {
-    hidden: yes
-    sql: ${TABLE}.about.ip ;;
-    group_label: "About"
-    group_item_label: "IP"
-  }
-
-  dimension: about__mac {
-    hidden: yes
-    sql: ${TABLE}.about.mac ;;
-    group_label: "About"
-    group_item_label: "Mac"
-  }
-
   dimension: additional__fields {
     hidden: yes
     sql: ${TABLE}.additional.fields ;;
@@ -89,20 +75,6 @@ view: udm_events {
   dimension: intermediary {
     hidden: yes
     sql: ${TABLE}.intermediary ;;
-  }
-
-  dimension: intermediary__ip {
-    hidden: yes
-    sql: ${TABLE}.intermediary.ip ;;
-    group_label: "Intermediary"
-    group_item_label: "IP"
-  }
-
-  dimension: intermediary__mac {
-    hidden: yes
-    sql: ${TABLE}.intermediary.mac ;;
-    group_label: "Intermediary"
-    group_item_label: "Mac"
   }
 
   dimension: metadata__collected_timestamp__nanos {
@@ -1120,6 +1092,20 @@ view: udm_events {
     group_item_label: "Country or Region"
   }
 
+  dimension: observer__asset__location__desk_name {
+    type: string
+    sql: ${TABLE}.observer.asset.location.desk_name ;;
+    group_label: "Observer Asset Location"
+    group_item_label: "Desk Name"
+  }
+
+  dimension: observer__asset__location__floor_name {
+    type: string
+    sql: ${TABLE}.observer.asset.location.floor_name ;;
+    group_label: "Observer Asset Location"
+    group_item_label: "Floor Name"
+  }
+
   dimension: observer__asset__location__name {
     type: string
     sql: ${TABLE}.observer.asset.location.name ;;
@@ -1505,7 +1491,7 @@ view: udm_events {
     group_item_label: "Environment"
   }
 
-  dimension: observer__group__attribute__cloud__pripoject__id {
+  dimension: observer__group__attribute__cloud__project__id {
     type: string
     sql: ${TABLE}.observer.`group`.attribute.cloud.project.id ;;
     group_label: "Observer Group Attribute Cloud Project"
@@ -1762,6 +1748,20 @@ view: udm_events {
     sql: ${TABLE}.observer.location.country_or_region ;;
     group_label: "Observer Location"
     group_item_label: "Country or Region"
+  }
+
+  dimension: observer__location__desk_name {
+    type: string
+    sql: ${TABLE}.observer.location.desk_name ;;
+    group_label: "Observer Location"
+    group_item_label: "Desk Name"
+  }
+
+  dimension: observer__location__floor_name {
+    type: string
+    sql: ${TABLE}.observer.location.floor_name ;;
+    group_label: "Observer Location"
+    group_item_label: "Floor Name"
   }
 
   dimension: observer__location__name {
@@ -2345,6 +2345,20 @@ view: udm_events {
     group_item_label: "Country or Region"
   }
 
+  dimension: observer__user__office_address__desk_name {
+    type: string
+    sql: ${TABLE}.observer.user.office_address.desk_name ;;
+    group_label: "Observer User Office Address"
+    group_item_label: "Desk Name"
+  }
+
+  dimension: observer__user__office_address__floor_name {
+    type: string
+    sql: ${TABLE}.observer.user.office_address.floor_name ;;
+    group_label: "Observer User Office Address"
+    group_item_label: "Floor Name"
+  }
+
   dimension: observer__user__office_address__name {
     type: string
     sql: ${TABLE}.observer.user.office_address.name ;;
@@ -2371,6 +2385,20 @@ view: udm_events {
     sql: ${TABLE}.observer.user.personal_address.country_or_region ;;
     group_label: "Observer User Personal Address"
     group_item_label: "Country or Region"
+  }
+
+  dimension: observer__user__personal_address__desk_name {
+    type: string
+    sql: ${TABLE}.observer.user.personal_address.desk_name ;;
+    group_label: "Observer User Personal Address"
+    group_item_label: "Desk Name"
+  }
+
+  dimension: observer__user__personal_address__floor_name {
+    type: string
+    sql: ${TABLE}.observer.user.personal_address.floor_name ;;
+    group_label: "Observer User Personal Address"
+    group_item_label: "Floor Name"
   }
 
   dimension: observer__user__personal_address__name {
@@ -2777,6 +2805,20 @@ view: udm_events {
     sql: ${TABLE}.principal.asset.location.country_or_region ;;
     group_label: "Principal Asset Location"
     group_item_label: "Country or Region"
+  }
+
+  dimension: principal__asset__location__desk_name {
+    type: string
+    sql: ${TABLE}.principal.asset.location.desk_name ;;
+    group_label: "Principal Asset Location"
+    group_item_label: "Desk Name"
+  }
+
+  dimension: principal__asset__location__floor_name {
+    type: string
+    sql: ${TABLE}.principal.asset.location.floor_name ;;
+    group_label: "Principal Asset Location"
+    group_item_label: "Floor Name"
   }
 
   dimension: principal__asset__location__name {
@@ -3423,6 +3465,20 @@ view: udm_events {
     group_item_label: "Country or Region"
   }
 
+  dimension: principal__location__desk_name {
+    type: string
+    sql: ${TABLE}.principal.location.desk_name ;;
+    group_label: "Principal Location"
+    group_item_label: "Desk Name"
+  }
+
+  dimension: principal__location__floor_name {
+    type: string
+    sql: ${TABLE}.principal.location.floor_name ;;
+    group_label: "Principal Location"
+    group_item_label: "Floor Name"
+  }
+
   dimension: principal__location__name {
     type: string
     sql: ${TABLE}.principal.location.name ;;
@@ -4004,6 +4060,20 @@ view: udm_events {
     group_item_label: "Country or Region"
   }
 
+  dimension: principal__user__office_address__desk_name {
+    type: string
+    sql: ${TABLE}.principal.user.office_address.desk_name ;;
+    group_label: "Principal User Office Address"
+    group_item_label: "Desk Name"
+  }
+
+  dimension: principal__user__office_address__floor_name {
+    type: string
+    sql: ${TABLE}.principal.user.office_address.floor_name ;;
+    group_label: "Principal User Office Address"
+    group_item_label: "Floor Name"
+  }
+
   dimension: principal__user__office_address__name {
     type: string
     sql: ${TABLE}.principal.user.office_address.name ;;
@@ -4030,6 +4100,20 @@ view: udm_events {
     sql: ${TABLE}.principal.user.personal_address.country_or_region ;;
     group_label: "Principal User Personal Address"
     group_item_label: "Country or Region"
+  }
+
+  dimension: principal__user__personal_address__desk_name {
+    type: string
+    sql: ${TABLE}.principal.user.personal_address.desk_name ;;
+    group_label: "Principal User Personal Address"
+    group_item_label: "Desk Name"
+  }
+
+  dimension: principal__user__personal_address__floor_name {
+    type: string
+    sql: ${TABLE}.principal.user.personal_address.floor_name ;;
+    group_label: "Principal User Personal Address"
+    group_item_label: "Floor Name"
   }
 
   dimension: principal__user__personal_address__name {
@@ -4147,13 +4231,6 @@ view: udm_events {
   dimension: security_result {
     hidden: yes
     sql: ${TABLE}.security_result ;;
-  }
-
-  dimension: security_result__action {
-    hidden: yes
-    sql: ${TABLE}.security_result.action ;;
-    group_label: "Security Result"
-    group_item_label: "Action"
   }
 
   dimension: src__administrative_domain {
@@ -4448,6 +4525,20 @@ view: udm_events {
     sql: ${TABLE}.src.asset.location.country_or_region ;;
     group_label: "Src Asset Location"
     group_item_label: "Country or Region"
+  }
+
+  dimension: src__asset__location__desk_name {
+    type: string
+    sql: ${TABLE}.src.asset.location.desk_name ;;
+    group_label: "Src Asset Location"
+    group_item_label: "Desk Name"
+  }
+
+  dimension: src__asset__location__floor_name {
+    type: string
+    sql: ${TABLE}.src.asset.location.floor_name ;;
+    group_label: "Src Asset Location"
+    group_item_label: "Floor Name"
   }
 
   dimension: src__asset__location__name {
@@ -5094,6 +5185,20 @@ view: udm_events {
     group_item_label: "Country or Region"
   }
 
+  dimension: src__location__desk_name {
+    type: string
+    sql: ${TABLE}.src.location.desk_name ;;
+    group_label: "Src Location"
+    group_item_label: "Desk Name"
+  }
+
+  dimension: src__location__floor_name {
+    type: string
+    sql: ${TABLE}.src.location.floor_name ;;
+    group_label: "Src Location"
+    group_item_label: "Floor Name"
+  }
+
   dimension: src__location__name {
     type: string
     sql: ${TABLE}.src.location.name ;;
@@ -5675,6 +5780,20 @@ view: udm_events {
     group_item_label: "Country or Region"
   }
 
+  dimension: src__user__office_address__desk_name {
+    type: string
+    sql: ${TABLE}.src.user.office_address.desk_name ;;
+    group_label: "Src User Office Address"
+    group_item_label: "Desk Name"
+  }
+
+  dimension: src__user__office_address__floor_name {
+    type: string
+    sql: ${TABLE}.src.user.office_address.floor_name ;;
+    group_label: "Src User Office Address"
+    group_item_label: "Floor Name"
+  }
+
   dimension: src__user__office_address__name {
     type: string
     sql: ${TABLE}.src.user.office_address.name ;;
@@ -5701,6 +5820,20 @@ view: udm_events {
     sql: ${TABLE}.src.user.personal_address.country_or_region ;;
     group_label: "Src User Personal Address"
     group_item_label: "Country or Region"
+  }
+
+  dimension: src__user__personal_address__desk_name {
+    type: string
+    sql: ${TABLE}.src.user.personal_address.desk_name ;;
+    group_label: "Src User Personal Address"
+    group_item_label: "Desk Name"
+  }
+
+  dimension: src__user__personal_address__floor_name {
+    type: string
+    sql: ${TABLE}.src.user.personal_address.floor_name ;;
+    group_label: "Src User Personal Address"
+    group_item_label: "Floor Name"
   }
 
   dimension: src__user__personal_address__name {
@@ -6107,6 +6240,20 @@ view: udm_events {
     sql: ${TABLE}.target.asset.location.country_or_region ;;
     group_label: "Target Asset Location"
     group_item_label: "Country or Region"
+  }
+
+  dimension: target__asset__location__desk_name {
+    type: string
+    sql: ${TABLE}.target.asset.location.desk_name ;;
+    group_label: "Target Asset Location"
+    group_item_label: "Desk Name"
+  }
+
+  dimension: target__asset__location__floor_name {
+    type: string
+    sql: ${TABLE}.target.asset.location.floor_name ;;
+    group_label: "Target Asset Location"
+    group_item_label: "Floor Name"
   }
 
   dimension: target__asset__location__name {
@@ -6753,6 +6900,20 @@ view: udm_events {
     group_item_label: "Country or Region"
   }
 
+  dimension: target__location__desk_name {
+    type: string
+    sql: ${TABLE}.target.location.desk_name ;;
+    group_label: "Target Location"
+    group_item_label: "Desk Name"
+  }
+
+  dimension: target__location__floor_name {
+    type: string
+    sql: ${TABLE}.target.location.floor_name ;;
+    group_label: "Target Location"
+    group_item_label: "Floor Name"
+  }
+
   dimension: target__location__name {
     type: string
     sql: ${TABLE}.target.location.name ;;
@@ -7334,6 +7495,20 @@ view: udm_events {
     group_item_label: "Country or Region"
   }
 
+  dimension: target__user__office_address__desk_name {
+    type: string
+    sql: ${TABLE}.target.user.office_address.desk_name ;;
+    group_label: "Target User Office Address"
+    group_item_label: "Desk Name"
+  }
+
+  dimension: target__user__office_address__floor_name {
+    type: string
+    sql: ${TABLE}.target.user.office_address.floor_name ;;
+    group_label: "Target User Office Address"
+    group_item_label: "Floor Name"
+  }
+
   dimension: target__user__office_address__name {
     type: string
     sql: ${TABLE}.target.user.office_address.name ;;
@@ -7360,6 +7535,20 @@ view: udm_events {
     sql: ${TABLE}.target.user.personal_address.country_or_region ;;
     group_label: "Target User Personal Address"
     group_item_label: "Country or Region"
+  }
+
+  dimension: target__user__personal_address__desk_name {
+    type: string
+    sql: ${TABLE}.target.user.personal_address.desk_name ;;
+    group_label: "Target User Personal Address"
+    group_item_label: "Desk Name"
+  }
+
+  dimension: target__user__personal_address__floor_name {
+    type: string
+    sql: ${TABLE}.target.user.personal_address.floor_name ;;
+    group_label: "Target User Personal Address"
+    group_item_label: "Floor Name"
   }
 
   dimension: target__user__personal_address__name {
@@ -7505,9 +7694,11 @@ view: udm_events {
       target__user__last_name,
       target__user__role_name,
       src__cloud__project__name,
+      src__location__desk_name,
       target__user__first_name,
       observer__resource__name,
       observer__location__name,
+      src__location__floor_name,
       src__asset__location__name,
       target__user__middle_name,
       principal__resource__name,
@@ -7523,55 +7714,85 @@ view: udm_events {
       principal__user__role_name,
       observer__user__first_name,
       target__cloud__project__name,
+      target__location__desk_name,
       principal__user__first_name,
       observer__user__middle_name,
       src__user__user_display_name,
+      target__location__floor_name,
       target__asset__location__name,
       principal__user__middle_name,
       observer__user__company_name,
       principal__user__company_name,
       observer__cloud__project__name,
+      observer__location__desk_name,
+      src__asset__location__desk_name,
       src__user__office_address__name,
       network__dhcp__client_hostname,
       principal__cloud__project__name,
+      principal__location__desk_name,
+      observer__location__floor_name,
       observer__asset__location__name,
+      src__asset__location__floor_name,
       target__user__user_display_name,
+      principal__location__floor_name,
       principal__asset__location__name,
       src__group__group_display_name,
       src__user__personal_address__name,
       network__tls__client__server_name,
+      target__asset__location__desk_name,
       target__user__office_address__name,
       observer__user__user_display_name,
       src__registry__registry_value_name,
+      target__asset__location__floor_name,
       principal__user__user_display_name,
       src__user__attribute__cloud__vpc__name,
+      src__user__office_address__desk_name,
       target__group__group_display_name,
       target__user__personal_address__name,
+      observer__asset__location__desk_name,
       observer__user__office_address__name,
       src__asset__attribute__cloud__vpc__name,
+      src__user__office_address__floor_name,
+      principal__asset__location__desk_name,
       principal__user__office_address__name,
+      observer__asset__location__floor_name,
+      src__user__personal_address__desk_name,
       target__registry__registry_value_name,
+      principal__asset__location__floor_name,
       observer__group__group_display_name,
       observer__user__personal_address__name,
       src__group__attribute__cloud__vpc__name,
+      src__user__personal_address__floor_name,
       target__user__attribute__cloud__vpc__name,
+      target__user__office_address__desk_name,
       principal__group__group_display_name,
       principal__user__personal_address__name,
       src__user__attribute__cloud__project__name,
       target__asset__attribute__cloud__vpc__name,
+      target__user__office_address__floor_name,
       observer__registry__registry_value_name,
       src__asset__attribute__cloud__project__name,
+      target__user__personal_address__desk_name,
       principal__registry__registry_value_name,
       observer__user__attribute__cloud__vpc__name,
+      observer__user__office_address__desk_name,
       target__group__attribute__cloud__vpc__name,
+      target__user__personal_address__floor_name,
       principal__user__attribute__cloud__vpc__name,
+      principal__user__office_address__desk_name,
       observer__asset__attribute__cloud__vpc__name,
+      observer__user__office_address__floor_name,
       src__group__attribute__cloud__project__name,
       target__user__attribute__cloud__project__name,
       principal__asset__attribute__cloud__vpc__name,
+      principal__user__office_address__floor_name,
+      observer__user__personal_address__desk_name,
       target__asset__attribute__cloud__project__name,
+      principal__user__personal_address__desk_name,
       observer__group__attribute__cloud__vpc__name,
+      observer__user__personal_address__floor_name,
       principal__group__attribute__cloud__vpc__name,
+      principal__user__personal_address__floor_name,
       observer__user__attribute__cloud__project__name,
       target__group__attribute__cloud__project__name,
       principal__user__attribute__cloud__project__name,
@@ -7580,6 +7801,1718 @@ view: udm_events {
       observer__group__attribute__cloud__project__name,
       principal__group__attribute__cloud__project__name
     ]
+  }
+}
+
+view: udm_events__about {
+  dimension: administrative_domain {
+    type: string
+    sql: administrative_domain ;;
+  }
+
+  dimension: application {
+    type: string
+    sql: application ;;
+  }
+
+  dimension: asset__asset_id {
+    type: string
+    sql: asset.asset_id ;;
+    group_label: "Asset"
+    group_item_label: "Asset ID"
+  }
+
+  dimension: asset__attribute__cloud__availability_zone {
+    type: string
+    sql: asset.attribute.cloud.availability_zone ;;
+    group_label: "Asset Attribute Cloud"
+    group_item_label: "Availability Zone"
+  }
+
+  dimension: asset__attribute__cloud__environment {
+    type: number
+    sql: asset.attribute.cloud.environment ;;
+    group_label: "Asset Attribute Cloud"
+    group_item_label: "Environment"
+  }
+
+  dimension: asset__attribute__cloud__project__id {
+    type: string
+    sql: asset.attribute.cloud.project.id ;;
+    group_label: "Asset Attribute Cloud Project"
+    group_item_label: "ID"
+  }
+
+  dimension: asset__attribute__cloud__project__name {
+    type: string
+    sql: asset.attribute.cloud.project.name ;;
+    group_label: "Asset Attribute Cloud Project"
+    group_item_label: "Name"
+  }
+
+  dimension: asset__attribute__cloud__project__parent {
+    type: string
+    sql: asset.attribute.cloud.project.parent ;;
+    group_label: "Asset Attribute Cloud Project"
+    group_item_label: "Parent"
+  }
+
+  dimension: asset__attribute__cloud__project__product_object_id {
+    type: string
+    sql: asset.attribute.cloud.project.product_object_id ;;
+    group_label: "Asset Attribute Cloud Project"
+    group_item_label: "Product Object ID"
+  }
+
+  dimension: asset__attribute__cloud__project__resource_subtype {
+    type: string
+    sql: asset.attribute.cloud.project.resource_subtype ;;
+    group_label: "Asset Attribute Cloud Project"
+    group_item_label: "Resource Subtype"
+  }
+
+  dimension: asset__attribute__cloud__project__resource_type {
+    type: number
+    sql: asset.attribute.cloud.project.resource_type ;;
+    group_label: "Asset Attribute Cloud Project"
+    group_item_label: "Resource Type"
+  }
+
+  dimension: asset__attribute__cloud__project__type {
+    type: string
+    sql: asset.attribute.cloud.project.type ;;
+    group_label: "Asset Attribute Cloud Project"
+    group_item_label: "Type"
+  }
+
+  dimension: asset__attribute__cloud__vpc__id {
+    type: string
+    sql: asset.attribute.cloud.vpc.id ;;
+    group_label: "Asset Attribute Cloud Vpc"
+    group_item_label: "ID"
+  }
+
+  dimension: asset__attribute__cloud__vpc__name {
+    type: string
+    sql: asset.attribute.cloud.vpc.name ;;
+    group_label: "Asset Attribute Cloud Vpc"
+    group_item_label: "Name"
+  }
+
+  dimension: asset__attribute__cloud__vpc__parent {
+    type: string
+    sql: asset.attribute.cloud.vpc.parent ;;
+    group_label: "Asset Attribute Cloud Vpc"
+    group_item_label: "Parent"
+  }
+
+  dimension: asset__attribute__cloud__vpc__product_object_id {
+    type: string
+    sql: asset.attribute.cloud.vpc.product_object_id ;;
+    group_label: "Asset Attribute Cloud Vpc"
+    group_item_label: "Product Object ID"
+  }
+
+  dimension: asset__attribute__cloud__vpc__resource_subtype {
+    type: string
+    sql: asset.attribute.cloud.vpc.resource_subtype ;;
+    group_label: "Asset Attribute Cloud Vpc"
+    group_item_label: "Resource Subtype"
+  }
+
+  dimension: asset__attribute__cloud__vpc__resource_type {
+    type: number
+    sql: asset.attribute.cloud.vpc.resource_type ;;
+    group_label: "Asset Attribute Cloud Vpc"
+    group_item_label: "Resource Type"
+  }
+
+  dimension: asset__attribute__cloud__vpc__type {
+    type: string
+    sql: asset.attribute.cloud.vpc.type ;;
+    group_label: "Asset Attribute Cloud Vpc"
+    group_item_label: "Type"
+  }
+
+  dimension: asset__attribute__creation_time__nanos {
+    type: number
+    sql: asset.attribute.creation_time.nanos ;;
+    group_label: "Asset Attribute Creation Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: asset__attribute__creation_time__seconds {
+    type: number
+    sql: asset.attribute.creation_time.seconds ;;
+    group_label: "Asset Attribute Creation Time"
+    group_item_label: "Seconds"
+  }
+
+  dimension: asset__attribute__labels {
+    hidden: yes
+    sql: asset.attribute.labels ;;
+    group_label: "Asset Attribute"
+    group_item_label: "Labels"
+  }
+
+  dimension: asset__attribute__last_update_time__nanos {
+    type: number
+    sql: asset.attribute.last_update_time.nanos ;;
+    group_label: "Asset Attribute Last Update Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: asset__attribute__last_update_time__seconds {
+    type: number
+    sql: asset.attribute.last_update_time.seconds ;;
+    group_label: "Asset Attribute Last Update Time"
+    group_item_label: "Seconds"
+  }
+
+  dimension: asset__attribute__permissions {
+    hidden: yes
+    sql: asset.attribute.permissions ;;
+    group_label: "Asset Attribute"
+    group_item_label: "Permissions"
+  }
+
+  dimension: asset__attribute__roles {
+    hidden: yes
+    sql: asset.attribute.roles ;;
+    group_label: "Asset Attribute"
+    group_item_label: "Roles"
+  }
+
+  dimension: asset__category {
+    type: string
+    sql: asset.category ;;
+    group_label: "Asset"
+    group_item_label: "Category"
+  }
+
+  dimension: asset__creation_time__nanos {
+    type: number
+    sql: asset.creation_time.nanos ;;
+    group_label: "Asset Creation Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: asset__creation_time__seconds {
+    type: number
+    sql: asset.creation_time.seconds ;;
+    group_label: "Asset Creation Time"
+    group_item_label: "Seconds"
+  }
+
+  dimension: asset__deployment_status {
+    type: number
+    sql: asset.deployment_status ;;
+    group_label: "Asset"
+    group_item_label: "Deployment Status"
+  }
+
+  dimension: asset__first_discover_time__nanos {
+    type: number
+    sql: asset.first_discover_time.nanos ;;
+    group_label: "Asset First Discover Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: asset__first_discover_time__seconds {
+    type: number
+    sql: asset.first_discover_time.seconds ;;
+    group_label: "Asset First Discover Time"
+    group_item_label: "Seconds"
+  }
+
+  dimension: asset__hardware {
+    hidden: yes
+    sql: asset.hardware ;;
+    group_label: "Asset"
+    group_item_label: "Hardware"
+  }
+
+  dimension: asset__hostname {
+    type: string
+    sql: asset.hostname ;;
+    group_label: "Asset"
+    group_item_label: "Hostname"
+  }
+
+  dimension: asset__ip {
+    hidden: yes
+    sql: asset.ip ;;
+    group_label: "Asset"
+    group_item_label: "IP"
+  }
+
+  dimension: asset__labels {
+    hidden: yes
+    sql: asset.labels ;;
+    group_label: "Asset"
+    group_item_label: "Labels"
+  }
+
+  dimension: asset__last_boot_time__nanos {
+    type: number
+    sql: asset.last_boot_time.nanos ;;
+    group_label: "Asset Last Boot Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: asset__last_boot_time__seconds {
+    type: number
+    sql: asset.last_boot_time.seconds ;;
+    group_label: "Asset Last Boot Time"
+    group_item_label: "Seconds"
+  }
+
+  dimension: asset__last_discover_time__nanos {
+    type: number
+    sql: asset.last_discover_time.nanos ;;
+    group_label: "Asset Last Discover Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: asset__last_discover_time__seconds {
+    type: number
+    sql: asset.last_discover_time.seconds ;;
+    group_label: "Asset Last Discover Time"
+    group_item_label: "Seconds"
+  }
+
+  dimension: asset__location__city {
+    type: string
+    sql: asset.location.city ;;
+    group_label: "Asset Location"
+    group_item_label: "City"
+  }
+
+  dimension: asset__location__country_or_region {
+    type: string
+    sql: asset.location.country_or_region ;;
+    group_label: "Asset Location"
+    group_item_label: "Country or Region"
+  }
+
+  dimension: asset__location__desk_name {
+    type: string
+    sql: asset.location.desk_name ;;
+    group_label: "Asset Location"
+    group_item_label: "Desk Name"
+  }
+
+  dimension: asset__location__floor_name {
+    type: string
+    sql: asset.location.floor_name ;;
+    group_label: "Asset Location"
+    group_item_label: "Floor Name"
+  }
+
+  dimension: asset__location__name {
+    type: string
+    sql: asset.location.name ;;
+    group_label: "Asset Location"
+    group_item_label: "Name"
+  }
+
+  dimension: asset__location__state {
+    type: string
+    sql: asset.location.state ;;
+    group_label: "Asset Location"
+    group_item_label: "State"
+  }
+
+  dimension: asset__mac {
+    hidden: yes
+    sql: asset.mac ;;
+    group_label: "Asset"
+    group_item_label: "Mac"
+  }
+
+  dimension: asset__nat_ip {
+    hidden: yes
+    sql: asset.nat_ip ;;
+    group_label: "Asset"
+    group_item_label: "Nat IP"
+  }
+
+  dimension: asset__network_domain {
+    type: string
+    sql: asset.network_domain ;;
+    group_label: "Asset"
+    group_item_label: "Network Domain"
+  }
+
+  dimension: asset__platform_software__platform {
+    type: number
+    sql: asset.platform_software.platform ;;
+    group_label: "Asset Platform Software"
+    group_item_label: "Platform"
+  }
+
+  dimension: asset__platform_software__platform_patch_level {
+    type: string
+    sql: asset.platform_software.platform_patch_level ;;
+    group_label: "Asset Platform Software"
+    group_item_label: "Platform Patch Level"
+  }
+
+  dimension: asset__platform_software__platform_version {
+    type: string
+    sql: asset.platform_software.platform_version ;;
+    group_label: "Asset Platform Software"
+    group_item_label: "Platform Version"
+  }
+
+  dimension: asset__product_object_id {
+    type: string
+    sql: asset.product_object_id ;;
+    group_label: "Asset"
+    group_item_label: "Product Object ID"
+  }
+
+  dimension: asset__software {
+    hidden: yes
+    sql: asset.software ;;
+    group_label: "Asset"
+    group_item_label: "Software"
+  }
+
+  dimension: asset__system_last_update_time__nanos {
+    type: number
+    sql: asset.system_last_update_time.nanos ;;
+    group_label: "Asset System Last Update Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: asset__system_last_update_time__seconds {
+    type: number
+    sql: asset.system_last_update_time.seconds ;;
+    group_label: "Asset System Last Update Time"
+    group_item_label: "Seconds"
+  }
+
+  dimension: asset__type {
+    type: number
+    sql: asset.type ;;
+    group_label: "Asset"
+    group_item_label: "Type"
+  }
+
+  dimension: asset__vulnerabilities {
+    hidden: yes
+    sql: asset.vulnerabilities ;;
+    group_label: "Asset"
+    group_item_label: "Vulnerabilities"
+  }
+
+  dimension: asset_id {
+    type: string
+    sql: asset_id ;;
+  }
+
+  dimension: cloud__availability_zone {
+    type: string
+    sql: cloud.availability_zone ;;
+    group_label: "Cloud"
+    group_item_label: "Availability Zone"
+  }
+
+  dimension: cloud__environment {
+    type: number
+    sql: cloud.environment ;;
+    group_label: "Cloud"
+    group_item_label: "Environment"
+  }
+
+  dimension: cloud__project__attribute__creation_time__nanos {
+    type: number
+    sql: cloud.project.attribute.creation_time.nanos ;;
+    group_label: "Cloud Project Attribute Creation Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: cloud__project__attribute__creation_time__seconds {
+    type: number
+    sql: cloud.project.attribute.creation_time.seconds ;;
+    group_label: "Cloud Project Attribute Creation Time"
+    group_item_label: "Seconds"
+  }
+
+  dimension: cloud__project__attribute__labels {
+    hidden: yes
+    sql: cloud.project.attribute.labels ;;
+    group_label: "Cloud Project Attribute"
+    group_item_label: "Labels"
+  }
+
+  dimension: cloud__project__attribute__last_update_time__nanos {
+    type: number
+    sql: cloud.project.attribute.last_update_time.nanos ;;
+    group_label: "Cloud Project Attribute Last Update Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: cloud__project__attribute__last_update_time__seconds {
+    type: number
+    sql: cloud.project.attribute.last_update_time.seconds ;;
+    group_label: "Cloud Project Attribute Last Update Time"
+    group_item_label: "Seconds"
+  }
+
+  dimension: cloud__project__attribute__permissions {
+    hidden: yes
+    sql: cloud.project.attribute.permissions ;;
+    group_label: "Cloud Project Attribute"
+    group_item_label: "Permissions"
+  }
+
+  dimension: cloud__project__attribute__roles {
+    hidden: yes
+    sql: cloud.project.attribute.roles ;;
+    group_label: "Cloud Project Attribute"
+    group_item_label: "Roles"
+  }
+
+  dimension: cloud__project__id {
+    type: string
+    sql: cloud.project.id ;;
+    group_label: "Cloud Project"
+    group_item_label: "ID"
+  }
+
+  dimension: cloud__project__name {
+    type: string
+    sql: cloud.project.name ;;
+    group_label: "Cloud Project"
+    group_item_label: "Name"
+  }
+
+  dimension: cloud__project__parent {
+    type: string
+    sql: cloud.project.parent ;;
+    group_label: "Cloud Project"
+    group_item_label: "Parent"
+  }
+
+  dimension: cloud__project__product_object_id {
+    type: string
+    sql: cloud.project.product_object_id ;;
+    group_label: "Cloud Project"
+    group_item_label: "Product Object ID"
+  }
+
+  dimension: cloud__project__resource_subtype {
+    type: string
+    sql: cloud.project.resource_subtype ;;
+    group_label: "Cloud Project"
+    group_item_label: "Resource Subtype"
+  }
+
+  dimension: cloud__project__resource_type {
+    type: number
+    sql: cloud.project.resource_type ;;
+    group_label: "Cloud Project"
+    group_item_label: "Resource Type"
+  }
+
+  dimension: cloud__project__type {
+    type: string
+    sql: cloud.project.type ;;
+    group_label: "Cloud Project"
+    group_item_label: "Type"
+  }
+
+  dimension: cloud__vpc__attribute__creation_time__nanos {
+    type: number
+    sql: cloud.vpc.attribute.creation_time.nanos ;;
+    group_label: "Cloud Vpc Attribute Creation Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: cloud__vpc__attribute__creation_time__seconds {
+    type: number
+    sql: cloud.vpc.attribute.creation_time.seconds ;;
+    group_label: "Cloud Vpc Attribute Creation Time"
+    group_item_label: "Seconds"
+  }
+
+  dimension: cloud__vpc__attribute__labels {
+    hidden: yes
+    sql: cloud.vpc.attribute.labels ;;
+    group_label: "Cloud Vpc Attribute"
+    group_item_label: "Labels"
+  }
+
+  dimension: cloud__vpc__attribute__last_update_time__nanos {
+    type: number
+    sql: cloud.vpc.attribute.last_update_time.nanos ;;
+    group_label: "Cloud Vpc Attribute Last Update Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: cloud__vpc__attribute__last_update_time__seconds {
+    type: number
+    sql: cloud.vpc.attribute.last_update_time.seconds ;;
+    group_label: "Cloud Vpc Attribute Last Update Time"
+    group_item_label: "Seconds"
+  }
+
+  dimension: cloud__vpc__attribute__permissions {
+    hidden: yes
+    sql: cloud.vpc.attribute.permissions ;;
+    group_label: "Cloud Vpc Attribute"
+    group_item_label: "Permissions"
+  }
+
+  dimension: cloud__vpc__attribute__roles {
+    hidden: yes
+    sql: cloud.vpc.attribute.roles ;;
+    group_label: "Cloud Vpc Attribute"
+    group_item_label: "Roles"
+  }
+
+  dimension: cloud__vpc__id {
+    type: string
+    sql: cloud.vpc.id ;;
+    group_label: "Cloud Vpc"
+    group_item_label: "ID"
+  }
+
+  dimension: cloud__vpc__name {
+    type: string
+    sql: cloud.vpc.name ;;
+    group_label: "Cloud Vpc"
+    group_item_label: "Name"
+  }
+
+  dimension: cloud__vpc__parent {
+    type: string
+    sql: cloud.vpc.parent ;;
+    group_label: "Cloud Vpc"
+    group_item_label: "Parent"
+  }
+
+  dimension: cloud__vpc__product_object_id {
+    type: string
+    sql: cloud.vpc.product_object_id ;;
+    group_label: "Cloud Vpc"
+    group_item_label: "Product Object ID"
+  }
+
+  dimension: cloud__vpc__resource_subtype {
+    type: string
+    sql: cloud.vpc.resource_subtype ;;
+    group_label: "Cloud Vpc"
+    group_item_label: "Resource Subtype"
+  }
+
+  dimension: cloud__vpc__resource_type {
+    type: number
+    sql: cloud.vpc.resource_type ;;
+    group_label: "Cloud Vpc"
+    group_item_label: "Resource Type"
+  }
+
+  dimension: cloud__vpc__type {
+    type: string
+    sql: cloud.vpc.type ;;
+    group_label: "Cloud Vpc"
+    group_item_label: "Type"
+  }
+
+  dimension: email {
+    type: string
+    sql: email ;;
+  }
+
+  dimension: file__file_metadata__pe__import_hash {
+    type: string
+    sql: file.file_metadata.pe.import_hash ;;
+    group_label: "File File Metadata Pe"
+    group_item_label: "Import Hash"
+  }
+
+  dimension: file__full_path {
+    type: string
+    sql: file.full_path ;;
+    group_label: "File"
+    group_item_label: "Full Path"
+  }
+
+  dimension: file__md5 {
+    type: string
+    sql: file.md5 ;;
+    group_label: "File"
+    group_item_label: "Md5"
+  }
+
+  dimension: file__mime_type {
+    type: string
+    sql: file.mime_type ;;
+    group_label: "File"
+    group_item_label: "Mime Type"
+  }
+
+  dimension: file__sha1 {
+    type: string
+    sql: file.sha1 ;;
+    group_label: "File"
+    group_item_label: "Sha1"
+  }
+
+  dimension: file__sha256 {
+    type: string
+    sql: file.sha256 ;;
+    group_label: "File"
+    group_item_label: "Sha256"
+  }
+
+  dimension: file__size {
+    type: number
+    sql: file.size ;;
+    group_label: "File"
+    group_item_label: "Size"
+  }
+
+  dimension: group__attribute__cloud__availability_zone {
+    type: string
+    sql: `group`.attribute.cloud.availability_zone
+      ;;
+    group_label: "Group Attribute Cloud"
+    group_item_label: "Availability Zone"
+  }
+
+  dimension: group__attribute__cloud__environment {
+    type: number
+    sql: `group`.attribute.cloud.environment
+      ;;
+    group_label: "Group Attribute Cloud"
+    group_item_label: "Environment"
+  }
+
+  dimension: group__attribute__cloud__project__id {
+    type: string
+    sql: `group`.attribute.cloud.project.id
+      ;;
+    group_label: "Group Attribute Cloud Project"
+    group_item_label: "ID"
+  }
+
+  dimension: group__attribute__cloud__project__name {
+    type: string
+    sql: `group`.attribute.cloud.project.name
+      ;;
+    group_label: "Group Attribute Cloud Project"
+    group_item_label: "Name"
+  }
+
+  dimension: group__attribute__cloud__project__parent {
+    type: string
+    sql: `group`.attribute.cloud.project.parent
+      ;;
+    group_label: "Group Attribute Cloud Project"
+    group_item_label: "Parent"
+  }
+
+  dimension: group__attribute__cloud__project__product_object_id {
+    type: string
+    sql: `group`.attribute.cloud.project.product_object_id
+      ;;
+    group_label: "Group Attribute Cloud Project"
+    group_item_label: "Product Object ID"
+  }
+
+  dimension: group__attribute__cloud__project__resource_subtype {
+    type: string
+    sql: `group`.attribute.cloud.project.resource_subtype
+      ;;
+    group_label: "Group Attribute Cloud Project"
+    group_item_label: "Resource Subtype"
+  }
+
+  dimension: group__attribute__cloud__project__resource_type {
+    type: number
+    sql: `group`.attribute.cloud.project.resource_type
+      ;;
+    group_label: "Group Attribute Cloud Project"
+    group_item_label: "Resource Type"
+  }
+
+  dimension: group__attribute__cloud__project__type {
+    type: string
+    sql: `group`.attribute.cloud.project.type
+      ;;
+    group_label: "Group Attribute Cloud Project"
+    group_item_label: "Type"
+  }
+
+  dimension: group__attribute__cloud__vpc__id {
+    type: string
+    sql: `group`.attribute.cloud.vpc.id
+      ;;
+    group_label: "Group Attribute Cloud Vpc"
+    group_item_label: "ID"
+  }
+
+  dimension: group__attribute__cloud__vpc__name {
+    type: string
+    sql: `group`.attribute.cloud.vpc.name
+      ;;
+    group_label: "Group Attribute Cloud Vpc"
+    group_item_label: "Name"
+  }
+
+  dimension: group__attribute__cloud__vpc__parent {
+    type: string
+    sql: `group`.attribute.cloud.vpc.parent
+      ;;
+    group_label: "Group Attribute Cloud Vpc"
+    group_item_label: "Parent"
+  }
+
+  dimension: group__attribute__cloud__vpc__product_object_id {
+    type: string
+    sql: `group`.attribute.cloud.vpc.product_object_id
+      ;;
+    group_label: "Group Attribute Cloud Vpc"
+    group_item_label: "Product Object ID"
+  }
+
+  dimension: group__attribute__cloud__vpc__resource_subtype {
+    type: string
+    sql: `group`.attribute.cloud.vpc.resource_subtype
+      ;;
+    group_label: "Group Attribute Cloud Vpc"
+    group_item_label: "Resource Subtype"
+  }
+
+  dimension: group__attribute__cloud__vpc__resource_type {
+    type: number
+    sql: `group`.attribute.cloud.vpc.resource_type
+      ;;
+    group_label: "Group Attribute Cloud Vpc"
+    group_item_label: "Resource Type"
+  }
+
+  dimension: group__attribute__cloud__vpc__type {
+    type: string
+    sql: `group`.attribute.cloud.vpc.type
+      ;;
+    group_label: "Group Attribute Cloud Vpc"
+    group_item_label: "Type"
+  }
+
+  dimension: group__attribute__creation_time__nanos {
+    type: number
+    sql: `group`.attribute.creation_time.nanos
+      ;;
+    group_label: "Group Attribute Creation Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: group__attribute__creation_time__seconds {
+    type: number
+    sql: `group`.attribute.creation_time.seconds
+      ;;
+    group_label: "Group Attribute Creation Time"
+    group_item_label: "Seconds"
+  }
+
+  dimension: group__attribute__labels {
+    hidden: yes
+    sql: group.attribute.labels ;;
+    group_label: "Group Attribute"
+    group_item_label: "Labels"
+  }
+
+  dimension: group__attribute__last_update_time__nanos {
+    type: number
+    sql: `group`.attribute.last_update_time.nanos
+      ;;
+    group_label: "Group Attribute Last Update Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: group__attribute__last_update_time__seconds {
+    type: number
+    sql: `group`.attribute.last_update_time.seconds
+      ;;
+    group_label: "Group Attribute Last Update Time"
+    group_item_label: "Seconds"
+  }
+
+  dimension: group__attribute__permissions {
+    hidden: yes
+    sql: group.attribute.permissions ;;
+    group_label: "Group Attribute"
+    group_item_label: "Permissions"
+  }
+
+  dimension: group__attribute__roles {
+    hidden: yes
+    sql: group.attribute.roles ;;
+    group_label: "Group Attribute"
+    group_item_label: "Roles"
+  }
+
+  dimension: group__creation_time__nanos {
+    type: number
+    sql: `group`.creation_time.nanos
+      ;;
+    group_label: "Group Creation Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: group__creation_time__seconds {
+    type: number
+    sql: `group`.creation_time.seconds
+      ;;
+    group_label: "Group Creation Time"
+    group_item_label: "Seconds"
+  }
+
+  dimension: group__email_addresses {
+    hidden: yes
+    sql: group.email_addresses ;;
+    group_label: "Group"
+    group_item_label: "Email Addresses"
+  }
+
+  dimension: group__group_display_name {
+    type: string
+    sql: `group`.group_display_name
+      ;;
+    group_label: "Group"
+    group_item_label: "Group Display Name"
+  }
+
+  dimension: group__product_object_id {
+    type: string
+    sql: `group`.product_object_id
+      ;;
+    group_label: "Group"
+    group_item_label: "Product Object ID"
+  }
+
+  dimension: group__windows_sid {
+    type: string
+    sql: `group`.windows_sid
+      ;;
+    group_label: "Group"
+    group_item_label: "Windows Sid"
+  }
+
+  dimension: hostname {
+    type: string
+    sql: hostname ;;
+  }
+
+  dimension: investigation__comments {
+    hidden: yes
+    sql: investigation.comments ;;
+    group_label: "Investigation"
+    group_item_label: "Comments"
+  }
+
+  dimension: investigation__reputation {
+    type: number
+    sql: investigation.reputation ;;
+    group_label: "Investigation"
+    group_item_label: "Reputation"
+  }
+
+  dimension: investigation__severity_score {
+    type: number
+    sql: investigation.severity_score ;;
+    group_label: "Investigation"
+    group_item_label: "Severity Score"
+  }
+
+  dimension: investigation__status {
+    type: number
+    sql: investigation.status ;;
+    group_label: "Investigation"
+    group_item_label: "Status"
+  }
+
+  dimension: investigation__verdict {
+    type: number
+    sql: investigation.verdict ;;
+    group_label: "Investigation"
+    group_item_label: "Verdict"
+  }
+
+  dimension: ip {
+    hidden: yes
+    sql: ip ;;
+  }
+
+  dimension: labels {
+    hidden: yes
+    sql: labels ;;
+  }
+
+  dimension: location__city {
+    type: string
+    sql: location.city ;;
+    group_label: "Location"
+    group_item_label: "City"
+  }
+
+  dimension: location__country_or_region {
+    type: string
+    sql: location.country_or_region ;;
+    group_label: "Location"
+    group_item_label: "Country or Region"
+  }
+
+  dimension: location__desk_name {
+    type: string
+    sql: location.desk_name ;;
+    group_label: "Location"
+    group_item_label: "Desk Name"
+  }
+
+  dimension: location__floor_name {
+    type: string
+    sql: location.floor_name ;;
+    group_label: "Location"
+    group_item_label: "Floor Name"
+  }
+
+  dimension: location__name {
+    type: string
+    sql: location.name ;;
+    group_label: "Location"
+    group_item_label: "Name"
+  }
+
+  dimension: location__state {
+    type: string
+    sql: location.state ;;
+    group_label: "Location"
+    group_item_label: "State"
+  }
+
+  dimension: mac {
+    hidden: yes
+    sql: mac ;;
+  }
+
+  dimension: namespace {
+    type: string
+    sql: namespace ;;
+  }
+
+  dimension: nat_ip {
+    hidden: yes
+    sql: nat_ip ;;
+  }
+
+  dimension: nat_port {
+    type: number
+    sql: nat_port ;;
+  }
+
+  dimension: object_reference__id {
+    type: string
+    sql: object_reference.id ;;
+    group_label: "Object Reference"
+    group_item_label: "ID"
+  }
+
+  dimension: object_reference__namespace {
+    type: number
+    sql: object_reference.namespace ;;
+    group_label: "Object Reference"
+    group_item_label: "Namespace"
+  }
+
+  dimension: platform {
+    type: number
+    sql: platform ;;
+  }
+
+  dimension: platform_patch_level {
+    type: string
+    sql: platform_patch_level ;;
+  }
+
+  dimension: platform_version {
+    type: string
+    sql: platform_version ;;
+  }
+
+  dimension: port {
+    type: number
+    sql: port ;;
+  }
+
+  dimension: process__access_mask {
+    type: number
+    sql: process.access_mask ;;
+    group_label: "Process"
+    group_item_label: "Access Mask"
+  }
+
+  dimension: process__command_line {
+    type: string
+    sql: process.command_line ;;
+    group_label: "Process"
+    group_item_label: "Command Line"
+  }
+
+  dimension: process__command_line_history {
+    hidden: yes
+    sql: process.command_line_history ;;
+    group_label: "Process"
+    group_item_label: "Command Line History"
+  }
+
+  dimension: process__file__file_metadata__pe__import_hash {
+    type: string
+    sql: process.file.file_metadata.pe.import_hash ;;
+    group_label: "Process File File Metadata Pe"
+    group_item_label: "Import Hash"
+  }
+
+  dimension: process__file__full_path {
+    type: string
+    sql: process.file.full_path ;;
+    group_label: "Process File"
+    group_item_label: "Full Path"
+  }
+
+  dimension: process__file__md5 {
+    type: string
+    sql: process.file.md5 ;;
+    group_label: "Process File"
+    group_item_label: "Md5"
+  }
+
+  dimension: process__file__mime_type {
+    type: string
+    sql: process.file.mime_type ;;
+    group_label: "Process File"
+    group_item_label: "Mime Type"
+  }
+
+  dimension: process__file__sha1 {
+    type: string
+    sql: process.file.sha1 ;;
+    group_label: "Process File"
+    group_item_label: "Sha1"
+  }
+
+  dimension: process__file__sha256 {
+    type: string
+    sql: process.file.sha256 ;;
+    group_label: "Process File"
+    group_item_label: "Sha256"
+  }
+
+  dimension: process__file__size {
+    type: number
+    sql: process.file.size ;;
+    group_label: "Process File"
+    group_item_label: "Size"
+  }
+
+  dimension: process__parent_pid {
+    type: string
+    sql: process.parent_pid ;;
+    group_label: "Process"
+    group_item_label: "Parent Pid"
+  }
+
+  dimension: process__pid {
+    type: string
+    sql: process.pid ;;
+    group_label: "Process"
+    group_item_label: "Pid"
+  }
+
+  dimension: process__product_specific_parent_process_id {
+    type: string
+    sql: process.product_specific_parent_process_id ;;
+    group_label: "Process"
+    group_item_label: "Product Specific Parent Process ID"
+  }
+
+  dimension: process__product_specific_process_id {
+    type: string
+    sql: process.product_specific_process_id ;;
+    group_label: "Process"
+    group_item_label: "Product Specific Process ID"
+  }
+
+  dimension: process_ancestors {
+    hidden: yes
+    sql: process_ancestors ;;
+  }
+
+  dimension: registry__registry_key {
+    type: string
+    sql: registry.registry_key ;;
+    group_label: "Registry"
+    group_item_label: "Registry Key"
+  }
+
+  dimension: registry__registry_value_data {
+    type: string
+    sql: registry.registry_value_data ;;
+    group_label: "Registry"
+    group_item_label: "Registry Value Data"
+  }
+
+  dimension: registry__registry_value_name {
+    type: string
+    sql: registry.registry_value_name ;;
+    group_label: "Registry"
+    group_item_label: "Registry Value Name"
+  }
+
+  dimension: resource__attribute__cloud__availability_zone {
+    type: string
+    sql: resource.attribute.cloud.availability_zone ;;
+    group_label: "Resource Attribute Cloud"
+    group_item_label: "Availability Zone"
+  }
+
+  dimension: resource__attribute__cloud__environment {
+    type: number
+    sql: resource.attribute.cloud.environment ;;
+    group_label: "Resource Attribute Cloud"
+    group_item_label: "Environment"
+  }
+
+  dimension: resource__attribute__creation_time__nanos {
+    type: number
+    sql: resource.attribute.creation_time.nanos ;;
+    group_label: "Resource Attribute Creation Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: resource__attribute__creation_time__seconds {
+    type: number
+    sql: resource.attribute.creation_time.seconds ;;
+    group_label: "Resource Attribute Creation Time"
+    group_item_label: "Seconds"
+  }
+
+  dimension: resource__attribute__labels {
+    hidden: yes
+    sql: resource.attribute.labels ;;
+    group_label: "Resource Attribute"
+    group_item_label: "Labels"
+  }
+
+  dimension: resource__attribute__last_update_time__nanos {
+    type: number
+    sql: resource.attribute.last_update_time.nanos ;;
+    group_label: "Resource Attribute Last Update Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: resource__attribute__last_update_time__seconds {
+    type: number
+    sql: resource.attribute.last_update_time.seconds ;;
+    group_label: "Resource Attribute Last Update Time"
+    group_item_label: "Seconds"
+  }
+
+  dimension: resource__attribute__permissions {
+    hidden: yes
+    sql: resource.attribute.permissions ;;
+    group_label: "Resource Attribute"
+    group_item_label: "Permissions"
+  }
+
+  dimension: resource__attribute__roles {
+    hidden: yes
+    sql: resource.attribute.roles ;;
+    group_label: "Resource Attribute"
+    group_item_label: "Roles"
+  }
+
+  dimension: resource__id {
+    type: string
+    sql: resource.id ;;
+    group_label: "Resource"
+    group_item_label: "ID"
+  }
+
+  dimension: resource__name {
+    type: string
+    sql: resource.name ;;
+    group_label: "Resource"
+    group_item_label: "Name"
+  }
+
+  dimension: resource__parent {
+    type: string
+    sql: resource.parent ;;
+    group_label: "Resource"
+    group_item_label: "Parent"
+  }
+
+  dimension: resource__product_object_id {
+    type: string
+    sql: resource.product_object_id ;;
+    group_label: "Resource"
+    group_item_label: "Product Object ID"
+  }
+
+  dimension: resource__resource_subtype {
+    type: string
+    sql: resource.resource_subtype ;;
+    group_label: "Resource"
+    group_item_label: "Resource Subtype"
+  }
+
+  dimension: resource__resource_type {
+    type: number
+    sql: resource.resource_type ;;
+    group_label: "Resource"
+    group_item_label: "Resource Type"
+  }
+
+  dimension: resource__type {
+    type: string
+    sql: resource.type ;;
+    group_label: "Resource"
+    group_item_label: "Type"
+  }
+
+  dimension: udm_events__about {
+    type: string
+    hidden: yes
+    sql: udm_events__about ;;
+  }
+
+  dimension: url {
+    type: string
+    sql: url ;;
+  }
+
+  dimension: user__attribute__cloud__availability_zone {
+    type: string
+    sql: user.attribute.cloud.availability_zone ;;
+    group_label: "User Attribute Cloud"
+    group_item_label: "Availability Zone"
+  }
+
+  dimension: user__attribute__cloud__environment {
+    type: number
+    sql: user.attribute.cloud.environment ;;
+    group_label: "User Attribute Cloud"
+    group_item_label: "Environment"
+  }
+
+  dimension: user__attribute__cloud__project__id {
+    type: string
+    sql: user.attribute.cloud.project.id ;;
+    group_label: "User Attribute Cloud Project"
+    group_item_label: "ID"
+  }
+
+  dimension: user__attribute__cloud__project__name {
+    type: string
+    sql: user.attribute.cloud.project.name ;;
+    group_label: "User Attribute Cloud Project"
+    group_item_label: "Name"
+  }
+
+  dimension: user__attribute__cloud__project__parent {
+    type: string
+    sql: user.attribute.cloud.project.parent ;;
+    group_label: "User Attribute Cloud Project"
+    group_item_label: "Parent"
+  }
+
+  dimension: user__attribute__cloud__project__product_object_id {
+    type: string
+    sql: user.attribute.cloud.project.product_object_id ;;
+    group_label: "User Attribute Cloud Project"
+    group_item_label: "Product Object ID"
+  }
+
+  dimension: user__attribute__cloud__project__resource_subtype {
+    type: string
+    sql: user.attribute.cloud.project.resource_subtype ;;
+    group_label: "User Attribute Cloud Project"
+    group_item_label: "Resource Subtype"
+  }
+
+  dimension: user__attribute__cloud__project__resource_type {
+    type: number
+    sql: user.attribute.cloud.project.resource_type ;;
+    group_label: "User Attribute Cloud Project"
+    group_item_label: "Resource Type"
+  }
+
+  dimension: user__attribute__cloud__project__type {
+    type: string
+    sql: user.attribute.cloud.project.type ;;
+    group_label: "User Attribute Cloud Project"
+    group_item_label: "Type"
+  }
+
+  dimension: user__attribute__cloud__vpc__id {
+    type: string
+    sql: user.attribute.cloud.vpc.id ;;
+    group_label: "User Attribute Cloud Vpc"
+    group_item_label: "ID"
+  }
+
+  dimension: user__attribute__cloud__vpc__name {
+    type: string
+    sql: user.attribute.cloud.vpc.name ;;
+    group_label: "User Attribute Cloud Vpc"
+    group_item_label: "Name"
+  }
+
+  dimension: user__attribute__cloud__vpc__parent {
+    type: string
+    sql: user.attribute.cloud.vpc.parent ;;
+    group_label: "User Attribute Cloud Vpc"
+    group_item_label: "Parent"
+  }
+
+  dimension: user__attribute__cloud__vpc__product_object_id {
+    type: string
+    sql: user.attribute.cloud.vpc.product_object_id ;;
+    group_label: "User Attribute Cloud Vpc"
+    group_item_label: "Product Object ID"
+  }
+
+  dimension: user__attribute__cloud__vpc__resource_subtype {
+    type: string
+    sql: user.attribute.cloud.vpc.resource_subtype ;;
+    group_label: "User Attribute Cloud Vpc"
+    group_item_label: "Resource Subtype"
+  }
+
+  dimension: user__attribute__cloud__vpc__resource_type {
+    type: number
+    sql: user.attribute.cloud.vpc.resource_type ;;
+    group_label: "User Attribute Cloud Vpc"
+    group_item_label: "Resource Type"
+  }
+
+  dimension: user__attribute__cloud__vpc__type {
+    type: string
+    sql: user.attribute.cloud.vpc.type ;;
+    group_label: "User Attribute Cloud Vpc"
+    group_item_label: "Type"
+  }
+
+  dimension: user__attribute__creation_time__nanos {
+    type: number
+    sql: user.attribute.creation_time.nanos ;;
+    group_label: "User Attribute Creation Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: user__attribute__creation_time__seconds {
+    type: number
+    sql: user.attribute.creation_time.seconds ;;
+    group_label: "User Attribute Creation Time"
+    group_item_label: "Seconds"
+  }
+
+  dimension: user__attribute__labels {
+    hidden: yes
+    sql: user.attribute.labels ;;
+    group_label: "User Attribute"
+    group_item_label: "Labels"
+  }
+
+  dimension: user__attribute__last_update_time__nanos {
+    type: number
+    sql: user.attribute.last_update_time.nanos ;;
+    group_label: "User Attribute Last Update Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: user__attribute__last_update_time__seconds {
+    type: number
+    sql: user.attribute.last_update_time.seconds ;;
+    group_label: "User Attribute Last Update Time"
+    group_item_label: "Seconds"
+  }
+
+  dimension: user__attribute__permissions {
+    hidden: yes
+    sql: user.attribute.permissions ;;
+    group_label: "User Attribute"
+    group_item_label: "Permissions"
+  }
+
+  dimension: user__attribute__roles {
+    hidden: yes
+    sql: user.attribute.roles ;;
+    group_label: "User Attribute"
+    group_item_label: "Roles"
+  }
+
+  dimension: user__company_name {
+    type: string
+    sql: user.company_name ;;
+    group_label: "User"
+    group_item_label: "Company Name"
+  }
+
+  dimension: user__department {
+    hidden: yes
+    sql: user.department ;;
+    group_label: "User"
+    group_item_label: "Department"
+  }
+
+  dimension: user__email_addresses {
+    hidden: yes
+    sql: user.email_addresses ;;
+    group_label: "User"
+    group_item_label: "Email Addresses"
+  }
+
+  dimension: user__employee_id {
+    type: string
+    sql: user.employee_id ;;
+    group_label: "User"
+    group_item_label: "Employee ID"
+  }
+
+  dimension: user__first_name {
+    type: string
+    sql: user.first_name ;;
+    group_label: "User"
+    group_item_label: "First Name"
+  }
+
+  dimension: user__group_identifiers {
+    hidden: yes
+    sql: user.group_identifiers ;;
+    group_label: "User"
+    group_item_label: "Group Identifiers"
+  }
+
+  dimension: user__groupid {
+    type: string
+    sql: user.groupid ;;
+    group_label: "User"
+    group_item_label: "Groupid"
+  }
+
+  dimension: user__hire_date__nanos {
+    type: number
+    sql: user.hire_date.nanos ;;
+    group_label: "User Hire Date"
+    group_item_label: "Nanos"
+  }
+
+  dimension: user__hire_date__seconds {
+    type: number
+    sql: user.hire_date.seconds ;;
+    group_label: "User Hire Date"
+    group_item_label: "Seconds"
+  }
+
+  dimension: user__last_name {
+    type: string
+    sql: user.last_name ;;
+    group_label: "User"
+    group_item_label: "Last Name"
+  }
+
+  dimension: user__middle_name {
+    type: string
+    sql: user.middle_name ;;
+    group_label: "User"
+    group_item_label: "Middle Name"
+  }
+
+  dimension: user__office_address__city {
+    type: string
+    sql: user.office_address.city ;;
+    group_label: "User Office Address"
+    group_item_label: "City"
+  }
+
+  dimension: user__office_address__country_or_region {
+    type: string
+    sql: user.office_address.country_or_region ;;
+    group_label: "User Office Address"
+    group_item_label: "Country or Region"
+  }
+
+  dimension: user__office_address__desk_name {
+    type: string
+    sql: user.office_address.desk_name ;;
+    group_label: "User Office Address"
+    group_item_label: "Desk Name"
+  }
+
+  dimension: user__office_address__floor_name {
+    type: string
+    sql: user.office_address.floor_name ;;
+    group_label: "User Office Address"
+    group_item_label: "Floor Name"
+  }
+
+  dimension: user__office_address__name {
+    type: string
+    sql: user.office_address.name ;;
+    group_label: "User Office Address"
+    group_item_label: "Name"
+  }
+
+  dimension: user__office_address__state {
+    type: string
+    sql: user.office_address.state ;;
+    group_label: "User Office Address"
+    group_item_label: "State"
+  }
+
+  dimension: user__personal_address__city {
+    type: string
+    sql: user.personal_address.city ;;
+    group_label: "User Personal Address"
+    group_item_label: "City"
+  }
+
+  dimension: user__personal_address__country_or_region {
+    type: string
+    sql: user.personal_address.country_or_region ;;
+    group_label: "User Personal Address"
+    group_item_label: "Country or Region"
+  }
+
+  dimension: user__personal_address__desk_name {
+    type: string
+    sql: user.personal_address.desk_name ;;
+    group_label: "User Personal Address"
+    group_item_label: "Desk Name"
+  }
+
+  dimension: user__personal_address__floor_name {
+    type: string
+    sql: user.personal_address.floor_name ;;
+    group_label: "User Personal Address"
+    group_item_label: "Floor Name"
+  }
+
+  dimension: user__personal_address__name {
+    type: string
+    sql: user.personal_address.name ;;
+    group_label: "User Personal Address"
+    group_item_label: "Name"
+  }
+
+  dimension: user__personal_address__state {
+    type: string
+    sql: user.personal_address.state ;;
+    group_label: "User Personal Address"
+    group_item_label: "State"
+  }
+
+  dimension: user__phone_numbers {
+    hidden: yes
+    sql: user.phone_numbers ;;
+    group_label: "User"
+    group_item_label: "Phone Numbers"
+  }
+
+  dimension: user__product_object_id {
+    type: string
+    sql: user.product_object_id ;;
+    group_label: "User"
+    group_item_label: "Product Object ID"
+  }
+
+  dimension: user__role_description {
+    type: string
+    sql: user.role_description ;;
+    group_label: "User"
+    group_item_label: "Role Description"
+  }
+
+  dimension: user__role_name {
+    type: string
+    sql: user.role_name ;;
+    group_label: "User"
+    group_item_label: "Role Name"
+  }
+
+  dimension: user__termination_date__nanos {
+    type: number
+    sql: user.termination_date.nanos ;;
+    group_label: "User Termination Date"
+    group_item_label: "Nanos"
+  }
+
+  dimension: user__termination_date__seconds {
+    type: number
+    sql: user.termination_date.seconds ;;
+    group_label: "User Termination Date"
+    group_item_label: "Seconds"
+  }
+
+  dimension: user__time_off {
+    hidden: yes
+    sql: user.time_off ;;
+    group_label: "User"
+    group_item_label: "Time Off"
+  }
+
+  dimension: user__title {
+    type: string
+    sql: user.title ;;
+    group_label: "User"
+    group_item_label: "Title"
+  }
+
+  dimension: user__user_authentication_status {
+    type: number
+    sql: user.user_authentication_status ;;
+    group_label: "User"
+    group_item_label: "User Authentication Status"
+  }
+
+  dimension: user__user_display_name {
+    type: string
+    sql: user.user_display_name ;;
+    group_label: "User"
+    group_item_label: "User Display Name"
+  }
+
+  dimension: user__user_role {
+    type: number
+    sql: user.user_role ;;
+    group_label: "User"
+    group_item_label: "User Role"
+  }
+
+  dimension: user__userid {
+    type: string
+    sql: user.userid ;;
+    group_label: "User"
+    group_item_label: "Userid"
+  }
+
+  dimension: user__windows_sid {
+    type: string
+    sql: user.windows_sid ;;
+    group_label: "User"
+    group_item_label: "Windows Sid"
+  }
+
+  dimension: user_management_chain {
+    hidden: yes
+    sql: user_management_chain ;;
   }
 }
 
@@ -7608,1621 +9541,6 @@ view: udm_events__about__mac {
   dimension: udm_events__about__mac {
     type: string
     sql: udm_events__about__mac ;;
-  }
-}
-
-view: udm_events__about {
-  dimension: administrative_domain {
-    type: string
-    sql: ${TABLE}.administrative_domain ;;
-  }
-
-  dimension: application {
-    type: string
-    sql: ${TABLE}.application ;;
-  }
-
-  dimension: asset__asset_id {
-    type: string
-    sql: ${TABLE}.asset.asset_id ;;
-    group_label: "Asset"
-    group_item_label: "Asset ID"
-  }
-
-  dimension: asset__attribute__cloud__availability_zone {
-    type: string
-    sql: ${TABLE}.asset.attribute.cloud.availability_zone ;;
-    group_label: "Asset Attribute Cloud"
-    group_item_label: "Availability Zone"
-  }
-
-  dimension: asset__attribute__cloud__environment {
-    type: number
-    sql: ${TABLE}.asset.attribute.cloud.environment ;;
-    group_label: "Asset Attribute Cloud"
-    group_item_label: "Environment"
-  }
-
-  dimension: asset__attribute__cloud__project__id {
-    type: string
-    sql: ${TABLE}.asset.attribute.cloud.project.id ;;
-    group_label: "Asset Attribute Cloud Project"
-    group_item_label: "ID"
-  }
-
-  dimension: asset__attribute__cloud__project__name {
-    type: string
-    sql: ${TABLE}.asset.attribute.cloud.project.name ;;
-    group_label: "Asset Attribute Cloud Project"
-    group_item_label: "Name"
-  }
-
-  dimension: asset__attribute__cloud__project__parent {
-    type: string
-    sql: ${TABLE}.asset.attribute.cloud.project.parent ;;
-    group_label: "Asset Attribute Cloud Project"
-    group_item_label: "Parent"
-  }
-
-  dimension: asset__attribute__cloud__project__product_object_id {
-    type: string
-    sql: ${TABLE}.asset.attribute.cloud.project.product_object_id ;;
-    group_label: "Asset Attribute Cloud Project"
-    group_item_label: "Product Object ID"
-  }
-
-  dimension: asset__attribute__cloud__project__resource_subtype {
-    type: string
-    sql: ${TABLE}.asset.attribute.cloud.project.resource_subtype ;;
-    group_label: "Asset Attribute Cloud Project"
-    group_item_label: "Resource Subtype"
-  }
-
-  dimension: asset__attribute__cloud__project__resource_type {
-    type: number
-    sql: ${TABLE}.asset.attribute.cloud.project.resource_type ;;
-    group_label: "Asset Attribute Cloud Project"
-    group_item_label: "Resource Type"
-  }
-
-  dimension: asset__attribute__cloud__project__type {
-    type: string
-    sql: ${TABLE}.asset.attribute.cloud.project.type ;;
-    group_label: "Asset Attribute Cloud Project"
-    group_item_label: "Type"
-  }
-
-  dimension: asset__attribute__cloud__vpc__id {
-    type: string
-    sql: ${TABLE}.asset.attribute.cloud.vpc.id ;;
-    group_label: "Asset Attribute Cloud Vpc"
-    group_item_label: "ID"
-  }
-
-  dimension: asset__attribute__cloud__vpc__name {
-    type: string
-    sql: ${TABLE}.asset.attribute.cloud.vpc.name ;;
-    group_label: "Asset Attribute Cloud Vpc"
-    group_item_label: "Name"
-  }
-
-  dimension: asset__attribute__cloud__vpc__parent {
-    type: string
-    sql: ${TABLE}.asset.attribute.cloud.vpc.parent ;;
-    group_label: "Asset Attribute Cloud Vpc"
-    group_item_label: "Parent"
-  }
-
-  dimension: asset__attribute__cloud__vpc__product_object_id {
-    type: string
-    sql: ${TABLE}.asset.attribute.cloud.vpc.product_object_id ;;
-    group_label: "Asset Attribute Cloud Vpc"
-    group_item_label: "Product Object ID"
-  }
-
-  dimension: asset__attribute__cloud__vpc__resource_subtype {
-    type: string
-    sql: ${TABLE}.asset.attribute.cloud.vpc.resource_subtype ;;
-    group_label: "Asset Attribute Cloud Vpc"
-    group_item_label: "Resource Subtype"
-  }
-
-  dimension: asset__attribute__cloud__vpc__resource_type {
-    type: number
-    sql: ${TABLE}.asset.attribute.cloud.vpc.resource_type ;;
-    group_label: "Asset Attribute Cloud Vpc"
-    group_item_label: "Resource Type"
-  }
-
-  dimension: asset__attribute__cloud__vpc__type {
-    type: string
-    sql: ${TABLE}.asset.attribute.cloud.vpc.type ;;
-    group_label: "Asset Attribute Cloud Vpc"
-    group_item_label: "Type"
-  }
-
-  dimension: asset__attribute__creation_time__nanos {
-    type: number
-    sql: ${TABLE}.asset.attribute.creation_time.nanos ;;
-    group_label: "Asset Attribute Creation Time"
-    group_item_label: "Nanos"
-  }
-
-  dimension: asset__attribute__creation_time__seconds {
-    type: number
-    sql: ${TABLE}.asset.attribute.creation_time.seconds ;;
-    group_label: "Asset Attribute Creation Time"
-    group_item_label: "Seconds"
-  }
-
-  dimension: asset__attribute__labels {
-    hidden: yes
-    sql: ${TABLE}.asset.attribute.labels ;;
-    group_label: "Asset Attribute"
-    group_item_label: "Labels"
-  }
-
-  dimension: asset__attribute__last_update_time__nanos {
-    type: number
-    sql: ${TABLE}.asset.attribute.last_update_time.nanos ;;
-    group_label: "Asset Attribute Last Update Time"
-    group_item_label: "Nanos"
-  }
-
-  dimension: asset__attribute__last_update_time__seconds {
-    type: number
-    sql: ${TABLE}.asset.attribute.last_update_time.seconds ;;
-    group_label: "Asset Attribute Last Update Time"
-    group_item_label: "Seconds"
-  }
-
-  dimension: asset__attribute__permissions {
-    hidden: yes
-    sql: ${TABLE}.asset.attribute.permissions ;;
-    group_label: "Asset Attribute"
-    group_item_label: "Permissions"
-  }
-
-  dimension: asset__attribute__roles {
-    hidden: yes
-    sql: ${TABLE}.asset.attribute.roles ;;
-    group_label: "Asset Attribute"
-    group_item_label: "Roles"
-  }
-
-  dimension: asset__category {
-    type: string
-    sql: ${TABLE}.asset.category ;;
-    group_label: "Asset"
-    group_item_label: "Category"
-  }
-
-  dimension: asset__creation_time__nanos {
-    type: number
-    sql: ${TABLE}.asset.creation_time.nanos ;;
-    group_label: "Asset Creation Time"
-    group_item_label: "Nanos"
-  }
-
-  dimension: asset__creation_time__seconds {
-    type: number
-    sql: ${TABLE}.asset.creation_time.seconds ;;
-    group_label: "Asset Creation Time"
-    group_item_label: "Seconds"
-  }
-
-  dimension: asset__deployment_status {
-    type: number
-    sql: ${TABLE}.asset.deployment_status ;;
-    group_label: "Asset"
-    group_item_label: "Deployment Status"
-  }
-
-  dimension: asset__first_discover_time__nanos {
-    type: number
-    sql: ${TABLE}.asset.first_discover_time.nanos ;;
-    group_label: "Asset First Discover Time"
-    group_item_label: "Nanos"
-  }
-
-  dimension: asset__first_discover_time__seconds {
-    type: number
-    sql: ${TABLE}.asset.first_discover_time.seconds ;;
-    group_label: "Asset First Discover Time"
-    group_item_label: "Seconds"
-  }
-
-  dimension: asset__hardware {
-    hidden: yes
-    sql: ${TABLE}.asset.hardware ;;
-    group_label: "Asset"
-    group_item_label: "Hardware"
-  }
-
-  dimension: asset__hostname {
-    type: string
-    sql: ${TABLE}.asset.hostname ;;
-    group_label: "Asset"
-    group_item_label: "Hostname"
-  }
-
-  dimension: asset__ip {
-    hidden: yes
-    sql: ${TABLE}.asset.ip ;;
-    group_label: "Asset"
-    group_item_label: "IP"
-  }
-
-  dimension: asset__labels {
-    hidden: yes
-    sql: ${TABLE}.asset.labels ;;
-    group_label: "Asset"
-    group_item_label: "Labels"
-  }
-
-  dimension: asset__last_boot_time__nanos {
-    type: number
-    sql: ${TABLE}.asset.last_boot_time.nanos ;;
-    group_label: "Asset Last Boot Time"
-    group_item_label: "Nanos"
-  }
-
-  dimension: asset__last_boot_time__seconds {
-    type: number
-    sql: ${TABLE}.asset.last_boot_time.seconds ;;
-    group_label: "Asset Last Boot Time"
-    group_item_label: "Seconds"
-  }
-
-  dimension: asset__last_discover_time__nanos {
-    type: number
-    sql: ${TABLE}.asset.last_discover_time.nanos ;;
-    group_label: "Asset Last Discover Time"
-    group_item_label: "Nanos"
-  }
-
-  dimension: asset__last_discover_time__seconds {
-    type: number
-    sql: ${TABLE}.asset.last_discover_time.seconds ;;
-    group_label: "Asset Last Discover Time"
-    group_item_label: "Seconds"
-  }
-
-  dimension: asset__location__city {
-    type: string
-    sql: ${TABLE}.asset.location.city ;;
-    group_label: "Asset Location"
-    group_item_label: "City"
-  }
-
-  dimension: asset__location__country_or_region {
-    type: string
-    sql: ${TABLE}.asset.location.country_or_region ;;
-    group_label: "Asset Location"
-    group_item_label: "Country or Region"
-  }
-
-  dimension: asset__location__name {
-    type: string
-    sql: ${TABLE}.asset.location.name ;;
-    group_label: "Asset Location"
-    group_item_label: "Name"
-  }
-
-  dimension: asset__location__state {
-    type: string
-    sql: ${TABLE}.asset.location.state ;;
-    group_label: "Asset Location"
-    group_item_label: "State"
-  }
-
-  dimension: asset__mac {
-    hidden: yes
-    sql: ${TABLE}.asset.mac ;;
-    group_label: "Asset"
-    group_item_label: "Mac"
-  }
-
-  dimension: asset__nat_ip {
-    hidden: yes
-    sql: ${TABLE}.asset.nat_ip ;;
-    group_label: "Asset"
-    group_item_label: "Nat IP"
-  }
-
-  dimension: asset__network_domain {
-    type: string
-    sql: ${TABLE}.asset.network_domain ;;
-    group_label: "Asset"
-    group_item_label: "Network Domain"
-  }
-
-  dimension: asset__platform_software__platform {
-    type: number
-    sql: ${TABLE}.asset.platform_software.platform ;;
-    group_label: "Asset Platform Software"
-    group_item_label: "Platform"
-  }
-
-  dimension: asset__platform_software__platform_patch_level {
-    type: string
-    sql: ${TABLE}.asset.platform_software.platform_patch_level ;;
-    group_label: "Asset Platform Software"
-    group_item_label: "Platform Patch Level"
-  }
-
-  dimension: asset__platform_software__platform_version {
-    type: string
-    sql: ${TABLE}.asset.platform_software.platform_version ;;
-    group_label: "Asset Platform Software"
-    group_item_label: "Platform Version"
-  }
-
-  dimension: asset__product_object_id {
-    type: string
-    sql: ${TABLE}.asset.product_object_id ;;
-    group_label: "Asset"
-    group_item_label: "Product Object ID"
-  }
-
-  dimension: asset__software {
-    hidden: yes
-    sql: ${TABLE}.asset.software ;;
-    group_label: "Asset"
-    group_item_label: "Software"
-  }
-
-  dimension: asset__system_last_update_time__nanos {
-    type: number
-    sql: ${TABLE}.asset.system_last_update_time.nanos ;;
-    group_label: "Asset System Last Update Time"
-    group_item_label: "Nanos"
-  }
-
-  dimension: asset__system_last_update_time__seconds {
-    type: number
-    sql: ${TABLE}.asset.system_last_update_time.seconds ;;
-    group_label: "Asset System Last Update Time"
-    group_item_label: "Seconds"
-  }
-
-  dimension: asset__type {
-    type: number
-    sql: ${TABLE}.asset.type ;;
-    group_label: "Asset"
-    group_item_label: "Type"
-  }
-
-  dimension: asset__vulnerabilities {
-    hidden: yes
-    sql: ${TABLE}.asset.vulnerabilities ;;
-    group_label: "Asset"
-    group_item_label: "Vulnerabilities"
-  }
-
-  dimension: asset_id {
-    type: string
-    sql: ${TABLE}.asset_id ;;
-  }
-
-  dimension: cloud__availability_zone {
-    type: string
-    sql: ${TABLE}.cloud.availability_zone ;;
-    group_label: "Cloud"
-    group_item_label: "Availability Zone"
-  }
-
-  dimension: cloud__environment {
-    type: number
-    sql: ${TABLE}.cloud.environment ;;
-    group_label: "Cloud"
-    group_item_label: "Environment"
-  }
-
-  dimension: cloud__project__attribute__creation_time__nanos {
-    type: number
-    sql: ${TABLE}.cloud.project.attribute.creation_time.nanos ;;
-    group_label: "Cloud Project Attribute Creation Time"
-    group_item_label: "Nanos"
-  }
-
-  dimension: cloud__project__attribute__creation_time__seconds {
-    type: number
-    sql: ${TABLE}.cloud.project.attribute.creation_time.seconds ;;
-    group_label: "Cloud Project Attribute Creation Time"
-    group_item_label: "Seconds"
-  }
-
-  dimension: cloud__project__attribute__labels {
-    hidden: yes
-    sql: ${TABLE}.cloud.project.attribute.labels ;;
-    group_label: "Cloud Project Attribute"
-    group_item_label: "Labels"
-  }
-
-  dimension: cloud__project__attribute__last_update_time__nanos {
-    type: number
-    sql: ${TABLE}.cloud.project.attribute.last_update_time.nanos ;;
-    group_label: "Cloud Project Attribute Last Update Time"
-    group_item_label: "Nanos"
-  }
-
-  dimension: cloud__project__attribute__last_update_time__seconds {
-    type: number
-    sql: ${TABLE}.cloud.project.attribute.last_update_time.seconds ;;
-    group_label: "Cloud Project Attribute Last Update Time"
-    group_item_label: "Seconds"
-  }
-
-  dimension: cloud__project__attribute__permissions {
-    hidden: yes
-    sql: ${TABLE}.cloud.project.attribute.permissions ;;
-    group_label: "Cloud Project Attribute"
-    group_item_label: "Permissions"
-  }
-
-  dimension: cloud__project__attribute__roles {
-    hidden: yes
-    sql: ${TABLE}.cloud.project.attribute.roles ;;
-    group_label: "Cloud Project Attribute"
-    group_item_label: "Roles"
-  }
-
-  dimension: cloud__project__id {
-    type: string
-    sql: ${TABLE}.cloud.project.id ;;
-    group_label: "Cloud Project"
-    group_item_label: "ID"
-  }
-
-  dimension: cloud__project__name {
-    type: string
-    sql: ${TABLE}.cloud.project.name ;;
-    group_label: "Cloud Project"
-    group_item_label: "Name"
-  }
-
-  dimension: cloud__project__parent {
-    type: string
-    sql: ${TABLE}.cloud.project.parent ;;
-    group_label: "Cloud Project"
-    group_item_label: "Parent"
-  }
-
-  dimension: cloud__project__product_object_id {
-    type: string
-    sql: ${TABLE}.cloud.project.product_object_id ;;
-    group_label: "Cloud Project"
-    group_item_label: "Product Object ID"
-  }
-
-  dimension: cloud__project__resource_subtype {
-    type: string
-    sql: ${TABLE}.cloud.project.resource_subtype ;;
-    group_label: "Cloud Project"
-    group_item_label: "Resource Subtype"
-  }
-
-  dimension: cloud__project__resource_type {
-    type: number
-    sql: ${TABLE}.cloud.project.resource_type ;;
-    group_label: "Cloud Project"
-    group_item_label: "Resource Type"
-  }
-
-  dimension: cloud__project__type {
-    type: string
-    sql: ${TABLE}.cloud.project.type ;;
-    group_label: "Cloud Project"
-    group_item_label: "Type"
-  }
-
-  dimension: cloud__vpc__attribute__creation_time__nanos {
-    type: number
-    sql: ${TABLE}.cloud.vpc.attribute.creation_time.nanos ;;
-    group_label: "Cloud Vpc Attribute Creation Time"
-    group_item_label: "Nanos"
-  }
-
-  dimension: cloud__vpc__attribute__creation_time__seconds {
-    type: number
-    sql: ${TABLE}.cloud.vpc.attribute.creation_time.seconds ;;
-    group_label: "Cloud Vpc Attribute Creation Time"
-    group_item_label: "Seconds"
-  }
-
-  dimension: cloud__vpc__attribute__labels {
-    hidden: yes
-    sql: ${TABLE}.cloud.vpc.attribute.labels ;;
-    group_label: "Cloud Vpc Attribute"
-    group_item_label: "Labels"
-  }
-
-  dimension: cloud__vpc__attribute__last_update_time__nanos {
-    type: number
-    sql: ${TABLE}.cloud.vpc.attribute.last_update_time.nanos ;;
-    group_label: "Cloud Vpc Attribute Last Update Time"
-    group_item_label: "Nanos"
-  }
-
-  dimension: cloud__vpc__attribute__last_update_time__seconds {
-    type: number
-    sql: ${TABLE}.cloud.vpc.attribute.last_update_time.seconds ;;
-    group_label: "Cloud Vpc Attribute Last Update Time"
-    group_item_label: "Seconds"
-  }
-
-  dimension: cloud__vpc__attribute__permissions {
-    hidden: yes
-    sql: ${TABLE}.cloud.vpc.attribute.permissions ;;
-    group_label: "Cloud Vpc Attribute"
-    group_item_label: "Permissions"
-  }
-
-  dimension: cloud__vpc__attribute__roles {
-    hidden: yes
-    sql: ${TABLE}.cloud.vpc.attribute.roles ;;
-    group_label: "Cloud Vpc Attribute"
-    group_item_label: "Roles"
-  }
-
-  dimension: cloud__vpc__id {
-    type: string
-    sql: ${TABLE}.cloud.vpc.id ;;
-    group_label: "Cloud Vpc"
-    group_item_label: "ID"
-  }
-
-  dimension: cloud__vpc__name {
-    type: string
-    sql: ${TABLE}.cloud.vpc.name ;;
-    group_label: "Cloud Vpc"
-    group_item_label: "Name"
-  }
-
-  dimension: cloud__vpc__parent {
-    type: string
-    sql: ${TABLE}.cloud.vpc.parent ;;
-    group_label: "Cloud Vpc"
-    group_item_label: "Parent"
-  }
-
-  dimension: cloud__vpc__product_object_id {
-    type: string
-    sql: ${TABLE}.cloud.vpc.product_object_id ;;
-    group_label: "Cloud Vpc"
-    group_item_label: "Product Object ID"
-  }
-
-  dimension: cloud__vpc__resource_subtype {
-    type: string
-    sql: ${TABLE}.cloud.vpc.resource_subtype ;;
-    group_label: "Cloud Vpc"
-    group_item_label: "Resource Subtype"
-  }
-
-  dimension: cloud__vpc__resource_type {
-    type: number
-    sql: ${TABLE}.cloud.vpc.resource_type ;;
-    group_label: "Cloud Vpc"
-    group_item_label: "Resource Type"
-  }
-
-  dimension: cloud__vpc__type {
-    type: string
-    sql: ${TABLE}.cloud.vpc.type ;;
-    group_label: "Cloud Vpc"
-    group_item_label: "Type"
-  }
-
-  dimension: email {
-    type: string
-    sql: ${TABLE}.email ;;
-  }
-
-  dimension: file__file_metadata__pe__import_hash {
-    type: string
-    sql: ${TABLE}.file.file_metadata.pe.import_hash ;;
-    group_label: "File File Metadata Pe"
-    group_item_label: "Import Hash"
-  }
-
-  dimension: file__full_path {
-    type: string
-    sql: ${TABLE}.file.full_path ;;
-    group_label: "File"
-    group_item_label: "Full Path"
-  }
-
-  dimension: file__md5 {
-    type: string
-    sql: ${TABLE}.file.md5 ;;
-    group_label: "File"
-    group_item_label: "Md5"
-  }
-
-  dimension: file__mime_type {
-    type: string
-    sql: ${TABLE}.file.mime_type ;;
-    group_label: "File"
-    group_item_label: "Mime Type"
-  }
-
-  dimension: file__sha1 {
-    type: string
-    sql: ${TABLE}.file.sha1 ;;
-    group_label: "File"
-    group_item_label: "Sha1"
-  }
-
-  dimension: file__sha256 {
-    type: string
-    sql: ${TABLE}.file.sha256 ;;
-    group_label: "File"
-    group_item_label: "Sha256"
-  }
-
-  dimension: file__size {
-    type: number
-    sql: ${TABLE}.file.size ;;
-    group_label: "File"
-    group_item_label: "Size"
-  }
-
-  dimension: group__attribute__cloud__availability_zone {
-    type: string
-    sql: ${TABLE}.`group`.attribute.cloud.availability_zone ;;
-    group_label: "Group Attribute Cloud"
-    group_item_label: "Availability Zone"
-  }
-
-  dimension: group__attribute__cloud__environment {
-    type: number
-    sql: ${TABLE}.`group`.attribute.cloud.environment ;;
-    group_label: "Group Attribute Cloud"
-    group_item_label: "Environment"
-  }
-
-  dimension: group__attribute__cloud__project__id {
-    type: string
-    sql: ${TABLE}.`group`.attribute.cloud.project.id ;;
-    group_label: "Group Attribute Cloud Project"
-    group_item_label: "ID"
-  }
-
-  dimension: group__attribute__cloud__project__name {
-    type: string
-    sql: ${TABLE}.`group`.attribute.cloud.project.name ;;
-    group_label: "Group Attribute Cloud Project"
-    group_item_label: "Name"
-  }
-
-  dimension: group__attribute__cloud__project__parent {
-    type: string
-    sql: ${TABLE}.`group`.attribute.cloud.project.parent ;;
-    group_label: "Group Attribute Cloud Project"
-    group_item_label: "Parent"
-  }
-
-  dimension: group__attribute__cloud__project__product_object_id {
-    type: string
-    sql: ${TABLE}.`group`.attribute.cloud.project.product_object_id ;;
-    group_label: "Group Attribute Cloud Project"
-    group_item_label: "Product Object ID"
-  }
-
-  dimension: group__attribute__cloud__project__resource_subtype {
-    type: string
-    sql: ${TABLE}.`group`.attribute.cloud.project.resource_subtype ;;
-    group_label: "Group Attribute Cloud Project"
-    group_item_label: "Resource Subtype"
-  }
-
-  dimension: group__attribute__cloud__project__resource_type {
-    type: number
-    sql: ${TABLE}.`group`.attribute.cloud.project.resource_type ;;
-    group_label: "Group Attribute Cloud Project"
-    group_item_label: "Resource Type"
-  }
-
-  dimension: group__attribute__cloud__project__type {
-    type: string
-    sql: ${TABLE}.`group`.attribute.cloud.project.type ;;
-    group_label: "Group Attribute Cloud Project"
-    group_item_label: "Type"
-  }
-
-  dimension: group__attribute__cloud__vpc__id {
-    type: string
-    sql: ${TABLE}.`group`.attribute.cloud.vpc.id ;;
-    group_label: "Group Attribute Cloud Vpc"
-    group_item_label: "ID"
-  }
-
-  dimension: group__attribute__cloud__vpc__name {
-    type: string
-    sql: ${TABLE}.`group`.attribute.cloud.vpc.name ;;
-    group_label: "Group Attribute Cloud Vpc"
-    group_item_label: "Name"
-  }
-
-  dimension: group__attribute__cloud__vpc__parent {
-    type: string
-    sql: ${TABLE}.`group`.attribute.cloud.vpc.parent ;;
-    group_label: "Group Attribute Cloud Vpc"
-    group_item_label: "Parent"
-  }
-
-  dimension: group__attribute__cloud__vpc__product_object_id {
-    type: string
-    sql: ${TABLE}.`group`.attribute.cloud.vpc.product_object_id ;;
-    group_label: "Group Attribute Cloud Vpc"
-    group_item_label: "Product Object ID"
-  }
-
-  dimension: group__attribute__cloud__vpc__resource_subtype {
-    type: string
-    sql: ${TABLE}.`group`.attribute.cloud.vpc.resource_subtype ;;
-    group_label: "Group Attribute Cloud Vpc"
-    group_item_label: "Resource Subtype"
-  }
-
-  dimension: group__attribute__cloud__vpc__resource_type {
-    type: number
-    sql: ${TABLE}.`group`.attribute.cloud.vpc.resource_type ;;
-    group_label: "Group Attribute Cloud Vpc"
-    group_item_label: "Resource Type"
-  }
-
-  dimension: group__attribute__cloud__vpc__type {
-    type: string
-    sql: ${TABLE}.`group`.attribute.cloud.vpc.type ;;
-    group_label: "Group Attribute Cloud Vpc"
-    group_item_label: "Type"
-  }
-
-  dimension: group__attribute__creation_time__nanos {
-    type: number
-    sql: ${TABLE}.`group`.attribute.creation_time.nanos ;;
-    group_label: "Group Attribute Creation Time"
-    group_item_label: "Nanos"
-  }
-
-  dimension: group__attribute__creation_time__seconds {
-    type: number
-    sql: ${TABLE}.`group`.attribute.creation_time.seconds ;;
-    group_label: "Group Attribute Creation Time"
-    group_item_label: "Seconds"
-  }
-
-  dimension: group__attribute__labels {
-    hidden: yes
-    sql: ${TABLE}.group.attribute.labels ;;
-    group_label: "Group Attribute"
-    group_item_label: "Labels"
-  }
-
-  dimension: group__attribute__last_update_time__nanos {
-    type: number
-    sql: ${TABLE}.`group`.attribute.last_update_time.nanos ;;
-    group_label: "Group Attribute Last Update Time"
-    group_item_label: "Nanos"
-  }
-
-  dimension: group__attribute__last_update_time__seconds {
-    type: number
-    sql: ${TABLE}.`group`.attribute.last_update_time.seconds ;;
-    group_label: "Group Attribute Last Update Time"
-    group_item_label: "Seconds"
-  }
-
-  dimension: group__attribute__permissions {
-    hidden: yes
-    sql: ${TABLE}.group.attribute.permissions ;;
-    group_label: "Group Attribute"
-    group_item_label: "Permissions"
-  }
-
-  dimension: group__attribute__roles {
-    hidden: yes
-    sql: ${TABLE}.group.attribute.roles ;;
-    group_label: "Group Attribute"
-    group_item_label: "Roles"
-  }
-
-  dimension: group__creation_time__nanos {
-    type: number
-    sql: ${TABLE}.`group`.creation_time.nanos ;;
-    group_label: "Group Creation Time"
-    group_item_label: "Nanos"
-  }
-
-  dimension: group__creation_time__seconds {
-    type: number
-    sql: ${TABLE}.`group`.creation_time.seconds ;;
-    group_label: "Group Creation Time"
-    group_item_label: "Seconds"
-  }
-
-  dimension: group__email_addresses {
-    hidden: yes
-    sql: ${TABLE}.group.email_addresses ;;
-    group_label: "Group"
-    group_item_label: "Email Addresses"
-  }
-
-  dimension: group__group_display_name {
-    type: string
-    sql: ${TABLE}.`group`.group_display_name ;;
-    group_label: "Group"
-    group_item_label: "Group Display Name"
-  }
-
-  dimension: group__product_object_id {
-    type: string
-    sql: ${TABLE}.`group`.product_object_id ;;
-    group_label: "Group"
-    group_item_label: "Product Object ID"
-  }
-
-  dimension: group__windows_sid {
-    type: string
-    sql: ${TABLE}.`group`.windows_sid ;;
-    group_label: "Group"
-    group_item_label: "Windows Sid"
-  }
-
-  dimension: hostname {
-    type: string
-    sql: ${TABLE}.hostname ;;
-  }
-
-  dimension: investigation__comments {
-    hidden: yes
-    sql: ${TABLE}.investigation.comments ;;
-    group_label: "Investigation"
-    group_item_label: "Comments"
-  }
-
-  dimension: investigation__reputation {
-    type: number
-    sql: ${TABLE}.investigation.reputation ;;
-    group_label: "Investigation"
-    group_item_label: "Reputation"
-  }
-
-  dimension: investigation__severity_score {
-    type: number
-    sql: ${TABLE}.investigation.severity_score ;;
-    group_label: "Investigation"
-    group_item_label: "Severity Score"
-  }
-
-  dimension: investigation__status {
-    type: number
-    sql: ${TABLE}.investigation.status ;;
-    group_label: "Investigation"
-    group_item_label: "Status"
-  }
-
-  dimension: investigation__verdict {
-    type: number
-    sql: ${TABLE}.investigation.verdict ;;
-    group_label: "Investigation"
-    group_item_label: "Verdict"
-  }
-
-  dimension: labels {
-    hidden: yes
-    sql: ${TABLE}.labels ;;
-  }
-
-  dimension: location__city {
-    type: string
-    sql: ${TABLE}.location.city ;;
-    group_label: "Location"
-    group_item_label: "City"
-  }
-
-  dimension: location__country_or_region {
-    type: string
-    sql: ${TABLE}.location.country_or_region ;;
-    group_label: "Location"
-    group_item_label: "Country or Region"
-  }
-
-  dimension: location__name {
-    type: string
-    sql: ${TABLE}.location.name ;;
-    group_label: "Location"
-    group_item_label: "Name"
-  }
-
-  dimension: location__state {
-    type: string
-    sql: ${TABLE}.location.state ;;
-    group_label: "Location"
-    group_item_label: "State"
-  }
-
-  dimension: namespace {
-    type: string
-    sql: ${TABLE}.namespace ;;
-  }
-
-  dimension: nat_ip {
-    hidden: yes
-    sql: ${TABLE}.nat_ip ;;
-  }
-
-  dimension: nat_port {
-    type: number
-    sql: ${TABLE}.nat_port ;;
-  }
-
-  dimension: object_reference__id {
-    type: string
-    sql: ${TABLE}.object_reference.id ;;
-    group_label: "Object Reference"
-    group_item_label: "ID"
-  }
-
-  dimension: object_reference__namespace {
-    type: number
-    sql: ${TABLE}.object_reference.namespace ;;
-    group_label: "Object Reference"
-    group_item_label: "Namespace"
-  }
-
-  dimension: platform {
-    type: number
-    sql: ${TABLE}.platform ;;
-  }
-
-  dimension: platform_patch_level {
-    type: string
-    sql: ${TABLE}.platform_patch_level ;;
-  }
-
-  dimension: platform_version {
-    type: string
-    sql: ${TABLE}.platform_version ;;
-  }
-
-  dimension: port {
-    type: number
-    sql: ${TABLE}.port ;;
-  }
-
-  dimension: process__access_mask {
-    type: number
-    sql: ${TABLE}.process.access_mask ;;
-    group_label: "Process"
-    group_item_label: "Access Mask"
-  }
-
-  dimension: process__command_line {
-    type: string
-    sql: ${TABLE}.process.command_line ;;
-    group_label: "Process"
-    group_item_label: "Command Line"
-  }
-
-  dimension: process__command_line_history {
-    hidden: yes
-    sql: ${TABLE}.process.command_line_history ;;
-    group_label: "Process"
-    group_item_label: "Command Line History"
-  }
-
-  dimension: process__file__file_metadata__pe__import_hash {
-    type: string
-    sql: ${TABLE}.process.file.file_metadata.pe.import_hash ;;
-    group_label: "Process File File Metadata Pe"
-    group_item_label: "Import Hash"
-  }
-
-  dimension: process__file__full_path {
-    type: string
-    sql: ${TABLE}.process.file.full_path ;;
-    group_label: "Process File"
-    group_item_label: "Full Path"
-  }
-
-  dimension: process__file__md5 {
-    type: string
-    sql: ${TABLE}.process.file.md5 ;;
-    group_label: "Process File"
-    group_item_label: "Md5"
-  }
-
-  dimension: process__file__mime_type {
-    type: string
-    sql: ${TABLE}.process.file.mime_type ;;
-    group_label: "Process File"
-    group_item_label: "Mime Type"
-  }
-
-  dimension: process__file__sha1 {
-    type: string
-    sql: ${TABLE}.process.file.sha1 ;;
-    group_label: "Process File"
-    group_item_label: "Sha1"
-  }
-
-  dimension: process__file__sha256 {
-    type: string
-    sql: ${TABLE}.process.file.sha256 ;;
-    group_label: "Process File"
-    group_item_label: "Sha256"
-  }
-
-  dimension: process__file__size {
-    type: number
-    sql: ${TABLE}.process.file.size ;;
-    group_label: "Process File"
-    group_item_label: "Size"
-  }
-
-  dimension: process__parent_pid {
-    type: string
-    sql: ${TABLE}.process.parent_pid ;;
-    group_label: "Process"
-    group_item_label: "Parent Pid"
-  }
-
-  dimension: process__pid {
-    type: string
-    sql: ${TABLE}.process.pid ;;
-    group_label: "Process"
-    group_item_label: "Pid"
-  }
-
-  dimension: process__product_specific_parent_process_id {
-    type: string
-    sql: ${TABLE}.process.product_specific_parent_process_id ;;
-    group_label: "Process"
-    group_item_label: "Product Specific Parent Process ID"
-  }
-
-  dimension: process__product_specific_process_id {
-    type: string
-    sql: ${TABLE}.process.product_specific_process_id ;;
-    group_label: "Process"
-    group_item_label: "Product Specific Process ID"
-  }
-
-  dimension: process_ancestors {
-    hidden: yes
-    sql: ${TABLE}.process_ancestors ;;
-  }
-
-  dimension: registry__registry_key {
-    type: string
-    sql: ${TABLE}.registry.registry_key ;;
-    group_label: "Registry"
-    group_item_label: "Registry Key"
-  }
-
-  dimension: registry__registry_value_data {
-    type: string
-    sql: ${TABLE}.registry.registry_value_data ;;
-    group_label: "Registry"
-    group_item_label: "Registry Value Data"
-  }
-
-  dimension: registry__registry_value_name {
-    type: string
-    sql: ${TABLE}.registry.registry_value_name ;;
-    group_label: "Registry"
-    group_item_label: "Registry Value Name"
-  }
-
-  dimension: resource__attribute__cloud__availability_zone {
-    type: string
-    sql: ${TABLE}.resource.attribute.cloud.availability_zone ;;
-    group_label: "Resource Attribute Cloud"
-    group_item_label: "Availability Zone"
-  }
-
-  dimension: resource__attribute__cloud__environment {
-    type: number
-    sql: ${TABLE}.resource.attribute.cloud.environment ;;
-    group_label: "Resource Attribute Cloud"
-    group_item_label: "Environment"
-  }
-
-  dimension: resource__attribute__creation_time__nanos {
-    type: number
-    sql: ${TABLE}.resource.attribute.creation_time.nanos ;;
-    group_label: "Resource Attribute Creation Time"
-    group_item_label: "Nanos"
-  }
-
-  dimension: resource__attribute__creation_time__seconds {
-    type: number
-    sql: ${TABLE}.resource.attribute.creation_time.seconds ;;
-    group_label: "Resource Attribute Creation Time"
-    group_item_label: "Seconds"
-  }
-
-  dimension: resource__attribute__labels {
-    hidden: yes
-    sql: ${TABLE}.resource.attribute.labels ;;
-    group_label: "Resource Attribute"
-    group_item_label: "Labels"
-  }
-
-  dimension: resource__attribute__last_update_time__nanos {
-    type: number
-    sql: ${TABLE}.resource.attribute.last_update_time.nanos ;;
-    group_label: "Resource Attribute Last Update Time"
-    group_item_label: "Nanos"
-  }
-
-  dimension: resource__attribute__last_update_time__seconds {
-    type: number
-    sql: ${TABLE}.resource.attribute.last_update_time.seconds ;;
-    group_label: "Resource Attribute Last Update Time"
-    group_item_label: "Seconds"
-  }
-
-  dimension: resource__attribute__permissions {
-    hidden: yes
-    sql: ${TABLE}.resource.attribute.permissions ;;
-    group_label: "Resource Attribute"
-    group_item_label: "Permissions"
-  }
-
-  dimension: resource__attribute__roles {
-    hidden: yes
-    sql: ${TABLE}.resource.attribute.roles ;;
-    group_label: "Resource Attribute"
-    group_item_label: "Roles"
-  }
-
-  dimension: resource__id {
-    type: string
-    sql: ${TABLE}.resource.id ;;
-    group_label: "Resource"
-    group_item_label: "ID"
-  }
-
-  dimension: resource__name {
-    type: string
-    sql: ${TABLE}.resource.name ;;
-    group_label: "Resource"
-    group_item_label: "Name"
-  }
-
-  dimension: resource__parent {
-    type: string
-    sql: ${TABLE}.resource.parent ;;
-    group_label: "Resource"
-    group_item_label: "Parent"
-  }
-
-  dimension: resource__product_object_id {
-    type: string
-    sql: ${TABLE}.resource.product_object_id ;;
-    group_label: "Resource"
-    group_item_label: "Product Object ID"
-  }
-
-  dimension: resource__resource_subtype {
-    type: string
-    sql: ${TABLE}.resource.resource_subtype ;;
-    group_label: "Resource"
-    group_item_label: "Resource Subtype"
-  }
-
-  dimension: resource__resource_type {
-    type: number
-    sql: ${TABLE}.resource.resource_type ;;
-    group_label: "Resource"
-    group_item_label: "Resource Type"
-  }
-
-  dimension: resource__type {
-    type: string
-    sql: ${TABLE}.resource.type ;;
-    group_label: "Resource"
-    group_item_label: "Type"
-  }
-
-  dimension: url {
-    type: string
-    sql: ${TABLE}.url ;;
-  }
-
-  dimension: user__attribute__cloud__availability_zone {
-    type: string
-    sql: ${TABLE}.user.attribute.cloud.availability_zone ;;
-    group_label: "User Attribute Cloud"
-    group_item_label: "Availability Zone"
-  }
-
-  dimension: user__attribute__cloud__environment {
-    type: number
-    sql: ${TABLE}.user.attribute.cloud.environment ;;
-    group_label: "User Attribute Cloud"
-    group_item_label: "Environment"
-  }
-
-  dimension: user__attribute__cloud__project__id {
-    type: string
-    sql: ${TABLE}.user.attribute.cloud.project.id ;;
-    group_label: "User Attribute Cloud Project"
-    group_item_label: "ID"
-  }
-
-  dimension: user__attribute__cloud__project__name {
-    type: string
-    sql: ${TABLE}.user.attribute.cloud.project.name ;;
-    group_label: "User Attribute Cloud Project"
-    group_item_label: "Name"
-  }
-
-  dimension: user__attribute__cloud__project__parent {
-    type: string
-    sql: ${TABLE}.user.attribute.cloud.project.parent ;;
-    group_label: "User Attribute Cloud Project"
-    group_item_label: "Parent"
-  }
-
-  dimension: user__attribute__cloud__project__product_object_id {
-    type: string
-    sql: ${TABLE}.user.attribute.cloud.project.product_object_id ;;
-    group_label: "User Attribute Cloud Project"
-    group_item_label: "Product Object ID"
-  }
-
-  dimension: user__attribute__cloud__project__resource_subtype {
-    type: string
-    sql: ${TABLE}.user.attribute.cloud.project.resource_subtype ;;
-    group_label: "User Attribute Cloud Project"
-    group_item_label: "Resource Subtype"
-  }
-
-  dimension: user__attribute__cloud__project__resource_type {
-    type: number
-    sql: ${TABLE}.user.attribute.cloud.project.resource_type ;;
-    group_label: "User Attribute Cloud Project"
-    group_item_label: "Resource Type"
-  }
-
-  dimension: user__attribute__cloud__project__type {
-    type: string
-    sql: ${TABLE}.user.attribute.cloud.project.type ;;
-    group_label: "User Attribute Cloud Project"
-    group_item_label: "Type"
-  }
-
-  dimension: user__attribute__cloud__vpc__id {
-    type: string
-    sql: ${TABLE}.user.attribute.cloud.vpc.id ;;
-    group_label: "User Attribute Cloud Vpc"
-    group_item_label: "ID"
-  }
-
-  dimension: user__attribute__cloud__vpc__name {
-    type: string
-    sql: ${TABLE}.user.attribute.cloud.vpc.name ;;
-    group_label: "User Attribute Cloud Vpc"
-    group_item_label: "Name"
-  }
-
-  dimension: user__attribute__cloud__vpc__parent {
-    type: string
-    sql: ${TABLE}.user.attribute.cloud.vpc.parent ;;
-    group_label: "User Attribute Cloud Vpc"
-    group_item_label: "Parent"
-  }
-
-  dimension: user__attribute__cloud__vpc__product_object_id {
-    type: string
-    sql: ${TABLE}.user.attribute.cloud.vpc.product_object_id ;;
-    group_label: "User Attribute Cloud Vpc"
-    group_item_label: "Product Object ID"
-  }
-
-  dimension: user__attribute__cloud__vpc__resource_subtype {
-    type: string
-    sql: ${TABLE}.user.attribute.cloud.vpc.resource_subtype ;;
-    group_label: "User Attribute Cloud Vpc"
-    group_item_label: "Resource Subtype"
-  }
-
-  dimension: user__attribute__cloud__vpc__resource_type {
-    type: number
-    sql: ${TABLE}.user.attribute.cloud.vpc.resource_type ;;
-    group_label: "User Attribute Cloud Vpc"
-    group_item_label: "Resource Type"
-  }
-
-  dimension: user__attribute__cloud__vpc__type {
-    type: string
-    sql: ${TABLE}.user.attribute.cloud.vpc.type ;;
-    group_label: "User Attribute Cloud Vpc"
-    group_item_label: "Type"
-  }
-
-  dimension: user__attribute__creation_time__nanos {
-    type: number
-    sql: ${TABLE}.user.attribute.creation_time.nanos ;;
-    group_label: "User Attribute Creation Time"
-    group_item_label: "Nanos"
-  }
-
-  dimension: user__attribute__creation_time__seconds {
-    type: number
-    sql: ${TABLE}.user.attribute.creation_time.seconds ;;
-    group_label: "User Attribute Creation Time"
-    group_item_label: "Seconds"
-  }
-
-  dimension: user__attribute__labels {
-    hidden: yes
-    sql: ${TABLE}.user.attribute.labels ;;
-    group_label: "User Attribute"
-    group_item_label: "Labels"
-  }
-
-  dimension: user__attribute__last_update_time__nanos {
-    type: number
-    sql: ${TABLE}.user.attribute.last_update_time.nanos ;;
-    group_label: "User Attribute Last Update Time"
-    group_item_label: "Nanos"
-  }
-
-  dimension: user__attribute__last_update_time__seconds {
-    type: number
-    sql: ${TABLE}.user.attribute.last_update_time.seconds ;;
-    group_label: "User Attribute Last Update Time"
-    group_item_label: "Seconds"
-  }
-
-  dimension: user__attribute__permissions {
-    hidden: yes
-    sql: ${TABLE}.user.attribute.permissions ;;
-    group_label: "User Attribute"
-    group_item_label: "Permissions"
-  }
-
-  dimension: user__attribute__roles {
-    hidden: yes
-    sql: ${TABLE}.user.attribute.roles ;;
-    group_label: "User Attribute"
-    group_item_label: "Roles"
-  }
-
-  dimension: user__company_name {
-    type: string
-    sql: ${TABLE}.user.company_name ;;
-    group_label: "User"
-    group_item_label: "Company Name"
-  }
-
-  dimension: user__department {
-    hidden: yes
-    sql: ${TABLE}.user.department ;;
-    group_label: "User"
-    group_item_label: "Department"
-  }
-
-  dimension: user__email_addresses {
-    hidden: yes
-    sql: ${TABLE}.user.email_addresses ;;
-    group_label: "User"
-    group_item_label: "Email Addresses"
-  }
-
-  dimension: user__employee_id {
-    type: string
-    sql: ${TABLE}.user.employee_id ;;
-    group_label: "User"
-    group_item_label: "Employee ID"
-  }
-
-  dimension: user__first_name {
-    type: string
-    sql: ${TABLE}.user.first_name ;;
-    group_label: "User"
-    group_item_label: "First Name"
-  }
-
-  dimension: user__group_identifiers {
-    hidden: yes
-    sql: ${TABLE}.user.group_identifiers ;;
-    group_label: "User"
-    group_item_label: "Group Identifiers"
-  }
-
-  dimension: user__groupid {
-    type: string
-    sql: ${TABLE}.user.groupid ;;
-    group_label: "User"
-    group_item_label: "Groupid"
-  }
-
-  dimension: user__hire_date__nanos {
-    type: number
-    sql: ${TABLE}.user.hire_date.nanos ;;
-    group_label: "User Hire Date"
-    group_item_label: "Nanos"
-  }
-
-  dimension: user__hire_date__seconds {
-    type: number
-    sql: ${TABLE}.user.hire_date.seconds ;;
-    group_label: "User Hire Date"
-    group_item_label: "Seconds"
-  }
-
-  dimension: user__last_name {
-    type: string
-    sql: ${TABLE}.user.last_name ;;
-    group_label: "User"
-    group_item_label: "Last Name"
-  }
-
-  dimension: user__middle_name {
-    type: string
-    sql: ${TABLE}.user.middle_name ;;
-    group_label: "User"
-    group_item_label: "Middle Name"
-  }
-
-  dimension: user__office_address__city {
-    type: string
-    sql: ${TABLE}.user.office_address.city ;;
-    group_label: "User Office Address"
-    group_item_label: "City"
-  }
-
-  dimension: user__office_address__country_or_region {
-    type: string
-    sql: ${TABLE}.user.office_address.country_or_region ;;
-    group_label: "User Office Address"
-    group_item_label: "Country or Region"
-  }
-
-  dimension: user__office_address__name {
-    type: string
-    sql: ${TABLE}.user.office_address.name ;;
-    group_label: "User Office Address"
-    group_item_label: "Name"
-  }
-
-  dimension: user__office_address__state {
-    type: string
-    sql: ${TABLE}.user.office_address.state ;;
-    group_label: "User Office Address"
-    group_item_label: "State"
-  }
-
-  dimension: user__personal_address__city {
-    type: string
-    sql: ${TABLE}.user.personal_address.city ;;
-    group_label: "User Personal Address"
-    group_item_label: "City"
-  }
-
-  dimension: user__personal_address__country_or_region {
-    type: string
-    sql: ${TABLE}.user.personal_address.country_or_region ;;
-    group_label: "User Personal Address"
-    group_item_label: "Country or Region"
-  }
-
-  dimension: user__personal_address__name {
-    type: string
-    sql: ${TABLE}.user.personal_address.name ;;
-    group_label: "User Personal Address"
-    group_item_label: "Name"
-  }
-
-  dimension: user__personal_address__state {
-    type: string
-    sql: ${TABLE}.user.personal_address.state ;;
-    group_label: "User Personal Address"
-    group_item_label: "State"
-  }
-
-  dimension: user__phone_numbers {
-    hidden: yes
-    sql: ${TABLE}.user.phone_numbers ;;
-    group_label: "User"
-    group_item_label: "Phone Numbers"
-  }
-
-  dimension: user__product_object_id {
-    type: string
-    sql: ${TABLE}.user.product_object_id ;;
-    group_label: "User"
-    group_item_label: "Product Object ID"
-  }
-
-  dimension: user__role_description {
-    type: string
-    sql: ${TABLE}.user.role_description ;;
-    group_label: "User"
-    group_item_label: "Role Description"
-  }
-
-  dimension: user__role_name {
-    type: string
-    sql: ${TABLE}.user.role_name ;;
-    group_label: "User"
-    group_item_label: "Role Name"
-  }
-
-  dimension: user__termination_date__nanos {
-    type: number
-    sql: ${TABLE}.user.termination_date.nanos ;;
-    group_label: "User Termination Date"
-    group_item_label: "Nanos"
-  }
-
-  dimension: user__termination_date__seconds {
-    type: number
-    sql: ${TABLE}.user.termination_date.seconds ;;
-    group_label: "User Termination Date"
-    group_item_label: "Seconds"
-  }
-
-  dimension: user__time_off {
-    hidden: yes
-    sql: ${TABLE}.user.time_off ;;
-    group_label: "User"
-    group_item_label: "Time Off"
-  }
-
-  dimension: user__title {
-    type: string
-    sql: ${TABLE}.user.title ;;
-    group_label: "User"
-    group_item_label: "Title"
-  }
-
-  dimension: user__user_authentication_status {
-    type: number
-    sql: ${TABLE}.user.user_authentication_status ;;
-    group_label: "User"
-    group_item_label: "User Authentication Status"
-  }
-
-  dimension: user__user_display_name {
-    type: string
-    sql: ${TABLE}.user.user_display_name ;;
-    group_label: "User"
-    group_item_label: "User Display Name"
-  }
-
-  dimension: user__user_role {
-    type: number
-    sql: ${TABLE}.user.user_role ;;
-    group_label: "User"
-    group_item_label: "User Role"
-  }
-
-  dimension: user__userid {
-    type: string
-    sql: ${TABLE}.user.userid ;;
-    group_label: "User"
-    group_item_label: "Userid"
-  }
-
-  dimension: user__windows_sid {
-    type: string
-    sql: ${TABLE}.user.windows_sid ;;
-    group_label: "User"
-    group_item_label: "Windows Sid"
-  }
-
-  dimension: user_management_chain {
-    hidden: yes
-    sql: ${TABLE}.user_management_chain ;;
   }
 }
 
@@ -9265,6 +9583,1718 @@ view: udm_events__about__nat_ip {
   dimension: udm_events__about__nat_ip {
     type: string
     sql: udm_events__about__nat_ip ;;
+  }
+}
+
+view: udm_events__intermediary {
+  dimension: administrative_domain {
+    type: string
+    sql: administrative_domain ;;
+  }
+
+  dimension: application {
+    type: string
+    sql: application ;;
+  }
+
+  dimension: asset__asset_id {
+    type: string
+    sql: asset.asset_id ;;
+    group_label: "Asset"
+    group_item_label: "Asset ID"
+  }
+
+  dimension: asset__attribute__cloud__availability_zone {
+    type: string
+    sql: asset.attribute.cloud.availability_zone ;;
+    group_label: "Asset Attribute Cloud"
+    group_item_label: "Availability Zone"
+  }
+
+  dimension: asset__attribute__cloud__environment {
+    type: number
+    sql: asset.attribute.cloud.environment ;;
+    group_label: "Asset Attribute Cloud"
+    group_item_label: "Environment"
+  }
+
+  dimension: asset__attribute__cloud__project__id {
+    type: string
+    sql: asset.attribute.cloud.project.id ;;
+    group_label: "Asset Attribute Cloud Project"
+    group_item_label: "ID"
+  }
+
+  dimension: asset__attribute__cloud__project__name {
+    type: string
+    sql: asset.attribute.cloud.project.name ;;
+    group_label: "Asset Attribute Cloud Project"
+    group_item_label: "Name"
+  }
+
+  dimension: asset__attribute__cloud__project__parent {
+    type: string
+    sql: asset.attribute.cloud.project.parent ;;
+    group_label: "Asset Attribute Cloud Project"
+    group_item_label: "Parent"
+  }
+
+  dimension: asset__attribute__cloud__project__product_object_id {
+    type: string
+    sql: asset.attribute.cloud.project.product_object_id ;;
+    group_label: "Asset Attribute Cloud Project"
+    group_item_label: "Product Object ID"
+  }
+
+  dimension: asset__attribute__cloud__project__resource_subtype {
+    type: string
+    sql: asset.attribute.cloud.project.resource_subtype ;;
+    group_label: "Asset Attribute Cloud Project"
+    group_item_label: "Resource Subtype"
+  }
+
+  dimension: asset__attribute__cloud__project__resource_type {
+    type: number
+    sql: asset.attribute.cloud.project.resource_type ;;
+    group_label: "Asset Attribute Cloud Project"
+    group_item_label: "Resource Type"
+  }
+
+  dimension: asset__attribute__cloud__project__type {
+    type: string
+    sql: asset.attribute.cloud.project.type ;;
+    group_label: "Asset Attribute Cloud Project"
+    group_item_label: "Type"
+  }
+
+  dimension: asset__attribute__cloud__vpc__id {
+    type: string
+    sql: asset.attribute.cloud.vpc.id ;;
+    group_label: "Asset Attribute Cloud Vpc"
+    group_item_label: "ID"
+  }
+
+  dimension: asset__attribute__cloud__vpc__name {
+    type: string
+    sql: asset.attribute.cloud.vpc.name ;;
+    group_label: "Asset Attribute Cloud Vpc"
+    group_item_label: "Name"
+  }
+
+  dimension: asset__attribute__cloud__vpc__parent {
+    type: string
+    sql: asset.attribute.cloud.vpc.parent ;;
+    group_label: "Asset Attribute Cloud Vpc"
+    group_item_label: "Parent"
+  }
+
+  dimension: asset__attribute__cloud__vpc__product_object_id {
+    type: string
+    sql: asset.attribute.cloud.vpc.product_object_id ;;
+    group_label: "Asset Attribute Cloud Vpc"
+    group_item_label: "Product Object ID"
+  }
+
+  dimension: asset__attribute__cloud__vpc__resource_subtype {
+    type: string
+    sql: asset.attribute.cloud.vpc.resource_subtype ;;
+    group_label: "Asset Attribute Cloud Vpc"
+    group_item_label: "Resource Subtype"
+  }
+
+  dimension: asset__attribute__cloud__vpc__resource_type {
+    type: number
+    sql: asset.attribute.cloud.vpc.resource_type ;;
+    group_label: "Asset Attribute Cloud Vpc"
+    group_item_label: "Resource Type"
+  }
+
+  dimension: asset__attribute__cloud__vpc__type {
+    type: string
+    sql: asset.attribute.cloud.vpc.type ;;
+    group_label: "Asset Attribute Cloud Vpc"
+    group_item_label: "Type"
+  }
+
+  dimension: asset__attribute__creation_time__nanos {
+    type: number
+    sql: asset.attribute.creation_time.nanos ;;
+    group_label: "Asset Attribute Creation Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: asset__attribute__creation_time__seconds {
+    type: number
+    sql: asset.attribute.creation_time.seconds ;;
+    group_label: "Asset Attribute Creation Time"
+    group_item_label: "Seconds"
+  }
+
+  dimension: asset__attribute__labels {
+    hidden: yes
+    sql: asset.attribute.labels ;;
+    group_label: "Asset Attribute"
+    group_item_label: "Labels"
+  }
+
+  dimension: asset__attribute__last_update_time__nanos {
+    type: number
+    sql: asset.attribute.last_update_time.nanos ;;
+    group_label: "Asset Attribute Last Update Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: asset__attribute__last_update_time__seconds {
+    type: number
+    sql: asset.attribute.last_update_time.seconds ;;
+    group_label: "Asset Attribute Last Update Time"
+    group_item_label: "Seconds"
+  }
+
+  dimension: asset__attribute__permissions {
+    hidden: yes
+    sql: asset.attribute.permissions ;;
+    group_label: "Asset Attribute"
+    group_item_label: "Permissions"
+  }
+
+  dimension: asset__attribute__roles {
+    hidden: yes
+    sql: asset.attribute.roles ;;
+    group_label: "Asset Attribute"
+    group_item_label: "Roles"
+  }
+
+  dimension: asset__category {
+    type: string
+    sql: asset.category ;;
+    group_label: "Asset"
+    group_item_label: "Category"
+  }
+
+  dimension: asset__creation_time__nanos {
+    type: number
+    sql: asset.creation_time.nanos ;;
+    group_label: "Asset Creation Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: asset__creation_time__seconds {
+    type: number
+    sql: asset.creation_time.seconds ;;
+    group_label: "Asset Creation Time"
+    group_item_label: "Seconds"
+  }
+
+  dimension: asset__deployment_status {
+    type: number
+    sql: asset.deployment_status ;;
+    group_label: "Asset"
+    group_item_label: "Deployment Status"
+  }
+
+  dimension: asset__first_discover_time__nanos {
+    type: number
+    sql: asset.first_discover_time.nanos ;;
+    group_label: "Asset First Discover Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: asset__first_discover_time__seconds {
+    type: number
+    sql: asset.first_discover_time.seconds ;;
+    group_label: "Asset First Discover Time"
+    group_item_label: "Seconds"
+  }
+
+  dimension: asset__hardware {
+    hidden: yes
+    sql: asset.hardware ;;
+    group_label: "Asset"
+    group_item_label: "Hardware"
+  }
+
+  dimension: asset__hostname {
+    type: string
+    sql: asset.hostname ;;
+    group_label: "Asset"
+    group_item_label: "Hostname"
+  }
+
+  dimension: asset__ip {
+    hidden: yes
+    sql: asset.ip ;;
+    group_label: "Asset"
+    group_item_label: "IP"
+  }
+
+  dimension: asset__labels {
+    hidden: yes
+    sql: asset.labels ;;
+    group_label: "Asset"
+    group_item_label: "Labels"
+  }
+
+  dimension: asset__last_boot_time__nanos {
+    type: number
+    sql: asset.last_boot_time.nanos ;;
+    group_label: "Asset Last Boot Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: asset__last_boot_time__seconds {
+    type: number
+    sql: asset.last_boot_time.seconds ;;
+    group_label: "Asset Last Boot Time"
+    group_item_label: "Seconds"
+  }
+
+  dimension: asset__last_discover_time__nanos {
+    type: number
+    sql: asset.last_discover_time.nanos ;;
+    group_label: "Asset Last Discover Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: asset__last_discover_time__seconds {
+    type: number
+    sql: asset.last_discover_time.seconds ;;
+    group_label: "Asset Last Discover Time"
+    group_item_label: "Seconds"
+  }
+
+  dimension: asset__location__city {
+    type: string
+    sql: asset.location.city ;;
+    group_label: "Asset Location"
+    group_item_label: "City"
+  }
+
+  dimension: asset__location__country_or_region {
+    type: string
+    sql: asset.location.country_or_region ;;
+    group_label: "Asset Location"
+    group_item_label: "Country or Region"
+  }
+
+  dimension: asset__location__desk_name {
+    type: string
+    sql: asset.location.desk_name ;;
+    group_label: "Asset Location"
+    group_item_label: "Desk Name"
+  }
+
+  dimension: asset__location__floor_name {
+    type: string
+    sql: asset.location.floor_name ;;
+    group_label: "Asset Location"
+    group_item_label: "Floor Name"
+  }
+
+  dimension: asset__location__name {
+    type: string
+    sql: asset.location.name ;;
+    group_label: "Asset Location"
+    group_item_label: "Name"
+  }
+
+  dimension: asset__location__state {
+    type: string
+    sql: asset.location.state ;;
+    group_label: "Asset Location"
+    group_item_label: "State"
+  }
+
+  dimension: asset__mac {
+    hidden: yes
+    sql: asset.mac ;;
+    group_label: "Asset"
+    group_item_label: "Mac"
+  }
+
+  dimension: asset__nat_ip {
+    hidden: yes
+    sql: asset.nat_ip ;;
+    group_label: "Asset"
+    group_item_label: "Nat IP"
+  }
+
+  dimension: asset__network_domain {
+    type: string
+    sql: asset.network_domain ;;
+    group_label: "Asset"
+    group_item_label: "Network Domain"
+  }
+
+  dimension: asset__platform_software__platform {
+    type: number
+    sql: asset.platform_software.platform ;;
+    group_label: "Asset Platform Software"
+    group_item_label: "Platform"
+  }
+
+  dimension: asset__platform_software__platform_patch_level {
+    type: string
+    sql: asset.platform_software.platform_patch_level ;;
+    group_label: "Asset Platform Software"
+    group_item_label: "Platform Patch Level"
+  }
+
+  dimension: asset__platform_software__platform_version {
+    type: string
+    sql: asset.platform_software.platform_version ;;
+    group_label: "Asset Platform Software"
+    group_item_label: "Platform Version"
+  }
+
+  dimension: asset__product_object_id {
+    type: string
+    sql: asset.product_object_id ;;
+    group_label: "Asset"
+    group_item_label: "Product Object ID"
+  }
+
+  dimension: asset__software {
+    hidden: yes
+    sql: asset.software ;;
+    group_label: "Asset"
+    group_item_label: "Software"
+  }
+
+  dimension: asset__system_last_update_time__nanos {
+    type: number
+    sql: asset.system_last_update_time.nanos ;;
+    group_label: "Asset System Last Update Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: asset__system_last_update_time__seconds {
+    type: number
+    sql: asset.system_last_update_time.seconds ;;
+    group_label: "Asset System Last Update Time"
+    group_item_label: "Seconds"
+  }
+
+  dimension: asset__type {
+    type: number
+    sql: asset.type ;;
+    group_label: "Asset"
+    group_item_label: "Type"
+  }
+
+  dimension: asset__vulnerabilities {
+    hidden: yes
+    sql: asset.vulnerabilities ;;
+    group_label: "Asset"
+    group_item_label: "Vulnerabilities"
+  }
+
+  dimension: asset_id {
+    type: string
+    sql: asset_id ;;
+  }
+
+  dimension: cloud__availability_zone {
+    type: string
+    sql: cloud.availability_zone ;;
+    group_label: "Cloud"
+    group_item_label: "Availability Zone"
+  }
+
+  dimension: cloud__environment {
+    type: number
+    sql: cloud.environment ;;
+    group_label: "Cloud"
+    group_item_label: "Environment"
+  }
+
+  dimension: cloud__project__attribute__creation_time__nanos {
+    type: number
+    sql: cloud.project.attribute.creation_time.nanos ;;
+    group_label: "Cloud Project Attribute Creation Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: cloud__project__attribute__creation_time__seconds {
+    type: number
+    sql: cloud.project.attribute.creation_time.seconds ;;
+    group_label: "Cloud Project Attribute Creation Time"
+    group_item_label: "Seconds"
+  }
+
+  dimension: cloud__project__attribute__labels {
+    hidden: yes
+    sql: cloud.project.attribute.labels ;;
+    group_label: "Cloud Project Attribute"
+    group_item_label: "Labels"
+  }
+
+  dimension: cloud__project__attribute__last_update_time__nanos {
+    type: number
+    sql: cloud.project.attribute.last_update_time.nanos ;;
+    group_label: "Cloud Project Attribute Last Update Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: cloud__project__attribute__last_update_time__seconds {
+    type: number
+    sql: cloud.project.attribute.last_update_time.seconds ;;
+    group_label: "Cloud Project Attribute Last Update Time"
+    group_item_label: "Seconds"
+  }
+
+  dimension: cloud__project__attribute__permissions {
+    hidden: yes
+    sql: cloud.project.attribute.permissions ;;
+    group_label: "Cloud Project Attribute"
+    group_item_label: "Permissions"
+  }
+
+  dimension: cloud__project__attribute__roles {
+    hidden: yes
+    sql: cloud.project.attribute.roles ;;
+    group_label: "Cloud Project Attribute"
+    group_item_label: "Roles"
+  }
+
+  dimension: cloud__project__id {
+    type: string
+    sql: cloud.project.id ;;
+    group_label: "Cloud Project"
+    group_item_label: "ID"
+  }
+
+  dimension: cloud__project__name {
+    type: string
+    sql: cloud.project.name ;;
+    group_label: "Cloud Project"
+    group_item_label: "Name"
+  }
+
+  dimension: cloud__project__parent {
+    type: string
+    sql: cloud.project.parent ;;
+    group_label: "Cloud Project"
+    group_item_label: "Parent"
+  }
+
+  dimension: cloud__project__product_object_id {
+    type: string
+    sql: cloud.project.product_object_id ;;
+    group_label: "Cloud Project"
+    group_item_label: "Product Object ID"
+  }
+
+  dimension: cloud__project__resource_subtype {
+    type: string
+    sql: cloud.project.resource_subtype ;;
+    group_label: "Cloud Project"
+    group_item_label: "Resource Subtype"
+  }
+
+  dimension: cloud__project__resource_type {
+    type: number
+    sql: cloud.project.resource_type ;;
+    group_label: "Cloud Project"
+    group_item_label: "Resource Type"
+  }
+
+  dimension: cloud__project__type {
+    type: string
+    sql: cloud.project.type ;;
+    group_label: "Cloud Project"
+    group_item_label: "Type"
+  }
+
+  dimension: cloud__vpc__attribute__creation_time__nanos {
+    type: number
+    sql: cloud.vpc.attribute.creation_time.nanos ;;
+    group_label: "Cloud Vpc Attribute Creation Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: cloud__vpc__attribute__creation_time__seconds {
+    type: number
+    sql: cloud.vpc.attribute.creation_time.seconds ;;
+    group_label: "Cloud Vpc Attribute Creation Time"
+    group_item_label: "Seconds"
+  }
+
+  dimension: cloud__vpc__attribute__labels {
+    hidden: yes
+    sql: cloud.vpc.attribute.labels ;;
+    group_label: "Cloud Vpc Attribute"
+    group_item_label: "Labels"
+  }
+
+  dimension: cloud__vpc__attribute__last_update_time__nanos {
+    type: number
+    sql: cloud.vpc.attribute.last_update_time.nanos ;;
+    group_label: "Cloud Vpc Attribute Last Update Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: cloud__vpc__attribute__last_update_time__seconds {
+    type: number
+    sql: cloud.vpc.attribute.last_update_time.seconds ;;
+    group_label: "Cloud Vpc Attribute Last Update Time"
+    group_item_label: "Seconds"
+  }
+
+  dimension: cloud__vpc__attribute__permissions {
+    hidden: yes
+    sql: cloud.vpc.attribute.permissions ;;
+    group_label: "Cloud Vpc Attribute"
+    group_item_label: "Permissions"
+  }
+
+  dimension: cloud__vpc__attribute__roles {
+    hidden: yes
+    sql: cloud.vpc.attribute.roles ;;
+    group_label: "Cloud Vpc Attribute"
+    group_item_label: "Roles"
+  }
+
+  dimension: cloud__vpc__id {
+    type: string
+    sql: cloud.vpc.id ;;
+    group_label: "Cloud Vpc"
+    group_item_label: "ID"
+  }
+
+  dimension: cloud__vpc__name {
+    type: string
+    sql: cloud.vpc.name ;;
+    group_label: "Cloud Vpc"
+    group_item_label: "Name"
+  }
+
+  dimension: cloud__vpc__parent {
+    type: string
+    sql: cloud.vpc.parent ;;
+    group_label: "Cloud Vpc"
+    group_item_label: "Parent"
+  }
+
+  dimension: cloud__vpc__product_object_id {
+    type: string
+    sql: cloud.vpc.product_object_id ;;
+    group_label: "Cloud Vpc"
+    group_item_label: "Product Object ID"
+  }
+
+  dimension: cloud__vpc__resource_subtype {
+    type: string
+    sql: cloud.vpc.resource_subtype ;;
+    group_label: "Cloud Vpc"
+    group_item_label: "Resource Subtype"
+  }
+
+  dimension: cloud__vpc__resource_type {
+    type: number
+    sql: cloud.vpc.resource_type ;;
+    group_label: "Cloud Vpc"
+    group_item_label: "Resource Type"
+  }
+
+  dimension: cloud__vpc__type {
+    type: string
+    sql: cloud.vpc.type ;;
+    group_label: "Cloud Vpc"
+    group_item_label: "Type"
+  }
+
+  dimension: email {
+    type: string
+    sql: email ;;
+  }
+
+  dimension: file__file_metadata__pe__import_hash {
+    type: string
+    sql: file.file_metadata.pe.import_hash ;;
+    group_label: "File File Metadata Pe"
+    group_item_label: "Import Hash"
+  }
+
+  dimension: file__full_path {
+    type: string
+    sql: file.full_path ;;
+    group_label: "File"
+    group_item_label: "Full Path"
+  }
+
+  dimension: file__md5 {
+    type: string
+    sql: file.md5 ;;
+    group_label: "File"
+    group_item_label: "Md5"
+  }
+
+  dimension: file__mime_type {
+    type: string
+    sql: file.mime_type ;;
+    group_label: "File"
+    group_item_label: "Mime Type"
+  }
+
+  dimension: file__sha1 {
+    type: string
+    sql: file.sha1 ;;
+    group_label: "File"
+    group_item_label: "Sha1"
+  }
+
+  dimension: file__sha256 {
+    type: string
+    sql: file.sha256 ;;
+    group_label: "File"
+    group_item_label: "Sha256"
+  }
+
+  dimension: file__size {
+    type: number
+    sql: file.size ;;
+    group_label: "File"
+    group_item_label: "Size"
+  }
+
+  dimension: group__attribute__cloud__availability_zone {
+    type: string
+    sql: `group`.attribute.cloud.availability_zone
+      ;;
+    group_label: "Group Attribute Cloud"
+    group_item_label: "Availability Zone"
+  }
+
+  dimension: group__attribute__cloud__environment {
+    type: number
+    sql: `group`.attribute.cloud.environment
+      ;;
+    group_label: "Group Attribute Cloud"
+    group_item_label: "Environment"
+  }
+
+  dimension: group__attribute__cloud__project__id {
+    type: string
+    sql: `group`.attribute.cloud.project.id
+      ;;
+    group_label: "Group Attribute Cloud Project"
+    group_item_label: "ID"
+  }
+
+  dimension: group__attribute__cloud__project__name {
+    type: string
+    sql: `group`.attribute.cloud.project.name
+      ;;
+    group_label: "Group Attribute Cloud Project"
+    group_item_label: "Name"
+  }
+
+  dimension: group__attribute__cloud__project__parent {
+    type: string
+    sql: `group`.attribute.cloud.project.parent
+      ;;
+    group_label: "Group Attribute Cloud Project"
+    group_item_label: "Parent"
+  }
+
+  dimension: group__attribute__cloud__project__product_object_id {
+    type: string
+    sql: `group`.attribute.cloud.project.product_object_id
+      ;;
+    group_label: "Group Attribute Cloud Project"
+    group_item_label: "Product Object ID"
+  }
+
+  dimension: group__attribute__cloud__project__resource_subtype {
+    type: string
+    sql: `group`.attribute.cloud.project.resource_subtype
+      ;;
+    group_label: "Group Attribute Cloud Project"
+    group_item_label: "Resource Subtype"
+  }
+
+  dimension: group__attribute__cloud__project__resource_type {
+    type: number
+    sql: `group`.attribute.cloud.project.resource_type
+      ;;
+    group_label: "Group Attribute Cloud Project"
+    group_item_label: "Resource Type"
+  }
+
+  dimension: group__attribute__cloud__project__type {
+    type: string
+    sql: `group`.attribute.cloud.project.type
+      ;;
+    group_label: "Group Attribute Cloud Project"
+    group_item_label: "Type"
+  }
+
+  dimension: group__attribute__cloud__vpc__id {
+    type: string
+    sql: `group`.attribute.cloud.vpc.id
+      ;;
+    group_label: "Group Attribute Cloud Vpc"
+    group_item_label: "ID"
+  }
+
+  dimension: group__attribute__cloud__vpc__name {
+    type: string
+    sql: `group`.attribute.cloud.vpc.name
+      ;;
+    group_label: "Group Attribute Cloud Vpc"
+    group_item_label: "Name"
+  }
+
+  dimension: group__attribute__cloud__vpc__parent {
+    type: string
+    sql: `group`.attribute.cloud.vpc.parent
+      ;;
+    group_label: "Group Attribute Cloud Vpc"
+    group_item_label: "Parent"
+  }
+
+  dimension: group__attribute__cloud__vpc__product_object_id {
+    type: string
+    sql: `group`.attribute.cloud.vpc.product_object_id
+      ;;
+    group_label: "Group Attribute Cloud Vpc"
+    group_item_label: "Product Object ID"
+  }
+
+  dimension: group__attribute__cloud__vpc__resource_subtype {
+    type: string
+    sql: `group`.attribute.cloud.vpc.resource_subtype
+      ;;
+    group_label: "Group Attribute Cloud Vpc"
+    group_item_label: "Resource Subtype"
+  }
+
+  dimension: group__attribute__cloud__vpc__resource_type {
+    type: number
+    sql: `group`.attribute.cloud.vpc.resource_type
+      ;;
+    group_label: "Group Attribute Cloud Vpc"
+    group_item_label: "Resource Type"
+  }
+
+  dimension: group__attribute__cloud__vpc__type {
+    type: string
+    sql: `group`.attribute.cloud.vpc.type
+      ;;
+    group_label: "Group Attribute Cloud Vpc"
+    group_item_label: "Type"
+  }
+
+  dimension: group__attribute__creation_time__nanos {
+    type: number
+    sql: `group`.attribute.creation_time.nanos
+      ;;
+    group_label: "Group Attribute Creation Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: group__attribute__creation_time__seconds {
+    type: number
+    sql: `group`.attribute.creation_time.seconds
+      ;;
+    group_label: "Group Attribute Creation Time"
+    group_item_label: "Seconds"
+  }
+
+  dimension: group__attribute__labels {
+    hidden: yes
+    sql: group.attribute.labels ;;
+    group_label: "Group Attribute"
+    group_item_label: "Labels"
+  }
+
+  dimension: group__attribute__last_update_time__nanos {
+    type: number
+    sql: `group`.attribute.last_update_time.nanos
+      ;;
+    group_label: "Group Attribute Last Update Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: group__attribute__last_update_time__seconds {
+    type: number
+    sql: `group`.attribute.last_update_time.seconds
+      ;;
+    group_label: "Group Attribute Last Update Time"
+    group_item_label: "Seconds"
+  }
+
+  dimension: group__attribute__permissions {
+    hidden: yes
+    sql: group.attribute.permissions ;;
+    group_label: "Group Attribute"
+    group_item_label: "Permissions"
+  }
+
+  dimension: group__attribute__roles {
+    hidden: yes
+    sql: group.attribute.roles ;;
+    group_label: "Group Attribute"
+    group_item_label: "Roles"
+  }
+
+  dimension: group__creation_time__nanos {
+    type: number
+    sql: `group`.creation_time.nanos
+      ;;
+    group_label: "Group Creation Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: group__creation_time__seconds {
+    type: number
+    sql: `group`.creation_time.seconds
+      ;;
+    group_label: "Group Creation Time"
+    group_item_label: "Seconds"
+  }
+
+  dimension: group__email_addresses {
+    hidden: yes
+    sql: group.email_addresses ;;
+    group_label: "Group"
+    group_item_label: "Email Addresses"
+  }
+
+  dimension: group__group_display_name {
+    type: string
+    sql: `group`.group_display_name
+      ;;
+    group_label: "Group"
+    group_item_label: "Group Display Name"
+  }
+
+  dimension: group__product_object_id {
+    type: string
+    sql: `group`.product_object_id
+      ;;
+    group_label: "Group"
+    group_item_label: "Product Object ID"
+  }
+
+  dimension: group__windows_sid {
+    type: string
+    sql: `group`.windows_sid
+      ;;
+    group_label: "Group"
+    group_item_label: "Windows Sid"
+  }
+
+  dimension: hostname {
+    type: string
+    sql: hostname ;;
+  }
+
+  dimension: investigation__comments {
+    hidden: yes
+    sql: investigation.comments ;;
+    group_label: "Investigation"
+    group_item_label: "Comments"
+  }
+
+  dimension: investigation__reputation {
+    type: number
+    sql: investigation.reputation ;;
+    group_label: "Investigation"
+    group_item_label: "Reputation"
+  }
+
+  dimension: investigation__severity_score {
+    type: number
+    sql: investigation.severity_score ;;
+    group_label: "Investigation"
+    group_item_label: "Severity Score"
+  }
+
+  dimension: investigation__status {
+    type: number
+    sql: investigation.status ;;
+    group_label: "Investigation"
+    group_item_label: "Status"
+  }
+
+  dimension: investigation__verdict {
+    type: number
+    sql: investigation.verdict ;;
+    group_label: "Investigation"
+    group_item_label: "Verdict"
+  }
+
+  dimension: ip {
+    hidden: yes
+    sql: ip ;;
+  }
+
+  dimension: labels {
+    hidden: yes
+    sql: labels ;;
+  }
+
+  dimension: location__city {
+    type: string
+    sql: location.city ;;
+    group_label: "Location"
+    group_item_label: "City"
+  }
+
+  dimension: location__country_or_region {
+    type: string
+    sql: location.country_or_region ;;
+    group_label: "Location"
+    group_item_label: "Country or Region"
+  }
+
+  dimension: location__desk_name {
+    type: string
+    sql: location.desk_name ;;
+    group_label: "Location"
+    group_item_label: "Desk Name"
+  }
+
+  dimension: location__floor_name {
+    type: string
+    sql: location.floor_name ;;
+    group_label: "Location"
+    group_item_label: "Floor Name"
+  }
+
+  dimension: location__name {
+    type: string
+    sql: location.name ;;
+    group_label: "Location"
+    group_item_label: "Name"
+  }
+
+  dimension: location__state {
+    type: string
+    sql: location.state ;;
+    group_label: "Location"
+    group_item_label: "State"
+  }
+
+  dimension: mac {
+    hidden: yes
+    sql: mac ;;
+  }
+
+  dimension: namespace {
+    type: string
+    sql: namespace ;;
+  }
+
+  dimension: nat_ip {
+    hidden: yes
+    sql: nat_ip ;;
+  }
+
+  dimension: nat_port {
+    type: number
+    sql: nat_port ;;
+  }
+
+  dimension: object_reference__id {
+    type: string
+    sql: object_reference.id ;;
+    group_label: "Object Reference"
+    group_item_label: "ID"
+  }
+
+  dimension: object_reference__namespace {
+    type: number
+    sql: object_reference.namespace ;;
+    group_label: "Object Reference"
+    group_item_label: "Namespace"
+  }
+
+  dimension: platform {
+    type: number
+    sql: platform ;;
+  }
+
+  dimension: platform_patch_level {
+    type: string
+    sql: platform_patch_level ;;
+  }
+
+  dimension: platform_version {
+    type: string
+    sql: platform_version ;;
+  }
+
+  dimension: port {
+    type: number
+    sql: port ;;
+  }
+
+  dimension: process__access_mask {
+    type: number
+    sql: process.access_mask ;;
+    group_label: "Process"
+    group_item_label: "Access Mask"
+  }
+
+  dimension: process__command_line {
+    type: string
+    sql: process.command_line ;;
+    group_label: "Process"
+    group_item_label: "Command Line"
+  }
+
+  dimension: process__command_line_history {
+    hidden: yes
+    sql: process.command_line_history ;;
+    group_label: "Process"
+    group_item_label: "Command Line History"
+  }
+
+  dimension: process__file__file_metadata__pe__import_hash {
+    type: string
+    sql: process.file.file_metadata.pe.import_hash ;;
+    group_label: "Process File File Metadata Pe"
+    group_item_label: "Import Hash"
+  }
+
+  dimension: process__file__full_path {
+    type: string
+    sql: process.file.full_path ;;
+    group_label: "Process File"
+    group_item_label: "Full Path"
+  }
+
+  dimension: process__file__md5 {
+    type: string
+    sql: process.file.md5 ;;
+    group_label: "Process File"
+    group_item_label: "Md5"
+  }
+
+  dimension: process__file__mime_type {
+    type: string
+    sql: process.file.mime_type ;;
+    group_label: "Process File"
+    group_item_label: "Mime Type"
+  }
+
+  dimension: process__file__sha1 {
+    type: string
+    sql: process.file.sha1 ;;
+    group_label: "Process File"
+    group_item_label: "Sha1"
+  }
+
+  dimension: process__file__sha256 {
+    type: string
+    sql: process.file.sha256 ;;
+    group_label: "Process File"
+    group_item_label: "Sha256"
+  }
+
+  dimension: process__file__size {
+    type: number
+    sql: process.file.size ;;
+    group_label: "Process File"
+    group_item_label: "Size"
+  }
+
+  dimension: process__parent_pid {
+    type: string
+    sql: process.parent_pid ;;
+    group_label: "Process"
+    group_item_label: "Parent Pid"
+  }
+
+  dimension: process__pid {
+    type: string
+    sql: process.pid ;;
+    group_label: "Process"
+    group_item_label: "Pid"
+  }
+
+  dimension: process__product_specific_parent_process_id {
+    type: string
+    sql: process.product_specific_parent_process_id ;;
+    group_label: "Process"
+    group_item_label: "Product Specific Parent Process ID"
+  }
+
+  dimension: process__product_specific_process_id {
+    type: string
+    sql: process.product_specific_process_id ;;
+    group_label: "Process"
+    group_item_label: "Product Specific Process ID"
+  }
+
+  dimension: process_ancestors {
+    hidden: yes
+    sql: process_ancestors ;;
+  }
+
+  dimension: registry__registry_key {
+    type: string
+    sql: registry.registry_key ;;
+    group_label: "Registry"
+    group_item_label: "Registry Key"
+  }
+
+  dimension: registry__registry_value_data {
+    type: string
+    sql: registry.registry_value_data ;;
+    group_label: "Registry"
+    group_item_label: "Registry Value Data"
+  }
+
+  dimension: registry__registry_value_name {
+    type: string
+    sql: registry.registry_value_name ;;
+    group_label: "Registry"
+    group_item_label: "Registry Value Name"
+  }
+
+  dimension: resource__attribute__cloud__availability_zone {
+    type: string
+    sql: resource.attribute.cloud.availability_zone ;;
+    group_label: "Resource Attribute Cloud"
+    group_item_label: "Availability Zone"
+  }
+
+  dimension: resource__attribute__cloud__environment {
+    type: number
+    sql: resource.attribute.cloud.environment ;;
+    group_label: "Resource Attribute Cloud"
+    group_item_label: "Environment"
+  }
+
+  dimension: resource__attribute__creation_time__nanos {
+    type: number
+    sql: resource.attribute.creation_time.nanos ;;
+    group_label: "Resource Attribute Creation Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: resource__attribute__creation_time__seconds {
+    type: number
+    sql: resource.attribute.creation_time.seconds ;;
+    group_label: "Resource Attribute Creation Time"
+    group_item_label: "Seconds"
+  }
+
+  dimension: resource__attribute__labels {
+    hidden: yes
+    sql: resource.attribute.labels ;;
+    group_label: "Resource Attribute"
+    group_item_label: "Labels"
+  }
+
+  dimension: resource__attribute__last_update_time__nanos {
+    type: number
+    sql: resource.attribute.last_update_time.nanos ;;
+    group_label: "Resource Attribute Last Update Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: resource__attribute__last_update_time__seconds {
+    type: number
+    sql: resource.attribute.last_update_time.seconds ;;
+    group_label: "Resource Attribute Last Update Time"
+    group_item_label: "Seconds"
+  }
+
+  dimension: resource__attribute__permissions {
+    hidden: yes
+    sql: resource.attribute.permissions ;;
+    group_label: "Resource Attribute"
+    group_item_label: "Permissions"
+  }
+
+  dimension: resource__attribute__roles {
+    hidden: yes
+    sql: resource.attribute.roles ;;
+    group_label: "Resource Attribute"
+    group_item_label: "Roles"
+  }
+
+  dimension: resource__id {
+    type: string
+    sql: resource.id ;;
+    group_label: "Resource"
+    group_item_label: "ID"
+  }
+
+  dimension: resource__name {
+    type: string
+    sql: resource.name ;;
+    group_label: "Resource"
+    group_item_label: "Name"
+  }
+
+  dimension: resource__parent {
+    type: string
+    sql: resource.parent ;;
+    group_label: "Resource"
+    group_item_label: "Parent"
+  }
+
+  dimension: resource__product_object_id {
+    type: string
+    sql: resource.product_object_id ;;
+    group_label: "Resource"
+    group_item_label: "Product Object ID"
+  }
+
+  dimension: resource__resource_subtype {
+    type: string
+    sql: resource.resource_subtype ;;
+    group_label: "Resource"
+    group_item_label: "Resource Subtype"
+  }
+
+  dimension: resource__resource_type {
+    type: number
+    sql: resource.resource_type ;;
+    group_label: "Resource"
+    group_item_label: "Resource Type"
+  }
+
+  dimension: resource__type {
+    type: string
+    sql: resource.type ;;
+    group_label: "Resource"
+    group_item_label: "Type"
+  }
+
+  dimension: udm_events__intermediary {
+    type: string
+    hidden: yes
+    sql: udm_events__intermediary ;;
+  }
+
+  dimension: url {
+    type: string
+    sql: url ;;
+  }
+
+  dimension: user__attribute__cloud__availability_zone {
+    type: string
+    sql: user.attribute.cloud.availability_zone ;;
+    group_label: "User Attribute Cloud"
+    group_item_label: "Availability Zone"
+  }
+
+  dimension: user__attribute__cloud__environment {
+    type: number
+    sql: user.attribute.cloud.environment ;;
+    group_label: "User Attribute Cloud"
+    group_item_label: "Environment"
+  }
+
+  dimension: user__attribute__cloud__project__id {
+    type: string
+    sql: user.attribute.cloud.project.id ;;
+    group_label: "User Attribute Cloud Project"
+    group_item_label: "ID"
+  }
+
+  dimension: user__attribute__cloud__project__name {
+    type: string
+    sql: user.attribute.cloud.project.name ;;
+    group_label: "User Attribute Cloud Project"
+    group_item_label: "Name"
+  }
+
+  dimension: user__attribute__cloud__project__parent {
+    type: string
+    sql: user.attribute.cloud.project.parent ;;
+    group_label: "User Attribute Cloud Project"
+    group_item_label: "Parent"
+  }
+
+  dimension: user__attribute__cloud__project__product_object_id {
+    type: string
+    sql: user.attribute.cloud.project.product_object_id ;;
+    group_label: "User Attribute Cloud Project"
+    group_item_label: "Product Object ID"
+  }
+
+  dimension: user__attribute__cloud__project__resource_subtype {
+    type: string
+    sql: user.attribute.cloud.project.resource_subtype ;;
+    group_label: "User Attribute Cloud Project"
+    group_item_label: "Resource Subtype"
+  }
+
+  dimension: user__attribute__cloud__project__resource_type {
+    type: number
+    sql: user.attribute.cloud.project.resource_type ;;
+    group_label: "User Attribute Cloud Project"
+    group_item_label: "Resource Type"
+  }
+
+  dimension: user__attribute__cloud__project__type {
+    type: string
+    sql: user.attribute.cloud.project.type ;;
+    group_label: "User Attribute Cloud Project"
+    group_item_label: "Type"
+  }
+
+  dimension: user__attribute__cloud__vpc__id {
+    type: string
+    sql: user.attribute.cloud.vpc.id ;;
+    group_label: "User Attribute Cloud Vpc"
+    group_item_label: "ID"
+  }
+
+  dimension: user__attribute__cloud__vpc__name {
+    type: string
+    sql: user.attribute.cloud.vpc.name ;;
+    group_label: "User Attribute Cloud Vpc"
+    group_item_label: "Name"
+  }
+
+  dimension: user__attribute__cloud__vpc__parent {
+    type: string
+    sql: user.attribute.cloud.vpc.parent ;;
+    group_label: "User Attribute Cloud Vpc"
+    group_item_label: "Parent"
+  }
+
+  dimension: user__attribute__cloud__vpc__product_object_id {
+    type: string
+    sql: user.attribute.cloud.vpc.product_object_id ;;
+    group_label: "User Attribute Cloud Vpc"
+    group_item_label: "Product Object ID"
+  }
+
+  dimension: user__attribute__cloud__vpc__resource_subtype {
+    type: string
+    sql: user.attribute.cloud.vpc.resource_subtype ;;
+    group_label: "User Attribute Cloud Vpc"
+    group_item_label: "Resource Subtype"
+  }
+
+  dimension: user__attribute__cloud__vpc__resource_type {
+    type: number
+    sql: user.attribute.cloud.vpc.resource_type ;;
+    group_label: "User Attribute Cloud Vpc"
+    group_item_label: "Resource Type"
+  }
+
+  dimension: user__attribute__cloud__vpc__type {
+    type: string
+    sql: user.attribute.cloud.vpc.type ;;
+    group_label: "User Attribute Cloud Vpc"
+    group_item_label: "Type"
+  }
+
+  dimension: user__attribute__creation_time__nanos {
+    type: number
+    sql: user.attribute.creation_time.nanos ;;
+    group_label: "User Attribute Creation Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: user__attribute__creation_time__seconds {
+    type: number
+    sql: user.attribute.creation_time.seconds ;;
+    group_label: "User Attribute Creation Time"
+    group_item_label: "Seconds"
+  }
+
+  dimension: user__attribute__labels {
+    hidden: yes
+    sql: user.attribute.labels ;;
+    group_label: "User Attribute"
+    group_item_label: "Labels"
+  }
+
+  dimension: user__attribute__last_update_time__nanos {
+    type: number
+    sql: user.attribute.last_update_time.nanos ;;
+    group_label: "User Attribute Last Update Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: user__attribute__last_update_time__seconds {
+    type: number
+    sql: user.attribute.last_update_time.seconds ;;
+    group_label: "User Attribute Last Update Time"
+    group_item_label: "Seconds"
+  }
+
+  dimension: user__attribute__permissions {
+    hidden: yes
+    sql: user.attribute.permissions ;;
+    group_label: "User Attribute"
+    group_item_label: "Permissions"
+  }
+
+  dimension: user__attribute__roles {
+    hidden: yes
+    sql: user.attribute.roles ;;
+    group_label: "User Attribute"
+    group_item_label: "Roles"
+  }
+
+  dimension: user__company_name {
+    type: string
+    sql: user.company_name ;;
+    group_label: "User"
+    group_item_label: "Company Name"
+  }
+
+  dimension: user__department {
+    hidden: yes
+    sql: user.department ;;
+    group_label: "User"
+    group_item_label: "Department"
+  }
+
+  dimension: user__email_addresses {
+    hidden: yes
+    sql: user.email_addresses ;;
+    group_label: "User"
+    group_item_label: "Email Addresses"
+  }
+
+  dimension: user__employee_id {
+    type: string
+    sql: user.employee_id ;;
+    group_label: "User"
+    group_item_label: "Employee ID"
+  }
+
+  dimension: user__first_name {
+    type: string
+    sql: user.first_name ;;
+    group_label: "User"
+    group_item_label: "First Name"
+  }
+
+  dimension: user__group_identifiers {
+    hidden: yes
+    sql: user.group_identifiers ;;
+    group_label: "User"
+    group_item_label: "Group Identifiers"
+  }
+
+  dimension: user__groupid {
+    type: string
+    sql: user.groupid ;;
+    group_label: "User"
+    group_item_label: "Groupid"
+  }
+
+  dimension: user__hire_date__nanos {
+    type: number
+    sql: user.hire_date.nanos ;;
+    group_label: "User Hire Date"
+    group_item_label: "Nanos"
+  }
+
+  dimension: user__hire_date__seconds {
+    type: number
+    sql: user.hire_date.seconds ;;
+    group_label: "User Hire Date"
+    group_item_label: "Seconds"
+  }
+
+  dimension: user__last_name {
+    type: string
+    sql: user.last_name ;;
+    group_label: "User"
+    group_item_label: "Last Name"
+  }
+
+  dimension: user__middle_name {
+    type: string
+    sql: user.middle_name ;;
+    group_label: "User"
+    group_item_label: "Middle Name"
+  }
+
+  dimension: user__office_address__city {
+    type: string
+    sql: user.office_address.city ;;
+    group_label: "User Office Address"
+    group_item_label: "City"
+  }
+
+  dimension: user__office_address__country_or_region {
+    type: string
+    sql: user.office_address.country_or_region ;;
+    group_label: "User Office Address"
+    group_item_label: "Country or Region"
+  }
+
+  dimension: user__office_address__desk_name {
+    type: string
+    sql: user.office_address.desk_name ;;
+    group_label: "User Office Address"
+    group_item_label: "Desk Name"
+  }
+
+  dimension: user__office_address__floor_name {
+    type: string
+    sql: user.office_address.floor_name ;;
+    group_label: "User Office Address"
+    group_item_label: "Floor Name"
+  }
+
+  dimension: user__office_address__name {
+    type: string
+    sql: user.office_address.name ;;
+    group_label: "User Office Address"
+    group_item_label: "Name"
+  }
+
+  dimension: user__office_address__state {
+    type: string
+    sql: user.office_address.state ;;
+    group_label: "User Office Address"
+    group_item_label: "State"
+  }
+
+  dimension: user__personal_address__city {
+    type: string
+    sql: user.personal_address.city ;;
+    group_label: "User Personal Address"
+    group_item_label: "City"
+  }
+
+  dimension: user__personal_address__country_or_region {
+    type: string
+    sql: user.personal_address.country_or_region ;;
+    group_label: "User Personal Address"
+    group_item_label: "Country or Region"
+  }
+
+  dimension: user__personal_address__desk_name {
+    type: string
+    sql: user.personal_address.desk_name ;;
+    group_label: "User Personal Address"
+    group_item_label: "Desk Name"
+  }
+
+  dimension: user__personal_address__floor_name {
+    type: string
+    sql: user.personal_address.floor_name ;;
+    group_label: "User Personal Address"
+    group_item_label: "Floor Name"
+  }
+
+  dimension: user__personal_address__name {
+    type: string
+    sql: user.personal_address.name ;;
+    group_label: "User Personal Address"
+    group_item_label: "Name"
+  }
+
+  dimension: user__personal_address__state {
+    type: string
+    sql: user.personal_address.state ;;
+    group_label: "User Personal Address"
+    group_item_label: "State"
+  }
+
+  dimension: user__phone_numbers {
+    hidden: yes
+    sql: user.phone_numbers ;;
+    group_label: "User"
+    group_item_label: "Phone Numbers"
+  }
+
+  dimension: user__product_object_id {
+    type: string
+    sql: user.product_object_id ;;
+    group_label: "User"
+    group_item_label: "Product Object ID"
+  }
+
+  dimension: user__role_description {
+    type: string
+    sql: user.role_description ;;
+    group_label: "User"
+    group_item_label: "Role Description"
+  }
+
+  dimension: user__role_name {
+    type: string
+    sql: user.role_name ;;
+    group_label: "User"
+    group_item_label: "Role Name"
+  }
+
+  dimension: user__termination_date__nanos {
+    type: number
+    sql: user.termination_date.nanos ;;
+    group_label: "User Termination Date"
+    group_item_label: "Nanos"
+  }
+
+  dimension: user__termination_date__seconds {
+    type: number
+    sql: user.termination_date.seconds ;;
+    group_label: "User Termination Date"
+    group_item_label: "Seconds"
+  }
+
+  dimension: user__time_off {
+    hidden: yes
+    sql: user.time_off ;;
+    group_label: "User"
+    group_item_label: "Time Off"
+  }
+
+  dimension: user__title {
+    type: string
+    sql: user.title ;;
+    group_label: "User"
+    group_item_label: "Title"
+  }
+
+  dimension: user__user_authentication_status {
+    type: number
+    sql: user.user_authentication_status ;;
+    group_label: "User"
+    group_item_label: "User Authentication Status"
+  }
+
+  dimension: user__user_display_name {
+    type: string
+    sql: user.user_display_name ;;
+    group_label: "User"
+    group_item_label: "User Display Name"
+  }
+
+  dimension: user__user_role {
+    type: number
+    sql: user.user_role ;;
+    group_label: "User"
+    group_item_label: "User Role"
+  }
+
+  dimension: user__userid {
+    type: string
+    sql: user.userid ;;
+    group_label: "User"
+    group_item_label: "Userid"
+  }
+
+  dimension: user__windows_sid {
+    type: string
+    sql: user.windows_sid ;;
+    group_label: "User"
+    group_item_label: "Windows Sid"
+  }
+
+  dimension: user_management_chain {
+    hidden: yes
+    sql: user_management_chain ;;
   }
 }
 
@@ -9336,6 +11366,1860 @@ view: udm_events__intermediary__ip {
   }
 }
 
+view: udm_events__security_result {
+  dimension: about__administrative_domain {
+    type: string
+    sql: about.administrative_domain ;;
+    group_label: "About"
+    group_item_label: "Administrative Domain"
+  }
+
+  dimension: about__application {
+    type: string
+    sql: about.application ;;
+    group_label: "About"
+    group_item_label: "Application"
+  }
+
+  dimension: about__asset__asset_id {
+    type: string
+    sql: about.asset.asset_id ;;
+    group_label: "About Asset"
+    group_item_label: "Asset ID"
+  }
+
+  dimension: about__asset__attribute__cloud__availability_zone {
+    type: string
+    sql: about.asset.attribute.cloud.availability_zone ;;
+    group_label: "About Asset Attribute Cloud"
+    group_item_label: "Availability Zone"
+  }
+
+  dimension: about__asset__attribute__cloud__environment {
+    type: number
+    sql: about.asset.attribute.cloud.environment ;;
+    group_label: "About Asset Attribute Cloud"
+    group_item_label: "Environment"
+  }
+
+  dimension: about__asset__attribute__cloud__project__id {
+    type: string
+    sql: about.asset.attribute.cloud.project.id ;;
+    group_label: "About Asset Attribute Cloud Project"
+    group_item_label: "ID"
+  }
+
+  dimension: about__asset__attribute__cloud__project__name {
+    type: string
+    sql: about.asset.attribute.cloud.project.name ;;
+    group_label: "About Asset Attribute Cloud Project"
+    group_item_label: "Name"
+  }
+
+  dimension: about__asset__attribute__cloud__project__parent {
+    type: string
+    sql: about.asset.attribute.cloud.project.parent ;;
+    group_label: "About Asset Attribute Cloud Project"
+    group_item_label: "Parent"
+  }
+
+  dimension: about__asset__attribute__cloud__project__product_object_id {
+    type: string
+    sql: about.asset.attribute.cloud.project.product_object_id ;;
+    group_label: "About Asset Attribute Cloud Project"
+    group_item_label: "Product Object ID"
+  }
+
+  dimension: about__asset__attribute__cloud__project__resource_subtype {
+    type: string
+    sql: about.asset.attribute.cloud.project.resource_subtype ;;
+    group_label: "About Asset Attribute Cloud Project"
+    group_item_label: "Resource Subtype"
+  }
+
+  dimension: about__asset__attribute__cloud__project__resource_type {
+    type: number
+    sql: about.asset.attribute.cloud.project.resource_type ;;
+    group_label: "About Asset Attribute Cloud Project"
+    group_item_label: "Resource Type"
+  }
+
+  dimension: about__asset__attribute__cloud__project__type {
+    type: string
+    sql: about.asset.attribute.cloud.project.type ;;
+    group_label: "About Asset Attribute Cloud Project"
+    group_item_label: "Type"
+  }
+
+  dimension: about__asset__attribute__cloud__vpc__id {
+    type: string
+    sql: about.asset.attribute.cloud.vpc.id ;;
+    group_label: "About Asset Attribute Cloud Vpc"
+    group_item_label: "ID"
+  }
+
+  dimension: about__asset__attribute__cloud__vpc__name {
+    type: string
+    sql: about.asset.attribute.cloud.vpc.name ;;
+    group_label: "About Asset Attribute Cloud Vpc"
+    group_item_label: "Name"
+  }
+
+  dimension: about__asset__attribute__cloud__vpc__parent {
+    type: string
+    sql: about.asset.attribute.cloud.vpc.parent ;;
+    group_label: "About Asset Attribute Cloud Vpc"
+    group_item_label: "Parent"
+  }
+
+  dimension: about__asset__attribute__cloud__vpc__product_object_id {
+    type: string
+    sql: about.asset.attribute.cloud.vpc.product_object_id ;;
+    group_label: "About Asset Attribute Cloud Vpc"
+    group_item_label: "Product Object ID"
+  }
+
+  dimension: about__asset__attribute__cloud__vpc__resource_subtype {
+    type: string
+    sql: about.asset.attribute.cloud.vpc.resource_subtype ;;
+    group_label: "About Asset Attribute Cloud Vpc"
+    group_item_label: "Resource Subtype"
+  }
+
+  dimension: about__asset__attribute__cloud__vpc__resource_type {
+    type: number
+    sql: about.asset.attribute.cloud.vpc.resource_type ;;
+    group_label: "About Asset Attribute Cloud Vpc"
+    group_item_label: "Resource Type"
+  }
+
+  dimension: about__asset__attribute__cloud__vpc__type {
+    type: string
+    sql: about.asset.attribute.cloud.vpc.type ;;
+    group_label: "About Asset Attribute Cloud Vpc"
+    group_item_label: "Type"
+  }
+
+  dimension: about__asset__attribute__creation_time__nanos {
+    type: number
+    sql: about.asset.attribute.creation_time.nanos ;;
+    group_label: "About Asset Attribute Creation Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: about__asset__attribute__creation_time__seconds {
+    type: number
+    sql: about.asset.attribute.creation_time.seconds ;;
+    group_label: "About Asset Attribute Creation Time"
+    group_item_label: "Seconds"
+  }
+
+  dimension: about__asset__attribute__labels {
+    hidden: yes
+    sql: about.asset.attribute.labels ;;
+    group_label: "About Asset Attribute"
+    group_item_label: "Labels"
+  }
+
+  dimension: about__asset__attribute__last_update_time__nanos {
+    type: number
+    sql: about.asset.attribute.last_update_time.nanos ;;
+    group_label: "About Asset Attribute Last Update Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: about__asset__attribute__last_update_time__seconds {
+    type: number
+    sql: about.asset.attribute.last_update_time.seconds ;;
+    group_label: "About Asset Attribute Last Update Time"
+    group_item_label: "Seconds"
+  }
+
+  dimension: about__asset__attribute__permissions {
+    hidden: yes
+    sql: about.asset.attribute.permissions ;;
+    group_label: "About Asset Attribute"
+    group_item_label: "Permissions"
+  }
+
+  dimension: about__asset__attribute__roles {
+    hidden: yes
+    sql: about.asset.attribute.roles ;;
+    group_label: "About Asset Attribute"
+    group_item_label: "Roles"
+  }
+
+  dimension: about__asset__category {
+    type: string
+    sql: about.asset.category ;;
+    group_label: "About Asset"
+    group_item_label: "Category"
+  }
+
+  dimension: about__asset__creation_time__nanos {
+    type: number
+    sql: about.asset.creation_time.nanos ;;
+    group_label: "About Asset Creation Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: about__asset__creation_time__seconds {
+    type: number
+    sql: about.asset.creation_time.seconds ;;
+    group_label: "About Asset Creation Time"
+    group_item_label: "Seconds"
+  }
+
+  dimension: about__asset__deployment_status {
+    type: number
+    sql: about.asset.deployment_status ;;
+    group_label: "About Asset"
+    group_item_label: "Deployment Status"
+  }
+
+  dimension: about__asset__first_discover_time__nanos {
+    type: number
+    sql: about.asset.first_discover_time.nanos ;;
+    group_label: "About Asset First Discover Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: about__asset__first_discover_time__seconds {
+    type: number
+    sql: about.asset.first_discover_time.seconds ;;
+    group_label: "About Asset First Discover Time"
+    group_item_label: "Seconds"
+  }
+
+  dimension: about__asset__hardware {
+    hidden: yes
+    sql: about.asset.hardware ;;
+    group_label: "About Asset"
+    group_item_label: "Hardware"
+  }
+
+  dimension: about__asset__hostname {
+    type: string
+    sql: about.asset.hostname ;;
+    group_label: "About Asset"
+    group_item_label: "Hostname"
+  }
+
+  dimension: about__asset__ip {
+    hidden: yes
+    sql: about.asset.ip ;;
+    group_label: "About Asset"
+    group_item_label: "IP"
+  }
+
+  dimension: about__asset__labels {
+    hidden: yes
+    sql: about.asset.labels ;;
+    group_label: "About Asset"
+    group_item_label: "Labels"
+  }
+
+  dimension: about__asset__last_boot_time__nanos {
+    type: number
+    sql: about.asset.last_boot_time.nanos ;;
+    group_label: "About Asset Last Boot Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: about__asset__last_boot_time__seconds {
+    type: number
+    sql: about.asset.last_boot_time.seconds ;;
+    group_label: "About Asset Last Boot Time"
+    group_item_label: "Seconds"
+  }
+
+  dimension: about__asset__last_discover_time__nanos {
+    type: number
+    sql: about.asset.last_discover_time.nanos ;;
+    group_label: "About Asset Last Discover Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: about__asset__last_discover_time__seconds {
+    type: number
+    sql: about.asset.last_discover_time.seconds ;;
+    group_label: "About Asset Last Discover Time"
+    group_item_label: "Seconds"
+  }
+
+  dimension: about__asset__location__city {
+    type: string
+    sql: about.asset.location.city ;;
+    group_label: "About Asset Location"
+    group_item_label: "City"
+  }
+
+  dimension: about__asset__location__country_or_region {
+    type: string
+    sql: about.asset.location.country_or_region ;;
+    group_label: "About Asset Location"
+    group_item_label: "Country or Region"
+  }
+
+  dimension: about__asset__location__desk_name {
+    type: string
+    sql: about.asset.location.desk_name ;;
+    group_label: "About Asset Location"
+    group_item_label: "Desk Name"
+  }
+
+  dimension: about__asset__location__floor_name {
+    type: string
+    sql: about.asset.location.floor_name ;;
+    group_label: "About Asset Location"
+    group_item_label: "Floor Name"
+  }
+
+  dimension: about__asset__location__name {
+    type: string
+    sql: about.asset.location.name ;;
+    group_label: "About Asset Location"
+    group_item_label: "Name"
+  }
+
+  dimension: about__asset__location__state {
+    type: string
+    sql: about.asset.location.state ;;
+    group_label: "About Asset Location"
+    group_item_label: "State"
+  }
+
+  dimension: about__asset__mac {
+    hidden: yes
+    sql: about.asset.mac ;;
+    group_label: "About Asset"
+    group_item_label: "Mac"
+  }
+
+  dimension: about__asset__nat_ip {
+    hidden: yes
+    sql: about.asset.nat_ip ;;
+    group_label: "About Asset"
+    group_item_label: "Nat IP"
+  }
+
+  dimension: about__asset__network_domain {
+    type: string
+    sql: about.asset.network_domain ;;
+    group_label: "About Asset"
+    group_item_label: "Network Domain"
+  }
+
+  dimension: about__asset__platform_software__platform {
+    type: number
+    sql: about.asset.platform_software.platform ;;
+    group_label: "About Asset Platform Software"
+    group_item_label: "Platform"
+  }
+
+  dimension: about__asset__platform_software__platform_patch_level {
+    type: string
+    sql: about.asset.platform_software.platform_patch_level ;;
+    group_label: "About Asset Platform Software"
+    group_item_label: "Platform Patch Level"
+  }
+
+  dimension: about__asset__platform_software__platform_version {
+    type: string
+    sql: about.asset.platform_software.platform_version ;;
+    group_label: "About Asset Platform Software"
+    group_item_label: "Platform Version"
+  }
+
+  dimension: about__asset__product_object_id {
+    type: string
+    sql: about.asset.product_object_id ;;
+    group_label: "About Asset"
+    group_item_label: "Product Object ID"
+  }
+
+  dimension: about__asset__software {
+    hidden: yes
+    sql: about.asset.software ;;
+    group_label: "About Asset"
+    group_item_label: "Software"
+  }
+
+  dimension: about__asset__system_last_update_time__nanos {
+    type: number
+    sql: about.asset.system_last_update_time.nanos ;;
+    group_label: "About Asset System Last Update Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: about__asset__system_last_update_time__seconds {
+    type: number
+    sql: about.asset.system_last_update_time.seconds ;;
+    group_label: "About Asset System Last Update Time"
+    group_item_label: "Seconds"
+  }
+
+  dimension: about__asset__type {
+    type: number
+    sql: about.asset.type ;;
+    group_label: "About Asset"
+    group_item_label: "Type"
+  }
+
+  dimension: about__asset__vulnerabilities {
+    hidden: yes
+    sql: about.asset.vulnerabilities ;;
+    group_label: "About Asset"
+    group_item_label: "Vulnerabilities"
+  }
+
+  dimension: about__asset_id {
+    type: string
+    sql: about.asset_id ;;
+    group_label: "About"
+    group_item_label: "Asset ID"
+  }
+
+  dimension: about__cloud__availability_zone {
+    type: string
+    sql: about.cloud.availability_zone ;;
+    group_label: "About Cloud"
+    group_item_label: "Availability Zone"
+  }
+
+  dimension: about__cloud__environment {
+    type: number
+    sql: about.cloud.environment ;;
+    group_label: "About Cloud"
+    group_item_label: "Environment"
+  }
+
+  dimension: about__cloud__project__attribute__creation_time__nanos {
+    type: number
+    sql: about.cloud.project.attribute.creation_time.nanos ;;
+    group_label: "About Cloud Project Attribute Creation Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: about__cloud__project__attribute__creation_time__seconds {
+    type: number
+    sql: about.cloud.project.attribute.creation_time.seconds ;;
+    group_label: "About Cloud Project Attribute Creation Time"
+    group_item_label: "Seconds"
+  }
+
+  dimension: about__cloud__project__attribute__labels {
+    hidden: yes
+    sql: about.cloud.project.attribute.labels ;;
+    group_label: "About Cloud Project Attribute"
+    group_item_label: "Labels"
+  }
+
+  dimension: about__cloud__project__attribute__last_update_time__nanos {
+    type: number
+    sql: about.cloud.project.attribute.last_update_time.nanos ;;
+    group_label: "About Cloud Project Attribute Last Update Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: about__cloud__project__attribute__last_update_time__seconds {
+    type: number
+    sql: about.cloud.project.attribute.last_update_time.seconds ;;
+    group_label: "About Cloud Project Attribute Last Update Time"
+    group_item_label: "Seconds"
+  }
+
+  dimension: about__cloud__project__attribute__permissions {
+    hidden: yes
+    sql: about.cloud.project.attribute.permissions ;;
+    group_label: "About Cloud Project Attribute"
+    group_item_label: "Permissions"
+  }
+
+  dimension: about__cloud__project__attribute__roles {
+    hidden: yes
+    sql: about.cloud.project.attribute.roles ;;
+    group_label: "About Cloud Project Attribute"
+    group_item_label: "Roles"
+  }
+
+  dimension: about__cloud__project__id {
+    type: string
+    sql: about.cloud.project.id ;;
+    group_label: "About Cloud Project"
+    group_item_label: "ID"
+  }
+
+  dimension: about__cloud__project__name {
+    type: string
+    sql: about.cloud.project.name ;;
+    group_label: "About Cloud Project"
+    group_item_label: "Name"
+  }
+
+  dimension: about__cloud__project__parent {
+    type: string
+    sql: about.cloud.project.parent ;;
+    group_label: "About Cloud Project"
+    group_item_label: "Parent"
+  }
+
+  dimension: about__cloud__project__product_object_id {
+    type: string
+    sql: about.cloud.project.product_object_id ;;
+    group_label: "About Cloud Project"
+    group_item_label: "Product Object ID"
+  }
+
+  dimension: about__cloud__project__resource_subtype {
+    type: string
+    sql: about.cloud.project.resource_subtype ;;
+    group_label: "About Cloud Project"
+    group_item_label: "Resource Subtype"
+  }
+
+  dimension: about__cloud__project__resource_type {
+    type: number
+    sql: about.cloud.project.resource_type ;;
+    group_label: "About Cloud Project"
+    group_item_label: "Resource Type"
+  }
+
+  dimension: about__cloud__project__type {
+    type: string
+    sql: about.cloud.project.type ;;
+    group_label: "About Cloud Project"
+    group_item_label: "Type"
+  }
+
+  dimension: about__cloud__vpc__attribute__creation_time__nanos {
+    type: number
+    sql: about.cloud.vpc.attribute.creation_time.nanos ;;
+    group_label: "About Cloud Vpc Attribute Creation Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: about__cloud__vpc__attribute__creation_time__seconds {
+    type: number
+    sql: about.cloud.vpc.attribute.creation_time.seconds ;;
+    group_label: "About Cloud Vpc Attribute Creation Time"
+    group_item_label: "Seconds"
+  }
+
+  dimension: about__cloud__vpc__attribute__labels {
+    hidden: yes
+    sql: about.cloud.vpc.attribute.labels ;;
+    group_label: "About Cloud Vpc Attribute"
+    group_item_label: "Labels"
+  }
+
+  dimension: about__cloud__vpc__attribute__last_update_time__nanos {
+    type: number
+    sql: about.cloud.vpc.attribute.last_update_time.nanos ;;
+    group_label: "About Cloud Vpc Attribute Last Update Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: about__cloud__vpc__attribute__last_update_time__seconds {
+    type: number
+    sql: about.cloud.vpc.attribute.last_update_time.seconds ;;
+    group_label: "About Cloud Vpc Attribute Last Update Time"
+    group_item_label: "Seconds"
+  }
+
+  dimension: about__cloud__vpc__attribute__permissions {
+    hidden: yes
+    sql: about.cloud.vpc.attribute.permissions ;;
+    group_label: "About Cloud Vpc Attribute"
+    group_item_label: "Permissions"
+  }
+
+  dimension: about__cloud__vpc__attribute__roles {
+    hidden: yes
+    sql: about.cloud.vpc.attribute.roles ;;
+    group_label: "About Cloud Vpc Attribute"
+    group_item_label: "Roles"
+  }
+
+  dimension: about__cloud__vpc__id {
+    type: string
+    sql: about.cloud.vpc.id ;;
+    group_label: "About Cloud Vpc"
+    group_item_label: "ID"
+  }
+
+  dimension: about__cloud__vpc__name {
+    type: string
+    sql: about.cloud.vpc.name ;;
+    group_label: "About Cloud Vpc"
+    group_item_label: "Name"
+  }
+
+  dimension: about__cloud__vpc__parent {
+    type: string
+    sql: about.cloud.vpc.parent ;;
+    group_label: "About Cloud Vpc"
+    group_item_label: "Parent"
+  }
+
+  dimension: about__cloud__vpc__product_object_id {
+    type: string
+    sql: about.cloud.vpc.product_object_id ;;
+    group_label: "About Cloud Vpc"
+    group_item_label: "Product Object ID"
+  }
+
+  dimension: about__cloud__vpc__resource_subtype {
+    type: string
+    sql: about.cloud.vpc.resource_subtype ;;
+    group_label: "About Cloud Vpc"
+    group_item_label: "Resource Subtype"
+  }
+
+  dimension: about__cloud__vpc__resource_type {
+    type: number
+    sql: about.cloud.vpc.resource_type ;;
+    group_label: "About Cloud Vpc"
+    group_item_label: "Resource Type"
+  }
+
+  dimension: about__cloud__vpc__type {
+    type: string
+    sql: about.cloud.vpc.type ;;
+    group_label: "About Cloud Vpc"
+    group_item_label: "Type"
+  }
+
+  dimension: about__email {
+    type: string
+    sql: about.email ;;
+    group_label: "About"
+    group_item_label: "Email"
+  }
+
+  dimension: about__file__file_metadata__pe__import_hash {
+    type: string
+    sql: about.file.file_metadata.pe.import_hash ;;
+    group_label: "About File File Metadata Pe"
+    group_item_label: "Import Hash"
+  }
+
+  dimension: about__file__full_path {
+    type: string
+    sql: about.file.full_path ;;
+    group_label: "About File"
+    group_item_label: "Full Path"
+  }
+
+  dimension: about__file__md5 {
+    type: string
+    sql: about.file.md5 ;;
+    group_label: "About File"
+    group_item_label: "Md5"
+  }
+
+  dimension: about__file__mime_type {
+    type: string
+    sql: about.file.mime_type ;;
+    group_label: "About File"
+    group_item_label: "Mime Type"
+  }
+
+  dimension: about__file__sha1 {
+    type: string
+    sql: about.file.sha1 ;;
+    group_label: "About File"
+    group_item_label: "Sha1"
+  }
+
+  dimension: about__file__sha256 {
+    type: string
+    sql: about.file.sha256 ;;
+    group_label: "About File"
+    group_item_label: "Sha256"
+  }
+
+  dimension: about__file__size {
+    type: number
+    sql: about.file.size ;;
+    group_label: "About File"
+    group_item_label: "Size"
+  }
+
+  dimension: about__group__attribute__cloud__availability_zone {
+    type: string
+    sql: about.`group`.attribute.cloud.availability_zone ;;
+    group_label: "About Group Attribute Cloud"
+    group_item_label: "Availability Zone"
+  }
+
+  dimension: about__group__attribute__cloud__environment {
+    type: number
+    sql: about.`group`.attribute.cloud.environment ;;
+    group_label: "About Group Attribute Cloud"
+    group_item_label: "Environment"
+  }
+
+  dimension: about__group__attribute__cloud__project__id {
+    type: string
+    sql: about.`group`.attribute.cloud.project.id ;;
+    group_label: "About Group Attribute Cloud Project"
+    group_item_label: "ID"
+  }
+
+  dimension: about__group__attribute__cloud__project__name {
+    type: string
+    sql: about.`group`.attribute.cloud.project.name ;;
+    group_label: "About Group Attribute Cloud Project"
+    group_item_label: "Name"
+  }
+
+  dimension: about__group__attribute__cloud__project__parent {
+    type: string
+    sql: about.`group`.attribute.cloud.project.parent ;;
+    group_label: "About Group Attribute Cloud Project"
+    group_item_label: "Parent"
+  }
+
+  dimension: about__group__attribute__cloud__project__product_object_id {
+    type: string
+    sql: about.`group`.attribute.cloud.project.product_object_id ;;
+    group_label: "About Group Attribute Cloud Project"
+    group_item_label: "Product Object ID"
+  }
+
+  dimension: about__group__attribute__cloud__project__resource_subtype {
+    type: string
+    sql: about.`group`.attribute.cloud.project.resource_subtype ;;
+    group_label: "About Group Attribute Cloud Project"
+    group_item_label: "Resource Subtype"
+  }
+
+  dimension: about__group__attribute__cloud__project__resource_type {
+    type: number
+    sql: about.`group`.attribute.cloud.project.resource_type ;;
+    group_label: "About Group Attribute Cloud Project"
+    group_item_label: "Resource Type"
+  }
+
+  dimension: about__group__attribute__cloud__project__type {
+    type: string
+    sql: about.`group`.attribute.cloud.project.type ;;
+    group_label: "About Group Attribute Cloud Project"
+    group_item_label: "Type"
+  }
+
+  dimension: about__group__attribute__cloud__vpc__id {
+    type: string
+    sql: about.`group`.attribute.cloud.vpc.id ;;
+    group_label: "About Group Attribute Cloud Vpc"
+    group_item_label: "ID"
+  }
+
+  dimension: about__group__attribute__cloud__vpc__name {
+    type: string
+    sql: about.`group`.attribute.cloud.vpc.name ;;
+    group_label: "About Group Attribute Cloud Vpc"
+    group_item_label: "Name"
+  }
+
+  dimension: about__group__attribute__cloud__vpc__parent {
+    type: string
+    sql: about.`group`.attribute.cloud.vpc.parent ;;
+    group_label: "About Group Attribute Cloud Vpc"
+    group_item_label: "Parent"
+  }
+
+  dimension: about__group__attribute__cloud__vpc__product_object_id {
+    type: string
+    sql: about.`group`.attribute.cloud.vpc.product_object_id ;;
+    group_label: "About Group Attribute Cloud Vpc"
+    group_item_label: "Product Object ID"
+  }
+
+  dimension: about__group__attribute__cloud__vpc__resource_subtype {
+    type: string
+    sql: about.`group`.attribute.cloud.vpc.resource_subtype ;;
+    group_label: "About Group Attribute Cloud Vpc"
+    group_item_label: "Resource Subtype"
+  }
+
+  dimension: about__group__attribute__cloud__vpc__resource_type {
+    type: number
+    sql: about.`group`.attribute.cloud.vpc.resource_type ;;
+    group_label: "About Group Attribute Cloud Vpc"
+    group_item_label: "Resource Type"
+  }
+
+  dimension: about__group__attribute__cloud__vpc__type {
+    type: string
+    sql: about.`group`.attribute.cloud.vpc.type ;;
+    group_label: "About Group Attribute Cloud Vpc"
+    group_item_label: "Type"
+  }
+
+  dimension: about__group__attribute__creation_time__nanos {
+    type: number
+    sql: about.`group`.attribute.creation_time.nanos ;;
+    group_label: "About Group Attribute Creation Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: about__group__attribute__creation_time__seconds {
+    type: number
+    sql: about.`group`.attribute.creation_time.seconds ;;
+    group_label: "About Group Attribute Creation Time"
+    group_item_label: "Seconds"
+  }
+
+  dimension: about__group__attribute__labels {
+    hidden: yes
+    sql: about.group.attribute.labels ;;
+    group_label: "About Group Attribute"
+    group_item_label: "Labels"
+  }
+
+  dimension: about__group__attribute__last_update_time__nanos {
+    type: number
+    sql: about.`group`.attribute.last_update_time.nanos ;;
+    group_label: "About Group Attribute Last Update Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: about__group__attribute__last_update_time__seconds {
+    type: number
+    sql: about.`group`.attribute.last_update_time.seconds ;;
+    group_label: "About Group Attribute Last Update Time"
+    group_item_label: "Seconds"
+  }
+
+  dimension: about__group__attribute__permissions {
+    hidden: yes
+    sql: about.group.attribute.permissions ;;
+    group_label: "About Group Attribute"
+    group_item_label: "Permissions"
+  }
+
+  dimension: about__group__attribute__roles {
+    hidden: yes
+    sql: about.group.attribute.roles ;;
+    group_label: "About Group Attribute"
+    group_item_label: "Roles"
+  }
+
+  dimension: about__group__creation_time__nanos {
+    type: number
+    sql: about.`group`.creation_time.nanos ;;
+    group_label: "About Group Creation Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: about__group__creation_time__seconds {
+    type: number
+    sql: about.`group`.creation_time.seconds ;;
+    group_label: "About Group Creation Time"
+    group_item_label: "Seconds"
+  }
+
+  dimension: about__group__email_addresses {
+    hidden: yes
+    sql: about.group.email_addresses ;;
+    group_label: "About Group"
+    group_item_label: "Email Addresses"
+  }
+
+  dimension: about__group__group_display_name {
+    type: string
+    sql: about.`group`.group_display_name ;;
+    group_label: "About Group"
+    group_item_label: "Group Display Name"
+  }
+
+  dimension: about__group__product_object_id {
+    type: string
+    sql: about.`group`.product_object_id ;;
+    group_label: "About Group"
+    group_item_label: "Product Object ID"
+  }
+
+  dimension: about__group__windows_sid {
+    type: string
+    sql: about.`group`.windows_sid ;;
+    group_label: "About Group"
+    group_item_label: "Windows Sid"
+  }
+
+  dimension: about__hostname {
+    type: string
+    sql: about.hostname ;;
+    group_label: "About"
+    group_item_label: "Hostname"
+  }
+
+  dimension: about__investigation__comments {
+    hidden: yes
+    sql: about.investigation.comments ;;
+    group_label: "About Investigation"
+    group_item_label: "Comments"
+  }
+
+  dimension: about__investigation__reputation {
+    type: number
+    sql: about.investigation.reputation ;;
+    group_label: "About Investigation"
+    group_item_label: "Reputation"
+  }
+
+  dimension: about__investigation__severity_score {
+    type: number
+    sql: about.investigation.severity_score ;;
+    group_label: "About Investigation"
+    group_item_label: "Severity Score"
+  }
+
+  dimension: about__investigation__status {
+    type: number
+    sql: about.investigation.status ;;
+    group_label: "About Investigation"
+    group_item_label: "Status"
+  }
+
+  dimension: about__investigation__verdict {
+    type: number
+    sql: about.investigation.verdict ;;
+    group_label: "About Investigation"
+    group_item_label: "Verdict"
+  }
+
+  dimension: about__ip {
+    hidden: yes
+    sql: about.ip ;;
+    group_label: "About"
+    group_item_label: "IP"
+  }
+
+  dimension: about__labels {
+    hidden: yes
+    sql: about.labels ;;
+    group_label: "About"
+    group_item_label: "Labels"
+  }
+
+  dimension: about__location__city {
+    type: string
+    sql: about.location.city ;;
+    group_label: "About Location"
+    group_item_label: "City"
+  }
+
+  dimension: about__location__country_or_region {
+    type: string
+    sql: about.location.country_or_region ;;
+    group_label: "About Location"
+    group_item_label: "Country or Region"
+  }
+
+  dimension: about__location__desk_name {
+    type: string
+    sql: about.location.desk_name ;;
+    group_label: "About Location"
+    group_item_label: "Desk Name"
+  }
+
+  dimension: about__location__floor_name {
+    type: string
+    sql: about.location.floor_name ;;
+    group_label: "About Location"
+    group_item_label: "Floor Name"
+  }
+
+  dimension: about__location__name {
+    type: string
+    sql: about.location.name ;;
+    group_label: "About Location"
+    group_item_label: "Name"
+  }
+
+  dimension: about__location__state {
+    type: string
+    sql: about.location.state ;;
+    group_label: "About Location"
+    group_item_label: "State"
+  }
+
+  dimension: about__mac {
+    hidden: yes
+    sql: about.mac ;;
+    group_label: "About"
+    group_item_label: "Mac"
+  }
+
+  dimension: about__namespace {
+    type: string
+    sql: about.namespace ;;
+    group_label: "About"
+    group_item_label: "Namespace"
+  }
+
+  dimension: about__nat_ip {
+    hidden: yes
+    sql: about.nat_ip ;;
+    group_label: "About"
+    group_item_label: "Nat IP"
+  }
+
+  dimension: about__nat_port {
+    type: number
+    sql: about.nat_port ;;
+    group_label: "About"
+    group_item_label: "Nat Port"
+  }
+
+  dimension: about__object_reference__id {
+    type: string
+    sql: about.object_reference.id ;;
+    group_label: "About Object Reference"
+    group_item_label: "ID"
+  }
+
+  dimension: about__object_reference__namespace {
+    type: number
+    sql: about.object_reference.namespace ;;
+    group_label: "About Object Reference"
+    group_item_label: "Namespace"
+  }
+
+  dimension: about__platform {
+    type: number
+    sql: about.platform ;;
+    group_label: "About"
+    group_item_label: "Platform"
+  }
+
+  dimension: about__platform_patch_level {
+    type: string
+    sql: about.platform_patch_level ;;
+    group_label: "About"
+    group_item_label: "Platform Patch Level"
+  }
+
+  dimension: about__platform_version {
+    type: string
+    sql: about.platform_version ;;
+    group_label: "About"
+    group_item_label: "Platform Version"
+  }
+
+  dimension: about__port {
+    type: number
+    sql: about.port ;;
+    group_label: "About"
+    group_item_label: "Port"
+  }
+
+  dimension: about__process__access_mask {
+    type: number
+    sql: about.process.access_mask ;;
+    group_label: "About Process"
+    group_item_label: "Access Mask"
+  }
+
+  dimension: about__process__command_line {
+    type: string
+    sql: about.process.command_line ;;
+    group_label: "About Process"
+    group_item_label: "Command Line"
+  }
+
+  dimension: about__process__command_line_history {
+    hidden: yes
+    sql: about.process.command_line_history ;;
+    group_label: "About Process"
+    group_item_label: "Command Line History"
+  }
+
+  dimension: about__process__file__file_metadata__pe__import_hash {
+    type: string
+    sql: about.process.file.file_metadata.pe.import_hash ;;
+    group_label: "About Process File File Metadata Pe"
+    group_item_label: "Import Hash"
+  }
+
+  dimension: about__process__file__full_path {
+    type: string
+    sql: about.process.file.full_path ;;
+    group_label: "About Process File"
+    group_item_label: "Full Path"
+  }
+
+  dimension: about__process__file__md5 {
+    type: string
+    sql: about.process.file.md5 ;;
+    group_label: "About Process File"
+    group_item_label: "Md5"
+  }
+
+  dimension: about__process__file__mime_type {
+    type: string
+    sql: about.process.file.mime_type ;;
+    group_label: "About Process File"
+    group_item_label: "Mime Type"
+  }
+
+  dimension: about__process__file__sha1 {
+    type: string
+    sql: about.process.file.sha1 ;;
+    group_label: "About Process File"
+    group_item_label: "Sha1"
+  }
+
+  dimension: about__process__file__sha256 {
+    type: string
+    sql: about.process.file.sha256 ;;
+    group_label: "About Process File"
+    group_item_label: "Sha256"
+  }
+
+  dimension: about__process__file__size {
+    type: number
+    sql: about.process.file.size ;;
+    group_label: "About Process File"
+    group_item_label: "Size"
+  }
+
+  dimension: about__process__parent_pid {
+    type: string
+    sql: about.process.parent_pid ;;
+    group_label: "About Process"
+    group_item_label: "Parent Pid"
+  }
+
+  dimension: about__process__pid {
+    type: string
+    sql: about.process.pid ;;
+    group_label: "About Process"
+    group_item_label: "Pid"
+  }
+
+  dimension: about__process__product_specific_parent_process_id {
+    type: string
+    sql: about.process.product_specific_parent_process_id ;;
+    group_label: "About Process"
+    group_item_label: "Product Specific Parent Process ID"
+  }
+
+  dimension: about__process__product_specific_process_id {
+    type: string
+    sql: about.process.product_specific_process_id ;;
+    group_label: "About Process"
+    group_item_label: "Product Specific Process ID"
+  }
+
+  dimension: about__process_ancestors {
+    hidden: yes
+    sql: about.process_ancestors ;;
+    group_label: "About"
+    group_item_label: "Process Ancestors"
+  }
+
+  dimension: about__registry__registry_key {
+    type: string
+    sql: about.registry.registry_key ;;
+    group_label: "About Registry"
+    group_item_label: "Registry Key"
+  }
+
+  dimension: about__registry__registry_value_data {
+    type: string
+    sql: about.registry.registry_value_data ;;
+    group_label: "About Registry"
+    group_item_label: "Registry Value Data"
+  }
+
+  dimension: about__registry__registry_value_name {
+    type: string
+    sql: about.registry.registry_value_name ;;
+    group_label: "About Registry"
+    group_item_label: "Registry Value Name"
+  }
+
+  dimension: about__resource__attribute__cloud__availability_zone {
+    type: string
+    sql: about.resource.attribute.cloud.availability_zone ;;
+    group_label: "About Resource Attribute Cloud"
+    group_item_label: "Availability Zone"
+  }
+
+  dimension: about__resource__attribute__cloud__environment {
+    type: number
+    sql: about.resource.attribute.cloud.environment ;;
+    group_label: "About Resource Attribute Cloud"
+    group_item_label: "Environment"
+  }
+
+  dimension: about__resource__attribute__creation_time__nanos {
+    type: number
+    sql: about.resource.attribute.creation_time.nanos ;;
+    group_label: "About Resource Attribute Creation Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: about__resource__attribute__creation_time__seconds {
+    type: number
+    sql: about.resource.attribute.creation_time.seconds ;;
+    group_label: "About Resource Attribute Creation Time"
+    group_item_label: "Seconds"
+  }
+
+  dimension: about__resource__attribute__labels {
+    hidden: yes
+    sql: about.resource.attribute.labels ;;
+    group_label: "About Resource Attribute"
+    group_item_label: "Labels"
+  }
+
+  dimension: about__resource__attribute__last_update_time__nanos {
+    type: number
+    sql: about.resource.attribute.last_update_time.nanos ;;
+    group_label: "About Resource Attribute Last Update Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: about__resource__attribute__last_update_time__seconds {
+    type: number
+    sql: about.resource.attribute.last_update_time.seconds ;;
+    group_label: "About Resource Attribute Last Update Time"
+    group_item_label: "Seconds"
+  }
+
+  dimension: about__resource__attribute__permissions {
+    hidden: yes
+    sql: about.resource.attribute.permissions ;;
+    group_label: "About Resource Attribute"
+    group_item_label: "Permissions"
+  }
+
+  dimension: about__resource__attribute__roles {
+    hidden: yes
+    sql: about.resource.attribute.roles ;;
+    group_label: "About Resource Attribute"
+    group_item_label: "Roles"
+  }
+
+  dimension: about__resource__id {
+    type: string
+    sql: about.resource.id ;;
+    group_label: "About Resource"
+    group_item_label: "ID"
+  }
+
+  dimension: about__resource__name {
+    type: string
+    sql: about.resource.name ;;
+    group_label: "About Resource"
+    group_item_label: "Name"
+  }
+
+  dimension: about__resource__parent {
+    type: string
+    sql: about.resource.parent ;;
+    group_label: "About Resource"
+    group_item_label: "Parent"
+  }
+
+  dimension: about__resource__product_object_id {
+    type: string
+    sql: about.resource.product_object_id ;;
+    group_label: "About Resource"
+    group_item_label: "Product Object ID"
+  }
+
+  dimension: about__resource__resource_subtype {
+    type: string
+    sql: about.resource.resource_subtype ;;
+    group_label: "About Resource"
+    group_item_label: "Resource Subtype"
+  }
+
+  dimension: about__resource__resource_type {
+    type: number
+    sql: about.resource.resource_type ;;
+    group_label: "About Resource"
+    group_item_label: "Resource Type"
+  }
+
+  dimension: about__resource__type {
+    type: string
+    sql: about.resource.type ;;
+    group_label: "About Resource"
+    group_item_label: "Type"
+  }
+
+  dimension: about__url {
+    type: string
+    sql: about.url ;;
+    group_label: "About"
+    group_item_label: "URL"
+  }
+
+  dimension: about__user__attribute__cloud__availability_zone {
+    type: string
+    sql: about.user.attribute.cloud.availability_zone ;;
+    group_label: "About User Attribute Cloud"
+    group_item_label: "Availability Zone"
+  }
+
+  dimension: about__user__attribute__cloud__environment {
+    type: number
+    sql: about.user.attribute.cloud.environment ;;
+    group_label: "About User Attribute Cloud"
+    group_item_label: "Environment"
+  }
+
+  dimension: about__user__attribute__cloud__project__id {
+    type: string
+    sql: about.user.attribute.cloud.project.id ;;
+    group_label: "About User Attribute Cloud Project"
+    group_item_label: "ID"
+  }
+
+  dimension: about__user__attribute__cloud__project__name {
+    type: string
+    sql: about.user.attribute.cloud.project.name ;;
+    group_label: "About User Attribute Cloud Project"
+    group_item_label: "Name"
+  }
+
+  dimension: about__user__attribute__cloud__project__parent {
+    type: string
+    sql: about.user.attribute.cloud.project.parent ;;
+    group_label: "About User Attribute Cloud Project"
+    group_item_label: "Parent"
+  }
+
+  dimension: about__user__attribute__cloud__project__product_object_id {
+    type: string
+    sql: about.user.attribute.cloud.project.product_object_id ;;
+    group_label: "About User Attribute Cloud Project"
+    group_item_label: "Product Object ID"
+  }
+
+  dimension: about__user__attribute__cloud__project__resource_subtype {
+    type: string
+    sql: about.user.attribute.cloud.project.resource_subtype ;;
+    group_label: "About User Attribute Cloud Project"
+    group_item_label: "Resource Subtype"
+  }
+
+  dimension: about__user__attribute__cloud__project__resource_type {
+    type: number
+    sql: about.user.attribute.cloud.project.resource_type ;;
+    group_label: "About User Attribute Cloud Project"
+    group_item_label: "Resource Type"
+  }
+
+  dimension: about__user__attribute__cloud__project__type {
+    type: string
+    sql: about.user.attribute.cloud.project.type ;;
+    group_label: "About User Attribute Cloud Project"
+    group_item_label: "Type"
+  }
+
+  dimension: about__user__attribute__cloud__vpc__id {
+    type: string
+    sql: about.user.attribute.cloud.vpc.id ;;
+    group_label: "About User Attribute Cloud Vpc"
+    group_item_label: "ID"
+  }
+
+  dimension: about__user__attribute__cloud__vpc__name {
+    type: string
+    sql: about.user.attribute.cloud.vpc.name ;;
+    group_label: "About User Attribute Cloud Vpc"
+    group_item_label: "Name"
+  }
+
+  dimension: about__user__attribute__cloud__vpc__parent {
+    type: string
+    sql: about.user.attribute.cloud.vpc.parent ;;
+    group_label: "About User Attribute Cloud Vpc"
+    group_item_label: "Parent"
+  }
+
+  dimension: about__user__attribute__cloud__vpc__product_object_id {
+    type: string
+    sql: about.user.attribute.cloud.vpc.product_object_id ;;
+    group_label: "About User Attribute Cloud Vpc"
+    group_item_label: "Product Object ID"
+  }
+
+  dimension: about__user__attribute__cloud__vpc__resource_subtype {
+    type: string
+    sql: about.user.attribute.cloud.vpc.resource_subtype ;;
+    group_label: "About User Attribute Cloud Vpc"
+    group_item_label: "Resource Subtype"
+  }
+
+  dimension: about__user__attribute__cloud__vpc__resource_type {
+    type: number
+    sql: about.user.attribute.cloud.vpc.resource_type ;;
+    group_label: "About User Attribute Cloud Vpc"
+    group_item_label: "Resource Type"
+  }
+
+  dimension: about__user__attribute__cloud__vpc__type {
+    type: string
+    sql: about.user.attribute.cloud.vpc.type ;;
+    group_label: "About User Attribute Cloud Vpc"
+    group_item_label: "Type"
+  }
+
+  dimension: about__user__attribute__creation_time__nanos {
+    type: number
+    sql: about.user.attribute.creation_time.nanos ;;
+    group_label: "About User Attribute Creation Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: about__user__attribute__creation_time__seconds {
+    type: number
+    sql: about.user.attribute.creation_time.seconds ;;
+    group_label: "About User Attribute Creation Time"
+    group_item_label: "Seconds"
+  }
+
+  dimension: about__user__attribute__labels {
+    hidden: yes
+    sql: about.user.attribute.labels ;;
+    group_label: "About User Attribute"
+    group_item_label: "Labels"
+  }
+
+  dimension: about__user__attribute__last_update_time__nanos {
+    type: number
+    sql: about.user.attribute.last_update_time.nanos ;;
+    group_label: "About User Attribute Last Update Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: about__user__attribute__last_update_time__seconds {
+    type: number
+    sql: about.user.attribute.last_update_time.seconds ;;
+    group_label: "About User Attribute Last Update Time"
+    group_item_label: "Seconds"
+  }
+
+  dimension: about__user__attribute__permissions {
+    hidden: yes
+    sql: about.user.attribute.permissions ;;
+    group_label: "About User Attribute"
+    group_item_label: "Permissions"
+  }
+
+  dimension: about__user__attribute__roles {
+    hidden: yes
+    sql: about.user.attribute.roles ;;
+    group_label: "About User Attribute"
+    group_item_label: "Roles"
+  }
+
+  dimension: about__user__company_name {
+    type: string
+    sql: about.user.company_name ;;
+    group_label: "About User"
+    group_item_label: "Company Name"
+  }
+
+  dimension: about__user__department {
+    hidden: yes
+    sql: about.user.department ;;
+    group_label: "About User"
+    group_item_label: "Department"
+  }
+
+  dimension: about__user__email_addresses {
+    hidden: yes
+    sql: about.user.email_addresses ;;
+    group_label: "About User"
+    group_item_label: "Email Addresses"
+  }
+
+  dimension: about__user__employee_id {
+    type: string
+    sql: about.user.employee_id ;;
+    group_label: "About User"
+    group_item_label: "Employee ID"
+  }
+
+  dimension: about__user__first_name {
+    type: string
+    sql: about.user.first_name ;;
+    group_label: "About User"
+    group_item_label: "First Name"
+  }
+
+  dimension: about__user__group_identifiers {
+    hidden: yes
+    sql: about.user.group_identifiers ;;
+    group_label: "About User"
+    group_item_label: "Group Identifiers"
+  }
+
+  dimension: about__user__groupid {
+    type: string
+    sql: about.user.groupid ;;
+    group_label: "About User"
+    group_item_label: "Groupid"
+  }
+
+  dimension: about__user__hire_date__nanos {
+    type: number
+    sql: about.user.hire_date.nanos ;;
+    group_label: "About User Hire Date"
+    group_item_label: "Nanos"
+  }
+
+  dimension: about__user__hire_date__seconds {
+    type: number
+    sql: about.user.hire_date.seconds ;;
+    group_label: "About User Hire Date"
+    group_item_label: "Seconds"
+  }
+
+  dimension: about__user__last_name {
+    type: string
+    sql: about.user.last_name ;;
+    group_label: "About User"
+    group_item_label: "Last Name"
+  }
+
+  dimension: about__user__middle_name {
+    type: string
+    sql: about.user.middle_name ;;
+    group_label: "About User"
+    group_item_label: "Middle Name"
+  }
+
+  dimension: about__user__office_address__city {
+    type: string
+    sql: about.user.office_address.city ;;
+    group_label: "About User Office Address"
+    group_item_label: "City"
+  }
+
+  dimension: about__user__office_address__country_or_region {
+    type: string
+    sql: about.user.office_address.country_or_region ;;
+    group_label: "About User Office Address"
+    group_item_label: "Country or Region"
+  }
+
+  dimension: about__user__office_address__desk_name {
+    type: string
+    sql: about.user.office_address.desk_name ;;
+    group_label: "About User Office Address"
+    group_item_label: "Desk Name"
+  }
+
+  dimension: about__user__office_address__floor_name {
+    type: string
+    sql: about.user.office_address.floor_name ;;
+    group_label: "About User Office Address"
+    group_item_label: "Floor Name"
+  }
+
+  dimension: about__user__office_address__name {
+    type: string
+    sql: about.user.office_address.name ;;
+    group_label: "About User Office Address"
+    group_item_label: "Name"
+  }
+
+  dimension: about__user__office_address__state {
+    type: string
+    sql: about.user.office_address.state ;;
+    group_label: "About User Office Address"
+    group_item_label: "State"
+  }
+
+  dimension: about__user__personal_address__city {
+    type: string
+    sql: about.user.personal_address.city ;;
+    group_label: "About User Personal Address"
+    group_item_label: "City"
+  }
+
+  dimension: about__user__personal_address__country_or_region {
+    type: string
+    sql: about.user.personal_address.country_or_region ;;
+    group_label: "About User Personal Address"
+    group_item_label: "Country or Region"
+  }
+
+  dimension: about__user__personal_address__desk_name {
+    type: string
+    sql: about.user.personal_address.desk_name ;;
+    group_label: "About User Personal Address"
+    group_item_label: "Desk Name"
+  }
+
+  dimension: about__user__personal_address__floor_name {
+    type: string
+    sql: about.user.personal_address.floor_name ;;
+    group_label: "About User Personal Address"
+    group_item_label: "Floor Name"
+  }
+
+  dimension: about__user__personal_address__name {
+    type: string
+    sql: about.user.personal_address.name ;;
+    group_label: "About User Personal Address"
+    group_item_label: "Name"
+  }
+
+  dimension: about__user__personal_address__state {
+    type: string
+    sql: about.user.personal_address.state ;;
+    group_label: "About User Personal Address"
+    group_item_label: "State"
+  }
+
+  dimension: about__user__phone_numbers {
+    hidden: yes
+    sql: about.user.phone_numbers ;;
+    group_label: "About User"
+    group_item_label: "Phone Numbers"
+  }
+
+  dimension: about__user__product_object_id {
+    type: string
+    sql: about.user.product_object_id ;;
+    group_label: "About User"
+    group_item_label: "Product Object ID"
+  }
+
+  dimension: about__user__role_description {
+    type: string
+    sql: about.user.role_description ;;
+    group_label: "About User"
+    group_item_label: "Role Description"
+  }
+
+  dimension: about__user__role_name {
+    type: string
+    sql: about.user.role_name ;;
+    group_label: "About User"
+    group_item_label: "Role Name"
+  }
+
+  dimension: about__user__termination_date__nanos {
+    type: number
+    sql: about.user.termination_date.nanos ;;
+    group_label: "About User Termination Date"
+    group_item_label: "Nanos"
+  }
+
+  dimension: about__user__termination_date__seconds {
+    type: number
+    sql: about.user.termination_date.seconds ;;
+    group_label: "About User Termination Date"
+    group_item_label: "Seconds"
+  }
+
+  dimension: about__user__time_off {
+    hidden: yes
+    sql: about.user.time_off ;;
+    group_label: "About User"
+    group_item_label: "Time Off"
+  }
+
+  dimension: about__user__title {
+    type: string
+    sql: about.user.title ;;
+    group_label: "About User"
+    group_item_label: "Title"
+  }
+
+  dimension: about__user__user_authentication_status {
+    type: number
+    sql: about.user.user_authentication_status ;;
+    group_label: "About User"
+    group_item_label: "User Authentication Status"
+  }
+
+  dimension: about__user__user_display_name {
+    type: string
+    sql: about.user.user_display_name ;;
+    group_label: "About User"
+    group_item_label: "User Display Name"
+  }
+
+  dimension: about__user__user_role {
+    type: number
+    sql: about.user.user_role ;;
+    group_label: "About User"
+    group_item_label: "User Role"
+  }
+
+  dimension: about__user__userid {
+    type: string
+    sql: about.user.userid ;;
+    group_label: "About User"
+    group_item_label: "Userid"
+  }
+
+  dimension: about__user__windows_sid {
+    type: string
+    sql: about.user.windows_sid ;;
+    group_label: "About User"
+    group_item_label: "Windows Sid"
+  }
+
+  dimension: about__user_management_chain {
+    hidden: yes
+    sql: about.user_management_chain ;;
+    group_label: "About"
+    group_item_label: "User Management Chain"
+  }
+
+  dimension: action {
+    hidden: yes
+    sql: action ;;
+  }
+
+  dimension: action_details {
+    type: string
+    sql: action_details ;;
+  }
+
+  dimension: alert_state {
+    type: number
+    sql: alert_state ;;
+  }
+
+  dimension: category {
+    hidden: yes
+    sql: category ;;
+  }
+
+  dimension: category_details {
+    hidden: yes
+    sql: category_details ;;
+  }
+
+  dimension: confidence {
+    type: number
+    sql: confidence ;;
+  }
+
+  dimension: confidence_details {
+    type: string
+    sql: confidence_details ;;
+  }
+
+  dimension: description {
+    type: string
+    sql: description ;;
+  }
+
+  dimension: detection_fields {
+    hidden: yes
+    sql: detection_fields ;;
+  }
+
+  dimension: priority {
+    type: number
+    sql: priority ;;
+  }
+
+  dimension: priority_details {
+    type: string
+    sql: priority_details ;;
+  }
+
+  dimension: rule_author {
+    type: string
+    sql: rule_author ;;
+  }
+
+  dimension: rule_id {
+    type: string
+    sql: rule_id ;;
+  }
+
+  dimension: rule_labels {
+    hidden: yes
+    sql: rule_labels ;;
+  }
+
+  dimension: rule_name {
+    type: string
+    sql: rule_name ;;
+  }
+
+  dimension: rule_type {
+    type: string
+    sql: rule_type ;;
+  }
+
+  dimension: rule_version {
+    type: string
+    sql: rule_version ;;
+  }
+
+  dimension: severity {
+    type: number
+    sql: severity ;;
+  }
+
+  dimension: severity_details {
+    type: string
+    sql: severity_details ;;
+  }
+
+  dimension: summary {
+    type: string
+    sql: summary ;;
+  }
+
+  dimension: threat_feed_name {
+    type: string
+    sql: threat_feed_name ;;
+  }
+
+  dimension: threat_id {
+    type: string
+    sql: threat_id ;;
+  }
+
+  dimension: threat_id_namespace {
+    type: number
+    value_format_name: id
+    sql: threat_id_namespace ;;
+  }
+
+  dimension: threat_name {
+    type: string
+    sql: threat_name ;;
+  }
+
+  dimension: threat_status {
+    type: number
+    sql: threat_status ;;
+  }
+
+  dimension: udm_events__security_result {
+    type: string
+    hidden: yes
+    sql: udm_events__security_result ;;
+  }
+
+  dimension: url_back_to_product {
+    type: string
+    sql: url_back_to_product ;;
+  }
+}
+
 view: udm_events__target__asset__ip {
   dimension: udm_events__target__asset__ip {
     type: string
@@ -9373,1621 +13257,6 @@ view: udm_events__intermediary__mac {
   dimension: udm_events__intermediary__mac {
     type: string
     sql: udm_events__intermediary__mac ;;
-  }
-}
-
-view: udm_events__intermediary {
-  dimension: administrative_domain {
-    type: string
-    sql: ${TABLE}.administrative_domain ;;
-  }
-
-  dimension: application {
-    type: string
-    sql: ${TABLE}.application ;;
-  }
-
-  dimension: asset__asset_id {
-    type: string
-    sql: ${TABLE}.asset.asset_id ;;
-    group_label: "Asset"
-    group_item_label: "Asset ID"
-  }
-
-  dimension: asset__attribute__cloud__availability_zone {
-    type: string
-    sql: ${TABLE}.asset.attribute.cloud.availability_zone ;;
-    group_label: "Asset Attribute Cloud"
-    group_item_label: "Availability Zone"
-  }
-
-  dimension: asset__attribute__cloud__environment {
-    type: number
-    sql: ${TABLE}.asset.attribute.cloud.environment ;;
-    group_label: "Asset Attribute Cloud"
-    group_item_label: "Environment"
-  }
-
-  dimension: asset__attribute__cloud__project__id {
-    type: string
-    sql: ${TABLE}.asset.attribute.cloud.project.id ;;
-    group_label: "Asset Attribute Cloud Project"
-    group_item_label: "ID"
-  }
-
-  dimension: asset__attribute__cloud__project__name {
-    type: string
-    sql: ${TABLE}.asset.attribute.cloud.project.name ;;
-    group_label: "Asset Attribute Cloud Project"
-    group_item_label: "Name"
-  }
-
-  dimension: asset__attribute__cloud__project__parent {
-    type: string
-    sql: ${TABLE}.asset.attribute.cloud.project.parent ;;
-    group_label: "Asset Attribute Cloud Project"
-    group_item_label: "Parent"
-  }
-
-  dimension: asset__attribute__cloud__project__product_object_id {
-    type: string
-    sql: ${TABLE}.asset.attribute.cloud.project.product_object_id ;;
-    group_label: "Asset Attribute Cloud Project"
-    group_item_label: "Product Object ID"
-  }
-
-  dimension: asset__attribute__cloud__project__resource_subtype {
-    type: string
-    sql: ${TABLE}.asset.attribute.cloud.project.resource_subtype ;;
-    group_label: "Asset Attribute Cloud Project"
-    group_item_label: "Resource Subtype"
-  }
-
-  dimension: asset__attribute__cloud__project__resource_type {
-    type: number
-    sql: ${TABLE}.asset.attribute.cloud.project.resource_type ;;
-    group_label: "Asset Attribute Cloud Project"
-    group_item_label: "Resource Type"
-  }
-
-  dimension: asset__attribute__cloud__project__type {
-    type: string
-    sql: ${TABLE}.asset.attribute.cloud.project.type ;;
-    group_label: "Asset Attribute Cloud Project"
-    group_item_label: "Type"
-  }
-
-  dimension: asset__attribute__cloud__vpc__id {
-    type: string
-    sql: ${TABLE}.asset.attribute.cloud.vpc.id ;;
-    group_label: "Asset Attribute Cloud Vpc"
-    group_item_label: "ID"
-  }
-
-  dimension: asset__attribute__cloud__vpc__name {
-    type: string
-    sql: ${TABLE}.asset.attribute.cloud.vpc.name ;;
-    group_label: "Asset Attribute Cloud Vpc"
-    group_item_label: "Name"
-  }
-
-  dimension: asset__attribute__cloud__vpc__parent {
-    type: string
-    sql: ${TABLE}.asset.attribute.cloud.vpc.parent ;;
-    group_label: "Asset Attribute Cloud Vpc"
-    group_item_label: "Parent"
-  }
-
-  dimension: asset__attribute__cloud__vpc__product_object_id {
-    type: string
-    sql: ${TABLE}.asset.attribute.cloud.vpc.product_object_id ;;
-    group_label: "Asset Attribute Cloud Vpc"
-    group_item_label: "Product Object ID"
-  }
-
-  dimension: asset__attribute__cloud__vpc__resource_subtype {
-    type: string
-    sql: ${TABLE}.asset.attribute.cloud.vpc.resource_subtype ;;
-    group_label: "Asset Attribute Cloud Vpc"
-    group_item_label: "Resource Subtype"
-  }
-
-  dimension: asset__attribute__cloud__vpc__resource_type {
-    type: number
-    sql: ${TABLE}.asset.attribute.cloud.vpc.resource_type ;;
-    group_label: "Asset Attribute Cloud Vpc"
-    group_item_label: "Resource Type"
-  }
-
-  dimension: asset__attribute__cloud__vpc__type {
-    type: string
-    sql: ${TABLE}.asset.attribute.cloud.vpc.type ;;
-    group_label: "Asset Attribute Cloud Vpc"
-    group_item_label: "Type"
-  }
-
-  dimension: asset__attribute__creation_time__nanos {
-    type: number
-    sql: ${TABLE}.asset.attribute.creation_time.nanos ;;
-    group_label: "Asset Attribute Creation Time"
-    group_item_label: "Nanos"
-  }
-
-  dimension: asset__attribute__creation_time__seconds {
-    type: number
-    sql: ${TABLE}.asset.attribute.creation_time.seconds ;;
-    group_label: "Asset Attribute Creation Time"
-    group_item_label: "Seconds"
-  }
-
-  dimension: asset__attribute__labels {
-    hidden: yes
-    sql: ${TABLE}.asset.attribute.labels ;;
-    group_label: "Asset Attribute"
-    group_item_label: "Labels"
-  }
-
-  dimension: asset__attribute__last_update_time__nanos {
-    type: number
-    sql: ${TABLE}.asset.attribute.last_update_time.nanos ;;
-    group_label: "Asset Attribute Last Update Time"
-    group_item_label: "Nanos"
-  }
-
-  dimension: asset__attribute__last_update_time__seconds {
-    type: number
-    sql: ${TABLE}.asset.attribute.last_update_time.seconds ;;
-    group_label: "Asset Attribute Last Update Time"
-    group_item_label: "Seconds"
-  }
-
-  dimension: asset__attribute__permissions {
-    hidden: yes
-    sql: ${TABLE}.asset.attribute.permissions ;;
-    group_label: "Asset Attribute"
-    group_item_label: "Permissions"
-  }
-
-  dimension: asset__attribute__roles {
-    hidden: yes
-    sql: ${TABLE}.asset.attribute.roles ;;
-    group_label: "Asset Attribute"
-    group_item_label: "Roles"
-  }
-
-  dimension: asset__category {
-    type: string
-    sql: ${TABLE}.asset.category ;;
-    group_label: "Asset"
-    group_item_label: "Category"
-  }
-
-  dimension: asset__creation_time__nanos {
-    type: number
-    sql: ${TABLE}.asset.creation_time.nanos ;;
-    group_label: "Asset Creation Time"
-    group_item_label: "Nanos"
-  }
-
-  dimension: asset__creation_time__seconds {
-    type: number
-    sql: ${TABLE}.asset.creation_time.seconds ;;
-    group_label: "Asset Creation Time"
-    group_item_label: "Seconds"
-  }
-
-  dimension: asset__deployment_status {
-    type: number
-    sql: ${TABLE}.asset.deployment_status ;;
-    group_label: "Asset"
-    group_item_label: "Deployment Status"
-  }
-
-  dimension: asset__first_discover_time__nanos {
-    type: number
-    sql: ${TABLE}.asset.first_discover_time.nanos ;;
-    group_label: "Asset First Discover Time"
-    group_item_label: "Nanos"
-  }
-
-  dimension: asset__first_discover_time__seconds {
-    type: number
-    sql: ${TABLE}.asset.first_discover_time.seconds ;;
-    group_label: "Asset First Discover Time"
-    group_item_label: "Seconds"
-  }
-
-  dimension: asset__hardware {
-    hidden: yes
-    sql: ${TABLE}.asset.hardware ;;
-    group_label: "Asset"
-    group_item_label: "Hardware"
-  }
-
-  dimension: asset__hostname {
-    type: string
-    sql: ${TABLE}.asset.hostname ;;
-    group_label: "Asset"
-    group_item_label: "Hostname"
-  }
-
-  dimension: asset__ip {
-    hidden: yes
-    sql: ${TABLE}.asset.ip ;;
-    group_label: "Asset"
-    group_item_label: "IP"
-  }
-
-  dimension: asset__labels {
-    hidden: yes
-    sql: ${TABLE}.asset.labels ;;
-    group_label: "Asset"
-    group_item_label: "Labels"
-  }
-
-  dimension: asset__last_boot_time__nanos {
-    type: number
-    sql: ${TABLE}.asset.last_boot_time.nanos ;;
-    group_label: "Asset Last Boot Time"
-    group_item_label: "Nanos"
-  }
-
-  dimension: asset__last_boot_time__seconds {
-    type: number
-    sql: ${TABLE}.asset.last_boot_time.seconds ;;
-    group_label: "Asset Last Boot Time"
-    group_item_label: "Seconds"
-  }
-
-  dimension: asset__last_discover_time__nanos {
-    type: number
-    sql: ${TABLE}.asset.last_discover_time.nanos ;;
-    group_label: "Asset Last Discover Time"
-    group_item_label: "Nanos"
-  }
-
-  dimension: asset__last_discover_time__seconds {
-    type: number
-    sql: ${TABLE}.asset.last_discover_time.seconds ;;
-    group_label: "Asset Last Discover Time"
-    group_item_label: "Seconds"
-  }
-
-  dimension: asset__location__city {
-    type: string
-    sql: ${TABLE}.asset.location.city ;;
-    group_label: "Asset Location"
-    group_item_label: "City"
-  }
-
-  dimension: asset__location__country_or_region {
-    type: string
-    sql: ${TABLE}.asset.location.country_or_region ;;
-    group_label: "Asset Location"
-    group_item_label: "Country or Region"
-  }
-
-  dimension: asset__location__name {
-    type: string
-    sql: ${TABLE}.asset.location.name ;;
-    group_label: "Asset Location"
-    group_item_label: "Name"
-  }
-
-  dimension: asset__location__state {
-    type: string
-    sql: ${TABLE}.asset.location.state ;;
-    group_label: "Asset Location"
-    group_item_label: "State"
-  }
-
-  dimension: asset__mac {
-    hidden: yes
-    sql: ${TABLE}.asset.mac ;;
-    group_label: "Asset"
-    group_item_label: "Mac"
-  }
-
-  dimension: asset__nat_ip {
-    hidden: yes
-    sql: ${TABLE}.asset.nat_ip ;;
-    group_label: "Asset"
-    group_item_label: "Nat IP"
-  }
-
-  dimension: asset__network_domain {
-    type: string
-    sql: ${TABLE}.asset.network_domain ;;
-    group_label: "Asset"
-    group_item_label: "Network Domain"
-  }
-
-  dimension: asset__platform_software__platform {
-    type: number
-    sql: ${TABLE}.asset.platform_software.platform ;;
-    group_label: "Asset Platform Software"
-    group_item_label: "Platform"
-  }
-
-  dimension: asset__platform_software__platform_patch_level {
-    type: string
-    sql: ${TABLE}.asset.platform_software.platform_patch_level ;;
-    group_label: "Asset Platform Software"
-    group_item_label: "Platform Patch Level"
-  }
-
-  dimension: asset__platform_software__platform_version {
-    type: string
-    sql: ${TABLE}.asset.platform_software.platform_version ;;
-    group_label: "Asset Platform Software"
-    group_item_label: "Platform Version"
-  }
-
-  dimension: asset__product_object_id {
-    type: string
-    sql: ${TABLE}.asset.product_object_id ;;
-    group_label: "Asset"
-    group_item_label: "Product Object ID"
-  }
-
-  dimension: asset__software {
-    hidden: yes
-    sql: ${TABLE}.asset.software ;;
-    group_label: "Asset"
-    group_item_label: "Software"
-  }
-
-  dimension: asset__system_last_update_time__nanos {
-    type: number
-    sql: ${TABLE}.asset.system_last_update_time.nanos ;;
-    group_label: "Asset System Last Update Time"
-    group_item_label: "Nanos"
-  }
-
-  dimension: asset__system_last_update_time__seconds {
-    type: number
-    sql: ${TABLE}.asset.system_last_update_time.seconds ;;
-    group_label: "Asset System Last Update Time"
-    group_item_label: "Seconds"
-  }
-
-  dimension: asset__type {
-    type: number
-    sql: ${TABLE}.asset.type ;;
-    group_label: "Asset"
-    group_item_label: "Type"
-  }
-
-  dimension: asset__vulnerabilities {
-    hidden: yes
-    sql: ${TABLE}.asset.vulnerabilities ;;
-    group_label: "Asset"
-    group_item_label: "Vulnerabilities"
-  }
-
-  dimension: asset_id {
-    type: string
-    sql: ${TABLE}.asset_id ;;
-  }
-
-  dimension: cloud__availability_zone {
-    type: string
-    sql: ${TABLE}.cloud.availability_zone ;;
-    group_label: "Cloud"
-    group_item_label: "Availability Zone"
-  }
-
-  dimension: cloud__environment {
-    type: number
-    sql: ${TABLE}.cloud.environment ;;
-    group_label: "Cloud"
-    group_item_label: "Environment"
-  }
-
-  dimension: cloud__project__attribute__creation_time__nanos {
-    type: number
-    sql: ${TABLE}.cloud.project.attribute.creation_time.nanos ;;
-    group_label: "Cloud Project Attribute Creation Time"
-    group_item_label: "Nanos"
-  }
-
-  dimension: cloud__project__attribute__creation_time__seconds {
-    type: number
-    sql: ${TABLE}.cloud.project.attribute.creation_time.seconds ;;
-    group_label: "Cloud Project Attribute Creation Time"
-    group_item_label: "Seconds"
-  }
-
-  dimension: cloud__project__attribute__labels {
-    hidden: yes
-    sql: ${TABLE}.cloud.project.attribute.labels ;;
-    group_label: "Cloud Project Attribute"
-    group_item_label: "Labels"
-  }
-
-  dimension: cloud__project__attribute__last_update_time__nanos {
-    type: number
-    sql: ${TABLE}.cloud.project.attribute.last_update_time.nanos ;;
-    group_label: "Cloud Project Attribute Last Update Time"
-    group_item_label: "Nanos"
-  }
-
-  dimension: cloud__project__attribute__last_update_time__seconds {
-    type: number
-    sql: ${TABLE}.cloud.project.attribute.last_update_time.seconds ;;
-    group_label: "Cloud Project Attribute Last Update Time"
-    group_item_label: "Seconds"
-  }
-
-  dimension: cloud__project__attribute__permissions {
-    hidden: yes
-    sql: ${TABLE}.cloud.project.attribute.permissions ;;
-    group_label: "Cloud Project Attribute"
-    group_item_label: "Permissions"
-  }
-
-  dimension: cloud__project__attribute__roles {
-    hidden: yes
-    sql: ${TABLE}.cloud.project.attribute.roles ;;
-    group_label: "Cloud Project Attribute"
-    group_item_label: "Roles"
-  }
-
-  dimension: cloud__project__id {
-    type: string
-    sql: ${TABLE}.cloud.project.id ;;
-    group_label: "Cloud Project"
-    group_item_label: "ID"
-  }
-
-  dimension: cloud__project__name {
-    type: string
-    sql: ${TABLE}.cloud.project.name ;;
-    group_label: "Cloud Project"
-    group_item_label: "Name"
-  }
-
-  dimension: cloud__project__parent {
-    type: string
-    sql: ${TABLE}.cloud.project.parent ;;
-    group_label: "Cloud Project"
-    group_item_label: "Parent"
-  }
-
-  dimension: cloud__project__product_object_id {
-    type: string
-    sql: ${TABLE}.cloud.project.product_object_id ;;
-    group_label: "Cloud Project"
-    group_item_label: "Product Object ID"
-  }
-
-  dimension: cloud__project__resource_subtype {
-    type: string
-    sql: ${TABLE}.cloud.project.resource_subtype ;;
-    group_label: "Cloud Project"
-    group_item_label: "Resource Subtype"
-  }
-
-  dimension: cloud__project__resource_type {
-    type: number
-    sql: ${TABLE}.cloud.project.resource_type ;;
-    group_label: "Cloud Project"
-    group_item_label: "Resource Type"
-  }
-
-  dimension: cloud__project__type {
-    type: string
-    sql: ${TABLE}.cloud.project.type ;;
-    group_label: "Cloud Project"
-    group_item_label: "Type"
-  }
-
-  dimension: cloud__vpc__attribute__creation_time__nanos {
-    type: number
-    sql: ${TABLE}.cloud.vpc.attribute.creation_time.nanos ;;
-    group_label: "Cloud Vpc Attribute Creation Time"
-    group_item_label: "Nanos"
-  }
-
-  dimension: cloud__vpc__attribute__creation_time__seconds {
-    type: number
-    sql: ${TABLE}.cloud.vpc.attribute.creation_time.seconds ;;
-    group_label: "Cloud Vpc Attribute Creation Time"
-    group_item_label: "Seconds"
-  }
-
-  dimension: cloud__vpc__attribute__labels {
-    hidden: yes
-    sql: ${TABLE}.cloud.vpc.attribute.labels ;;
-    group_label: "Cloud Vpc Attribute"
-    group_item_label: "Labels"
-  }
-
-  dimension: cloud__vpc__attribute__last_update_time__nanos {
-    type: number
-    sql: ${TABLE}.cloud.vpc.attribute.last_update_time.nanos ;;
-    group_label: "Cloud Vpc Attribute Last Update Time"
-    group_item_label: "Nanos"
-  }
-
-  dimension: cloud__vpc__attribute__last_update_time__seconds {
-    type: number
-    sql: ${TABLE}.cloud.vpc.attribute.last_update_time.seconds ;;
-    group_label: "Cloud Vpc Attribute Last Update Time"
-    group_item_label: "Seconds"
-  }
-
-  dimension: cloud__vpc__attribute__permissions {
-    hidden: yes
-    sql: ${TABLE}.cloud.vpc.attribute.permissions ;;
-    group_label: "Cloud Vpc Attribute"
-    group_item_label: "Permissions"
-  }
-
-  dimension: cloud__vpc__attribute__roles {
-    hidden: yes
-    sql: ${TABLE}.cloud.vpc.attribute.roles ;;
-    group_label: "Cloud Vpc Attribute"
-    group_item_label: "Roles"
-  }
-
-  dimension: cloud__vpc__id {
-    type: string
-    sql: ${TABLE}.cloud.vpc.id ;;
-    group_label: "Cloud Vpc"
-    group_item_label: "ID"
-  }
-
-  dimension: cloud__vpc__name {
-    type: string
-    sql: ${TABLE}.cloud.vpc.name ;;
-    group_label: "Cloud Vpc"
-    group_item_label: "Name"
-  }
-
-  dimension: cloud__vpc__parent {
-    type: string
-    sql: ${TABLE}.cloud.vpc.parent ;;
-    group_label: "Cloud Vpc"
-    group_item_label: "Parent"
-  }
-
-  dimension: cloud__vpc__product_object_id {
-    type: string
-    sql: ${TABLE}.cloud.vpc.product_object_id ;;
-    group_label: "Cloud Vpc"
-    group_item_label: "Product Object ID"
-  }
-
-  dimension: cloud__vpc__resource_subtype {
-    type: string
-    sql: ${TABLE}.cloud.vpc.resource_subtype ;;
-    group_label: "Cloud Vpc"
-    group_item_label: "Resource Subtype"
-  }
-
-  dimension: cloud__vpc__resource_type {
-    type: number
-    sql: ${TABLE}.cloud.vpc.resource_type ;;
-    group_label: "Cloud Vpc"
-    group_item_label: "Resource Type"
-  }
-
-  dimension: cloud__vpc__type {
-    type: string
-    sql: ${TABLE}.cloud.vpc.type ;;
-    group_label: "Cloud Vpc"
-    group_item_label: "Type"
-  }
-
-  dimension: email {
-    type: string
-    sql: ${TABLE}.email ;;
-  }
-
-  dimension: file__file_metadata__pe__import_hash {
-    type: string
-    sql: ${TABLE}.file.file_metadata.pe.import_hash ;;
-    group_label: "File File Metadata Pe"
-    group_item_label: "Import Hash"
-  }
-
-  dimension: file__full_path {
-    type: string
-    sql: ${TABLE}.file.full_path ;;
-    group_label: "File"
-    group_item_label: "Full Path"
-  }
-
-  dimension: file__md5 {
-    type: string
-    sql: ${TABLE}.file.md5 ;;
-    group_label: "File"
-    group_item_label: "Md5"
-  }
-
-  dimension: file__mime_type {
-    type: string
-    sql: ${TABLE}.file.mime_type ;;
-    group_label: "File"
-    group_item_label: "Mime Type"
-  }
-
-  dimension: file__sha1 {
-    type: string
-    sql: ${TABLE}.file.sha1 ;;
-    group_label: "File"
-    group_item_label: "Sha1"
-  }
-
-  dimension: file__sha256 {
-    type: string
-    sql: ${TABLE}.file.sha256 ;;
-    group_label: "File"
-    group_item_label: "Sha256"
-  }
-
-  dimension: file__size {
-    type: number
-    sql: ${TABLE}.file.size ;;
-    group_label: "File"
-    group_item_label: "Size"
-  }
-
-  dimension: group__attribute__cloud__availability_zone {
-    type: string
-    sql: ${TABLE}.`group`.attribute.cloud.availability_zone ;;
-    group_label: "Group Attribute Cloud"
-    group_item_label: "Availability Zone"
-  }
-
-  dimension: group__attribute__cloud__environment {
-    type: number
-    sql: ${TABLE}.`group`.attribute.cloud.environment ;;
-    group_label: "Group Attribute Cloud"
-    group_item_label: "Environment"
-  }
-
-  dimension: group__attribute__cloud__project__id {
-    type: string
-    sql: ${TABLE}.`group`.attribute.cloud.project.id ;;
-    group_label: "Group Attribute Cloud Project"
-    group_item_label: "ID"
-  }
-
-  dimension: group__attribute__cloud__project__name {
-    type: string
-    sql: ${TABLE}.`group`.attribute.cloud.project.name ;;
-    group_label: "Group Attribute Cloud Project"
-    group_item_label: "Name"
-  }
-
-  dimension: group__attribute__cloud__project__parent {
-    type: string
-    sql: ${TABLE}.`group`.attribute.cloud.project.parent ;;
-    group_label: "Group Attribute Cloud Project"
-    group_item_label: "Parent"
-  }
-
-  dimension: group__attribute__cloud__project__product_object_id {
-    type: string
-    sql: ${TABLE}.`group`.attribute.cloud.project.product_object_id ;;
-    group_label: "Group Attribute Cloud Project"
-    group_item_label: "Product Object ID"
-  }
-
-  dimension: group__attribute__cloud__project__resource_subtype {
-    type: string
-    sql: ${TABLE}.`group`.attribute.cloud.project.resource_subtype ;;
-    group_label: "Group Attribute Cloud Project"
-    group_item_label: "Resource Subtype"
-  }
-
-  dimension: group__attribute__cloud__project__resource_type {
-    type: number
-    sql: ${TABLE}.`group`.attribute.cloud.project.resource_type ;;
-    group_label: "Group Attribute Cloud Project"
-    group_item_label: "Resource Type"
-  }
-
-  dimension: group__attribute__cloud__project__type {
-    type: string
-    sql: ${TABLE}.`group`.attribute.cloud.project.type ;;
-    group_label: "Group Attribute Cloud Project"
-    group_item_label: "Type"
-  }
-
-  dimension: group__attribute__cloud__vpc__id {
-    type: string
-    sql: ${TABLE}.`group`.attribute.cloud.vpc.id ;;
-    group_label: "Group Attribute Cloud Vpc"
-    group_item_label: "ID"
-  }
-
-  dimension: group__attribute__cloud__vpc__name {
-    type: string
-    sql: ${TABLE}.`group`.attribute.cloud.vpc.name ;;
-    group_label: "Group Attribute Cloud Vpc"
-    group_item_label: "Name"
-  }
-
-  dimension: group__attribute__cloud__vpc__parent {
-    type: string
-    sql: ${TABLE}.`group`.attribute.cloud.vpc.parent ;;
-    group_label: "Group Attribute Cloud Vpc"
-    group_item_label: "Parent"
-  }
-
-  dimension: group__attribute__cloud__vpc__product_object_id {
-    type: string
-    sql: ${TABLE}.`group`.attribute.cloud.vpc.product_object_id ;;
-    group_label: "Group Attribute Cloud Vpc"
-    group_item_label: "Product Object ID"
-  }
-
-  dimension: group__attribute__cloud__vpc__resource_subtype {
-    type: string
-    sql: ${TABLE}.`group`.attribute.cloud.vpc.resource_subtype ;;
-    group_label: "Group Attribute Cloud Vpc"
-    group_item_label: "Resource Subtype"
-  }
-
-  dimension: group__attribute__cloud__vpc__resource_type {
-    type: number
-    sql: ${TABLE}.`group`.attribute.cloud.vpc.resource_type ;;
-    group_label: "Group Attribute Cloud Vpc"
-    group_item_label: "Resource Type"
-  }
-
-  dimension: group__attribute__cloud__vpc__type {
-    type: string
-    sql: ${TABLE}.`group`.attribute.cloud.vpc.type ;;
-    group_label: "Group Attribute Cloud Vpc"
-    group_item_label: "Type"
-  }
-
-  dimension: group__attribute__creation_time__nanos {
-    type: number
-    sql: ${TABLE}.`group`.attribute.creation_time.nanos ;;
-    group_label: "Group Attribute Creation Time"
-    group_item_label: "Nanos"
-  }
-
-  dimension: group__attribute__creation_time__seconds {
-    type: number
-    sql: ${TABLE}.`group`.attribute.creation_time.seconds ;;
-    group_label: "Group Attribute Creation Time"
-    group_item_label: "Seconds"
-  }
-
-  dimension: group__attribute__labels {
-    hidden: yes
-    sql: ${TABLE}.group.attribute.labels ;;
-    group_label: "Group Attribute"
-    group_item_label: "Labels"
-  }
-
-  dimension: group__attribute__last_update_time__nanos {
-    type: number
-    sql: ${TABLE}.`group`.attribute.last_update_time.nanos ;;
-    group_label: "Group Attribute Last Update Time"
-    group_item_label: "Nanos"
-  }
-
-  dimension: group__attribute__last_update_time__seconds {
-    type: number
-    sql: ${TABLE}.`group`.attribute.last_update_time.seconds ;;
-    group_label: "Group Attribute Last Update Time"
-    group_item_label: "Seconds"
-  }
-
-  dimension: group__attribute__permissions {
-    hidden: yes
-    sql: ${TABLE}.group.attribute.permissions ;;
-    group_label: "Group Attribute"
-    group_item_label: "Permissions"
-  }
-
-  dimension: group__attribute__roles {
-    hidden: yes
-    sql: ${TABLE}.group.attribute.roles ;;
-    group_label: "Group Attribute"
-    group_item_label: "Roles"
-  }
-
-  dimension: group__creation_time__nanos {
-    type: number
-    sql: ${TABLE}.`group`.creation_time.nanos ;;
-    group_label: "Group Creation Time"
-    group_item_label: "Nanos"
-  }
-
-  dimension: group__creation_time__seconds {
-    type: number
-    sql: ${TABLE}.`group`.creation_time.seconds ;;
-    group_label: "Group Creation Time"
-    group_item_label: "Seconds"
-  }
-
-  dimension: group__email_addresses {
-    hidden: yes
-    sql: ${TABLE}.group.email_addresses ;;
-    group_label: "Group"
-    group_item_label: "Email Addresses"
-  }
-
-  dimension: group__group_display_name {
-    type: string
-    sql: ${TABLE}.`group`.group_display_name ;;
-    group_label: "Group"
-    group_item_label: "Group Display Name"
-  }
-
-  dimension: group__product_object_id {
-    type: string
-    sql: ${TABLE}.`group`.product_object_id ;;
-    group_label: "Group"
-    group_item_label: "Product Object ID"
-  }
-
-  dimension: group__windows_sid {
-    type: string
-    sql: ${TABLE}.`group`.windows_sid ;;
-    group_label: "Group"
-    group_item_label: "Windows Sid"
-  }
-
-  dimension: hostname {
-    type: string
-    sql: ${TABLE}.hostname ;;
-  }
-
-  dimension: investigation__comments {
-    hidden: yes
-    sql: ${TABLE}.investigation.comments ;;
-    group_label: "Investigation"
-    group_item_label: "Comments"
-  }
-
-  dimension: investigation__reputation {
-    type: number
-    sql: ${TABLE}.investigation.reputation ;;
-    group_label: "Investigation"
-    group_item_label: "Reputation"
-  }
-
-  dimension: investigation__severity_score {
-    type: number
-    sql: ${TABLE}.investigation.severity_score ;;
-    group_label: "Investigation"
-    group_item_label: "Severity Score"
-  }
-
-  dimension: investigation__status {
-    type: number
-    sql: ${TABLE}.investigation.status ;;
-    group_label: "Investigation"
-    group_item_label: "Status"
-  }
-
-  dimension: investigation__verdict {
-    type: number
-    sql: ${TABLE}.investigation.verdict ;;
-    group_label: "Investigation"
-    group_item_label: "Verdict"
-  }
-
-  dimension: labels {
-    hidden: yes
-    sql: ${TABLE}.labels ;;
-  }
-
-  dimension: location__city {
-    type: string
-    sql: ${TABLE}.location.city ;;
-    group_label: "Location"
-    group_item_label: "City"
-  }
-
-  dimension: location__country_or_region {
-    type: string
-    sql: ${TABLE}.location.country_or_region ;;
-    group_label: "Location"
-    group_item_label: "Country or Region"
-  }
-
-  dimension: location__name {
-    type: string
-    sql: ${TABLE}.location.name ;;
-    group_label: "Location"
-    group_item_label: "Name"
-  }
-
-  dimension: location__state {
-    type: string
-    sql: ${TABLE}.location.state ;;
-    group_label: "Location"
-    group_item_label: "State"
-  }
-
-  dimension: namespace {
-    type: string
-    sql: ${TABLE}.namespace ;;
-  }
-
-  dimension: nat_ip {
-    hidden: yes
-    sql: ${TABLE}.nat_ip ;;
-  }
-
-  dimension: nat_port {
-    type: number
-    sql: ${TABLE}.nat_port ;;
-  }
-
-  dimension: object_reference__id {
-    type: string
-    sql: ${TABLE}.object_reference.id ;;
-    group_label: "Object Reference"
-    group_item_label: "ID"
-  }
-
-  dimension: object_reference__namespace {
-    type: number
-    sql: ${TABLE}.object_reference.namespace ;;
-    group_label: "Object Reference"
-    group_item_label: "Namespace"
-  }
-
-  dimension: platform {
-    type: number
-    sql: ${TABLE}.platform ;;
-  }
-
-  dimension: platform_patch_level {
-    type: string
-    sql: ${TABLE}.platform_patch_level ;;
-  }
-
-  dimension: platform_version {
-    type: string
-    sql: ${TABLE}.platform_version ;;
-  }
-
-  dimension: port {
-    type: number
-    sql: ${TABLE}.port ;;
-  }
-
-  dimension: process__access_mask {
-    type: number
-    sql: ${TABLE}.process.access_mask ;;
-    group_label: "Process"
-    group_item_label: "Access Mask"
-  }
-
-  dimension: process__command_line {
-    type: string
-    sql: ${TABLE}.process.command_line ;;
-    group_label: "Process"
-    group_item_label: "Command Line"
-  }
-
-  dimension: process__command_line_history {
-    hidden: yes
-    sql: ${TABLE}.process.command_line_history ;;
-    group_label: "Process"
-    group_item_label: "Command Line History"
-  }
-
-  dimension: process__file__file_metadata__pe__import_hash {
-    type: string
-    sql: ${TABLE}.process.file.file_metadata.pe.import_hash ;;
-    group_label: "Process File File Metadata Pe"
-    group_item_label: "Import Hash"
-  }
-
-  dimension: process__file__full_path {
-    type: string
-    sql: ${TABLE}.process.file.full_path ;;
-    group_label: "Process File"
-    group_item_label: "Full Path"
-  }
-
-  dimension: process__file__md5 {
-    type: string
-    sql: ${TABLE}.process.file.md5 ;;
-    group_label: "Process File"
-    group_item_label: "Md5"
-  }
-
-  dimension: process__file__mime_type {
-    type: string
-    sql: ${TABLE}.process.file.mime_type ;;
-    group_label: "Process File"
-    group_item_label: "Mime Type"
-  }
-
-  dimension: process__file__sha1 {
-    type: string
-    sql: ${TABLE}.process.file.sha1 ;;
-    group_label: "Process File"
-    group_item_label: "Sha1"
-  }
-
-  dimension: process__file__sha256 {
-    type: string
-    sql: ${TABLE}.process.file.sha256 ;;
-    group_label: "Process File"
-    group_item_label: "Sha256"
-  }
-
-  dimension: process__file__size {
-    type: number
-    sql: ${TABLE}.process.file.size ;;
-    group_label: "Process File"
-    group_item_label: "Size"
-  }
-
-  dimension: process__parent_pid {
-    type: string
-    sql: ${TABLE}.process.parent_pid ;;
-    group_label: "Process"
-    group_item_label: "Parent Pid"
-  }
-
-  dimension: process__pid {
-    type: string
-    sql: ${TABLE}.process.pid ;;
-    group_label: "Process"
-    group_item_label: "Pid"
-  }
-
-  dimension: process__product_specific_parent_process_id {
-    type: string
-    sql: ${TABLE}.process.product_specific_parent_process_id ;;
-    group_label: "Process"
-    group_item_label: "Product Specific Parent Process ID"
-  }
-
-  dimension: process__product_specific_process_id {
-    type: string
-    sql: ${TABLE}.process.product_specific_process_id ;;
-    group_label: "Process"
-    group_item_label: "Product Specific Process ID"
-  }
-
-  dimension: process_ancestors {
-    hidden: yes
-    sql: ${TABLE}.process_ancestors ;;
-  }
-
-  dimension: registry__registry_key {
-    type: string
-    sql: ${TABLE}.registry.registry_key ;;
-    group_label: "Registry"
-    group_item_label: "Registry Key"
-  }
-
-  dimension: registry__registry_value_data {
-    type: string
-    sql: ${TABLE}.registry.registry_value_data ;;
-    group_label: "Registry"
-    group_item_label: "Registry Value Data"
-  }
-
-  dimension: registry__registry_value_name {
-    type: string
-    sql: ${TABLE}.registry.registry_value_name ;;
-    group_label: "Registry"
-    group_item_label: "Registry Value Name"
-  }
-
-  dimension: resource__attribute__cloud__availability_zone {
-    type: string
-    sql: ${TABLE}.resource.attribute.cloud.availability_zone ;;
-    group_label: "Resource Attribute Cloud"
-    group_item_label: "Availability Zone"
-  }
-
-  dimension: resource__attribute__cloud__environment {
-    type: number
-    sql: ${TABLE}.resource.attribute.cloud.environment ;;
-    group_label: "Resource Attribute Cloud"
-    group_item_label: "Environment"
-  }
-
-  dimension: resource__attribute__creation_time__nanos {
-    type: number
-    sql: ${TABLE}.resource.attribute.creation_time.nanos ;;
-    group_label: "Resource Attribute Creation Time"
-    group_item_label: "Nanos"
-  }
-
-  dimension: resource__attribute__creation_time__seconds {
-    type: number
-    sql: ${TABLE}.resource.attribute.creation_time.seconds ;;
-    group_label: "Resource Attribute Creation Time"
-    group_item_label: "Seconds"
-  }
-
-  dimension: resource__attribute__labels {
-    hidden: yes
-    sql: ${TABLE}.resource.attribute.labels ;;
-    group_label: "Resource Attribute"
-    group_item_label: "Labels"
-  }
-
-  dimension: resource__attribute__last_update_time__nanos {
-    type: number
-    sql: ${TABLE}.resource.attribute.last_update_time.nanos ;;
-    group_label: "Resource Attribute Last Update Time"
-    group_item_label: "Nanos"
-  }
-
-  dimension: resource__attribute__last_update_time__seconds {
-    type: number
-    sql: ${TABLE}.resource.attribute.last_update_time.seconds ;;
-    group_label: "Resource Attribute Last Update Time"
-    group_item_label: "Seconds"
-  }
-
-  dimension: resource__attribute__permissions {
-    hidden: yes
-    sql: ${TABLE}.resource.attribute.permissions ;;
-    group_label: "Resource Attribute"
-    group_item_label: "Permissions"
-  }
-
-  dimension: resource__attribute__roles {
-    hidden: yes
-    sql: ${TABLE}.resource.attribute.roles ;;
-    group_label: "Resource Attribute"
-    group_item_label: "Roles"
-  }
-
-  dimension: resource__id {
-    type: string
-    sql: ${TABLE}.resource.id ;;
-    group_label: "Resource"
-    group_item_label: "ID"
-  }
-
-  dimension: resource__name {
-    type: string
-    sql: ${TABLE}.resource.name ;;
-    group_label: "Resource"
-    group_item_label: "Name"
-  }
-
-  dimension: resource__parent {
-    type: string
-    sql: ${TABLE}.resource.parent ;;
-    group_label: "Resource"
-    group_item_label: "Parent"
-  }
-
-  dimension: resource__product_object_id {
-    type: string
-    sql: ${TABLE}.resource.product_object_id ;;
-    group_label: "Resource"
-    group_item_label: "Product Object ID"
-  }
-
-  dimension: resource__resource_subtype {
-    type: string
-    sql: ${TABLE}.resource.resource_subtype ;;
-    group_label: "Resource"
-    group_item_label: "Resource Subtype"
-  }
-
-  dimension: resource__resource_type {
-    type: number
-    sql: ${TABLE}.resource.resource_type ;;
-    group_label: "Resource"
-    group_item_label: "Resource Type"
-  }
-
-  dimension: resource__type {
-    type: string
-    sql: ${TABLE}.resource.type ;;
-    group_label: "Resource"
-    group_item_label: "Type"
-  }
-
-  dimension: url {
-    type: string
-    sql: ${TABLE}.url ;;
-  }
-
-  dimension: user__attribute__cloud__availability_zone {
-    type: string
-    sql: ${TABLE}.user.attribute.cloud.availability_zone ;;
-    group_label: "User Attribute Cloud"
-    group_item_label: "Availability Zone"
-  }
-
-  dimension: user__attribute__cloud__environment {
-    type: number
-    sql: ${TABLE}.user.attribute.cloud.environment ;;
-    group_label: "User Attribute Cloud"
-    group_item_label: "Environment"
-  }
-
-  dimension: user__attribute__cloud__project__id {
-    type: string
-    sql: ${TABLE}.user.attribute.cloud.project.id ;;
-    group_label: "User Attribute Cloud Project"
-    group_item_label: "ID"
-  }
-
-  dimension: user__attribute__cloud__project__name {
-    type: string
-    sql: ${TABLE}.user.attribute.cloud.project.name ;;
-    group_label: "User Attribute Cloud Project"
-    group_item_label: "Name"
-  }
-
-  dimension: user__attribute__cloud__project__parent {
-    type: string
-    sql: ${TABLE}.user.attribute.cloud.project.parent ;;
-    group_label: "User Attribute Cloud Project"
-    group_item_label: "Parent"
-  }
-
-  dimension: user__attribute__cloud__project__product_object_id {
-    type: string
-    sql: ${TABLE}.user.attribute.cloud.project.product_object_id ;;
-    group_label: "User Attribute Cloud Project"
-    group_item_label: "Product Object ID"
-  }
-
-  dimension: user__attribute__cloud__project__resource_subtype {
-    type: string
-    sql: ${TABLE}.user.attribute.cloud.project.resource_subtype ;;
-    group_label: "User Attribute Cloud Project"
-    group_item_label: "Resource Subtype"
-  }
-
-  dimension: user__attribute__cloud__project__resource_type {
-    type: number
-    sql: ${TABLE}.user.attribute.cloud.project.resource_type ;;
-    group_label: "User Attribute Cloud Project"
-    group_item_label: "Resource Type"
-  }
-
-  dimension: user__attribute__cloud__project__type {
-    type: string
-    sql: ${TABLE}.user.attribute.cloud.project.type ;;
-    group_label: "User Attribute Cloud Project"
-    group_item_label: "Type"
-  }
-
-  dimension: user__attribute__cloud__vpc__id {
-    type: string
-    sql: ${TABLE}.user.attribute.cloud.vpc.id ;;
-    group_label: "User Attribute Cloud Vpc"
-    group_item_label: "ID"
-  }
-
-  dimension: user__attribute__cloud__vpc__name {
-    type: string
-    sql: ${TABLE}.user.attribute.cloud.vpc.name ;;
-    group_label: "User Attribute Cloud Vpc"
-    group_item_label: "Name"
-  }
-
-  dimension: user__attribute__cloud__vpc__parent {
-    type: string
-    sql: ${TABLE}.user.attribute.cloud.vpc.parent ;;
-    group_label: "User Attribute Cloud Vpc"
-    group_item_label: "Parent"
-  }
-
-  dimension: user__attribute__cloud__vpc__product_object_id {
-    type: string
-    sql: ${TABLE}.user.attribute.cloud.vpc.product_object_id ;;
-    group_label: "User Attribute Cloud Vpc"
-    group_item_label: "Product Object ID"
-  }
-
-  dimension: user__attribute__cloud__vpc__resource_subtype {
-    type: string
-    sql: ${TABLE}.user.attribute.cloud.vpc.resource_subtype ;;
-    group_label: "User Attribute Cloud Vpc"
-    group_item_label: "Resource Subtype"
-  }
-
-  dimension: user__attribute__cloud__vpc__resource_type {
-    type: number
-    sql: ${TABLE}.user.attribute.cloud.vpc.resource_type ;;
-    group_label: "User Attribute Cloud Vpc"
-    group_item_label: "Resource Type"
-  }
-
-  dimension: user__attribute__cloud__vpc__type {
-    type: string
-    sql: ${TABLE}.user.attribute.cloud.vpc.type ;;
-    group_label: "User Attribute Cloud Vpc"
-    group_item_label: "Type"
-  }
-
-  dimension: user__attribute__creation_time__nanos {
-    type: number
-    sql: ${TABLE}.user.attribute.creation_time.nanos ;;
-    group_label: "User Attribute Creation Time"
-    group_item_label: "Nanos"
-  }
-
-  dimension: user__attribute__creation_time__seconds {
-    type: number
-    sql: ${TABLE}.user.attribute.creation_time.seconds ;;
-    group_label: "User Attribute Creation Time"
-    group_item_label: "Seconds"
-  }
-
-  dimension: user__attribute__labels {
-    hidden: yes
-    sql: ${TABLE}.user.attribute.labels ;;
-    group_label: "User Attribute"
-    group_item_label: "Labels"
-  }
-
-  dimension: user__attribute__last_update_time__nanos {
-    type: number
-    sql: ${TABLE}.user.attribute.last_update_time.nanos ;;
-    group_label: "User Attribute Last Update Time"
-    group_item_label: "Nanos"
-  }
-
-  dimension: user__attribute__last_update_time__seconds {
-    type: number
-    sql: ${TABLE}.user.attribute.last_update_time.seconds ;;
-    group_label: "User Attribute Last Update Time"
-    group_item_label: "Seconds"
-  }
-
-  dimension: user__attribute__permissions {
-    hidden: yes
-    sql: ${TABLE}.user.attribute.permissions ;;
-    group_label: "User Attribute"
-    group_item_label: "Permissions"
-  }
-
-  dimension: user__attribute__roles {
-    hidden: yes
-    sql: ${TABLE}.user.attribute.roles ;;
-    group_label: "User Attribute"
-    group_item_label: "Roles"
-  }
-
-  dimension: user__company_name {
-    type: string
-    sql: ${TABLE}.user.company_name ;;
-    group_label: "User"
-    group_item_label: "Company Name"
-  }
-
-  dimension: user__department {
-    hidden: yes
-    sql: ${TABLE}.user.department ;;
-    group_label: "User"
-    group_item_label: "Department"
-  }
-
-  dimension: user__email_addresses {
-    hidden: yes
-    sql: ${TABLE}.user.email_addresses ;;
-    group_label: "User"
-    group_item_label: "Email Addresses"
-  }
-
-  dimension: user__employee_id {
-    type: string
-    sql: ${TABLE}.user.employee_id ;;
-    group_label: "User"
-    group_item_label: "Employee ID"
-  }
-
-  dimension: user__first_name {
-    type: string
-    sql: ${TABLE}.user.first_name ;;
-    group_label: "User"
-    group_item_label: "First Name"
-  }
-
-  dimension: user__group_identifiers {
-    hidden: yes
-    sql: ${TABLE}.user.group_identifiers ;;
-    group_label: "User"
-    group_item_label: "Group Identifiers"
-  }
-
-  dimension: user__groupid {
-    type: string
-    sql: ${TABLE}.user.groupid ;;
-    group_label: "User"
-    group_item_label: "Groupid"
-  }
-
-  dimension: user__hire_date__nanos {
-    type: number
-    sql: ${TABLE}.user.hire_date.nanos ;;
-    group_label: "User Hire Date"
-    group_item_label: "Nanos"
-  }
-
-  dimension: user__hire_date__seconds {
-    type: number
-    sql: ${TABLE}.user.hire_date.seconds ;;
-    group_label: "User Hire Date"
-    group_item_label: "Seconds"
-  }
-
-  dimension: user__last_name {
-    type: string
-    sql: ${TABLE}.user.last_name ;;
-    group_label: "User"
-    group_item_label: "Last Name"
-  }
-
-  dimension: user__middle_name {
-    type: string
-    sql: ${TABLE}.user.middle_name ;;
-    group_label: "User"
-    group_item_label: "Middle Name"
-  }
-
-  dimension: user__office_address__city {
-    type: string
-    sql: ${TABLE}.user.office_address.city ;;
-    group_label: "User Office Address"
-    group_item_label: "City"
-  }
-
-  dimension: user__office_address__country_or_region {
-    type: string
-    sql: ${TABLE}.user.office_address.country_or_region ;;
-    group_label: "User Office Address"
-    group_item_label: "Country or Region"
-  }
-
-  dimension: user__office_address__name {
-    type: string
-    sql: ${TABLE}.user.office_address.name ;;
-    group_label: "User Office Address"
-    group_item_label: "Name"
-  }
-
-  dimension: user__office_address__state {
-    type: string
-    sql: ${TABLE}.user.office_address.state ;;
-    group_label: "User Office Address"
-    group_item_label: "State"
-  }
-
-  dimension: user__personal_address__city {
-    type: string
-    sql: ${TABLE}.user.personal_address.city ;;
-    group_label: "User Personal Address"
-    group_item_label: "City"
-  }
-
-  dimension: user__personal_address__country_or_region {
-    type: string
-    sql: ${TABLE}.user.personal_address.country_or_region ;;
-    group_label: "User Personal Address"
-    group_item_label: "Country or Region"
-  }
-
-  dimension: user__personal_address__name {
-    type: string
-    sql: ${TABLE}.user.personal_address.name ;;
-    group_label: "User Personal Address"
-    group_item_label: "Name"
-  }
-
-  dimension: user__personal_address__state {
-    type: string
-    sql: ${TABLE}.user.personal_address.state ;;
-    group_label: "User Personal Address"
-    group_item_label: "State"
-  }
-
-  dimension: user__phone_numbers {
-    hidden: yes
-    sql: ${TABLE}.user.phone_numbers ;;
-    group_label: "User"
-    group_item_label: "Phone Numbers"
-  }
-
-  dimension: user__product_object_id {
-    type: string
-    sql: ${TABLE}.user.product_object_id ;;
-    group_label: "User"
-    group_item_label: "Product Object ID"
-  }
-
-  dimension: user__role_description {
-    type: string
-    sql: ${TABLE}.user.role_description ;;
-    group_label: "User"
-    group_item_label: "Role Description"
-  }
-
-  dimension: user__role_name {
-    type: string
-    sql: ${TABLE}.user.role_name ;;
-    group_label: "User"
-    group_item_label: "Role Name"
-  }
-
-  dimension: user__termination_date__nanos {
-    type: number
-    sql: ${TABLE}.user.termination_date.nanos ;;
-    group_label: "User Termination Date"
-    group_item_label: "Nanos"
-  }
-
-  dimension: user__termination_date__seconds {
-    type: number
-    sql: ${TABLE}.user.termination_date.seconds ;;
-    group_label: "User Termination Date"
-    group_item_label: "Seconds"
-  }
-
-  dimension: user__time_off {
-    hidden: yes
-    sql: ${TABLE}.user.time_off ;;
-    group_label: "User"
-    group_item_label: "Time Off"
-  }
-
-  dimension: user__title {
-    type: string
-    sql: ${TABLE}.user.title ;;
-    group_label: "User"
-    group_item_label: "Title"
-  }
-
-  dimension: user__user_authentication_status {
-    type: number
-    sql: ${TABLE}.user.user_authentication_status ;;
-    group_label: "User"
-    group_item_label: "User Authentication Status"
-  }
-
-  dimension: user__user_display_name {
-    type: string
-    sql: ${TABLE}.user.user_display_name ;;
-    group_label: "User"
-    group_item_label: "User Display Name"
-  }
-
-  dimension: user__user_role {
-    type: number
-    sql: ${TABLE}.user.user_role ;;
-    group_label: "User"
-    group_item_label: "User Role"
-  }
-
-  dimension: user__userid {
-    type: string
-    sql: ${TABLE}.user.userid ;;
-    group_label: "User"
-    group_item_label: "Userid"
-  }
-
-  dimension: user__windows_sid {
-    type: string
-    sql: ${TABLE}.user.windows_sid ;;
-    group_label: "User"
-    group_item_label: "Windows Sid"
-  }
-
-  dimension: user_management_chain {
-    hidden: yes
-    sql: ${TABLE}.user_management_chain ;;
   }
 }
 
@@ -11300,6 +13569,11 @@ view: udm_events__src__asset__software {
     sql: ${TABLE}.name ;;
   }
 
+  dimension: permissions {
+    hidden: yes
+    sql: ${TABLE}.permissions ;;
+  }
+
   dimension: version {
     type: string
     sql: ${TABLE}.version ;;
@@ -11315,1793 +13589,6 @@ view: udm_events__intermediary__labels {
   dimension: value {
     type: string
     sql: ${TABLE}.value ;;
-  }
-}
-
-view: udm_events__security_result {
-  dimension: about__administrative_domain {
-    type: string
-    sql: ${TABLE}.about.administrative_domain ;;
-    group_label: "About"
-    group_item_label: "Administrative Domain"
-  }
-
-  dimension: about__application {
-    type: string
-    sql: ${TABLE}.about.application ;;
-    group_label: "About"
-    group_item_label: "Application"
-  }
-
-  dimension: about__asset__asset_id {
-    type: string
-    sql: ${TABLE}.about.asset.asset_id ;;
-    group_label: "About Asset"
-    group_item_label: "Asset ID"
-  }
-
-  dimension: about__asset__attribute__cloud__availability_zone {
-    type: string
-    sql: ${TABLE}.about.asset.attribute.cloud.availability_zone ;;
-    group_label: "About Asset Attribute Cloud"
-    group_item_label: "Availability Zone"
-  }
-
-  dimension: about__asset__attribute__cloud__environment {
-    type: number
-    sql: ${TABLE}.about.asset.attribute.cloud.environment ;;
-    group_label: "About Asset Attribute Cloud"
-    group_item_label: "Environment"
-  }
-
-  dimension: about__asset__attribute__cloud__project__id {
-    type: string
-    sql: ${TABLE}.about.asset.attribute.cloud.project.id ;;
-    group_label: "About Asset Attribute Cloud Project"
-    group_item_label: "ID"
-  }
-
-  dimension: about__asset__attribute__cloud__project__name {
-    type: string
-    sql: ${TABLE}.about.asset.attribute.cloud.project.name ;;
-    group_label: "About Asset Attribute Cloud Project"
-    group_item_label: "Name"
-  }
-
-  dimension: about__asset__attribute__cloud__project__parent {
-    type: string
-    sql: ${TABLE}.about.asset.attribute.cloud.project.parent ;;
-    group_label: "About Asset Attribute Cloud Project"
-    group_item_label: "Parent"
-  }
-
-  dimension: about__asset__attribute__cloud__project__product_object_id {
-    type: string
-    sql: ${TABLE}.about.asset.attribute.cloud.project.product_object_id ;;
-    group_label: "About Asset Attribute Cloud Project"
-    group_item_label: "Product Object ID"
-  }
-
-  dimension: about__asset__attribute__cloud__project__resource_subtype {
-    type: string
-    sql: ${TABLE}.about.asset.attribute.cloud.project.resource_subtype ;;
-    group_label: "About Asset Attribute Cloud Project"
-    group_item_label: "Resource Subtype"
-  }
-
-  dimension: about__asset__attribute__cloud__project__resource_type {
-    type: number
-    sql: ${TABLE}.about.asset.attribute.cloud.project.resource_type ;;
-    group_label: "About Asset Attribute Cloud Project"
-    group_item_label: "Resource Type"
-  }
-
-  dimension: about__asset__attribute__cloud__project__type {
-    type: string
-    sql: ${TABLE}.about.asset.attribute.cloud.project.type ;;
-    group_label: "About Asset Attribute Cloud Project"
-    group_item_label: "Type"
-  }
-
-  dimension: about__asset__attribute__cloud__vpc__id {
-    type: string
-    sql: ${TABLE}.about.asset.attribute.cloud.vpc.id ;;
-    group_label: "About Asset Attribute Cloud Vpc"
-    group_item_label: "ID"
-  }
-
-  dimension: about__asset__attribute__cloud__vpc__name {
-    type: string
-    sql: ${TABLE}.about.asset.attribute.cloud.vpc.name ;;
-    group_label: "About Asset Attribute Cloud Vpc"
-    group_item_label: "Name"
-  }
-
-  dimension: about__asset__attribute__cloud__vpc__parent {
-    type: string
-    sql: ${TABLE}.about.asset.attribute.cloud.vpc.parent ;;
-    group_label: "About Asset Attribute Cloud Vpc"
-    group_item_label: "Parent"
-  }
-
-  dimension: about__asset__attribute__cloud__vpc__product_object_id {
-    type: string
-    sql: ${TABLE}.about.asset.attribute.cloud.vpc.product_object_id ;;
-    group_label: "About Asset Attribute Cloud Vpc"
-    group_item_label: "Product Object ID"
-  }
-
-  dimension: about__asset__attribute__cloud__vpc__resource_subtype {
-    type: string
-    sql: ${TABLE}.about.asset.attribute.cloud.vpc.resource_subtype ;;
-    group_label: "About Asset Attribute Cloud Vpc"
-    group_item_label: "Resource Subtype"
-  }
-
-  dimension: about__asset__attribute__cloud__vpc__resource_type {
-    type: number
-    sql: ${TABLE}.about.asset.attribute.cloud.vpc.resource_type ;;
-    group_label: "About Asset Attribute Cloud Vpc"
-    group_item_label: "Resource Type"
-  }
-
-  dimension: about__asset__attribute__cloud__vpc__type {
-    type: string
-    sql: ${TABLE}.about.asset.attribute.cloud.vpc.type ;;
-    group_label: "About Asset Attribute Cloud Vpc"
-    group_item_label: "Type"
-  }
-
-  dimension: about__asset__attribute__creation_time__nanos {
-    type: number
-    sql: ${TABLE}.about.asset.attribute.creation_time.nanos ;;
-    group_label: "About Asset Attribute Creation Time"
-    group_item_label: "Nanos"
-  }
-
-  dimension: about__asset__attribute__creation_time__seconds {
-    type: number
-    sql: ${TABLE}.about.asset.attribute.creation_time.seconds ;;
-    group_label: "About Asset Attribute Creation Time"
-    group_item_label: "Seconds"
-  }
-
-  dimension: about__asset__attribute__labels {
-    hidden: yes
-    sql: ${TABLE}.about.asset.attribute.labels ;;
-    group_label: "About Asset Attribute"
-    group_item_label: "Labels"
-  }
-
-  dimension: about__asset__attribute__last_update_time__nanos {
-    type: number
-    sql: ${TABLE}.about.asset.attribute.last_update_time.nanos ;;
-    group_label: "About Asset Attribute Last Update Time"
-    group_item_label: "Nanos"
-  }
-
-  dimension: about__asset__attribute__last_update_time__seconds {
-    type: number
-    sql: ${TABLE}.about.asset.attribute.last_update_time.seconds ;;
-    group_label: "About Asset Attribute Last Update Time"
-    group_item_label: "Seconds"
-  }
-
-  dimension: about__asset__attribute__permissions {
-    hidden: yes
-    sql: ${TABLE}.about.asset.attribute.permissions ;;
-    group_label: "About Asset Attribute"
-    group_item_label: "Permissions"
-  }
-
-  dimension: about__asset__attribute__roles {
-    hidden: yes
-    sql: ${TABLE}.about.asset.attribute.roles ;;
-    group_label: "About Asset Attribute"
-    group_item_label: "Roles"
-  }
-
-  dimension: about__asset__category {
-    type: string
-    sql: ${TABLE}.about.asset.category ;;
-    group_label: "About Asset"
-    group_item_label: "Category"
-  }
-
-  dimension: about__asset__creation_time__nanos {
-    type: number
-    sql: ${TABLE}.about.asset.creation_time.nanos ;;
-    group_label: "About Asset Creation Time"
-    group_item_label: "Nanos"
-  }
-
-  dimension: about__asset__creation_time__seconds {
-    type: number
-    sql: ${TABLE}.about.asset.creation_time.seconds ;;
-    group_label: "About Asset Creation Time"
-    group_item_label: "Seconds"
-  }
-
-  dimension: about__asset__deployment_status {
-    type: number
-    sql: ${TABLE}.about.asset.deployment_status ;;
-    group_label: "About Asset"
-    group_item_label: "Deployment Status"
-  }
-
-  dimension: about__asset__first_discover_time__nanos {
-    type: number
-    sql: ${TABLE}.about.asset.first_discover_time.nanos ;;
-    group_label: "About Asset First Discover Time"
-    group_item_label: "Nanos"
-  }
-
-  dimension: about__asset__first_discover_time__seconds {
-    type: number
-    sql: ${TABLE}.about.asset.first_discover_time.seconds ;;
-    group_label: "About Asset First Discover Time"
-    group_item_label: "Seconds"
-  }
-
-  dimension: about__asset__hardware {
-    hidden: yes
-    sql: ${TABLE}.about.asset.hardware ;;
-    group_label: "About Asset"
-    group_item_label: "Hardware"
-  }
-
-  dimension: about__asset__hostname {
-    type: string
-    sql: ${TABLE}.about.asset.hostname ;;
-    group_label: "About Asset"
-    group_item_label: "Hostname"
-  }
-
-  dimension: about__asset__ip {
-    hidden: yes
-    sql: ${TABLE}.about.asset.ip ;;
-    group_label: "About Asset"
-    group_item_label: "IP"
-  }
-
-  dimension: about__asset__labels {
-    hidden: yes
-    sql: ${TABLE}.about.asset.labels ;;
-    group_label: "About Asset"
-    group_item_label: "Labels"
-  }
-
-  dimension: about__asset__last_boot_time__nanos {
-    type: number
-    sql: ${TABLE}.about.asset.last_boot_time.nanos ;;
-    group_label: "About Asset Last Boot Time"
-    group_item_label: "Nanos"
-  }
-
-  dimension: about__asset__last_boot_time__seconds {
-    type: number
-    sql: ${TABLE}.about.asset.last_boot_time.seconds ;;
-    group_label: "About Asset Last Boot Time"
-    group_item_label: "Seconds"
-  }
-
-  dimension: about__asset__last_discover_time__nanos {
-    type: number
-    sql: ${TABLE}.about.asset.last_discover_time.nanos ;;
-    group_label: "About Asset Last Discover Time"
-    group_item_label: "Nanos"
-  }
-
-  dimension: about__asset__last_discover_time__seconds {
-    type: number
-    sql: ${TABLE}.about.asset.last_discover_time.seconds ;;
-    group_label: "About Asset Last Discover Time"
-    group_item_label: "Seconds"
-  }
-
-  dimension: about__asset__location__city {
-    type: string
-    sql: ${TABLE}.about.asset.location.city ;;
-    group_label: "About Asset Location"
-    group_item_label: "City"
-  }
-
-  dimension: about__asset__location__country_or_region {
-    type: string
-    sql: ${TABLE}.about.asset.location.country_or_region ;;
-    group_label: "About Asset Location"
-    group_item_label: "Country or Region"
-  }
-
-  dimension: about__asset__location__name {
-    type: string
-    sql: ${TABLE}.about.asset.location.name ;;
-    group_label: "About Asset Location"
-    group_item_label: "Name"
-  }
-
-  dimension: about__asset__location__state {
-    type: string
-    sql: ${TABLE}.about.asset.location.state ;;
-    group_label: "About Asset Location"
-    group_item_label: "State"
-  }
-
-  dimension: about__asset__mac {
-    hidden: yes
-    sql: ${TABLE}.about.asset.mac ;;
-    group_label: "About Asset"
-    group_item_label: "Mac"
-  }
-
-  dimension: about__asset__nat_ip {
-    hidden: yes
-    sql: ${TABLE}.about.asset.nat_ip ;;
-    group_label: "About Asset"
-    group_item_label: "Nat IP"
-  }
-
-  dimension: about__asset__network_domain {
-    type: string
-    sql: ${TABLE}.about.asset.network_domain ;;
-    group_label: "About Asset"
-    group_item_label: "Network Domain"
-  }
-
-  dimension: about__asset__platform_software__platform {
-    type: number
-    sql: ${TABLE}.about.asset.platform_software.platform ;;
-    group_label: "About Asset Platform Software"
-    group_item_label: "Platform"
-  }
-
-  dimension: about__asset__platform_software__platform_patch_level {
-    type: string
-    sql: ${TABLE}.about.asset.platform_software.platform_patch_level ;;
-    group_label: "About Asset Platform Software"
-    group_item_label: "Platform Patch Level"
-  }
-
-  dimension: about__asset__platform_software__platform_version {
-    type: string
-    sql: ${TABLE}.about.asset.platform_software.platform_version ;;
-    group_label: "About Asset Platform Software"
-    group_item_label: "Platform Version"
-  }
-
-  dimension: about__asset__product_object_id {
-    type: string
-    sql: ${TABLE}.about.asset.product_object_id ;;
-    group_label: "About Asset"
-    group_item_label: "Product Object ID"
-  }
-
-  dimension: about__asset__software {
-    hidden: yes
-    sql: ${TABLE}.about.asset.software ;;
-    group_label: "About Asset"
-    group_item_label: "Software"
-  }
-
-  dimension: about__asset__system_last_update_time__nanos {
-    type: number
-    sql: ${TABLE}.about.asset.system_last_update_time.nanos ;;
-    group_label: "About Asset System Last Update Time"
-    group_item_label: "Nanos"
-  }
-
-  dimension: about__asset__system_last_update_time__seconds {
-    type: number
-    sql: ${TABLE}.about.asset.system_last_update_time.seconds ;;
-    group_label: "About Asset System Last Update Time"
-    group_item_label: "Seconds"
-  }
-
-  dimension: about__asset__type {
-    type: number
-    sql: ${TABLE}.about.asset.type ;;
-    group_label: "About Asset"
-    group_item_label: "Type"
-  }
-
-  dimension: about__asset__vulnerabilities {
-    hidden: yes
-    sql: ${TABLE}.about.asset.vulnerabilities ;;
-    group_label: "About Asset"
-    group_item_label: "Vulnerabilities"
-  }
-
-  dimension: about__asset_id {
-    type: string
-    sql: ${TABLE}.about.asset_id ;;
-    group_label: "About"
-    group_item_label: "Asset ID"
-  }
-
-  dimension: about__cloud__availability_zone {
-    type: string
-    sql: ${TABLE}.about.cloud.availability_zone ;;
-    group_label: "About Cloud"
-    group_item_label: "Availability Zone"
-  }
-
-  dimension: about__cloud__environment {
-    type: number
-    sql: ${TABLE}.about.cloud.environment ;;
-    group_label: "About Cloud"
-    group_item_label: "Environment"
-  }
-
-  dimension: about__cloud__project__attribute__creation_time__nanos {
-    type: number
-    sql: ${TABLE}.about.cloud.project.attribute.creation_time.nanos ;;
-    group_label: "About Cloud Project Attribute Creation Time"
-    group_item_label: "Nanos"
-  }
-
-  dimension: about__cloud__project__attribute__creation_time__seconds {
-    type: number
-    sql: ${TABLE}.about.cloud.project.attribute.creation_time.seconds ;;
-    group_label: "About Cloud Project Attribute Creation Time"
-    group_item_label: "Seconds"
-  }
-
-  dimension: about__cloud__project__attribute__labels {
-    hidden: yes
-    sql: ${TABLE}.about.cloud.project.attribute.labels ;;
-    group_label: "About Cloud Project Attribute"
-    group_item_label: "Labels"
-  }
-
-  dimension: about__cloud__project__attribute__last_update_time__nanos {
-    type: number
-    sql: ${TABLE}.about.cloud.project.attribute.last_update_time.nanos ;;
-    group_label: "About Cloud Project Attribute Last Update Time"
-    group_item_label: "Nanos"
-  }
-
-  dimension: about__cloud__project__attribute__last_update_time__seconds {
-    type: number
-    sql: ${TABLE}.about.cloud.project.attribute.last_update_time.seconds ;;
-    group_label: "About Cloud Project Attribute Last Update Time"
-    group_item_label: "Seconds"
-  }
-
-  dimension: about__cloud__project__attribute__permissions {
-    hidden: yes
-    sql: ${TABLE}.about.cloud.project.attribute.permissions ;;
-    group_label: "About Cloud Project Attribute"
-    group_item_label: "Permissions"
-  }
-
-  dimension: about__cloud__project__attribute__roles {
-    hidden: yes
-    sql: ${TABLE}.about.cloud.project.attribute.roles ;;
-    group_label: "About Cloud Project Attribute"
-    group_item_label: "Roles"
-  }
-
-  dimension: about__cloud__project__id {
-    type: string
-    sql: ${TABLE}.about.cloud.project.id ;;
-    group_label: "About Cloud Project"
-    group_item_label: "ID"
-  }
-
-  dimension: about__cloud__project__name {
-    type: string
-    sql: ${TABLE}.about.cloud.project.name ;;
-    group_label: "About Cloud Project"
-    group_item_label: "Name"
-  }
-
-  dimension: about__cloud__project__parent {
-    type: string
-    sql: ${TABLE}.about.cloud.project.parent ;;
-    group_label: "About Cloud Project"
-    group_item_label: "Parent"
-  }
-
-  dimension: about__cloud__project__product_object_id {
-    type: string
-    sql: ${TABLE}.about.cloud.project.product_object_id ;;
-    group_label: "About Cloud Project"
-    group_item_label: "Product Object ID"
-  }
-
-  dimension: about__cloud__project__resource_subtype {
-    type: string
-    sql: ${TABLE}.about.cloud.project.resource_subtype ;;
-    group_label: "About Cloud Project"
-    group_item_label: "Resource Subtype"
-  }
-
-  dimension: about__cloud__project__resource_type {
-    type: number
-    sql: ${TABLE}.about.cloud.project.resource_type ;;
-    group_label: "About Cloud Project"
-    group_item_label: "Resource Type"
-  }
-
-  dimension: about__cloud__project__type {
-    type: string
-    sql: ${TABLE}.about.cloud.project.type ;;
-    group_label: "About Cloud Project"
-    group_item_label: "Type"
-  }
-
-  dimension: about__cloud__vpc__attribute__creation_time__nanos {
-    type: number
-    sql: ${TABLE}.about.cloud.vpc.attribute.creation_time.nanos ;;
-    group_label: "About Cloud Vpc Attribute Creation Time"
-    group_item_label: "Nanos"
-  }
-
-  dimension: about__cloud__vpc__attribute__creation_time__seconds {
-    type: number
-    sql: ${TABLE}.about.cloud.vpc.attribute.creation_time.seconds ;;
-    group_label: "About Cloud Vpc Attribute Creation Time"
-    group_item_label: "Seconds"
-  }
-
-  dimension: about__cloud__vpc__attribute__labels {
-    hidden: yes
-    sql: ${TABLE}.about.cloud.vpc.attribute.labels ;;
-    group_label: "About Cloud Vpc Attribute"
-    group_item_label: "Labels"
-  }
-
-  dimension: about__cloud__vpc__attribute__last_update_time__nanos {
-    type: number
-    sql: ${TABLE}.about.cloud.vpc.attribute.last_update_time.nanos ;;
-    group_label: "About Cloud Vpc Attribute Last Update Time"
-    group_item_label: "Nanos"
-  }
-
-  dimension: about__cloud__vpc__attribute__last_update_time__seconds {
-    type: number
-    sql: ${TABLE}.about.cloud.vpc.attribute.last_update_time.seconds ;;
-    group_label: "About Cloud Vpc Attribute Last Update Time"
-    group_item_label: "Seconds"
-  }
-
-  dimension: about__cloud__vpc__attribute__permissions {
-    hidden: yes
-    sql: ${TABLE}.about.cloud.vpc.attribute.permissions ;;
-    group_label: "About Cloud Vpc Attribute"
-    group_item_label: "Permissions"
-  }
-
-  dimension: about__cloud__vpc__attribute__roles {
-    hidden: yes
-    sql: ${TABLE}.about.cloud.vpc.attribute.roles ;;
-    group_label: "About Cloud Vpc Attribute"
-    group_item_label: "Roles"
-  }
-
-  dimension: about__cloud__vpc__id {
-    type: string
-    sql: ${TABLE}.about.cloud.vpc.id ;;
-    group_label: "About Cloud Vpc"
-    group_item_label: "ID"
-  }
-
-  dimension: about__cloud__vpc__name {
-    type: string
-    sql: ${TABLE}.about.cloud.vpc.name ;;
-    group_label: "About Cloud Vpc"
-    group_item_label: "Name"
-  }
-
-  dimension: about__cloud__vpc__parent {
-    type: string
-    sql: ${TABLE}.about.cloud.vpc.parent ;;
-    group_label: "About Cloud Vpc"
-    group_item_label: "Parent"
-  }
-
-  dimension: about__cloud__vpc__product_object_id {
-    type: string
-    sql: ${TABLE}.about.cloud.vpc.product_object_id ;;
-    group_label: "About Cloud Vpc"
-    group_item_label: "Product Object ID"
-  }
-
-  dimension: about__cloud__vpc__resource_subtype {
-    type: string
-    sql: ${TABLE}.about.cloud.vpc.resource_subtype ;;
-    group_label: "About Cloud Vpc"
-    group_item_label: "Resource Subtype"
-  }
-
-  dimension: about__cloud__vpc__resource_type {
-    type: number
-    sql: ${TABLE}.about.cloud.vpc.resource_type ;;
-    group_label: "About Cloud Vpc"
-    group_item_label: "Resource Type"
-  }
-
-  dimension: about__cloud__vpc__type {
-    type: string
-    sql: ${TABLE}.about.cloud.vpc.type ;;
-    group_label: "About Cloud Vpc"
-    group_item_label: "Type"
-  }
-
-  dimension: about__email {
-    type: string
-    sql: ${TABLE}.about.email ;;
-    group_label: "About"
-    group_item_label: "Email"
-  }
-
-  dimension: about__file__file_metadata__pe__import_hash {
-    type: string
-    sql: ${TABLE}.about.file.file_metadata.pe.import_hash ;;
-    group_label: "About File File Metadata Pe"
-    group_item_label: "Import Hash"
-  }
-
-  dimension: about__file__full_path {
-    type: string
-    sql: ${TABLE}.about.file.full_path ;;
-    group_label: "About File"
-    group_item_label: "Full Path"
-  }
-
-  dimension: about__file__md5 {
-    type: string
-    sql: ${TABLE}.about.file.md5 ;;
-    group_label: "About File"
-    group_item_label: "Md5"
-  }
-
-  dimension: about__file__mime_type {
-    type: string
-    sql: ${TABLE}.about.file.mime_type ;;
-    group_label: "About File"
-    group_item_label: "Mime Type"
-  }
-
-  dimension: about__file__sha1 {
-    type: string
-    sql: ${TABLE}.about.file.sha1 ;;
-    group_label: "About File"
-    group_item_label: "Sha1"
-  }
-
-  dimension: about__file__sha256 {
-    type: string
-    sql: ${TABLE}.about.file.sha256 ;;
-    group_label: "About File"
-    group_item_label: "Sha256"
-  }
-
-  dimension: about__file__size {
-    type: number
-    sql: ${TABLE}.about.file.size ;;
-    group_label: "About File"
-    group_item_label: "Size"
-  }
-
-  dimension: about__group__attribute__cloud__availability_zone {
-    type: string
-    sql: ${TABLE}.about.`group`.attribute.cloud.availability_zone ;;
-    group_label: "About Group Attribute Cloud"
-    group_item_label: "Availability Zone"
-  }
-
-  dimension: about__group__attribute__cloud__environment {
-    type: number
-    sql: ${TABLE}.about.`group`.attribute.cloud.environment ;;
-    group_label: "About Group Attribute Cloud"
-    group_item_label: "Environment"
-  }
-
-  dimension: about__group__attribute__cloud__project__id {
-    type: string
-    sql: ${TABLE}.about.`group`.attribute.cloud.project.id ;;
-    group_label: "About Group Attribute Cloud Project"
-    group_item_label: "ID"
-  }
-
-  dimension: about__group__attribute__cloud__project__name {
-    type: string
-    sql: ${TABLE}.about.`group`.attribute.cloud.project.name ;;
-    group_label: "About Group Attribute Cloud Project"
-    group_item_label: "Name"
-  }
-
-  dimension: about__group__attribute__cloud__project__parent {
-    type: string
-    sql: ${TABLE}.about.`group`.attribute.cloud.project.parent ;;
-    group_label: "About Group Attribute Cloud Project"
-    group_item_label: "Parent"
-  }
-
-  dimension: about__group__attribute__cloud__project__product_object_id {
-    type: string
-    sql: ${TABLE}.about.`group`.attribute.cloud.project.product_object_id ;;
-    group_label: "About Group Attribute Cloud Project"
-    group_item_label: "Product Object ID"
-  }
-
-  dimension: about__group__attribute__cloud__project__resource_subtype {
-    type: string
-    sql: ${TABLE}.about.`group`.attribute.cloud.project.resource_subtype ;;
-    group_label: "About Group Attribute Cloud Project"
-    group_item_label: "Resource Subtype"
-  }
-
-  dimension: about__group__attribute__cloud__project__resource_type {
-    type: number
-    sql: ${TABLE}.about.`group`.attribute.cloud.project.resource_type ;;
-    group_label: "About Group Attribute Cloud Project"
-    group_item_label: "Resource Type"
-  }
-
-  dimension: about__group__attribute__cloud__project__type {
-    type: string
-    sql: ${TABLE}.about.`group`.attribute.cloud.project.type ;;
-    group_label: "About Group Attribute Cloud Project"
-    group_item_label: "Type"
-  }
-
-  dimension: about__group__attribute__cloud__vpc__id {
-    type: string
-    sql: ${TABLE}.about.`group`.attribute.cloud.vpc.id ;;
-    group_label: "About Group Attribute Cloud Vpc"
-    group_item_label: "ID"
-  }
-
-  dimension: about__group__attribute__cloud__vpc__name {
-    type: string
-    sql: ${TABLE}.about.`group`.attribute.cloud.vpc.name ;;
-    group_label: "About Group Attribute Cloud Vpc"
-    group_item_label: "Name"
-  }
-
-  dimension: about__group__attribute__cloud__vpc__parent {
-    type: string
-    sql: ${TABLE}.about.`group`.attribute.cloud.vpc.parent ;;
-    group_label: "About Group Attribute Cloud Vpc"
-    group_item_label: "Parent"
-  }
-
-  dimension: about__group__attribute__cloud__vpc__product_object_id {
-    type: string
-    sql: ${TABLE}.about.`group`.attribute.cloud.vpc.product_object_id ;;
-    group_label: "About Group Attribute Cloud Vpc"
-    group_item_label: "Product Object ID"
-  }
-
-  dimension: about__group__attribute__cloud__vpc__resource_subtype {
-    type: string
-    sql: ${TABLE}.about.`group`.attribute.cloud.vpc.resource_subtype ;;
-    group_label: "About Group Attribute Cloud Vpc"
-    group_item_label: "Resource Subtype"
-  }
-
-  dimension: about__group__attribute__cloud__vpc__resource_type {
-    type: number
-    sql: ${TABLE}.about.`group`.attribute.cloud.vpc.resource_type ;;
-    group_label: "About Group Attribute Cloud Vpc"
-    group_item_label: "Resource Type"
-  }
-
-  dimension: about__group__attribute__cloud__vpc__type {
-    type: string
-    sql: ${TABLE}.about.`group`.attribute.cloud.vpc.type ;;
-    group_label: "About Group Attribute Cloud Vpc"
-    group_item_label: "Type"
-  }
-
-  dimension: about__group__attribute__creation_time__nanos {
-    type: number
-    sql: ${TABLE}.about.`group`.attribute.creation_time.nanos ;;
-    group_label: "About Group Attribute Creation Time"
-    group_item_label: "Nanos"
-  }
-
-  dimension: about__group__attribute__creation_time__seconds {
-    type: number
-    sql: ${TABLE}.about.`group`.attribute.creation_time.seconds ;;
-    group_label: "About Group Attribute Creation Time"
-    group_item_label: "Seconds"
-  }
-
-  dimension: about__group__attribute__labels {
-    hidden: yes
-    sql: ${TABLE}.about.group.attribute.labels ;;
-    group_label: "About Group Attribute"
-    group_item_label: "Labels"
-  }
-
-  dimension: about__group__attribute__last_update_time__nanos {
-    type: number
-    sql: ${TABLE}.about.`group`.attribute.last_update_time.nanos ;;
-    group_label: "About Group Attribute Last Update Time"
-    group_item_label: "Nanos"
-  }
-
-  dimension: about__group__attribute__last_update_time__seconds {
-    type: number
-    sql: ${TABLE}.about.`group`.attribute.last_update_time.seconds ;;
-    group_label: "About Group Attribute Last Update Time"
-    group_item_label: "Seconds"
-  }
-
-  dimension: about__group__attribute__permissions {
-    hidden: yes
-    sql: ${TABLE}.about.group.attribute.permissions ;;
-    group_label: "About Group Attribute"
-    group_item_label: "Permissions"
-  }
-
-  dimension: about__group__attribute__roles {
-    hidden: yes
-    sql: ${TABLE}.about.group.attribute.roles ;;
-    group_label: "About Group Attribute"
-    group_item_label: "Roles"
-  }
-
-  dimension: about__group__creation_time__nanos {
-    type: number
-    sql: ${TABLE}.about.`group`.creation_time.nanos ;;
-    group_label: "About Group Creation Time"
-    group_item_label: "Nanos"
-  }
-
-  dimension: about__group__creation_time__seconds {
-    type: number
-    sql: ${TABLE}.about.`group`.creation_time.seconds ;;
-    group_label: "About Group Creation Time"
-    group_item_label: "Seconds"
-  }
-
-  dimension: about__group__email_addresses {
-    hidden: yes
-    sql: ${TABLE}.about.group.email_addresses ;;
-    group_label: "About Group"
-    group_item_label: "Email Addresses"
-  }
-
-  dimension: about__group__group_display_name {
-    type: string
-    sql: ${TABLE}.about.`group`.group_display_name ;;
-    group_label: "About Group"
-    group_item_label: "Group Display Name"
-  }
-
-  dimension: about__group__product_object_id {
-    type: string
-    sql: ${TABLE}.about.`group`.product_object_id ;;
-    group_label: "About Group"
-    group_item_label: "Product Object ID"
-  }
-
-  dimension: about__group__windows_sid {
-    type: string
-    sql: ${TABLE}.about.`group`.windows_sid ;;
-    group_label: "About Group"
-    group_item_label: "Windows Sid"
-  }
-
-  dimension: about__hostname {
-    type: string
-    sql: ${TABLE}.about.hostname ;;
-    group_label: "About"
-    group_item_label: "Hostname"
-  }
-
-  dimension: about__investigation__comments {
-    hidden: yes
-    sql: ${TABLE}.about.investigation.comments ;;
-    group_label: "About Investigation"
-    group_item_label: "Comments"
-  }
-
-  dimension: about__investigation__reputation {
-    type: number
-    sql: ${TABLE}.about.investigation.reputation ;;
-    group_label: "About Investigation"
-    group_item_label: "Reputation"
-  }
-
-  dimension: about__investigation__severity_score {
-    type: number
-    sql: ${TABLE}.about.investigation.severity_score ;;
-    group_label: "About Investigation"
-    group_item_label: "Severity Score"
-  }
-
-  dimension: about__investigation__status {
-    type: number
-    sql: ${TABLE}.about.investigation.status ;;
-    group_label: "About Investigation"
-    group_item_label: "Status"
-  }
-
-  dimension: about__investigation__verdict {
-    type: number
-    sql: ${TABLE}.about.investigation.verdict ;;
-    group_label: "About Investigation"
-    group_item_label: "Verdict"
-  }
-
-  dimension: about__ip {
-    hidden: yes
-    sql: ${TABLE}.about.ip ;;
-    group_label: "About"
-    group_item_label: "IP"
-  }
-
-  dimension: about__labels {
-    hidden: yes
-    sql: ${TABLE}.about.labels ;;
-    group_label: "About"
-    group_item_label: "Labels"
-  }
-
-  dimension: about__location__city {
-    type: string
-    sql: ${TABLE}.about.location.city ;;
-    group_label: "About Location"
-    group_item_label: "City"
-  }
-
-  dimension: about__location__country_or_region {
-    type: string
-    sql: ${TABLE}.about.location.country_or_region ;;
-    group_label: "About Location"
-    group_item_label: "Country or Region"
-  }
-
-  dimension: about__location__name {
-    type: string
-    sql: ${TABLE}.about.location.name ;;
-    group_label: "About Location"
-    group_item_label: "Name"
-  }
-
-  dimension: about__location__state {
-    type: string
-    sql: ${TABLE}.about.location.state ;;
-    group_label: "About Location"
-    group_item_label: "State"
-  }
-
-  dimension: about__mac {
-    hidden: yes
-    sql: ${TABLE}.about.mac ;;
-    group_label: "About"
-    group_item_label: "Mac"
-  }
-
-  dimension: about__namespace {
-    type: string
-    sql: ${TABLE}.about.namespace ;;
-    group_label: "About"
-    group_item_label: "Namespace"
-  }
-
-  dimension: about__nat_ip {
-    hidden: yes
-    sql: ${TABLE}.about.nat_ip ;;
-    group_label: "About"
-    group_item_label: "Nat IP"
-  }
-
-  dimension: about__nat_port {
-    type: number
-    sql: ${TABLE}.about.nat_port ;;
-    group_label: "About"
-    group_item_label: "Nat Port"
-  }
-
-  dimension: about__object_reference__id {
-    type: string
-    sql: ${TABLE}.about.object_reference.id ;;
-    group_label: "About Object Reference"
-    group_item_label: "ID"
-  }
-
-  dimension: about__object_reference__namespace {
-    type: number
-    sql: ${TABLE}.about.object_reference.namespace ;;
-    group_label: "About Object Reference"
-    group_item_label: "Namespace"
-  }
-
-  dimension: about__platform {
-    type: number
-    sql: ${TABLE}.about.platform ;;
-    group_label: "About"
-    group_item_label: "Platform"
-  }
-
-  dimension: about__platform_patch_level {
-    type: string
-    sql: ${TABLE}.about.platform_patch_level ;;
-    group_label: "About"
-    group_item_label: "Platform Patch Level"
-  }
-
-  dimension: about__platform_version {
-    type: string
-    sql: ${TABLE}.about.platform_version ;;
-    group_label: "About"
-    group_item_label: "Platform Version"
-  }
-
-  dimension: about__port {
-    type: number
-    sql: ${TABLE}.about.port ;;
-    group_label: "About"
-    group_item_label: "Port"
-  }
-
-  dimension: about__process__access_mask {
-    type: number
-    sql: ${TABLE}.about.process.access_mask ;;
-    group_label: "About Process"
-    group_item_label: "Access Mask"
-  }
-
-  dimension: about__process__command_line {
-    type: string
-    sql: ${TABLE}.about.process.command_line ;;
-    group_label: "About Process"
-    group_item_label: "Command Line"
-  }
-
-  dimension: about__process__command_line_history {
-    hidden: yes
-    sql: ${TABLE}.about.process.command_line_history ;;
-    group_label: "About Process"
-    group_item_label: "Command Line History"
-  }
-
-  dimension: about__process__file__file_metadata__pe__import_hash {
-    type: string
-    sql: ${TABLE}.about.process.file.file_metadata.pe.import_hash ;;
-    group_label: "About Process File File Metadata Pe"
-    group_item_label: "Import Hash"
-  }
-
-  dimension: about__process__file__full_path {
-    type: string
-    sql: ${TABLE}.about.process.file.full_path ;;
-    group_label: "About Process File"
-    group_item_label: "Full Path"
-  }
-
-  dimension: about__process__file__md5 {
-    type: string
-    sql: ${TABLE}.about.process.file.md5 ;;
-    group_label: "About Process File"
-    group_item_label: "Md5"
-  }
-
-  dimension: about__process__file__mime_type {
-    type: string
-    sql: ${TABLE}.about.process.file.mime_type ;;
-    group_label: "About Process File"
-    group_item_label: "Mime Type"
-  }
-
-  dimension: about__process__file__sha1 {
-    type: string
-    sql: ${TABLE}.about.process.file.sha1 ;;
-    group_label: "About Process File"
-    group_item_label: "Sha1"
-  }
-
-  dimension: about__process__file__sha256 {
-    type: string
-    sql: ${TABLE}.about.process.file.sha256 ;;
-    group_label: "About Process File"
-    group_item_label: "Sha256"
-  }
-
-  dimension: about__process__file__size {
-    type: number
-    sql: ${TABLE}.about.process.file.size ;;
-    group_label: "About Process File"
-    group_item_label: "Size"
-  }
-
-  dimension: about__process__parent_pid {
-    type: string
-    sql: ${TABLE}.about.process.parent_pid ;;
-    group_label: "About Process"
-    group_item_label: "Parent Pid"
-  }
-
-  dimension: about__process__pid {
-    type: string
-    sql: ${TABLE}.about.process.pid ;;
-    group_label: "About Process"
-    group_item_label: "Pid"
-  }
-
-  dimension: about__process__product_specific_parent_process_id {
-    type: string
-    sql: ${TABLE}.about.process.product_specific_parent_process_id ;;
-    group_label: "About Process"
-    group_item_label: "Product Specific Parent Process ID"
-  }
-
-  dimension: about__process__product_specific_process_id {
-    type: string
-    sql: ${TABLE}.about.process.product_specific_process_id ;;
-    group_label: "About Process"
-    group_item_label: "Product Specific Process ID"
-  }
-
-  dimension: about__process_ancestors {
-    hidden: yes
-    sql: ${TABLE}.about.process_ancestors ;;
-    group_label: "About"
-    group_item_label: "Process Ancestors"
-  }
-
-  dimension: about__registry__registry_key {
-    type: string
-    sql: ${TABLE}.about.registry.registry_key ;;
-    group_label: "About Registry"
-    group_item_label: "Registry Key"
-  }
-
-  dimension: about__registry__registry_value_data {
-    type: string
-    sql: ${TABLE}.about.registry.registry_value_data ;;
-    group_label: "About Registry"
-    group_item_label: "Registry Value Data"
-  }
-
-  dimension: about__registry__registry_value_name {
-    type: string
-    sql: ${TABLE}.about.registry.registry_value_name ;;
-    group_label: "About Registry"
-    group_item_label: "Registry Value Name"
-  }
-
-  dimension: about__resource__attribute__cloud__availability_zone {
-    type: string
-    sql: ${TABLE}.about.resource.attribute.cloud.availability_zone ;;
-    group_label: "About Resource Attribute Cloud"
-    group_item_label: "Availability Zone"
-  }
-
-  dimension: about__resource__attribute__cloud__environment {
-    type: number
-    sql: ${TABLE}.about.resource.attribute.cloud.environment ;;
-    group_label: "About Resource Attribute Cloud"
-    group_item_label: "Environment"
-  }
-
-  dimension: about__resource__attribute__creation_time__nanos {
-    type: number
-    sql: ${TABLE}.about.resource.attribute.creation_time.nanos ;;
-    group_label: "About Resource Attribute Creation Time"
-    group_item_label: "Nanos"
-  }
-
-  dimension: about__resource__attribute__creation_time__seconds {
-    type: number
-    sql: ${TABLE}.about.resource.attribute.creation_time.seconds ;;
-    group_label: "About Resource Attribute Creation Time"
-    group_item_label: "Seconds"
-  }
-
-  dimension: about__resource__attribute__labels {
-    hidden: yes
-    sql: ${TABLE}.about.resource.attribute.labels ;;
-    group_label: "About Resource Attribute"
-    group_item_label: "Labels"
-  }
-
-  dimension: about__resource__attribute__last_update_time__nanos {
-    type: number
-    sql: ${TABLE}.about.resource.attribute.last_update_time.nanos ;;
-    group_label: "About Resource Attribute Last Update Time"
-    group_item_label: "Nanos"
-  }
-
-  dimension: about__resource__attribute__last_update_time__seconds {
-    type: number
-    sql: ${TABLE}.about.resource.attribute.last_update_time.seconds ;;
-    group_label: "About Resource Attribute Last Update Time"
-    group_item_label: "Seconds"
-  }
-
-  dimension: about__resource__attribute__permissions {
-    hidden: yes
-    sql: ${TABLE}.about.resource.attribute.permissions ;;
-    group_label: "About Resource Attribute"
-    group_item_label: "Permissions"
-  }
-
-  dimension: about__resource__attribute__roles {
-    hidden: yes
-    sql: ${TABLE}.about.resource.attribute.roles ;;
-    group_label: "About Resource Attribute"
-    group_item_label: "Roles"
-  }
-
-  dimension: about__resource__id {
-    type: string
-    sql: ${TABLE}.about.resource.id ;;
-    group_label: "About Resource"
-    group_item_label: "ID"
-  }
-
-  dimension: about__resource__name {
-    type: string
-    sql: ${TABLE}.about.resource.name ;;
-    group_label: "About Resource"
-    group_item_label: "Name"
-  }
-
-  dimension: about__resource__parent {
-    type: string
-    sql: ${TABLE}.about.resource.parent ;;
-    group_label: "About Resource"
-    group_item_label: "Parent"
-  }
-
-  dimension: about__resource__product_object_id {
-    type: string
-    sql: ${TABLE}.about.resource.product_object_id ;;
-    group_label: "About Resource"
-    group_item_label: "Product Object ID"
-  }
-
-  dimension: about__resource__resource_subtype {
-    type: string
-    sql: ${TABLE}.about.resource.resource_subtype ;;
-    group_label: "About Resource"
-    group_item_label: "Resource Subtype"
-  }
-
-  dimension: about__resource__resource_type {
-    type: number
-    sql: ${TABLE}.about.resource.resource_type ;;
-    group_label: "About Resource"
-    group_item_label: "Resource Type"
-  }
-
-  dimension: about__resource__type {
-    type: string
-    sql: ${TABLE}.about.resource.type ;;
-    group_label: "About Resource"
-    group_item_label: "Type"
-  }
-
-  dimension: about__url {
-    type: string
-    sql: ${TABLE}.about.url ;;
-    group_label: "About"
-    group_item_label: "URL"
-  }
-
-  dimension: about__user__attribute__cloud__availability_zone {
-    type: string
-    sql: ${TABLE}.about.user.attribute.cloud.availability_zone ;;
-    group_label: "About User Attribute Cloud"
-    group_item_label: "Availability Zone"
-  }
-
-  dimension: about__user__attribute__cloud__environment {
-    type: number
-    sql: ${TABLE}.about.user.attribute.cloud.environment ;;
-    group_label: "About User Attribute Cloud"
-    group_item_label: "Environment"
-  }
-
-  dimension: about__user__attribute__cloud__project__id {
-    type: string
-    sql: ${TABLE}.about.user.attribute.cloud.project.id ;;
-    group_label: "About User Attribute Cloud Project"
-    group_item_label: "ID"
-  }
-
-  dimension: about__user__attribute__cloud__project__name {
-    type: string
-    sql: ${TABLE}.about.user.attribute.cloud.project.name ;;
-    group_label: "About User Attribute Cloud Project"
-    group_item_label: "Name"
-  }
-
-  dimension: about__user__attribute__cloud__project__parent {
-    type: string
-    sql: ${TABLE}.about.user.attribute.cloud.project.parent ;;
-    group_label: "About User Attribute Cloud Project"
-    group_item_label: "Parent"
-  }
-
-  dimension: about__user__attribute__cloud__project__product_object_id {
-    type: string
-    sql: ${TABLE}.about.user.attribute.cloud.project.product_object_id ;;
-    group_label: "About User Attribute Cloud Project"
-    group_item_label: "Product Object ID"
-  }
-
-  dimension: about__user__attribute__cloud__project__resource_subtype {
-    type: string
-    sql: ${TABLE}.about.user.attribute.cloud.project.resource_subtype ;;
-    group_label: "About User Attribute Cloud Project"
-    group_item_label: "Resource Subtype"
-  }
-
-  dimension: about__user__attribute__cloud__project__resource_type {
-    type: number
-    sql: ${TABLE}.about.user.attribute.cloud.project.resource_type ;;
-    group_label: "About User Attribute Cloud Project"
-    group_item_label: "Resource Type"
-  }
-
-  dimension: about__user__attribute__cloud__project__type {
-    type: string
-    sql: ${TABLE}.about.user.attribute.cloud.project.type ;;
-    group_label: "About User Attribute Cloud Project"
-    group_item_label: "Type"
-  }
-
-  dimension: about__user__attribute__cloud__vpc__id {
-    type: string
-    sql: ${TABLE}.about.user.attribute.cloud.vpc.id ;;
-    group_label: "About User Attribute Cloud Vpc"
-    group_item_label: "ID"
-  }
-
-  dimension: about__user__attribute__cloud__vpc__name {
-    type: string
-    sql: ${TABLE}.about.user.attribute.cloud.vpc.name ;;
-    group_label: "About User Attribute Cloud Vpc"
-    group_item_label: "Name"
-  }
-
-  dimension: about__user__attribute__cloud__vpc__parent {
-    type: string
-    sql: ${TABLE}.about.user.attribute.cloud.vpc.parent ;;
-    group_label: "About User Attribute Cloud Vpc"
-    group_item_label: "Parent"
-  }
-
-  dimension: about__user__attribute__cloud__vpc__product_object_id {
-    type: string
-    sql: ${TABLE}.about.user.attribute.cloud.vpc.product_object_id ;;
-    group_label: "About User Attribute Cloud Vpc"
-    group_item_label: "Product Object ID"
-  }
-
-  dimension: about__user__attribute__cloud__vpc__resource_subtype {
-    type: string
-    sql: ${TABLE}.about.user.attribute.cloud.vpc.resource_subtype ;;
-    group_label: "About User Attribute Cloud Vpc"
-    group_item_label: "Resource Subtype"
-  }
-
-  dimension: about__user__attribute__cloud__vpc__resource_type {
-    type: number
-    sql: ${TABLE}.about.user.attribute.cloud.vpc.resource_type ;;
-    group_label: "About User Attribute Cloud Vpc"
-    group_item_label: "Resource Type"
-  }
-
-  dimension: about__user__attribute__cloud__vpc__type {
-    type: string
-    sql: ${TABLE}.about.user.attribute.cloud.vpc.type ;;
-    group_label: "About User Attribute Cloud Vpc"
-    group_item_label: "Type"
-  }
-
-  dimension: about__user__attribute__creation_time__nanos {
-    type: number
-    sql: ${TABLE}.about.user.attribute.creation_time.nanos ;;
-    group_label: "About User Attribute Creation Time"
-    group_item_label: "Nanos"
-  }
-
-  dimension: about__user__attribute__creation_time__seconds {
-    type: number
-    sql: ${TABLE}.about.user.attribute.creation_time.seconds ;;
-    group_label: "About User Attribute Creation Time"
-    group_item_label: "Seconds"
-  }
-
-  dimension: about__user__attribute__labels {
-    hidden: yes
-    sql: ${TABLE}.about.user.attribute.labels ;;
-    group_label: "About User Attribute"
-    group_item_label: "Labels"
-  }
-
-  dimension: about__user__attribute__last_update_time__nanos {
-    type: number
-    sql: ${TABLE}.about.user.attribute.last_update_time.nanos ;;
-    group_label: "About User Attribute Last Update Time"
-    group_item_label: "Nanos"
-  }
-
-  dimension: about__user__attribute__last_update_time__seconds {
-    type: number
-    sql: ${TABLE}.about.user.attribute.last_update_time.seconds ;;
-    group_label: "About User Attribute Last Update Time"
-    group_item_label: "Seconds"
-  }
-
-  dimension: about__user__attribute__permissions {
-    hidden: yes
-    sql: ${TABLE}.about.user.attribute.permissions ;;
-    group_label: "About User Attribute"
-    group_item_label: "Permissions"
-  }
-
-  dimension: about__user__attribute__roles {
-    hidden: yes
-    sql: ${TABLE}.about.user.attribute.roles ;;
-    group_label: "About User Attribute"
-    group_item_label: "Roles"
-  }
-
-  dimension: about__user__company_name {
-    type: string
-    sql: ${TABLE}.about.user.company_name ;;
-    group_label: "About User"
-    group_item_label: "Company Name"
-  }
-
-  dimension: about__user__department {
-    hidden: yes
-    sql: ${TABLE}.about.user.department ;;
-    group_label: "About User"
-    group_item_label: "Department"
-  }
-
-  dimension: about__user__email_addresses {
-    hidden: yes
-    sql: ${TABLE}.about.user.email_addresses ;;
-    group_label: "About User"
-    group_item_label: "Email Addresses"
-  }
-
-  dimension: about__user__employee_id {
-    type: string
-    sql: ${TABLE}.about.user.employee_id ;;
-    group_label: "About User"
-    group_item_label: "Employee ID"
-  }
-
-  dimension: about__user__first_name {
-    type: string
-    sql: ${TABLE}.about.user.first_name ;;
-    group_label: "About User"
-    group_item_label: "First Name"
-  }
-
-  dimension: about__user__group_identifiers {
-    hidden: yes
-    sql: ${TABLE}.about.user.group_identifiers ;;
-    group_label: "About User"
-    group_item_label: "Group Identifiers"
-  }
-
-  dimension: about__user__groupid {
-    type: string
-    sql: ${TABLE}.about.user.groupid ;;
-    group_label: "About User"
-    group_item_label: "Groupid"
-  }
-
-  dimension: about__user__hire_date__nanos {
-    type: number
-    sql: ${TABLE}.about.user.hire_date.nanos ;;
-    group_label: "About User Hire Date"
-    group_item_label: "Nanos"
-  }
-
-  dimension: about__user__hire_date__seconds {
-    type: number
-    sql: ${TABLE}.about.user.hire_date.seconds ;;
-    group_label: "About User Hire Date"
-    group_item_label: "Seconds"
-  }
-
-  dimension: about__user__last_name {
-    type: string
-    sql: ${TABLE}.about.user.last_name ;;
-    group_label: "About User"
-    group_item_label: "Last Name"
-  }
-
-  dimension: about__user__middle_name {
-    type: string
-    sql: ${TABLE}.about.user.middle_name ;;
-    group_label: "About User"
-    group_item_label: "Middle Name"
-  }
-
-  dimension: about__user__office_address__city {
-    type: string
-    sql: ${TABLE}.about.user.office_address.city ;;
-    group_label: "About User Office Address"
-    group_item_label: "City"
-  }
-
-  dimension: about__user__office_address__country_or_region {
-    type: string
-    sql: ${TABLE}.about.user.office_address.country_or_region ;;
-    group_label: "About User Office Address"
-    group_item_label: "Country or Region"
-  }
-
-  dimension: about__user__office_address__name {
-    type: string
-    sql: ${TABLE}.about.user.office_address.name ;;
-    group_label: "About User Office Address"
-    group_item_label: "Name"
-  }
-
-  dimension: about__user__office_address__state {
-    type: string
-    sql: ${TABLE}.about.user.office_address.state ;;
-    group_label: "About User Office Address"
-    group_item_label: "State"
-  }
-
-  dimension: about__user__personal_address__city {
-    type: string
-    sql: ${TABLE}.about.user.personal_address.city ;;
-    group_label: "About User Personal Address"
-    group_item_label: "City"
-  }
-
-  dimension: about__user__personal_address__country_or_region {
-    type: string
-    sql: ${TABLE}.about.user.personal_address.country_or_region ;;
-    group_label: "About User Personal Address"
-    group_item_label: "Country or Region"
-  }
-
-  dimension: about__user__personal_address__name {
-    type: string
-    sql: ${TABLE}.about.user.personal_address.name ;;
-    group_label: "About User Personal Address"
-    group_item_label: "Name"
-  }
-
-  dimension: about__user__personal_address__state {
-    type: string
-    sql: ${TABLE}.about.user.personal_address.state ;;
-    group_label: "About User Personal Address"
-    group_item_label: "State"
-  }
-
-  dimension: about__user__phone_numbers {
-    hidden: yes
-    sql: ${TABLE}.about.user.phone_numbers ;;
-    group_label: "About User"
-    group_item_label: "Phone Numbers"
-  }
-
-  dimension: about__user__product_object_id {
-    type: string
-    sql: ${TABLE}.about.user.product_object_id ;;
-    group_label: "About User"
-    group_item_label: "Product Object ID"
-  }
-
-  dimension: about__user__role_description {
-    type: string
-    sql: ${TABLE}.about.user.role_description ;;
-    group_label: "About User"
-    group_item_label: "Role Description"
-  }
-
-  dimension: about__user__role_name {
-    type: string
-    sql: ${TABLE}.about.user.role_name ;;
-    group_label: "About User"
-    group_item_label: "Role Name"
-  }
-
-  dimension: about__user__termination_date__nanos {
-    type: number
-    sql: ${TABLE}.about.user.termination_date.nanos ;;
-    group_label: "About User Termination Date"
-    group_item_label: "Nanos"
-  }
-
-  dimension: about__user__termination_date__seconds {
-    type: number
-    sql: ${TABLE}.about.user.termination_date.seconds ;;
-    group_label: "About User Termination Date"
-    group_item_label: "Seconds"
-  }
-
-  dimension: about__user__time_off {
-    hidden: yes
-    sql: ${TABLE}.about.user.time_off ;;
-    group_label: "About User"
-    group_item_label: "Time Off"
-  }
-
-  dimension: about__user__title {
-    type: string
-    sql: ${TABLE}.about.user.title ;;
-    group_label: "About User"
-    group_item_label: "Title"
-  }
-
-  dimension: about__user__user_authentication_status {
-    type: number
-    sql: ${TABLE}.about.user.user_authentication_status ;;
-    group_label: "About User"
-    group_item_label: "User Authentication Status"
-  }
-
-  dimension: about__user__user_display_name {
-    type: string
-    sql: ${TABLE}.about.user.user_display_name ;;
-    group_label: "About User"
-    group_item_label: "User Display Name"
-  }
-
-  dimension: about__user__user_role {
-    type: number
-    sql: ${TABLE}.about.user.user_role ;;
-    group_label: "About User"
-    group_item_label: "User Role"
-  }
-
-  dimension: about__user__userid {
-    type: string
-    sql: ${TABLE}.about.user.userid ;;
-    group_label: "About User"
-    group_item_label: "Userid"
-  }
-
-  dimension: about__user__windows_sid {
-    type: string
-    sql: ${TABLE}.about.user.windows_sid ;;
-    group_label: "About User"
-    group_item_label: "Windows Sid"
-  }
-
-  dimension: about__user_management_chain {
-    hidden: yes
-    sql: ${TABLE}.about.user_management_chain ;;
-    group_label: "About"
-    group_item_label: "User Management Chain"
-  }
-
-  dimension: action_details {
-    type: string
-    sql: ${TABLE}.action_details ;;
-  }
-
-  dimension: alert_state {
-    type: number
-    sql: ${TABLE}.alert_state ;;
-  }
-
-  dimension: category {
-    hidden: yes
-    sql: ${TABLE}.category ;;
-  }
-
-  dimension: category_details {
-    hidden: yes
-    sql: ${TABLE}.category_details ;;
-  }
-
-  dimension: confidence {
-    type: number
-    sql: ${TABLE}.confidence ;;
-  }
-
-  dimension: confidence_details {
-    type: string
-    sql: ${TABLE}.confidence_details ;;
-  }
-
-  dimension: description {
-    type: string
-    sql: ${TABLE}.description ;;
-  }
-
-  dimension: detection_fields {
-    hidden: yes
-    sql: ${TABLE}.detection_fields ;;
-  }
-
-  dimension: priority {
-    type: number
-    sql: ${TABLE}.priority ;;
-  }
-
-  dimension: priority_details {
-    type: string
-    sql: ${TABLE}.priority_details ;;
-  }
-
-  dimension: rule_author {
-    type: string
-    sql: ${TABLE}.rule_author ;;
-  }
-
-  dimension: rule_id {
-    type: string
-    sql: ${TABLE}.rule_id ;;
-  }
-
-  dimension: rule_labels {
-    hidden: yes
-    sql: ${TABLE}.rule_labels ;;
-  }
-
-  dimension: rule_name {
-    type: string
-    sql: ${TABLE}.rule_name ;;
-  }
-
-  dimension: rule_type {
-    type: string
-    sql: ${TABLE}.rule_type ;;
-  }
-
-  dimension: rule_version {
-    type: string
-    sql: ${TABLE}.rule_version ;;
-  }
-
-  dimension: severity {
-    type: number
-    sql: ${TABLE}.severity ;;
-  }
-
-  dimension: severity_details {
-    type: string
-    sql: ${TABLE}.severity_details ;;
-  }
-
-  dimension: summary {
-    type: string
-    sql: ${TABLE}.summary ;;
-  }
-
-  dimension: threat_feed_name {
-    type: string
-    sql: ${TABLE}.threat_feed_name ;;
-  }
-
-  dimension: threat_id {
-    type: string
-    sql: ${TABLE}.threat_id ;;
-  }
-
-  dimension: threat_id_namespace {
-    type: number
-    value_format_name: id
-    sql: ${TABLE}.threat_id_namespace ;;
-  }
-
-  dimension: threat_name {
-    type: string
-    sql: ${TABLE}.threat_name ;;
-  }
-
-  dimension: threat_status {
-    type: number
-    sql: ${TABLE}.threat_status ;;
-  }
-
-  dimension: url_back_to_product {
-    type: string
-    sql: ${TABLE}.url_back_to_product ;;
   }
 }
 
@@ -13323,6 +13810,11 @@ view: udm_events__about__asset__software {
     sql: ${TABLE}.name ;;
   }
 
+  dimension: permissions {
+    hidden: yes
+    sql: ${TABLE}.permissions ;;
+  }
+
   dimension: version {
     type: string
     sql: ${TABLE}.version ;;
@@ -13492,6 +13984,11 @@ view: udm_events__target__asset__software {
   dimension: name {
     type: string
     sql: ${TABLE}.name ;;
+  }
+
+  dimension: permissions {
+    hidden: yes
+    sql: ${TABLE}.permissions ;;
   }
 
   dimension: version {
@@ -13889,6 +14386,11 @@ view: udm_events__observer__asset__software {
     sql: ${TABLE}.name ;;
   }
 
+  dimension: permissions {
+    hidden: yes
+    sql: ${TABLE}.permissions ;;
+  }
+
   dimension: version {
     type: string
     sql: ${TABLE}.version ;;
@@ -14008,6 +14510,11 @@ view: udm_events__principal__asset__software {
   dimension: name {
     type: string
     sql: ${TABLE}.name ;;
+  }
+
+  dimension: permissions {
+    hidden: yes
+    sql: ${TABLE}.permissions ;;
   }
 
   dimension: version {
@@ -14512,6 +15019,20 @@ view: udm_events__src__user_management_chain {
     group_item_label: "Country or Region"
   }
 
+  dimension: office_address__desk_name {
+    type: string
+    sql: ${TABLE}.office_address.desk_name ;;
+    group_label: "Office Address"
+    group_item_label: "Desk Name"
+  }
+
+  dimension: office_address__floor_name {
+    type: string
+    sql: ${TABLE}.office_address.floor_name ;;
+    group_label: "Office Address"
+    group_item_label: "Floor Name"
+  }
+
   dimension: office_address__name {
     type: string
     sql: ${TABLE}.office_address.name ;;
@@ -14538,6 +15059,20 @@ view: udm_events__src__user_management_chain {
     sql: ${TABLE}.personal_address.country_or_region ;;
     group_label: "Personal Address"
     group_item_label: "Country or Region"
+  }
+
+  dimension: personal_address__desk_name {
+    type: string
+    sql: ${TABLE}.personal_address.desk_name ;;
+    group_label: "Personal Address"
+    group_item_label: "Desk Name"
+  }
+
+  dimension: personal_address__floor_name {
+    type: string
+    sql: ${TABLE}.personal_address.floor_name ;;
+    group_label: "Personal Address"
+    group_item_label: "Floor Name"
   }
 
   dimension: personal_address__name {
@@ -15050,6 +15585,11 @@ view: udm_events__intermediary__asset__software {
     sql: ${TABLE}.name ;;
   }
 
+  dimension: permissions {
+    hidden: yes
+    sql: ${TABLE}.permissions ;;
+  }
+
   dimension: version {
     type: string
     sql: ${TABLE}.version ;;
@@ -15424,6 +15964,20 @@ view: udm_events__about__user_management_chain {
     group_item_label: "Country or Region"
   }
 
+  dimension: office_address__desk_name {
+    type: string
+    sql: ${TABLE}.office_address.desk_name ;;
+    group_label: "Office Address"
+    group_item_label: "Desk Name"
+  }
+
+  dimension: office_address__floor_name {
+    type: string
+    sql: ${TABLE}.office_address.floor_name ;;
+    group_label: "Office Address"
+    group_item_label: "Floor Name"
+  }
+
   dimension: office_address__name {
     type: string
     sql: ${TABLE}.office_address.name ;;
@@ -15450,6 +16004,20 @@ view: udm_events__about__user_management_chain {
     sql: ${TABLE}.personal_address.country_or_region ;;
     group_label: "Personal Address"
     group_item_label: "Country or Region"
+  }
+
+  dimension: personal_address__desk_name {
+    type: string
+    sql: ${TABLE}.personal_address.desk_name ;;
+    group_label: "Personal Address"
+    group_item_label: "Desk Name"
+  }
+
+  dimension: personal_address__floor_name {
+    type: string
+    sql: ${TABLE}.personal_address.floor_name ;;
+    group_label: "Personal Address"
+    group_item_label: "Floor Name"
   }
 
   dimension: personal_address__name {
@@ -16090,6 +16658,20 @@ view: udm_events__target__user_management_chain {
     group_item_label: "Country or Region"
   }
 
+  dimension: office_address__desk_name {
+    type: string
+    sql: ${TABLE}.office_address.desk_name ;;
+    group_label: "Office Address"
+    group_item_label: "Desk Name"
+  }
+
+  dimension: office_address__floor_name {
+    type: string
+    sql: ${TABLE}.office_address.floor_name ;;
+    group_label: "Office Address"
+    group_item_label: "Floor Name"
+  }
+
   dimension: office_address__name {
     type: string
     sql: ${TABLE}.office_address.name ;;
@@ -16116,6 +16698,20 @@ view: udm_events__target__user_management_chain {
     sql: ${TABLE}.personal_address.country_or_region ;;
     group_label: "Personal Address"
     group_item_label: "Country or Region"
+  }
+
+  dimension: personal_address__desk_name {
+    type: string
+    sql: ${TABLE}.personal_address.desk_name ;;
+    group_label: "Personal Address"
+    group_item_label: "Desk Name"
+  }
+
+  dimension: personal_address__floor_name {
+    type: string
+    sql: ${TABLE}.personal_address.floor_name ;;
+    group_label: "Personal Address"
+    group_item_label: "Floor Name"
   }
 
   dimension: personal_address__name {
@@ -16263,6 +16859,23 @@ view: udm_events__observer__user__attribute__labels {
   dimension: value {
     type: string
     sql: ${TABLE}.value ;;
+  }
+}
+
+view: udm_events__src__asset__software__permissions {
+  dimension: description {
+    type: string
+    sql: ${TABLE}.description ;;
+  }
+
+  dimension: name {
+    type: string
+    sql: ${TABLE}.name ;;
+  }
+
+  dimension: type {
+    type: number
+    sql: ${TABLE}.type ;;
   }
 }
 
@@ -17063,6 +17676,20 @@ view: udm_events__observer__user_management_chain {
     group_item_label: "Country or Region"
   }
 
+  dimension: office_address__desk_name {
+    type: string
+    sql: ${TABLE}.office_address.desk_name ;;
+    group_label: "Office Address"
+    group_item_label: "Desk Name"
+  }
+
+  dimension: office_address__floor_name {
+    type: string
+    sql: ${TABLE}.office_address.floor_name ;;
+    group_label: "Office Address"
+    group_item_label: "Floor Name"
+  }
+
   dimension: office_address__name {
     type: string
     sql: ${TABLE}.office_address.name ;;
@@ -17089,6 +17716,20 @@ view: udm_events__observer__user_management_chain {
     sql: ${TABLE}.personal_address.country_or_region ;;
     group_label: "Personal Address"
     group_item_label: "Country or Region"
+  }
+
+  dimension: personal_address__desk_name {
+    type: string
+    sql: ${TABLE}.personal_address.desk_name ;;
+    group_label: "Personal Address"
+    group_item_label: "Desk Name"
+  }
+
+  dimension: personal_address__floor_name {
+    type: string
+    sql: ${TABLE}.personal_address.floor_name ;;
+    group_label: "Personal Address"
+    group_item_label: "Floor Name"
   }
 
   dimension: personal_address__name {
@@ -17172,6 +17813,23 @@ view: udm_events__observer__user_management_chain {
   dimension: windows_sid {
     type: string
     sql: ${TABLE}.windows_sid ;;
+  }
+}
+
+view: udm_events__about__asset__software__permissions {
+  dimension: description {
+    type: string
+    sql: ${TABLE}.description ;;
+  }
+
+  dimension: name {
+    type: string
+    sql: ${TABLE}.name ;;
+  }
+
+  dimension: type {
+    type: number
+    sql: ${TABLE}.type ;;
   }
 }
 
@@ -17463,6 +18121,20 @@ view: udm_events__principal__user_management_chain {
     group_item_label: "Country or Region"
   }
 
+  dimension: office_address__desk_name {
+    type: string
+    sql: ${TABLE}.office_address.desk_name ;;
+    group_label: "Office Address"
+    group_item_label: "Desk Name"
+  }
+
+  dimension: office_address__floor_name {
+    type: string
+    sql: ${TABLE}.office_address.floor_name ;;
+    group_label: "Office Address"
+    group_item_label: "Floor Name"
+  }
+
   dimension: office_address__name {
     type: string
     sql: ${TABLE}.office_address.name ;;
@@ -17489,6 +18161,20 @@ view: udm_events__principal__user_management_chain {
     sql: ${TABLE}.personal_address.country_or_region ;;
     group_label: "Personal Address"
     group_item_label: "Country or Region"
+  }
+
+  dimension: personal_address__desk_name {
+    type: string
+    sql: ${TABLE}.personal_address.desk_name ;;
+    group_label: "Personal Address"
+    group_item_label: "Desk Name"
+  }
+
+  dimension: personal_address__floor_name {
+    type: string
+    sql: ${TABLE}.personal_address.floor_name ;;
+    group_label: "Personal Address"
+    group_item_label: "Floor Name"
   }
 
   dimension: personal_address__name {
@@ -17904,6 +18590,20 @@ view: udm_events__extensions__vulns__vulnerabilities {
     sql: ${TABLE}.about.asset.location.country_or_region ;;
     group_label: "About Asset Location"
     group_item_label: "Country or Region"
+  }
+
+  dimension: about__asset__location__desk_name {
+    type: string
+    sql: ${TABLE}.about.asset.location.desk_name ;;
+    group_label: "About Asset Location"
+    group_item_label: "Desk Name"
+  }
+
+  dimension: about__asset__location__floor_name {
+    type: string
+    sql: ${TABLE}.about.asset.location.floor_name ;;
+    group_label: "About Asset Location"
+    group_item_label: "Floor Name"
   }
 
   dimension: about__asset__location__name {
@@ -18543,6 +19243,20 @@ view: udm_events__extensions__vulns__vulnerabilities {
     group_item_label: "Country or Region"
   }
 
+  dimension: about__location__desk_name {
+    type: string
+    sql: ${TABLE}.about.location.desk_name ;;
+    group_label: "About Location"
+    group_item_label: "Desk Name"
+  }
+
+  dimension: about__location__floor_name {
+    type: string
+    sql: ${TABLE}.about.location.floor_name ;;
+    group_label: "About Location"
+    group_item_label: "Floor Name"
+  }
+
   dimension: about__location__name {
     type: string
     sql: ${TABLE}.about.location.name ;;
@@ -19124,6 +19838,20 @@ view: udm_events__extensions__vulns__vulnerabilities {
     group_item_label: "Country or Region"
   }
 
+  dimension: about__user__office_address__desk_name {
+    type: string
+    sql: ${TABLE}.about.user.office_address.desk_name ;;
+    group_label: "About User Office Address"
+    group_item_label: "Desk Name"
+  }
+
+  dimension: about__user__office_address__floor_name {
+    type: string
+    sql: ${TABLE}.about.user.office_address.floor_name ;;
+    group_label: "About User Office Address"
+    group_item_label: "Floor Name"
+  }
+
   dimension: about__user__office_address__name {
     type: string
     sql: ${TABLE}.about.user.office_address.name ;;
@@ -19150,6 +19878,20 @@ view: udm_events__extensions__vulns__vulnerabilities {
     sql: ${TABLE}.about.user.personal_address.country_or_region ;;
     group_label: "About User Personal Address"
     group_item_label: "Country or Region"
+  }
+
+  dimension: about__user__personal_address__desk_name {
+    type: string
+    sql: ${TABLE}.about.user.personal_address.desk_name ;;
+    group_label: "About User Personal Address"
+    group_item_label: "Desk Name"
+  }
+
+  dimension: about__user__personal_address__floor_name {
+    type: string
+    sql: ${TABLE}.about.user.personal_address.floor_name ;;
+    group_label: "About User Personal Address"
+    group_item_label: "Floor Name"
   }
 
   dimension: about__user__personal_address__name {
@@ -19524,6 +20266,23 @@ view: udm_events__security_result__about__asset__labels {
   dimension: value {
     type: string
     sql: ${TABLE}.value ;;
+  }
+}
+
+view: udm_events__target__asset__software__permissions {
+  dimension: description {
+    type: string
+    sql: ${TABLE}.description ;;
+  }
+
+  dimension: name {
+    type: string
+    sql: ${TABLE}.name ;;
+  }
+
+  dimension: type {
+    type: number
+    sql: ${TABLE}.type ;;
   }
 }
 
@@ -20160,6 +20919,20 @@ view: udm_events__intermediary__user_management_chain {
     group_item_label: "Country or Region"
   }
 
+  dimension: office_address__desk_name {
+    type: string
+    sql: ${TABLE}.office_address.desk_name ;;
+    group_label: "Office Address"
+    group_item_label: "Desk Name"
+  }
+
+  dimension: office_address__floor_name {
+    type: string
+    sql: ${TABLE}.office_address.floor_name ;;
+    group_label: "Office Address"
+    group_item_label: "Floor Name"
+  }
+
   dimension: office_address__name {
     type: string
     sql: ${TABLE}.office_address.name ;;
@@ -20186,6 +20959,20 @@ view: udm_events__intermediary__user_management_chain {
     sql: ${TABLE}.personal_address.country_or_region ;;
     group_label: "Personal Address"
     group_item_label: "Country or Region"
+  }
+
+  dimension: personal_address__desk_name {
+    type: string
+    sql: ${TABLE}.personal_address.desk_name ;;
+    group_label: "Personal Address"
+    group_item_label: "Desk Name"
+  }
+
+  dimension: personal_address__floor_name {
+    type: string
+    sql: ${TABLE}.personal_address.floor_name ;;
+    group_label: "Personal Address"
+    group_item_label: "Floor Name"
   }
 
   dimension: personal_address__name {
@@ -20355,6 +21142,23 @@ view: udm_events__principal__cloud__vpc__attribute__labels {
   }
 }
 
+view: udm_events__observer__asset__software__permissions {
+  dimension: description {
+    type: string
+    sql: ${TABLE}.description ;;
+  }
+
+  dimension: name {
+    type: string
+    sql: ${TABLE}.name ;;
+  }
+
+  dimension: type {
+    type: number
+    sql: ${TABLE}.type ;;
+  }
+}
+
 view: udm_events__observer__user__attribute__permissions {
   dimension: description {
     type: string
@@ -20445,6 +21249,11 @@ view: udm_events__security_result__about__asset__software {
     sql: ${TABLE}.name ;;
   }
 
+  dimension: permissions {
+    hidden: yes
+    sql: ${TABLE}.permissions ;;
+  }
+
   dimension: version {
     type: string
     sql: ${TABLE}.version ;;
@@ -20481,6 +21290,23 @@ view: udm_events__target__cloud__project__attribute__labels {
 }
 
 view: udm_events__target__group__attribute__permissions {
+  dimension: description {
+    type: string
+    sql: ${TABLE}.description ;;
+  }
+
+  dimension: name {
+    type: string
+    sql: ${TABLE}.name ;;
+  }
+
+  dimension: type {
+    type: number
+    sql: ${TABLE}.type ;;
+  }
+}
+
+view: udm_events__principal__asset__software__permissions {
   dimension: description {
     type: string
     sql: ${TABLE}.description ;;
@@ -20873,6 +21699,23 @@ view: udm_events__about__process_ancestors__command_line_history {
   dimension: udm_events__about__process_ancestors__command_line_history {
     type: string
     sql: udm_events__about__process_ancestors__command_line_history ;;
+  }
+}
+
+view: udm_events__intermediary__asset__software__permissions {
+  dimension: description {
+    type: string
+    sql: ${TABLE}.description ;;
+  }
+
+  dimension: name {
+    type: string
+    sql: ${TABLE}.name ;;
+  }
+
+  dimension: type {
+    type: number
+    sql: ${TABLE}.type ;;
   }
 }
 
@@ -21845,6 +22688,20 @@ view: udm_events__security_result__about__user_management_chain {
     group_item_label: "Country or Region"
   }
 
+  dimension: office_address__desk_name {
+    type: string
+    sql: ${TABLE}.office_address.desk_name ;;
+    group_label: "Office Address"
+    group_item_label: "Desk Name"
+  }
+
+  dimension: office_address__floor_name {
+    type: string
+    sql: ${TABLE}.office_address.floor_name ;;
+    group_label: "Office Address"
+    group_item_label: "Floor Name"
+  }
+
   dimension: office_address__name {
     type: string
     sql: ${TABLE}.office_address.name ;;
@@ -21871,6 +22728,20 @@ view: udm_events__security_result__about__user_management_chain {
     sql: ${TABLE}.personal_address.country_or_region ;;
     group_label: "Personal Address"
     group_item_label: "Country or Region"
+  }
+
+  dimension: personal_address__desk_name {
+    type: string
+    sql: ${TABLE}.personal_address.desk_name ;;
+    group_label: "Personal Address"
+    group_item_label: "Desk Name"
+  }
+
+  dimension: personal_address__floor_name {
+    type: string
+    sql: ${TABLE}.personal_address.floor_name ;;
+    group_label: "Personal Address"
+    group_item_label: "Floor Name"
   }
 
   dimension: personal_address__name {
@@ -22358,6 +23229,23 @@ view: udm_events__intermediary__cloud__project__attribute__permissions {
   }
 }
 
+view: udm_events__security_result__about__asset__software__permissions {
+  dimension: description {
+    type: string
+    sql: ${TABLE}.description ;;
+  }
+
+  dimension: name {
+    type: string
+    sql: ${TABLE}.name ;;
+  }
+
+  dimension: type {
+    type: number
+    sql: ${TABLE}.type ;;
+  }
+}
+
 view: udm_events__security_result__about__user__attribute__permissions {
   dimension: description {
     type: string
@@ -22695,6 +23583,11 @@ view: udm_events__extensions__vulns__vulnerabilities__about__asset__software {
   dimension: name {
     type: string
     sql: ${TABLE}.name ;;
+  }
+
+  dimension: permissions {
+    hidden: yes
+    sql: ${TABLE}.permissions ;;
   }
 
   dimension: version {
@@ -23264,6 +24157,20 @@ view: udm_events__extensions__vulns__vulnerabilities__about__user_management_cha
     group_item_label: "Country or Region"
   }
 
+  dimension: office_address__desk_name {
+    type: string
+    sql: ${TABLE}.office_address.desk_name ;;
+    group_label: "Office Address"
+    group_item_label: "Desk Name"
+  }
+
+  dimension: office_address__floor_name {
+    type: string
+    sql: ${TABLE}.office_address.floor_name ;;
+    group_label: "Office Address"
+    group_item_label: "Floor Name"
+  }
+
   dimension: office_address__name {
     type: string
     sql: ${TABLE}.office_address.name ;;
@@ -23290,6 +24197,20 @@ view: udm_events__extensions__vulns__vulnerabilities__about__user_management_cha
     sql: ${TABLE}.personal_address.country_or_region ;;
     group_label: "Personal Address"
     group_item_label: "Country or Region"
+  }
+
+  dimension: personal_address__desk_name {
+    type: string
+    sql: ${TABLE}.personal_address.desk_name ;;
+    group_label: "Personal Address"
+    group_item_label: "Desk Name"
+  }
+
+  dimension: personal_address__floor_name {
+    type: string
+    sql: ${TABLE}.personal_address.floor_name ;;
+    group_label: "Personal Address"
+    group_item_label: "Floor Name"
   }
 
   dimension: personal_address__name {
@@ -23471,6 +24392,23 @@ view: udm_events__extensions__vulns__vulnerabilities__about__cloud__vpc__attribu
 }
 
 view: udm_events__security_result__about__user_management_chain__attribute__permissions {
+  dimension: description {
+    type: string
+    sql: ${TABLE}.description ;;
+  }
+
+  dimension: name {
+    type: string
+    sql: ${TABLE}.name ;;
+  }
+
+  dimension: type {
+    type: number
+    sql: ${TABLE}.type ;;
+  }
+}
+
+view: udm_events__extensions__vulns__vulnerabilities__about__asset__software__permissions {
   dimension: description {
     type: string
     sql: ${TABLE}.description ;;
