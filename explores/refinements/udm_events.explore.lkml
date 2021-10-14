@@ -73,6 +73,7 @@ explore: +udm_events {
     relationship: one_to_one
     fields: [enum_name]
   }
+
   # Etc
   conditionally_filter: {
     filters: {

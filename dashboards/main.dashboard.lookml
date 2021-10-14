@@ -12,9 +12,9 @@
     col: 0
     width: 7
     height: 1
-  - name: Throughput (GB)
+  - name: Throughput
     type: text
-    title_text: Throughput (GB)
+    title_text: Throughput
     subtitle_text: ''
     body_text: ''
     row: 0
@@ -38,9 +38,9 @@
     fields: [rule_detections.count_for_drill, rule_detections.period]
     sorts: [rule_detections.period desc]
     limit: 500
-    dynamic_fields: [{table_calculation: delta, label: Delta, expression: 'round((${rule_detections.count_for_drill}
-          - offset(${rule_detections.count_for_drill}, 1))/1000,3)', value_format: !!null '',
-        value_format_name: !!null '', _kind_hint: measure, _type_hint: number}]
+    dynamic_fields: [{table_calculation: delta, label: Delta, expression: '(${rule_detections.count_for_drill}
+          - offset(${rule_detections.count_for_drill}, 1))', value_format: "#,##0;-#,##0",
+          value_format_name: !!null '', _kind_hint: measure, _type_hint: number}]
     query_timezone: America/Los_Angeles
     custom_color_enabled: true
     show_single_value_title: false
@@ -51,7 +51,7 @@
     enable_conditional_formatting: false
     conditional_formatting_include_totals: false
     conditional_formatting_include_nulls: false
-    value_format: 0.000, "K"
+    value_format: "[>=1000000]#,##0.0,,\" M\";[>=1000]0.0,\" K\";0"
     x_axis_gridlines: false
     y_axis_gridlines: true
     show_view_names: false
@@ -92,19 +92,19 @@
     model: block_google_chronicle_v2
     explore: ingestion_stats
     type: single_value
-    fields: [ingestion_stats.total_size_bytes_GB_for_drill, ingestion_stats.period]
+    fields: [ingestion_stats.total_size_bytes, ingestion_stats.period]
     filters:
       ingestion_stats.log_type: -"FORWARDER_HEARTBEAT"
     sorts: [ingestion_stats.period desc]
     limit: 500
     dynamic_fields: [{table_calculation: size_gb, label: Size (GB), expression: " round(${ingestion_stats.total_size_bytes}/1000/1000/1000,\
           \ 2)", value_format: !!null '', value_format_name: !!null '', is_disabled: true,
-        _kind_hint: dimension, _type_hint: number}, {table_calculation: delta, label: Delta,
-        expression: 'round(${ingestion_stats.total_size_bytes_GB_for_drill} - offset(${ingestion_stats.total_size_bytes_GB_for_drill},
-          1),2)', value_format: !!null '', value_format_name: !!null '', is_disabled: false,
-        _kind_hint: measure, _type_hint: number}, {measure: sum_of_size_bytes, based_on: ingestion_stats.size_bytes,
-        type: sum, label: Sum of Size Bytes, expression: !!null '', _kind_hint: measure,
-        _type_hint: number}]
+          _kind_hint: dimension, _type_hint: number}, {table_calculation: delta, label: Delta,
+          expression: '${ingestion_stats.total_size_bytes} - offset(${ingestion_stats.total_size_bytes},1)',
+          value_format: "#,##0.0,,,\" GB\";-#,##0.0,,,\" GB\"", value_format_name: !!null '', is_disabled: false,
+          _kind_hint: measure, _type_hint: number}, {measure: sum_of_size_bytes, based_on: ingestion_stats.size_bytes,
+          type: sum, label: Sum of Size Bytes, expression: !!null '', _kind_hint: measure,
+          _type_hint: number}]
     query_timezone: America/Los_Angeles
     custom_color_enabled: true
     show_single_value_title: false
@@ -115,7 +115,7 @@
     enable_conditional_formatting: false
     conditional_formatting_include_totals: false
     conditional_formatting_include_nulls: false
-    value_format: '0.00'
+    value_format: "[>=1000000000000000]#,##0.0,,,,\" PB\";[>=1000000000000]#,##0.0,,,,\" TB\";#,##0.0,,,\" GB\""
     x_axis_gridlines: false
     y_axis_gridlines: true
     show_view_names: false
@@ -287,14 +287,14 @@
     model: block_google_chronicle_v2
     explore: ingestion_stats
     type: single_value
-    fields: [ingestion_stats.total_entry_number_in_million_for_drill, ingestion_stats.period]
+    fields: [ingestion_stats.total_entry_number, ingestion_stats.period]
     filters:
       ingestion_stats.log_type: -"FORWARDER_HEARTBEAT"
     sorts: [ingestion_stats.period desc]
     limit: 500
-    dynamic_fields: [{table_calculation: delta, label: Delta, expression: 'round(${ingestion_stats.total_entry_number_in_million_for_drill}
-          - offset(${ingestion_stats.total_entry_number_in_million_for_drill}, 1),2)',
-        value_format: !!null '', value_format_name: !!null '', _kind_hint: measure,
+    dynamic_fields: [{table_calculation: delta, label: Delta, expression: '${ingestion_stats.total_entry_number}
+        - offset(${ingestion_stats.total_entry_number}, 1)',
+        value_format: "#,##0,\" K\";-#,##0,\" K\"", value_format_name: !!null '', _kind_hint: measure,
         _type_hint: number}]
     query_timezone: America/Los_Angeles
     custom_color_enabled: true
@@ -306,7 +306,7 @@
     enable_conditional_formatting: false
     conditional_formatting_include_totals: false
     conditional_formatting_include_nulls: false
-    value_format: 0 "M"
+    value_format: "[>=1000000000]#,##0,,,\" B\";[>=1000000]0,,\" M\";0,\" K\""
     x_axis_gridlines: false
     y_axis_gridlines: true
     show_view_names: false

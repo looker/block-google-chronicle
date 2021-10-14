@@ -89,11 +89,23 @@ view: +udm_events {
   }
 }
 
+view: +udm_events__security_result__action {
+  dimension: action_enum_name {
+    type:  string
+    sql:  ${udm_events__security_result__action__enum.enum_name} ;;
+  }
+}
+
 # Naming enums
 view: +udm_events__security_result{
   dimension: about__platform_enum_name {
     type:  string
     sql:  ${udm_events__security_result__about__platform__enum.enum_name} ;;
+  }
+
+  dimension: action {
+    hidden: yes
+    sql: ${TABLE}.action ;;
   }
 
   dimension: alert_state_enum_name {

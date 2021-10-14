@@ -1,10 +1,10 @@
 constant: CONNECTION_NAME{
-  value: "your-bq-connection"
+  value: "c4"
   export: override_required
 }
 
 constant: DATASET_NAME{
-  value: "dataset"
+  value: "datalake"
   export: override_required
 }
 
