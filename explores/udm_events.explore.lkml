@@ -1,6 +1,12 @@
 include: "/views/refinements/udm_events.view.lkml"
 
 explore: udm_events {
+  join: udm_events__about {
+    view_label: "Udm Events: About"
+    sql: LEFT JOIN UNNEST(${udm_events.about}) as udm_events__about ;;
+    relationship: one_to_many
+  }
+
   join: udm_events__src__ip {
     view_label: "Udm Events: Src Ip"
     sql: LEFT JOIN UNNEST(${udm_events.src__ip}) as udm_events__src__ip ;;
@@ -15,19 +21,13 @@ explore: udm_events {
 
   join: udm_events__about__ip {
     view_label: "Udm Events: About Ip"
-    sql: LEFT JOIN UNNEST(${udm_events.about__ip}) as udm_events__about__ip ;;
+    sql: LEFT JOIN UNNEST(${udm_events__about.ip}) as udm_events__about__ip ;;
     relationship: one_to_many
   }
 
   join: udm_events__about__mac {
     view_label: "Udm Events: About Mac"
-    sql: LEFT JOIN UNNEST(${udm_events.about__mac}) as udm_events__about__mac ;;
-    relationship: one_to_many
-  }
-
-  join: udm_events__about {
-    view_label: "Udm Events: About"
-    sql: LEFT JOIN UNNEST(${udm_events.about}) as udm_events__about ;;
+    sql: LEFT JOIN UNNEST(${udm_events__about.mac}) as udm_events__about__mac ;;
     relationship: one_to_many
   }
 
@@ -64,6 +64,12 @@ explore: udm_events {
   join: udm_events__about__nat_ip {
     view_label: "Udm Events: About Nat Ip"
     sql: LEFT JOIN UNNEST(${udm_events__about.nat_ip}) as udm_events__about__nat_ip ;;
+    relationship: one_to_many
+  }
+
+  join: udm_events__intermediary {
+    view_label: "Udm Events: Intermediary"
+    sql: LEFT JOIN UNNEST(${udm_events.intermediary}) as udm_events__intermediary ;;
     relationship: one_to_many
   }
 
@@ -117,7 +123,13 @@ explore: udm_events {
 
   join: udm_events__intermediary__ip {
     view_label: "Udm Events: Intermediary Ip"
-    sql: LEFT JOIN UNNEST(${udm_events.intermediary__ip}) as udm_events__intermediary__ip ;;
+    sql: LEFT JOIN UNNEST(${udm_events__intermediary.ip}) as udm_events__intermediary__ip ;;
+    relationship: one_to_many
+  }
+
+  join: udm_events__security_result {
+    view_label: "Udm Events: Security Result"
+    sql: LEFT JOIN UNNEST(${udm_events.security_result}) as udm_events__security_result ;;
     relationship: one_to_many
   }
 
@@ -147,13 +159,7 @@ explore: udm_events {
 
   join: udm_events__intermediary__mac {
     view_label: "Udm Events: Intermediary Mac"
-    sql: LEFT JOIN UNNEST(${udm_events.intermediary__mac}) as udm_events__intermediary__mac ;;
-    relationship: one_to_many
-  }
-
-  join: udm_events__intermediary {
-    view_label: "Udm Events: Intermediary"
-    sql: LEFT JOIN UNNEST(${udm_events.intermediary}) as udm_events__intermediary ;;
+    sql: LEFT JOIN UNNEST(${udm_events__intermediary.mac}) as udm_events__intermediary__mac ;;
     relationship: one_to_many
   }
 
@@ -315,7 +321,7 @@ explore: udm_events {
 
   join: udm_events__security_result__action {
     view_label: "Udm Events: Security Result Action"
-    sql: LEFT JOIN UNNEST(${udm_events.security_result__action}) as udm_events__security_result__action ;;
+    sql: LEFT JOIN UNNEST(${udm_events__security_result.action}) as udm_events__security_result__action ;;
     relationship: one_to_many
   }
 
@@ -346,12 +352,6 @@ explore: udm_events {
   join: udm_events__intermediary__labels {
     view_label: "Udm Events: Intermediary Labels"
     sql: LEFT JOIN UNNEST(${udm_events__intermediary.labels}) as udm_events__intermediary__labels ;;
-    relationship: one_to_many
-  }
-
-  join: udm_events__security_result {
-    view_label: "Udm Events: Security Result"
-    sql: LEFT JOIN UNNEST(${udm_events.security_result}) as udm_events__security_result ;;
     relationship: one_to_many
   }
 
@@ -961,6 +961,12 @@ explore: udm_events {
     relationship: one_to_many
   }
 
+  join: udm_events__src__asset__software__permissions {
+    view_label: "Udm Events: Src Asset Software Permissions"
+    sql: LEFT JOIN UNNEST(${udm_events__src__asset__software.permissions}) as udm_events__src__asset__software__permissions ;;
+    relationship: one_to_many
+  }
+
   join: udm_events__src__user__attribute__permissions {
     view_label: "Udm Events: Src User Attribute Permissions"
     sql: LEFT JOIN UNNEST(${udm_events.src__user__attribute__permissions}) as udm_events__src__user__attribute__permissions ;;
@@ -1123,6 +1129,12 @@ explore: udm_events {
     relationship: one_to_many
   }
 
+  join: udm_events__about__asset__software__permissions {
+    view_label: "Udm Events: About Asset Software Permissions"
+    sql: LEFT JOIN UNNEST(${udm_events__about__asset__software.permissions}) as udm_events__about__asset__software__permissions ;;
+    relationship: one_to_many
+  }
+
   join: udm_events__about__user__attribute__permissions {
     view_label: "Udm Events: About User Attribute Permissions"
     sql: LEFT JOIN UNNEST(${udm_events__about.user__attribute__permissions}) as udm_events__about__user__attribute__permissions ;;
@@ -1228,6 +1240,12 @@ explore: udm_events {
   join: udm_events__security_result__about__asset__labels {
     view_label: "Udm Events: Security Result About Asset Labels"
     sql: LEFT JOIN UNNEST(${udm_events__security_result.about__asset__labels}) as udm_events__security_result__about__asset__labels ;;
+    relationship: one_to_many
+  }
+
+  join: udm_events__target__asset__software__permissions {
+    view_label: "Udm Events: Target Asset Software Permissions"
+    sql: LEFT JOIN UNNEST(${udm_events__target__asset__software.permissions}) as udm_events__target__asset__software__permissions ;;
     relationship: one_to_many
   }
 
@@ -1387,6 +1405,12 @@ explore: udm_events {
     relationship: one_to_many
   }
 
+  join: udm_events__observer__asset__software__permissions {
+    view_label: "Udm Events: Observer Asset Software Permissions"
+    sql: LEFT JOIN UNNEST(${udm_events__observer__asset__software.permissions}) as udm_events__observer__asset__software__permissions ;;
+    relationship: one_to_many
+  }
+
   join: udm_events__observer__user__attribute__permissions {
     view_label: "Udm Events: Observer User Attribute Permissions"
     sql: LEFT JOIN UNNEST(${udm_events.observer__user__attribute__permissions}) as udm_events__observer__user__attribute__permissions ;;
@@ -1450,6 +1474,12 @@ explore: udm_events {
   join: udm_events__target__group__attribute__permissions {
     view_label: "Udm Events: Target Group Attribute Permissions"
     sql: LEFT JOIN UNNEST(${udm_events.target__group__attribute__permissions}) as udm_events__target__group__attribute__permissions ;;
+    relationship: one_to_many
+  }
+
+  join: udm_events__principal__asset__software__permissions {
+    view_label: "Udm Events: Principal Asset Software Permissions"
+    sql: LEFT JOIN UNNEST(${udm_events__principal__asset__software.permissions}) as udm_events__principal__asset__software__permissions ;;
     relationship: one_to_many
   }
 
@@ -1600,6 +1630,12 @@ explore: udm_events {
   join: udm_events__about__process_ancestors__command_line_history {
     view_label: "Udm Events: About Process Ancestors Command Line History"
     sql: LEFT JOIN UNNEST(${udm_events__about__process_ancestors.command_line_history}) as udm_events__about__process_ancestors__command_line_history ;;
+    relationship: one_to_many
+  }
+
+  join: udm_events__intermediary__asset__software__permissions {
+    view_label: "Udm Events: Intermediary Asset Software Permissions"
+    sql: LEFT JOIN UNNEST(${udm_events__intermediary__asset__software.permissions}) as udm_events__intermediary__asset__software__permissions ;;
     relationship: one_to_many
   }
 
@@ -2047,6 +2083,12 @@ explore: udm_events {
     relationship: one_to_many
   }
 
+  join: udm_events__security_result__about__asset__software__permissions {
+    view_label: "Udm Events: Security Result About Asset Software Permissions"
+    sql: LEFT JOIN UNNEST(${udm_events__security_result__about__asset__software.permissions}) as udm_events__security_result__about__asset__software__permissions ;;
+    relationship: one_to_many
+  }
+
   join: udm_events__security_result__about__user__attribute__permissions {
     view_label: "Udm Events: Security Result About User Attribute Permissions"
     sql: LEFT JOIN UNNEST(${udm_events__security_result.about__user__attribute__permissions}) as udm_events__security_result__about__user__attribute__permissions ;;
@@ -2332,6 +2374,12 @@ explore: udm_events {
   join: udm_events__security_result__about__user_management_chain__attribute__permissions {
     view_label: "Udm Events: Security Result About User Management Chain Attribute Permissions"
     sql: LEFT JOIN UNNEST(${udm_events__security_result__about__user_management_chain.attribute__permissions}) as udm_events__security_result__about__user_management_chain__attribute__permissions ;;
+    relationship: one_to_many
+  }
+
+  join: udm_events__extensions__vulns__vulnerabilities__about__asset__software__permissions {
+    view_label: "Udm Events: Extensions Vulns Vulnerabilities About Asset Software Permissions"
+    sql: LEFT JOIN UNNEST(${udm_events__extensions__vulns__vulnerabilities__about__asset__software.permissions}) as udm_events__extensions__vulns__vulnerabilities__about__asset__software__permissions ;;
     relationship: one_to_many
   }
 

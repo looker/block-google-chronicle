@@ -74,37 +74,6 @@ explore: +udm_events {
     fields: [enum_name]
   }
 
-  # Overwriting the generated (broken) joins for some nested repeated fields.
-  join: udm_events__about__ip {
-    view_label: "Udm Events: About Ip"
-    sql: LEFT JOIN UNNEST(${udm_events__about.ip}) as udm_events__about__ip ;;
-    relationship: one_to_many
-  }
-
-  join: udm_events__about__mac {
-    view_label: "Udm Events: About Mac"
-    sql: LEFT JOIN UNNEST(${udm_events__about.mac}) as udm_events__about__mac ;;
-    relationship: one_to_many
-  }
-
-  join: udm_events__intermediary__ip {
-    view_label: "Udm Events: Intermediary Ip"
-    sql: LEFT JOIN UNNEST(${udm_events__intermediary.ip}) as udm_events__intermediary__ip ;;
-    relationship: one_to_many
-  }
-
-  join: udm_events__intermediary__mac {
-    view_label: "Udm Events: Intermediary Mac"
-    sql: LEFT JOIN UNNEST(${udm_events__intermediary.mac}) as udm_events__intermediary__mac ;;
-    relationship: one_to_many
-  }
-
-  join: udm_events__security_result__action {
-    view_label: "Udm Events: Security Result Action"
-    sql: LEFT JOIN UNNEST(${udm_events__security_result.action}) as udm_events__security_result__action ;;
-    relationship: one_to_many
-  }
-
   # Etc
   conditionally_filter: {
     filters: {
