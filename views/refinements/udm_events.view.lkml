@@ -140,36 +140,3 @@ view: +udm_events__extensions__vulns__vulnerabilities {
     sql:  ${udm_events__extensions__vulns__vulnerabilities__severity__enum.enum_name} ;;
   }
 }
-
-# Adding views to fix the generated (broken) joins for some nested repeated fields.
-view: +udm_events__about {
-  dimension: ip {
-    hidden: yes
-    sql: ${TABLE}.ip ;;
-    group_label: "About"
-    group_item_label: "IP"
-  }
-
-  dimension: mac {
-    hidden: yes
-    sql: ${TABLE}.mac ;;
-    group_label: "About"
-    group_item_label: "Mac"
-  }
-}
-
-view: +udm_events__intermediary {
-  dimension: ip {
-    hidden: yes
-    sql: ${TABLE}.ip ;;
-    group_label: "Intermediary"
-    group_item_label: "IP"
-  }
-
-  dimension: mac {
-    hidden: yes
-    sql: ${TABLE}.mac ;;
-    group_label: "Intermediary"
-    group_item_label: "Mac"
-  }
-}
