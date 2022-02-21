@@ -5,7 +5,7 @@ view: +udm_events {
   dimension: primary_key {
     primary_key: yes
     hidden: yes
-    sql: CONCAT(${TABLE}.metadata.product_log_id, ${TABLE}.metadata.event_timestamp.seconds, ${TABLE}.metadata.event_timestamp.nanos, ${TABLE}.metadata.event_type, ${TABLE}.metadata.vendor_name, ${TABLE}.metadata.product_name);;
+    sql: CONCAT(IFNULL(${TABLE}.metadata.product_log_id, ""), IFNULL(${TABLE}.metadata.event_timestamp.seconds,0), IFNULL(${TABLE}.metadata.event_timestamp.nanos,0), IFNULL(${TABLE}.metadata.event_type,0), IFNULL(${TABLE}.metadata.vendor_name,""), IFNULL(${TABLE}.metadata.product_name,""));;
   }
 
   dimension_group: event_timestamp {
@@ -89,11 +89,23 @@ view: +udm_events {
   }
 }
 
+view: +udm_events__security_result__action {
+  dimension: action_enum_name {
+    type:  string
+    sql:  ${udm_events__security_result__action__enum.enum_name} ;;
+  }
+}
+
 # Naming enums
 view: +udm_events__security_result{
   dimension: about__platform_enum_name {
     type:  string
     sql:  ${udm_events__security_result__about__platform__enum.enum_name} ;;
+  }
+
+  dimension: action {
+    hidden: yes
+    sql: ${TABLE}.action ;;
   }
 
   dimension: alert_state_enum_name {
